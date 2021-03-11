@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "rollup -c -w",
+    "start": "rollup -c -w",
     "build": "rollup -c",
-    "start": "sirv public"
+    "verify": "sirv public"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^4.0.2",
