@@ -280,7 +280,7 @@
 				d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z"
 				fill="#14141f"></path>
 		</svg>
-		<svg class="z-20 w-10 h-10 p-2 ml-1.5 rounded-full" xmlns="http://www.w3.org/2000/svg"
+		<svg class="z-20 w-10 h-10 p-2 rounded-full logo" xmlns="http://www.w3.org/2000/svg"
 			xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="120 120 256 256">
 			<defs>
 				<path id="a"
@@ -1270,7 +1270,7 @@
 							d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z"
 							fill="#14141f"></path>
 					</svg>
-					<svg class="z-20 w-10 h-10 p-2 ml-1.5 rounded-full" xmlns="http://www.w3.org/2000/svg"
+					<svg class="z-20 w-10 h-10 p-2 rounded-full logo" xmlns="http://www.w3.org/2000/svg"
 						xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="120 120 256 256">
 						<defs>
 							<path id="a"
@@ -1391,4 +1391,7 @@
 </footer>
 
 <style>
+	.logo {
+		margin-left: 5px;
+	}
 </style>
