@@ -674,7 +674,7 @@
 <main id="main" class="flex flex-row-reverse justify-around w-full">
 	<div class="flex flex-col w-11/12 m-10 mb-10 items-left lg:ml-0 sm:w-10/12 md:w-9/12 lg:w-8/12">
 		<h2 class="inline-flex w-auto mb-6 text-xl font-bold text-left text-white">
-			<a href="javascript:;" class="focus:outline-none">Software Development (3)</a>
+			<a href="https://www.quillerbee.com/" class="focus:outline-none">Software Development (3)</a>
 		</h2>
 		<section
 			class="relative flex flex-col pb-0 mb-6 transition-shadow duration-300 ease-in-out bg-gray-900 rounded-lg hover:shadow-lg">
@@ -757,7 +757,8 @@
 									d="M9.243 3.03a1 1 0 01.727 1.213L9.53 6h2.94l.56-2.243a1 1 0 111.94.486L14.53 6H17a1 1 0 110 2h-2.97l-1 4H15a1 1 0 110 2h-2.47l-.56 2.242a1 1 0 11-1.94-.485L10.47 14H7.53l-.56 2.242a1 1 0 11-1.94-.485L5.47 14H3a1 1 0 110-2h2.97l1-4H5a1 1 0 110-2h2.47l.56-2.243a1 1 0 011.213-.727zM9.03 8l-1 4h2.938l1-4H9.031z"
 									clip-rule="evenodd" />
 							</svg>
-							<a class="focus:outline-none hover:text-gray-300 focus:text-gray-300" href="javascript:;">
+							<a class="focus:outline-none hover:text-gray-300 focus:text-gray-300"
+								href="https://www.quillerbee.com/">
 								JavaScript
 							</a>
 						</div>
@@ -768,7 +769,8 @@
 									d="M9.243 3.03a1 1 0 01.727 1.213L9.53 6h2.94l.56-2.243a1 1 0 111.94.486L14.53 6H17a1 1 0 110 2h-2.97l-1 4H15a1 1 0 110 2h-2.47l-.56 2.242a1 1 0 11-1.94-.485L10.47 14H7.53l-.56 2.242a1 1 0 11-1.94-.485L5.47 14H3a1 1 0 110-2h2.97l1-4H5a1 1 0 110-2h2.47l.56-2.243a1 1 0 011.213-.727zM9.03 8l-1 4h2.938l1-4H9.031z"
 									clip-rule="evenodd" />
 							</svg>
-							<a class="focus:outline-none hover:text-gray-300 focus:text-gray-300" href="javascript:;">
+							<a class="focus:outline-none hover:text-gray-300 focus:text-gray-300"
+								href="https://www.quillerbee.com/">
 								Svelte
 							</a>
 						</div>
@@ -940,7 +942,8 @@
 									d="M9.243 3.03a1 1 0 01.727 1.213L9.53 6h2.94l.56-2.243a1 1 0 111.94.486L14.53 6H17a1 1 0 110 2h-2.97l-1 4H15a1 1 0 110 2h-2.47l-.56 2.242a1 1 0 11-1.94-.485L10.47 14H7.53l-.56 2.242a1 1 0 11-1.94-.485L5.47 14H3a1 1 0 110-2h2.97l1-4H5a1 1 0 110-2h2.47l.56-2.243a1 1 0 011.213-.727zM9.03 8l-1 4h2.938l1-4H9.031z"
 									clip-rule="evenodd" />
 							</svg>
-							<a class="focus:outline-none hover:text-gray-700 focus:text-gray-700" href="javascript:;">
+							<a class="focus:outline-none hover:text-gray-700 focus:text-gray-700"
+								href="https://www.quillerbee.com/">
 								JavaScript
 							</a>
 						</div>
@@ -951,7 +954,8 @@
 									d="M9.243 3.03a1 1 0 01.727 1.213L9.53 6h2.94l.56-2.243a1 1 0 111.94.486L14.53 6H17a1 1 0 110 2h-2.97l-1 4H15a1 1 0 110 2h-2.47l-.56 2.242a1 1 0 11-1.94-.485L10.47 14H7.53l-.56 2.242a1 1 0 11-1.94-.485L5.47 14H3a1 1 0 110-2h2.97l1-4H5a1 1 0 110-2h2.47l.56-2.243a1 1 0 011.213-.727zM9.03 8l-1 4h2.938l1-4H9.031z"
 									clip-rule="evenodd" />
 							</svg>
-							<a class="focus:outline-none hover:text-gray-700 focus:text-gray-700" href="javascript:;">
+							<a class="focus:outline-none hover:text-gray-700 focus:text-gray-700"
+								href="https://www.quillerbee.com/">
 								Svelte
 							</a>
 						</div>
@@ -985,7 +989,7 @@
 			</div>
 		</section>
 		<h2 class="inline-flex w-auto my-6 text-xl font-bold text-left text-white">
-			<a href="javascript:;" class="focus:outline-none">Game Development (1)</a>
+			<a href="https://www.quillerbee.com/" class="focus:outline-none">Game Development (1)</a>
 		</h2>
 		<section
 			class="relative flex flex-col pb-0 mb-6 transition-shadow duration-300 ease-in-out bg-gray-900 rounded-lg hover:shadow-lg">
@@ -1068,7 +1072,8 @@
 									d="M9.243 3.03a1 1 0 01.727 1.213L9.53 6h2.94l.56-2.243a1 1 0 111.94.486L14.53 6H17a1 1 0 110 2h-2.97l-1 4H15a1 1 0 110 2h-2.47l-.56 2.242a1 1 0 11-1.94-.485L10.47 14H7.53l-.56 2.242a1 1 0 11-1.94-.485L5.47 14H3a1 1 0 110-2h2.97l1-4H5a1 1 0 110-2h2.47l.56-2.243a1 1 0 011.213-.727zM9.03 8l-1 4h2.938l1-4H9.031z"
 									clip-rule="evenodd" />
 							</svg>
-							<a class="focus:outline-none hover:text-gray-300 focus:text-gray-300" href="javascript:;">
+							<a class="focus:outline-none hover:text-gray-300 focus:text-gray-300"
+								href="https://www.quillerbee.com/">
 								JavaScript
 							</a>
 						</div>
@@ -1079,7 +1084,8 @@
 									d="M9.243 3.03a1 1 0 01.727 1.213L9.53 6h2.94l.56-2.243a1 1 0 111.94.486L14.53 6H17a1 1 0 110 2h-2.97l-1 4H15a1 1 0 110 2h-2.47l-.56 2.242a1 1 0 11-1.94-.485L10.47 14H7.53l-.56 2.242a1 1 0 11-1.94-.485L5.47 14H3a1 1 0 110-2h2.97l1-4H5a1 1 0 110-2h2.47l.56-2.243a1 1 0 011.213-.727zM9.03 8l-1 4h2.938l1-4H9.031z"
 									clip-rule="evenodd" />
 							</svg>
-							<a class="focus:outline-none hover:text-gray-300 focus:text-gray-300" href="javascript:;">
+							<a class="focus:outline-none hover:text-gray-300 focus:text-gray-300"
+								href="https://www.quillerbee.com/">
 								Svelte
 							</a>
 						</div>
@@ -1147,15 +1153,15 @@
 
 		</div>
 		<div class="p-3">
-			<a href="javascript:;"
+			<a href="https://www.quillerbee.com/"
 				class="inline-block mr-3 text-sm text-gray-300 hover:text-white focus:text-white focus:outline-none">Terms</a>
-			<a href="javascript:;"
+			<a href="https://www.quillerbee.com/"
 				class="inline-block mr-3 text-sm text-gray-300 hover:text-white focus:text-white focus:outline-none">Privacy</a>
-			<a href="javascript:;"
+			<a href="https://www.quillerbee.com/"
 				class="inline-block mr-3 text-sm text-gray-300 hover:text-white focus:text-white focus:outline-none">Cookies</a>
-			<a href="javascript:;"
+			<a href="https://www.quillerbee.com/"
 				class="inline-block mr-3 text-sm text-gray-300 hover:text-white focus:text-white focus:outline-none">Disclaimer</a>
-			<a href="javascript:;"
+			<a href="https://www.quillerbee.com/"
 				class="inline-block mr-3 text-sm text-gray-300 hover:text-white focus:text-white focus:outline-none">About</a>
 			<br />
 			<span class="inline-block text-sm text-gray-300">© 2021 Quiller
@@ -1197,7 +1203,7 @@
 				<div class="w-full mb-10 mr-6 lg:w-2/5 lg:border-r lg:border-violet-300">
 					<div>
 						<div>
-							<a href="javascript:;"
+							<a href="https://www.quillerbee.com/"
 								class="inline-block text-xl font-bold text-white focus:outline-none">Quiller
 								Bee</a>
 						</div>
@@ -1212,13 +1218,13 @@
 					<div class="grid grid-cols-2 gap-6 sm:grid-cols-3">
 						<div class="flex flex-col">
 							<h3 class="font-semibold text-white uppercase">Company</h3>
-							<div><a href="javascript:;"
+							<div><a href="https://www.quillerbee.com/"
 									class="inline-block mt-2 text-sm text-gray-300 focus:outline-none hover:text-white focus:text-white">About
 									Us</a></div>
-							<div><a href="javascript:;"
+							<div><a href="https://www.quillerbee.com/"
 									class="inline-block mt-2 text-sm text-gray-300 focus:outline-none hover:text-white focus:text-white">Analytics</a>
 							</div>
-							<div><a href="javascript:;"
+							<div><a href="https://www.quillerbee.com/"
 									class="inline-block mt-2 text-sm text-gray-300 focus:outline-none hover:text-white focus:text-white">Post
 									a
 									Job</a></div>
@@ -1227,17 +1233,17 @@
 						<div class="flex flex-col">
 							<h3 class="font-semibold text-white uppercase">Legal</h3>
 
-							<div><a href="javascript:;"
+							<div><a href="https://www.quillerbee.com/"
 									class="inline-block mt-2 text-sm text-gray-300 focus:outline-none hover:text-white focus:text-white">Privacy
 									Policy</a></div>
-							<div><a href="javascript:;"
+							<div><a href="https://www.quillerbee.com/"
 									class="inline-block mt-2 text-sm text-gray-300 focus:outline-none hover:text-white focus:text-white">Terms
 									&
 									Conditions</a></div>
-							<div><a href="javascript:;"
+							<div><a href="https://www.quillerbee.com/"
 									class="inline-block mt-2 text-sm text-gray-300 focus:outline-none hover:text-white focus:text-white">Cookie
 									Policy</a></div>
-							<div><a href="javascript:;"
+							<div><a href="https://www.quillerbee.com/"
 									class="inline-block mt-2 text-sm text-gray-300 focus:outline-none hover:text-white focus:text-white">Disclaimer</a>
 							</div>
 						</div>
@@ -1344,13 +1350,15 @@
 						target="_blank" rel="noopener noreferrer">@quillerbee</a>
 				</p>
 				<span class="inline-flex justify-center mt-4 cursor-pointer sm:ml-auto sm:mt-0 sm:justify-start">
-					<a class="text-gray-400 hover:text-white focus:text-white focus:outline-none">
+					<a href="https://www.quillerbee.com/"
+						class="text-gray-400 hover:text-white focus:text-white focus:outline-none">
 						<svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
 							class="w-5 h-5" viewBox="0 0 24 24">
 							<path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
 						</svg>
 					</a>
-					<a class="ml-3 text-gray-400 hover:text-white focus:text-white focus:outline-none">
+					<a href="https://www.quillerbee.com/"
+						class="ml-3 text-gray-400 hover:text-white focus:text-white focus:outline-none">
 						<svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
 							class="w-5 h-5" viewBox="0 0 24 24">
 							<path
@@ -1358,14 +1366,16 @@
 							</path>
 						</svg>
 					</a>
-					<a class="ml-3 text-gray-400 hover:text-white focus:text-white focus:outline-none">
+					<a href="https://www.quillerbee.com/"
+						class="ml-3 text-gray-400 hover:text-white focus:text-white focus:outline-none">
 						<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
 							stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
 							<rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
 							<path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
 						</svg>
 					</a>
-					<a class="ml-3 text-gray-400 hover:text-white focus:text-white focus:outline-none">
+					<a href="https://www.quillerbee.com/"
+						class="ml-3 text-gray-400 hover:text-white focus:text-white focus:outline-none">
 						<svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
 							stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
 							<path stroke="none"
