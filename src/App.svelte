@@ -382,28 +382,10 @@
 				</svg>
 			</div>
 			<input id="search-toggle" type="search" placeholder="Enter search term ('/' to focus)"
-				class="inline-block w-full py-3 pl-12 pr-4 font-bold text-gray-700 bg-gray-100 rounded-lg pointer-events-auto focus:outline-none focus:ring-4 focus:ring-white focus:ring-opacity-20">
+				class="inline-block w-full py-3 pl-12 pr-4 mb-1 font-bold text-gray-700 bg-gray-100 rounded-lg pointer-events-auto focus:outline-none focus:ring-4 focus:ring-white focus:ring-opacity-20">
 			<label for="search-toggle"
 				class="absolute text-xs italic font-semibold text-white -bottom-4 right-8">Powered by
 				Dgraph</label>
-			<div class="mt-1">
-				<div id="search-content" class="z-10 w-full overflow-y-auto text-gray-600 rounded-lg text"
-					style="max-height: 500px;">
-					<div id="searchresults" class="h-auto max-w-3xl mx-auto"></div>
-
-					<!-- No search results message-->
-					<div id="nosearchresults" class="flex hidden px-6 pb-6 bg-white">
-						<svg class="w-6 h-6 text-indigo-600 fill-current" xmlns="http://www.w3.org/2000/svg"
-							viewBox="0 0 20 20">
-							<path
-								d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z">
-							</path>
-						</svg>
-						<span class="ml-4 font-bold"> Oops, no search results!!!1</span>
-					</div>
-					<!-- / No search results -->
-				</div>
-			</div>
 		</div>
 		<h1 id="typewriter" class="text-lg font-bold text-white pointer-events-none sm:text-2xl md:text-4xl bottom-36">
 		</h1>
@@ -682,7 +664,7 @@
 			<div class="flex items-start justify-between mb-5">
 				<div class="flex p-5">
 					<div
-						class="flex items-center justify-center inline-block text-4xl font-bold text-center text-gray-900 bg-pink-400 rounded-full w-logo h-logo">
+						class="flex items-center justify-center text-4xl font-bold text-center text-gray-900 bg-pink-400 rounded-full w-logo h-logo">
 						D
 					</div>
 					<div class="flex flex-col ml-4 text-left">
@@ -775,7 +757,7 @@
 							</a>
 						</div>
 					</div>
-					<div class="flex items-center hidden mr-3 sm:block">
+					<div class="items-center hidden mr-3 sm:flex">
 						<span class="text-gray-500">$</span>24k -
 						<span class="ml-1 text-gray-500">$</span>40k
 					</div>
@@ -836,7 +818,7 @@
 						<div class="flex items-center justify-center w-20 h-5 mr-2 bg-gray-700 rounded animate-pulse">
 						</div>
 					</div>
-					<div class="flex items-center hidden mr-3 sm:block">
+					<div class="items-center hidden mr-3 sm:flex">
 						<div class="w-24 h-5 bg-gray-700 rounded animate-pulse"></div>
 					</div>
 				</div>
@@ -868,7 +850,7 @@
 			<div class="flex items-start justify-between mb-5">
 				<div class="flex p-5">
 					<div
-						class="flex items-center justify-center inline-block text-4xl font-bold text-center text-white bg-pink-400 rounded-full w-logo h-logo">
+						class="flex items-center justify-center text-4xl font-bold text-center text-white bg-pink-400 rounded-full w-logo h-logo">
 						D
 					</div>
 					<div class="flex flex-col ml-4 text-left">
@@ -960,7 +942,7 @@
 							</a>
 						</div>
 					</div>
-					<div class="flex items-center hidden mr-3 sm:block">
+					<div class="items-center hidden mr-3 sm:flex">
 						<span class="text-gray-500">$</span>24k -
 						<span class="ml-1 text-gray-500">$</span>40k
 					</div>
@@ -997,7 +979,7 @@
 			<div class="flex items-start justify-between mb-5">
 				<div class="flex p-5">
 					<div
-						class="flex items-center justify-center inline-block text-4xl font-bold text-center text-gray-900 bg-pink-400 rounded-full w-logo h-logo">
+						class="flex items-center justify-center text-4xl font-bold text-center text-gray-900 bg-pink-400 rounded-full w-logo h-logo">
 						D
 					</div>
 					<div class="flex flex-col ml-4 text-left">
@@ -1090,7 +1072,7 @@
 							</a>
 						</div>
 					</div>
-					<div class="flex items-center hidden mr-3 sm:block">
+					<div class="items-center hidden mr-3 sm:flex">
 						<span class="text-gray-500">$</span>24k -
 						<span class="ml-1 text-gray-500">$</span>40k
 					</div>
@@ -1149,7 +1131,7 @@
 		<span class="ribbon left">
 			Filters
 		</span>
-		<div class="w-full overflow-x-hidden overflow-y-auto bg-gray-900 rounded-lg shadow-lg rounded-2xl h-filter">
+		<div class="w-full overflow-x-hidden overflow-y-auto bg-gray-900 shadow-lg rounded-2xl h-filter">
 
 		</div>
 		<div class="p-3">
