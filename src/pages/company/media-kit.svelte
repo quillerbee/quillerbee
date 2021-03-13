@@ -1,1 +1,0 @@
-<h2>Media Kit</h2>
