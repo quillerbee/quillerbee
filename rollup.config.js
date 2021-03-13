@@ -5,6 +5,8 @@ import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
 import postcss from 'rollup-plugin-postcss'
+import cleaner from 'rollup-plugin-cleaner';
+import sveltePreprocess from 'svelte-preprocess';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -33,21 +35,44 @@ export default {
 	input: 'src/main.js',
 	output: {
 		sourcemap: true,
-		format: 'iife',
+		format: 'esm',
 		name: 'app',
-		file: 'public/build/bundle.js'
+		dir: 'public/build',
+		// for performance, disabling filename hashing in development
+		chunkFileNames: `[name]${production && '-[hash]' || ''}.js`
 	},
 	plugins: [
-		postcss({ extract: "tailwind.css" }),
+		postcss({ extract: "bundle.css" }),
 		svelte({
+			preprocess: sveltePreprocess({
+				postcss: {
+					plugins: [require('autoprefixer')],
+				},
+				babel: {
+					presets: [
+						[
+							'@babel/preset-env',
+							{
+								loose: true,
+								modules: false,
+								targets: {
+									esmodules: true,
+								},
+							},
+						],
+					],
+				},
+			}),
 			compilerOptions: {
 				// enable run-time checks when not in production
 				dev: !production
 			}
 		}),
-		// we'll extract any component CSS out into
-		// a separate file - better for performance
-		css({ output: 'bundle.css' }),
+		cleaner({
+			targets: [
+				'public/build/'
+			]
+		}),
 
 		// If you have external dependencies installed from
 		// npm, you'll most likely need these plugins. In
@@ -56,9 +81,13 @@ export default {
 		// https://github.com/rollup/plugins/tree/master/packages/commonjs
 		resolve({
 			browser: true,
-			dedupe: ['svelte']
+			main: true,
+			dedupe: ['svelte', 'svelte/transition', 'svelte/internal'],
+			preferBuiltins: false,
 		}),
-		commonjs(),
+		commonjs({
+			esmExternals: ['/node_modules/@roxi/routify']
+		}),
 
 		// In dev mode, call `npm run start` once
 		// the bundle has been generated
