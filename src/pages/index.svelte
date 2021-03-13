@@ -1,3 +1,7 @@
+<script>
+    import { url } from '@roxi/routify'
+</script>
+
 <nav>
     <section class="mb-10 text-gray-900 beehive">
         <div class="flex justify-center honeycomb">
@@ -719,15 +723,15 @@
 
         </div>
         <div class="p-3">
-            <a href="https://www.quillerbee.com/"
+            <a use:$url href="/legal/privacy-policy"
                 class="inline-block mr-3 text-sm text-gray-300 hover:text-white focus:text-white focus:outline-none">Terms</a>
-            <a href="https://www.quillerbee.com/"
+            <a use:$url href="/legal/terms-and-conditions"
                 class="inline-block mr-3 text-sm text-gray-300 hover:text-white focus:text-white focus:outline-none">Privacy</a>
-            <a href="https://www.quillerbee.com/"
+            <a use:$url href="/legal/cookie-policy"
                 class="inline-block mr-3 text-sm text-gray-300 hover:text-white focus:text-white focus:outline-none">Cookies</a>
-            <a href="https://www.quillerbee.com/"
+            <a use:$url href="/legal/disclaimer"
                 class="inline-block mr-3 text-sm text-gray-300 hover:text-white focus:text-white focus:outline-none">Disclaimer</a>
-            <a href="https://www.quillerbee.com/"
+            <a use:$url href="/about"
                 class="inline-block mr-3 text-sm text-gray-300 hover:text-white focus:text-white focus:outline-none">About</a>
             <br />
             <span class="inline-block text-sm text-gray-300">© 2021 Quiller
