@@ -459,7 +459,7 @@
     </div>
     <h1
       id="typewriter"
-      class="text-lg font-bold text-white pointer-events-none sm:text-2xl md:text-4xl bottom-36" />
+      class="text-lg font-bold text-white pointer-events-none sm:text-2xl md:text-4xl bottom-36">$nbsp;</h1>
   </section>
   <canvas class="w-full h-full" bind:this={canvas} />
   <svg
