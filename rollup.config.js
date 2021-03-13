@@ -1,3 +1,4 @@
+import alias from '@rollup/plugin-alias';
 import svelte from 'rollup-plugin-svelte';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
@@ -8,6 +9,7 @@ import cleaner from 'rollup-plugin-cleaner';
 import sveltePreprocess from 'svelte-preprocess';
 
 const production = !process.env.ROLLUP_WATCH;
+const path = require('path');
 
 function serve() {
 	let server;
@@ -71,6 +73,12 @@ export default {
 			targets: [
 				'public/build/'
 			]
+		}),
+
+		alias({
+			entries: {
+				components: path.resolve(__dirname, './src/components')
+			},
 		}),
 
 		// If you have external dependencies installed from

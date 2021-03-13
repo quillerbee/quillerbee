@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import { url, goto, isChangingPage } from "@roxi/routify";
+  import { Loader } from "components";
 
   // https://codepen.io/hakimel/pen/bzrZGo
   const STAR_COUNT = (window.innerWidth + window.innerHeight) / 8,
@@ -368,24 +369,7 @@
 <slot />
 
 {#if $isChangingPage}
-<div class="flex justify-center">
-  <div class="scale-75 loader transform-gpu">
-    <div class="planet">
-      <div class="ring"></div>
-      <div class="cover-ring"></div>
-      <div class="spots">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-    <p>loading</p>
-  </div>
-</div>
+<Loader />
 {/if}
 
 <footer id="footer" class="w-full">

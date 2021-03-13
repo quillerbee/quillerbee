@@ -5,6 +5,7 @@ devDependencies:
   '@babel/core': 7.13.10
   '@babel/preset-env': 7.13.10_@babel+core@7.13.10
   '@fullhuman/postcss-purgecss': 4.0.2_postcss@8.2.8
+  '@rollup/plugin-alias': 3.1.2_rollup@2.41.1
   '@rollup/plugin-commonjs': 17.1.0_rollup@2.41.1
   '@rollup/plugin-node-resolve': 11.2.0_rollup@2.41.1
   '@roxi/routify': 2.14.0
@@ -968,6 +969,17 @@ packages:
     dev: false
     resolution:
       integrity: sha512-3NsZsJIA/22P3QUyrEDNA2D133H4j224twJrdipXN38dpnIOzAbUDtOwkcJ5pXmn75w7LSQDjA4tO9dm1XlqlA==
+  /@rollup/plugin-alias/3.1.2_rollup@2.41.1:
+    dependencies:
+      rollup: 2.41.1
+      slash: 3.0.0
+    dev: true
+    engines:
+      node: '>=8.0.0'
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0
+    resolution:
+      integrity: sha512-wzDnQ6v7CcoRzS0qVwFPrFdYA4Qlr+ookA217Y2Z3DPZE1R8jrFNM3jvGgOf6o6DMjbnQIn5lCIJgHPe1Bt3uw==
   /@rollup/plugin-commonjs/17.1.0_rollup@2.41.1:
     dependencies:
       '@rollup/pluginutils': 3.1.0_rollup@2.41.1
@@ -3972,6 +3984,12 @@ packages:
       node: '>= 10'
     resolution:
       integrity: sha512-SR36i3/LSWja7AJNRBz4fF/Xjpn7lQFI30tZ434dIy+bitLYSP+ZEenHg36i23V2SGEz+kqjksg0uOGZ5LPiqg==
+  /slash/3.0.0:
+    dev: true
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
   /source-map-support/0.5.19:
     dependencies:
       buffer-from: 1.1.1
@@ -4585,6 +4603,7 @@ specifiers:
   '@babel/core': ^7.13.10
   '@babel/preset-env': ^7.13.10
   '@fullhuman/postcss-purgecss': ^4.0.2
+  '@rollup/plugin-alias': ^3.1.2
   '@rollup/plugin-commonjs': ^17.0.0
   '@rollup/plugin-node-resolve': ^11.0.0
   '@roxi/routify': ^2.14.0
