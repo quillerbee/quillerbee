@@ -1,4 +1,8 @@
 <script>
+    /**
+    * Taken from:
+    * https://codepen.io/FilipVitas/pen/KRRRoY 
+    */
     import { url } from "@roxi/routify";
 </script>
 <section class="absolute top-0 flex flex-col justify-around w-full p-10 pointer-events-none h-4/5">
