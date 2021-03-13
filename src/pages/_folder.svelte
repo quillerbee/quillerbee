@@ -4,9 +4,36 @@
 
   import Typewriter from "typewriter-effect/dist/core";
 
-  var typewriter = document.getElementById("typewriter");
+  // https://codepen.io/hakimel/pen/bzrZGo
+  const STAR_COUNT = (window.innerWidth + window.innerHeight) / 8,
+    STAR_SIZE = 3,
+    STAR_MIN_SCALE = 0.2,
+    OVERFLOW_THRESHOLD = 50;
 
-  var typewriter = new Typewriter(typewriter, {
+  let canvas, context, header;
+
+  let scale = 1, // device pixel ratio
+    width,
+    height;
+
+  let stars = [];
+
+  let pointerX, pointerY;
+
+  let velocity = { x: 0, y: 0, tx: 0, ty: 0, z: 0.0005 };
+
+  let touchInput = false;
+
+  onMount(() => {
+    context = canvas.getContext("2d");
+    canvas.onmousemove = onMouseMove;
+    // canvas.ontouchmove = onTouchMove;
+    canvas.ontouchend = onMouseLeave;
+    document.onmouseleave = onMouseLeave;
+    resize();
+    step();
+
+    let typewriter = new Typewriter(header, {
     loop: true,
     delay: 75
   });
@@ -40,35 +67,6 @@
     )
     .pauseFor(1000)
     .start();
-
-  // https://codepen.io/hakimel/pen/bzrZGo
-  const STAR_COUNT = (window.innerWidth + window.innerHeight) / 8,
-    STAR_SIZE = 3,
-    STAR_MIN_SCALE = 0.2,
-    OVERFLOW_THRESHOLD = 50;
-
-  let canvas, context;
-
-  let scale = 1, // device pixel ratio
-    width,
-    height;
-
-  let stars = [];
-
-  let pointerX, pointerY;
-
-  let velocity = { x: 0, y: 0, tx: 0, ty: 0, z: 0.0005 };
-
-  let touchInput = false;
-
-  onMount(() => {
-    context = canvas.getContext("2d");
-    canvas.onmousemove = onMouseMove;
-    // canvas.ontouchmove = onTouchMove;
-    canvas.ontouchend = onMouseLeave;
-    document.onmouseleave = onMouseLeave;
-    resize();
-    step();
   });
 
   generate();
@@ -458,6 +456,7 @@
       </label>
     </div>
     <h1
+        bind:this={header}
       id="typewriter"
       class="text-lg font-bold text-white pointer-events-none sm:text-2xl md:text-4xl bottom-36">&nbsp;</h1>
   </section>
