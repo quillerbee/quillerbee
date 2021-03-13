@@ -1,7 +1,10 @@
 <script>
   import { onMount } from "svelte";
-  import { url, goto, isChangingPage } from "@roxi/routify";
+  import { url, goto, isChangingPage, metatags } from "@roxi/routify";
   import { Loader } from "components";
+
+  metatags.title = `Quiller Bee`;
+  metatags.description = `One stop destination for hand curated, high quality, jobs from world's most valuable companies!`;
 
   // https://codepen.io/hakimel/pen/bzrZGo
   const STAR_COUNT = (window.innerWidth + window.innerHeight) / 8,
