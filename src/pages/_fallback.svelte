@@ -3,7 +3,9 @@
     * Taken from:
     * https://codepen.io/FilipVitas/pen/KRRRoY 
     */
-    import { url } from "@roxi/routify";
+    import { url, metatags } from "@roxi/routify";
+
+    metatags.template("title", title => `Page Not Found - ${title}`);
 </script>
 <section class="absolute top-0 flex flex-col justify-around w-full p-10 pointer-events-none h-4/5">
     <div class="center transform-gpu">
