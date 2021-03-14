@@ -1,6 +1,6 @@
 <script>
   import { url, goto, isChangingPage, metatags } from "@roxi/routify";
-  import { Loader, DayAndNightToggle, InteractiveBackground, Logo } from "components";
+  import { Loader, DayAndNightToggle, InteractiveBackground, Logo, SkipLink } from "components";
 
   metatags.title = `Quiller Bee`;
   metatags.description = `One stop destination for hand curated, high quality, jobs from world's most valuable companies!`;
@@ -8,13 +8,7 @@
 
 <header class="relative w-full mb-16">
   <nav class="fixed z-10 flex items-center justify-between w-full h-16 p-5 pointer-events-none frosted-glass">
-    <div class="skip-link">
-      <div class="mb-2">Skip to</div>
-      <a href="#main" class="focus:outline-none">Content</a>
-      or
-      <a href="#footer" class="focus:outline-none">Footer</a>
-      <div class="ribbon banner transform-gpu" />
-    </div>
+    <SkipLink />
     <Logo />
     <div class="flex items-center">
       <DayAndNightToggle />

@@ -14,31 +14,6 @@ body {
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004) !important;
 }
 
-.skip-link {
-	color: #fff;
-	font-weight: 700;
-	position: absolute;
-	z-index: 2;
-	top: -148px;
-	left: 0;
-	padding: 65px 16px 0;
-	transform: translateY(-125%);
-	pointer-events: all;
-}
-
-.skip-link {
-	transform: translateY(-125%);
-	transition: transform 0.3s;
-}
-
-.skip-link:focus-within {
-	transform: translateY(80%);
-}
-
-.skip-to-content-link:focus {
-	transform: translateY(80%);
-}
-
 header, footer {
 	background-repeat: no-repeat;
 }
