@@ -62,7 +62,9 @@
         padding-left: 1em;
     }
 
-    /* https://codepen.io/simoncoudeville/pen/LyCda */
+    .h-filter {
+        height: 650px;
+    }
 </style>
 
 <aside class="relative hidden m-10 text-white lg:block lg:w-4/12 ribbon-container">

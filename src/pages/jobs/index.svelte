@@ -115,6 +115,18 @@
         -o-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
         transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
     }
+
+    .w-logo {
+        min-width: 75px;
+        width: 75px;
+        max-width: 75px;
+    }
+
+    .h-logo {
+        min-height: 75px;
+        height: 75px;
+        max-height: 75px;
+    }
 </style>
 
 <div class="flex flex-col w-11/12 m-10 mb-10 items-left lg:ml-0 sm:w-10/12 md:w-9/12 lg:w-8/12">

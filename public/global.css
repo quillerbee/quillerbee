@@ -35,34 +35,6 @@ header {
 	height: 500px;
 }
 
-.stroke-rounded {
-	stroke-linecap: round;
-}
-
-.w-logo {
-	min-width: 75px;
-	width: 75px;
-	max-width: 75px;
-}
-
-.h-logo {
-	min-height: 75px;
-	height: 75px;
-	max-height: 75px;
-}
-
-.h-filter {
-	height: 650px;
-}
-
-.bg-dark {
-	background-color: #27273c;
-}
-
-.bg-darker {
-	background-color: #14141f;
-}
-
 /* width */
 
 *::-webkit-scrollbar {
@@ -86,11 +58,6 @@ header {
 
 *::-webkit-scrollbar-thumb:hover {
 	background: #555;
-}
-
-.frosted-glass {
-	background-color: rgba(0, 0, 0, 0.05);
-	backdrop-filter: blur(10px);
 }
 
 /* https://codepen.io/alphardex/pen/MWWEmLK */

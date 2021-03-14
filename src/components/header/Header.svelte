@@ -46,6 +46,11 @@
         background-image: linear-gradient(to right, #667eea, #764ba2, #6B8DD6, #8E37D7);
         box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
     }
+
+    .frosted-glass {
+        background-color: rgba(0, 0, 0, 0.05);
+        backdrop-filter: blur(10px);
+    }
 </style>
 
 <header class="relative w-full mb-16">
