@@ -46,9 +46,8 @@
 <section class="absolute top-0 flex flex-col justify-around w-full p-10 pointer-events-none h-2/3">
     <div class="relative max-w-3xl px-6 mx-auto">
         <div class="absolute top-0 left-0 flex items-center h-10 pl-10 mt-1">
-            <svg class="w-4 h-4 text-gray-600 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                <path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8
-            14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z" />
+            <svg class="w-4 h-4 text-gray-600 fill-current">
+                <use xlink:href="symbol-defs.svg#search" />
             </svg>
         </div>
         <input id="search-toggle" type="search" placeholder="Enter search term ('/' to focus)"
