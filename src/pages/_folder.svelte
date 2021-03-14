@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import { url, goto, isChangingPage, metatags } from "@roxi/routify";
-  import { Loader } from "components";
+  import { Loader, DayAndNightToggle } from "components";
 
   metatags.title = `Quiller Bee`;
   metatags.description = `One stop destination for hand curated, high quality, jobs from world's most valuable companies!`;
@@ -236,22 +236,7 @@
       </svg>
     </a>
     <div class="flex items-center">
-      <div class="day-and-night-toggle">
-        <input type="checkbox" class="focus:outline-none" id="dn" checked />
-        <label for="dn" class="toggle">
-          <span class="toggle__handler">
-            <span class="crater crater--1" />
-            <span class="crater crater--2" />
-            <span class="crater crater--3" />
-          </span>
-          <span class="star star--1" />
-          <span class="star star--2" />
-          <span class="star star--3" />
-          <span class="star star--4" />
-          <span class="star star--5" />
-          <span class="star star--6" />
-        </label>
-      </div>
+      <DayAndNightToggle />
       <button on:click="{(e)=> {$goto('/admin'); e?.target?.blur();}}"
         class="outline-none buttons btn-hover color-3 focus:outline-none focus:ring-2 focus:ring-purple-500">
         Post a Job
