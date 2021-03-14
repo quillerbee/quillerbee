@@ -61,6 +61,60 @@
         border-bottom: 3px solid transparent;
         border-top: 3px solid #79A70A;
     }
+
+    /* https://codepen.io/crayon-code/pen/vYXpmPB */
+
+    .bookmark {
+        width: 37px;
+        height: 36px;
+    }
+
+    .bookmark button {
+        z-index: 2;
+    }
+
+    .bookmark:hover .ribbon.up>.content,
+    .bookmark:focus .ribbon.up>.content {
+        height: 70px;
+    }
+
+    .bookmark:hover .ribbon.up,
+    .bookmark:focus .ribbon.up {
+        top: -20px;
+    }
+
+    .ribbon.up {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 5px;
+        filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, 0.5));
+    }
+
+    .ribbon>.content {
+        color: white;
+        font-size: 1.25rem;
+        text-align: center;
+        font-weight: 400;
+        background: var(--color, #2ca7d8) linear-gradient(45deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.25) 100%);
+        padding: 25px 2px 4px;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 0 100%);
+        width: 28px;
+        transition: clip-path 1s, padding 1s, background 1s;
+    }
+
+    .ribbon.up>.content {
+        height: 35px;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 8px), 0 100%);
+    }
+
+    .ribbon.up,
+    .ribbon.up>.content {
+        -webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+        -moz-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+        -o-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+        transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+    }
 </style>
 
 <div class="flex flex-col w-11/12 m-10 mb-10 items-left lg:ml-0 sm:w-10/12 md:w-9/12 lg:w-8/12">
