@@ -5,6 +5,64 @@
     metatags.template("title", title => `Jobs - ${title}`);
 </script>
 
+<style>
+    /* https://www.cssportal.com/css-ribbon-generator/ */
+
+    .ribbon.top-left {
+        position: absolute;
+        left: -5px;
+        top: -5px;
+        z-index: 1;
+        overflow: hidden;
+        width: 75px;
+        height: 75px;
+        text-align: right;
+    }
+
+    .ribbon.top-left span {
+        font-size: 10px;
+        font-weight: bold;
+        color: #FFF;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 20px;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        width: 100px;
+        display: block;
+        background: #79A70A;
+        background: linear-gradient(#9BC90D 0%, #79A70A 100%);
+        box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+        position: absolute;
+        top: 19px;
+        left: -21px;
+    }
+
+    .ribbon.top-left span::before {
+        content: "";
+        position: absolute;
+        left: 0px;
+        top: 100%;
+        z-index: -1;
+        border-left: 3px solid #79A70A;
+        border-right: 3px solid transparent;
+        border-bottom: 3px solid transparent;
+        border-top: 3px solid #79A70A;
+    }
+
+    .ribbon.top-left span::after {
+        content: "";
+        position: absolute;
+        right: 0px;
+        top: 100%;
+        z-index: -1;
+        border-left: 3px solid transparent;
+        border-right: 3px solid #79A70A;
+        border-bottom: 3px solid transparent;
+        border-top: 3px solid #79A70A;
+    }
+</style>
+
 <div class="flex flex-col w-11/12 m-10 mb-10 items-left lg:ml-0 sm:w-10/12 md:w-9/12 lg:w-8/12">
     <h2 class="inline-flex w-auto mb-6 text-xl font-bold text-left text-white">
         <a href="https://www.quillerbee.com/" class="focus:outline-none">Software Development (3)</a>
