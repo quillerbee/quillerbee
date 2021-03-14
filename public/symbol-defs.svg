@@ -83,7 +83,7 @@
       <use fill="none" xlink:href="#o" />
     </symbol>
 
-    <!-- Misc -->
+    <!-- Hexagons -->
     <symbol viewBox="-2 0 177 200" id="hex" fill="currentColor">
       <path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772
           150L86.60254037844386 200L0 150L0 50Z" fill="currentColor" />
@@ -92,6 +92,9 @@
       <path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z">
       </path>
     </symbol>
+
+    <!-- Icons -->
+
 
     <!-- HeroIcons -->
     <symbol viewBox="0 0 20 20" id="chevron-down" fill="currentColor">
