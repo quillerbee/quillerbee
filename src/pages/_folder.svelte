@@ -1,25 +1,10 @@
 <script>
   import { url, goto, isChangingPage, metatags } from "@roxi/routify";
-  import { Loader, DayAndNightToggle, InteractiveBackground } from "components";
+  import { Loader, DayAndNightToggle, InteractiveBackground, Logo } from "components";
 
   metatags.title = `Quiller Bee`;
   metatags.description = `One stop destination for hand curated, high quality, jobs from world's most valuable companies!`;
 </script>
-
-<style>
-  .logo-link {
-    height: 64px;
-  }
-
-  .logo {
-    left: 5px;
-    top: 7px;
-  }
-
-  .text-dark-gray {
-    color: #14141f;
-  }
-</style>
 
 <header class="relative w-full mb-16">
   <nav class="fixed z-10 flex items-center justify-between w-full h-16 p-5 pointer-events-none frosted-glass">
@@ -30,14 +15,7 @@
       <a href="#footer" class="focus:outline-none">Footer</a>
       <div class="ribbon banner transform-gpu" />
     </div>
-    <a use:$url href="/jobs" class="flex items-center outline-none pointer-events-auto logo-link">
-      <svg class="absolute z-10 text-dark-gray" height="50" width="50">
-        <use xlink:href="symbol-defs.svg#hex" />
-      </svg>
-      <svg class="ml-1.5 z-20 w-10 h-10 p-2 rounded-full logo">
-        <use xlink:href="symbol-defs.svg#logo" />
-      </svg>
-    </a>
+    <Logo />
     <div class="flex items-center">
       <DayAndNightToggle />
       <button on:click="{(e)=> {$goto('/admin'); e?.target?.blur();}}"
@@ -205,16 +183,8 @@
     </div>
     <div class="text-gray-400 body-font">
       <div class="container flex flex-col items-center px-5 py-8 mx-auto sm:flex-row">
-        <div class="relative flex items-center justify-center font-medium text-white title-font md:justify-start">
-          <a use:$url href="/jobs" class="flex items-center outline-none pointer-events-auto logo-link">
-            <svg class="absolute z-10 text-dark-gray" height="50" width="50">
-              <use xlink:href="symbol-defs.svg#hex" />
-            </svg>
-            <svg class="ml-1.5 z-20 w-10 h-10 p-2 rounded-full logo">
-              <use xlink:href="symbol-defs.svg#logo" />
-            </svg>
-            <span class="ml-3 -mt-1 text-xl">Quiller Bee</span>
-          </a>
+        <div class="relative flex items-center justify-center font-medium title-font md:justify-start">
+          <Logo />
         </div>
         <p class="mt-4 text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-600 sm:py-2 sm:mt-0">
           © 2021 Quiller Bee
