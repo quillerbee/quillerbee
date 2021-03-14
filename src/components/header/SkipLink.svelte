@@ -19,10 +19,6 @@
     .skip-link:focus-within {
         transform: translateY(80%);
     }
-
-    .skip-to-content-link:focus {
-        transform: translateY(80%);
-    }
 </style>
 
 <div class="skip-link">
