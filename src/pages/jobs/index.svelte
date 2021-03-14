@@ -1,6 +1,6 @@
 <script>
     import { url, metatags } from "@roxi/routify";
-    import { Loader } from "components";
+    import { Loader, LoadMoreBtn } from "components";
 
     metatags.template("title", title => `Jobs - ${title}`);
 </script>
@@ -380,13 +380,6 @@
             </div>
         </div>
     </section>
-    <div id="load-more-container">
-        <button class="load-more focus:outline-none focus:ring-2 focus:ring-green-400" onclick="this.blur();">
-            <span class="bg-gray-900 circle transform-gpu" aria-hidden="true">
-                <span class="icon arrow"></span>
-            </span>
-            <span class="flex items-center justify-center text-sm text-gray-500 button-text">Load More</span>
-        </button>
-    </div>
+    <LoadMoreBtn />
     <Loader />
 </div>
