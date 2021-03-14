@@ -1,7 +1,7 @@
 <script>
     import { goto } from "@roxi/routify";
-    import { Logo } from '../';
     import { DayAndNightToggle, InteractiveBackground, SkipLink, CloudWave } from "./";
+    import Logo from '../Logo.svelte';
 </script>
 
 <header class="relative w-full mb-16">

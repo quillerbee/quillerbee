@@ -1,7 +1,7 @@
 <script>
     import { url } from "@roxi/routify";
-    import { Logo } from "components";
-    import { WaterWave } from "./";
+    import { WaterWave, SocialLinks, CompanyLinks, LegalLinks } from "./";
+    import Logo from '../Logo.svelte';
 </script>
 
 <footer id="footer" class="w-full">
@@ -27,56 +27,9 @@
 
                 <div class="mt-6 lg:mt-0 lg:flex-1">
                     <div class="grid grid-cols-2 gap-6 sm:grid-cols-3">
-                        <div class="flex flex-col">
-                            <h3 class="font-semibold text-white uppercase">Company</h3>
-                            <div>
-                                <a use:$url href="/about"
-                                    class="inline-block mt-2 text-sm text-gray-300 focus:outline-none hover:text-white focus:text-white">
-                                    About Us
-                                </a>
-                            </div>
-                            <div>
-                                <a href="https://plausible.io/quillerbee.com"
-                                    class="inline-block mt-2 text-sm text-gray-300 focus:outline-none hover:text-white focus:text-white">
-                                    Analytics
-                                </a>
-                            </div>
-                            <div>
-                                <a use:$url href="/admin"
-                                    class="inline-block mt-2 text-sm text-gray-300 focus:outline-none hover:text-white focus:text-white">
-                                    Post a Job
-                                </a>
-                            </div>
-                        </div>
+                        <CompanyLinks />
 
-                        <div class="flex flex-col">
-                            <h3 class="font-semibold text-white uppercase">Legal</h3>
-
-                            <div>
-                                <a use:$url href="/legal/privacy-policy"
-                                    class="inline-block mt-2 text-sm text-gray-300 focus:outline-none hover:text-white focus:text-white">
-                                    Privacy Policy
-                                </a>
-                            </div>
-                            <div>
-                                <a use:$url href="/legal/terms-and-conditions"
-                                    class="inline-block mt-2 text-sm text-gray-300 focus:outline-none hover:text-white focus:text-white">
-                                    Terms & Conditions
-                                </a>
-                            </div>
-                            <div>
-                                <a use:$url href="/legal/cookie-policy"
-                                    class="inline-block mt-2 text-sm text-gray-300 focus:outline-none hover:text-white focus:text-white">
-                                    Cookie Policy
-                                </a>
-                            </div>
-                            <div>
-                                <a use:$url href="/legal/disclaimer"
-                                    class="inline-block mt-2 text-sm text-gray-300 focus:outline-none hover:text-white focus:text-white">
-                                    Disclaimer
-                                </a>
-                            </div>
-                        </div>
+                        <LegalLinks />
 
                         <div>
                             <h3 class="font-semibold text-white uppercase">Contact Us</h3>
@@ -104,32 +57,7 @@
                         @quillerbee
                     </a>
                 </p>
-                <span class="inline-flex justify-center mt-4 cursor-pointer sm:ml-auto sm:mt-0 sm:justify-start">
-                    <a href="https://www.quillerbee.com/"
-                        class="text-gray-400 hover:text-white focus:text-white focus:outline-none">
-                        <svg class="w-5 h-5">
-                            <use xlink:href="symbol-defs.svg#facebook" />
-                        </svg>
-                    </a>
-                    <a href="https://www.quillerbee.com/"
-                        class="ml-3 text-gray-400 hover:text-white focus:text-white focus:outline-none">
-                        <svg class="w-5 h-5">
-                            <use xlink:href="symbol-defs.svg#twitter" />
-                        </svg>
-                    </a>
-                    <a href="https://www.quillerbee.com/"
-                        class="ml-3 text-gray-400 hover:text-white focus:text-white focus:outline-none">
-                        <svg class="w-5 h-5">
-                            <use xlink:href="symbol-defs.svg#instagram" />
-                        </svg>
-                    </a>
-                    <a href="https://www.quillerbee.com/"
-                        class="ml-3 text-gray-400 hover:text-white focus:text-white focus:outline-none">
-                        <svg class="w-5 h-5">
-                            <use xlink:href="symbol-defs.svg#linkedin" />
-                        </svg>
-                    </a>
-                </span>
+                <SocialLinks />
             </div>
         </div>
     </section>
