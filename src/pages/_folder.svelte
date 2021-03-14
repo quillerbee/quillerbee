@@ -327,10 +327,7 @@
           <span class="star star--6" />
         </label>
       </div>
-      <button on:click={(e)=> {
-        $goto('/admin');
-        e?.target?.blur();
-        }}
+      <button on:click="{(e)=> {$goto('/admin'); e?.target?.blur();}}"
         class="outline-none buttons btn-hover color-3 focus:outline-none focus:ring-2 focus:ring-purple-500">
         Post a Job
       </button>
