@@ -212,6 +212,10 @@
     left: 5px;
     top: 7px;
   }
+
+  .text-dark-gray {
+    color: #14141f;
+  }
 </style>
 
 <header class="relative w-full mb-16">
@@ -224,10 +228,8 @@
       <div class="ribbon banner transform-gpu" />
     </div>
     <a use:$url href="/jobs" class="flex items-center outline-none pointer-events-auto logo-link">
-      <svg viewBox="-2 0 177 200" class="absolute z-10 text-gray-900" height="50" width="50" version="1.1"
-        xmlns="http://www.w3.org/2000/svg">
-        <path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772
-          150L86.60254037844386 200L0 150L0 50Z" fill="#14141f" />
+      <svg class="absolute z-10 text-dark-gray" height="50" width="50">
+        <use xlink:href="symbol-defs.svg#hex" />
       </svg>
       <svg class="ml-1.5 z-20 w-10 h-10 p-2 rounded-full logo" xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="120 120 256 256">
@@ -494,10 +496,8 @@
       <div class="container flex flex-col items-center px-5 py-8 mx-auto sm:flex-row">
         <div class="relative flex items-center justify-center font-medium text-white title-font md:justify-start">
           <a use:$url href="/jobs" class="flex items-center outline-none pointer-events-auto logo-link">
-            <svg viewBox="-2 0 177 200" class="absolute left-0 z-10 text-gray-900" height="50" width="50" version="1.1"
-              xmlns="http://www.w3.org/2000/svg">
-              <path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772
-                150L86.60254037844386 200L0 150L0 50Z" fill="#14141f" />
+            <svg class="absolute z-10 text-dark-gray" height="50" width="50">
+              <use xlink:href="symbol-defs.svg#hex" />
             </svg>
             <svg class="ml-1.5 z-20 w-10 h-10 p-2 rounded-full logo" xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="120 120 256 256">

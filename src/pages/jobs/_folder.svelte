@@ -65,23 +65,14 @@
     <section class="mb-10 text-gray-900 beehive">
         <div class="flex justify-center honeycomb">
             <button class="relative hex focus:outline-none" onclick="this.blur();">
-                <svg class="transition-all duration-200 fill transform-gpu" viewBox="-2 0 177 200" height="150"
-                    width="124" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z"
-                        fill="currentColor"></path>
+                <svg class="transition-all duration-200 fill transform-gpu" height="150" width="124">
+                    <use xlink:href="symbol-defs.svg#hex" />
                 </svg>
-                <svg class="absolute top-0 transform-gpu stroke" viewBox="-2 0 177 200" height="150" width="124"
-                    version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z">
-                    </path>
+                <svg class="absolute top-0 transform-gpu stroke" height="150" width="124">
+                    <use xlink:href="symbol-defs.svg#hex" />
                 </svg>
-                <svg class="absolute top-0 transform-gpu thick-stroke" viewBox="-5 0 182 200" height="150" width="124"
-                    version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z">
-                    </path>
+                <svg class="absolute top-0 transform-gpu thick-stroke" height="150" width="124">
+                    <use xlink:href="symbol-defs.svg#hex-ring" />
                 </svg>
                 <div class="absolute top-0 flex flex-col items-center w-full h-full pt-10 text-xs transform-gpu">
                     <svg class="mb-3 text-gray-400 icon" width="35" height="35" aria-hidden="true" focusable="false"
@@ -95,23 +86,14 @@
                 </div>
             </button>
             <button class="relative hidden lg:block hex focus:outline-none" onclick="this.blur();">
-                <svg class="transform-gpu fill" viewBox="-2 0 177 200" height="150" width="124" version="1.1"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z"
-                        fill="currentColor"></path>
+                <svg class="transition-all duration-200 fill transform-gpu" height="150" width="124">
+                    <use xlink:href="symbol-defs.svg#hex" />
                 </svg>
-                <svg class="absolute top-0 transform-gpu stroke" viewBox="-2 0 177 200" height="150" width="124"
-                    version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z">
-                    </path>
+                <svg class="absolute top-0 transform-gpu stroke" height="150" width="124">
+                    <use xlink:href="symbol-defs.svg#hex" />
                 </svg>
-                <svg class="absolute top-0 transform-gpu thick-stroke" viewBox="-5 0 182 200" height="150" width="124"
-                    version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z">
-                    </path>
+                <svg class="absolute top-0 transform-gpu thick-stroke" height="150" width="124">
+                    <use xlink:href="symbol-defs.svg#hex-ring" />
                 </svg>
                 <div class="absolute top-0 flex flex-col items-center w-full h-full pt-10 text-xs transform-gpu">
                     <svg class="mb-3 text-gray-400 icon" width="90" height="35" aria-hidden="true" focusable="false"
@@ -125,23 +107,14 @@
                 </div>
             </button>
             <button class="relative hex focus:outline-none" onclick="this.blur();">
-                <svg class="transform-gpu fill" viewBox="-2 0 177 200" height="150" width="124" version="1.1"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z"
-                        fill="currentColor"></path>
+                <svg class="transition-all duration-200 fill transform-gpu" height="150" width="124">
+                    <use xlink:href="symbol-defs.svg#hex" />
                 </svg>
-                <svg class="absolute top-0 transform-gpu stroke" viewBox="-2 0 177 200" height="150" width="124"
-                    version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z">
-                    </path>
+                <svg class="absolute top-0 transform-gpu stroke" height="150" width="124">
+                    <use xlink:href="symbol-defs.svg#hex" />
                 </svg>
-                <svg class="absolute top-0 transform-gpu thick-stroke" viewBox="-5 0 182 200" height="150" width="124"
-                    version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z">
-                    </path>
+                <svg class="absolute top-0 transform-gpu thick-stroke" height="150" width="124">
+                    <use xlink:href="symbol-defs.svg#hex-ring" />
                 </svg>
                 <div class="absolute top-0 flex flex-col items-center w-full h-full pt-10 text-xs transform-gpu">
                     <svg class="mb-3 text-gray-400 icon" width="35" height="35" aria-hidden="true" focusable="false"
@@ -155,23 +128,14 @@
                 </div>
             </button>
             <button class="relative hidden lg:block hex focus:outline-none" onclick="this.blur();">
-                <svg class="transform-gpu fill" viewBox="-2 0 177 200" height="150" width="124" version="1.1"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z"
-                        fill="currentColor"></path>
+                <svg class="transition-all duration-200 fill transform-gpu" height="150" width="124">
+                    <use xlink:href="symbol-defs.svg#hex" />
                 </svg>
-                <svg class="absolute top-0 transform-gpu stroke" viewBox="-2 0 177 200" height="150" width="124"
-                    version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z">
-                    </path>
+                <svg class="absolute top-0 transform-gpu stroke" height="150" width="124">
+                    <use xlink:href="symbol-defs.svg#hex" />
                 </svg>
-                <svg class="absolute top-0 transform-gpu thick-stroke" viewBox="-5 0 182 200" height="150" width="124"
-                    version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z">
-                    </path>
+                <svg class="absolute top-0 transform-gpu thick-stroke" height="150" width="124">
+                    <use xlink:href="symbol-defs.svg#hex-ring" />
                 </svg>
                 <div class="absolute top-0 flex flex-col items-center w-full h-full pt-10 text-xs transform-gpu">
                     <svg class="mb-3 text-gray-400 icon" width="35" height="35" aria-hidden="true" focusable="false"
@@ -185,23 +149,14 @@
                 </div>
             </button>
             <button class="relative focus:outline-none hex" onclick="this.blur();">
-                <svg class="transform-gpu fill" viewBox="-2 0 177 200" height="150" width="124" version="1.1"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z"
-                        fill="currentColor"></path>
+                <svg class="transition-all duration-200 fill transform-gpu" height="150" width="124">
+                    <use xlink:href="symbol-defs.svg#hex" />
                 </svg>
-                <svg class="absolute top-0 transform-gpu stroke" viewBox="-2 0 177 200" height="150" width="124"
-                    version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z">
-                    </path>
+                <svg class="absolute top-0 transform-gpu stroke" height="150" width="124">
+                    <use xlink:href="symbol-defs.svg#hex" />
                 </svg>
-                <svg class="absolute top-0 transform-gpu thick-stroke" viewBox="-5 0 182 200" height="150" width="124"
-                    version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z">
-                    </path>
+                <svg class="absolute top-0 transform-gpu thick-stroke" height="150" width="124">
+                    <use xlink:href="symbol-defs.svg#hex-ring" />
                 </svg>
                 <div class="absolute top-0 flex flex-col items-center w-full h-full pt-10 text-xs transform-gpu">
                     <svg class="mb-3 text-gray-400 icon" width="35" height="35" aria-hidden="true" focusable="false"
@@ -217,83 +172,47 @@
         </div>
         <div class="flex justify-center honeycomb">
             <button class="relative hex focus:outline-none" onclick="this.blur();">
-                <svg class="transform-gpu fill" viewBox="-2 0 177 200" height="150" width="124" version="1.1"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z"
-                        fill="currentColor"></path>
+                <svg class="transition-all duration-200 fill transform-gpu" height="150" width="124">
+                    <use xlink:href="symbol-defs.svg#hex" />
                 </svg>
-                <svg class="absolute top-0 transform-gpu stroke" viewBox="-2 0 177 200" height="150" width="124"
-                    version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z">
-                    </path>
+                <svg class="absolute top-0 transform-gpu stroke" height="150" width="124">
+                    <use xlink:href="symbol-defs.svg#hex" />
                 </svg>
-                <svg class="absolute top-0 transform-gpu thick-stroke" viewBox="-5 0 182 200" height="150" width="124"
-                    version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z">
-                    </path>
+                <svg class="absolute top-0 transform-gpu thick-stroke" height="150" width="124">
+                    <use xlink:href="symbol-defs.svg#hex-ring" />
                 </svg>
             </button>
             <button class="relative hidden hex lg:block focus:outline-none" onclick="this.blur();">
-                <svg class="transform-gpu fill" viewBox="-2 0 177 200" height="150" width="124" version="1.1"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z"
-                        fill="currentColor"></path>
+                <svg class="transition-all duration-200 fill transform-gpu" height="150" width="124">
+                    <use xlink:href="symbol-defs.svg#hex" />
                 </svg>
-                <svg class="absolute top-0 transform-gpu stroke" viewBox="-2 0 177 200" height="150" width="124"
-                    version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z">
-                    </path>
+                <svg class="absolute top-0 transform-gpu stroke" height="150" width="124">
+                    <use xlink:href="symbol-defs.svg#hex" />
                 </svg>
-                <svg class="absolute top-0 transform-gpu thick-stroke" viewBox="-5 0 182 200" height="150" width="124"
-                    version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z">
-                    </path>
+                <svg class="absolute top-0 transform-gpu thick-stroke" height="150" width="124">
+                    <use xlink:href="symbol-defs.svg#hex-ring" />
                 </svg>
             </button>
             <button class="relative hidden hex lg:block focus:outline-none" onclick="this.blur();">
-                <svg class="transform-gpu fill" viewBox="-2 0 177 200" height="150" width="124" version="1.1"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z"
-                        fill="currentColor"></path>
+                <svg class="transition-all duration-200 fill transform-gpu" height="150" width="124">
+                    <use xlink:href="symbol-defs.svg#hex" />
                 </svg>
-                <svg class="absolute top-0 transform-gpu stroke" viewBox="-2 0 177 200" height="150" width="124"
-                    version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z">
-                    </path>
+                <svg class="absolute top-0 transform-gpu stroke" height="150" width="124">
+                    <use xlink:href="symbol-defs.svg#hex" />
                 </svg>
-                <svg class="absolute top-0 transform-gpu thick-stroke" viewBox="-5 0 182 200" height="150" width="124"
-                    version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z">
-                    </path>
+                <svg class="absolute top-0 transform-gpu thick-stroke" height="150" width="124">
+                    <use xlink:href="symbol-defs.svg#hex-ring" />
                 </svg>
             </button>
             <button class="relative hex focus:outline-none" onclick="this.blur();">
-                <svg class="transform-gpu fill" viewBox="-2 0 177 200" height="150" width="124" version="1.1"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z"
-                        fill="currentColor"></path>
+                <svg class="transition-all duration-200 fill transform-gpu" height="150" width="124">
+                    <use xlink:href="symbol-defs.svg#hex" />
                 </svg>
-                <svg class="absolute top-0 transform-gpu stroke" viewBox="-2 0 177 200" height="150" width="124"
-                    version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z">
-                    </path>
+                <svg class="absolute top-0 transform-gpu stroke" height="150" width="124">
+                    <use xlink:href="symbol-defs.svg#hex" />
                 </svg>
-                <svg class="absolute top-0 transform-gpu thick-stroke" viewBox="-5 0 182 200" height="150" width="124"
-                    version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z">
-                    </path>
+                <svg class="absolute top-0 transform-gpu thick-stroke" height="150" width="124">
+                    <use xlink:href="symbol-defs.svg#hex-ring" />
                 </svg>
             </button>
         </div>

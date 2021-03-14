@@ -2,6 +2,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
   style="width:0;height:0;position:absolute;overflow:hidden;">
   <defs>
+    <symbol viewBox="-2 0 177 200" id="hex" fill="currentColor">
+      <path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772
+          150L86.60254037844386 200L0 150L0 50Z" fill="currentColor" />
+    </symbol>
+    <symbol viewBox="-5 0 182 200" id="hex-ring" fill="currentColor">
+      <path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z">
+      </path>
+    </symbol>
+
     <symbol viewBox="0 0 20 20" id="chevron-down" fill="currentColor">
       <path fill-rule="evenodd"
         d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"

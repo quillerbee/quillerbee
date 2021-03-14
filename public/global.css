@@ -690,6 +690,7 @@ button.load-more:hover .button-text, button.load-more:focus .button-text {
 
 .hex .stroke, .hex .thick-stroke {
 	fill: none;
+	color: transparent;
 	z-index: 1;
 	stroke: #111827;
 	pointer-events: none;
