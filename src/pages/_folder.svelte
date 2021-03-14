@@ -12,7 +12,7 @@
     STAR_MIN_SCALE = 0.2,
     OVERFLOW_THRESHOLD = 50;
 
-  let canvas, context, header;
+  let canvas, context;
 
   let scale = 1, // device pixel ratio
     width,
