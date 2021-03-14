@@ -59,11 +59,8 @@
 
                 <button onclick="this.blur();"
                     class="focus:outline-none focus:ring-2 focus:ring-indigo-400 p-1.5 rounded-full hover:bg-indigo-200">
-                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                        fill="currentColor">
-                        <path fill-rule="evenodd"
-                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                            clip-rule="evenodd" />
+                    <svg width="24" height="24" fill="currentColor">
+                        <use xlink:href="symbol-defs.svg#chevron-down" />
                     </svg>
                 </button>
             </div>
@@ -243,11 +240,8 @@
                 </button>
                 <button onclick="this.blur();"
                     class="focus:outline-none focus:ring-2 focus:ring-indigo-400 p-1.5 rounded-full hover:bg-indigo-200">
-                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                        fill="currentColor">
-                        <path fill-rule="evenodd"
-                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                            clip-rule="evenodd" />
+                    <svg width="24" height="24" fill="currentColor">
+                        <use xlink:href="symbol-defs.svg#chevron-down" />
                     </svg>
                 </button>
             </div>
@@ -373,11 +367,8 @@
 
                 <button onclick="this.blur();"
                     class="focus:outline-none focus:ring-2 focus:ring-indigo-400 p-1.5 rounded-full hover:bg-indigo-200">
-                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                        fill="currentColor">
-                        <path fill-rule="evenodd"
-                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                            clip-rule="evenodd" />
+                    <svg width="24" height="24" fill="currentColor">
+                        <use xlink:href="symbol-defs.svg#chevron-down" />
                     </svg>
                 </button>
             </div>
