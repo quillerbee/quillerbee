@@ -7,6 +7,8 @@ import { terser } from 'rollup-plugin-terser';
 import postcss from 'rollup-plugin-postcss'
 import cleaner from 'rollup-plugin-cleaner';
 import sveltePreprocess from 'svelte-preprocess';
+import { injectManifest } from 'rollup-plugin-workbox';
+import replace from '@rollup/plugin-replace';
 
 const production = !process.env.ROLLUP_WATCH;
 const path = require('path');
@@ -78,6 +80,11 @@ export default {
 			},
 		}),
 
+		replace({
+			preventAssignment: true,
+			'process.env.NODE_ENV': JSON.stringify(production && 'production'),
+		}),
+
 		// If you have external dependencies installed from
 		// npm, you'll most likely need these plugins. In
 		// some cases you'll need additional configuration -
@@ -91,6 +98,15 @@ export default {
 		}),
 		commonjs({
 			esmExternals: ['/node_modules/@roxi/routify']
+		}),
+
+		production && injectManifest({
+			globDirectory: 'public/',
+			globPatterns: ['**/*.{html,js,css,svg,png}'],
+			swSrc: `src/sw.js`,
+			swDest: `public/sw.js`,
+			maximumFileSizeToCacheInBytes: 20000000, // 10 MB,
+			mode: 'production'
 		}),
 
 		// In dev mode, call `npm run start` once
