@@ -69,10 +69,6 @@
         height: 36px;
     }
 
-    .bookmark button {
-        z-index: 2;
-    }
-
     .bookmark:hover .ribbon.up>.content,
     .bookmark:focus .ribbon.up>.content {
         height: 70px;
