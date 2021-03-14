@@ -1,0 +1,1 @@
+export { default as WaterWave } from './WaterWave.svelte';
