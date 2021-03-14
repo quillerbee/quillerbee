@@ -1,4 +1,6 @@
 <style>
+    /* https://codepen.io/andywillekens/pen/zBBpdm */
+
     .skip-link {
         color: #fff;
         font-weight: 700;
@@ -18,6 +20,40 @@
 
     .skip-link:focus-within {
         transform: translateY(80%);
+    }
+
+    .ribbon.banner {
+        width: 90px;
+        height: 215px;
+        background-color: #fff;
+        position: absolute;
+        left: 0;
+        top: -350px;
+        animation: drop forwards 0.8s 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+        opacity: 0.2;
+        backdrop-filter: blur(10px);
+        pointer-events: none;
+    }
+
+    .ribbon.banner:before {
+        content: '';
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        bottom: -45px;
+        border-left: 45px solid #fff;
+        border-right: 45px solid #fff;
+        border-bottom: 45px solid transparent;
+    }
+
+    @keyframes drop {
+        0% {
+            top: -350px;
+        }
+
+        100% {
+            top: 0;
+        }
     }
 </style>
 
