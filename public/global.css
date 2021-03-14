@@ -731,7 +731,7 @@ button.load-more:hover .button-text, button.load-more:focus .button-text {
 	stroke: yellow;
 }
 
-.hex:hover .icon path, .hex:focus .icon path, .hex:hover .title, .hex:focus .title {
+.hex:hover .icon, .hex:focus .icon, .hex:hover .title, .hex:focus .title {
 	color: yellow;
 }
 
