@@ -46,9 +46,6 @@ export default {
 		postcss({ extract: "bundle.css" }),
 		svelte({
 			preprocess: sveltePreprocess({
-				postcss: {
-					plugins: [require('autoprefixer')],
-				},
 				babel: {
 					presets: [
 						[
