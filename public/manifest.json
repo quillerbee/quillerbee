@@ -70,7 +70,7 @@
             "name": "Post a Job",
             "short_name": "Post a Job",
             "description": "Post a Job",
-            "url": "/jobs/dashboard",
+            "url": "/admin/dashboard",
             "icons": [
                 {
                     "src": "/assets/icons/plus.png",

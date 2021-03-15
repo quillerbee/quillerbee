@@ -1,8 +1,7 @@
-<svg class="text-gray-800" viewBox="0 0 1439 147" version="1.1" xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg viewBox="0 0 1439 147" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g transform="translate(-1.000000, -14.000000)" fill-rule="nonzero">
-            <g class="wave" fill="currentColor">
+            <g class="wave" fill="#27273c">
                 <path d="M1440,84 C1383.555,64.3 1342.555,51.3 1317,45 C1259.5,30.824
               1206.707,25.526 1169,22 C1129.711,18.326 1044.426,18.475 980,22
               C954.25,23.409 922.25,26.742 884,32 C845.122,37.787 818.455,42.121
@@ -12,7 +11,7 @@
               231.737,88.736 205,84 C154.629,75.076 86.296,57.743 0,32 L0,0
               L1440,0 L1440,84 Z" />
             </g>
-            <g transform="translate(1.000000, 15.000000)" fill="currentColor">
+            <g transform="translate(1.000000, 15.000000)" fill="#27273c">
                 <g transform="translate(719.500000, 68.500000) rotate(-180.000000)
               translate(-719.500000, -68.500000) ">
                     <path d="M0,0 C90.7283404,0.927527913 147.912752,27.187927

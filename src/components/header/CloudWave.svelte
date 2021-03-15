@@ -1,7 +1,7 @@
-<svg class="absolute bottom-0 text-gray-800 pointer-events-none" viewBox="0 0 1428 174" version="1.1"
+<svg class="absolute bottom-0 pointer-events-none" viewBox="0 0 1428 174" version="1.1"
     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g transform="translate(-2.000000, 44.000000)" fill="currentColor" fill-rule="nonzero">
+        <g transform="translate(-2.000000, 44.000000)" fill="#27273c" fill-rule="nonzero">
             <path d="M0,0 C90.7283404,0.927527913 147.912752,27.187927
             291.910178,59.9119003 C387.908462,81.7278826 543.605069,89.334785
             759,82.7326078 C469.336065,156.254352 216.336065,153.6679 0,74.9732496" opacity="0.100000001" />
@@ -14,7 +14,7 @@
             1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071
             1046,51.6521276 Z" id="Path-4" opacity="0.200000003" />
         </g>
-        <g transform="translate(-4.000000, 76.000000)" fill="currentColor" fill-rule="nonzero">
+        <g transform="translate(-4.000000, 76.000000)" fill="#27273c" fill-rule="nonzero">
             <path d="M0.457,34.035 C57.086,53.198 98.208,65.809 123.822,71.865
             C181.454,85.495 234.295,90.29 272.033,93.459 C311.355,96.759
             396.635,95.801 461.025,91.663 C486.76,90.01 518.727,86.372
