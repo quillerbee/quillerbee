@@ -36,32 +36,32 @@
             "type": "image/png"
         },
         {
-            "src": "assets/screenshots/mobile-homepage-394x622",
+            "src": "assets/screenshots/mobile-homepage-394x622.png",
             "sizes": "394x622",
             "type": "image/png"
         }
     ],
     "shortcuts": [
         {
-            "name": "About Quiller Bee",
+            "name": "About",
             "short_name": "About",
             "description": "About Quiller Bee",
             "url": "/about",
             "icons": [
                 {
-                    "src": "/assets/icons/information-circle.svg",
+                    "src": "/assets/icons/information.png",
                     "sizes": "192x192"
                 }
             ]
         },
         {
-            "name": "Bookmarked Jobs",
+            "name": "Bookmarks",
             "short_name": "Bookmarks",
             "description": "Jobs Bookmarked by User",
             "url": "/jobs/bookmarked",
             "icons": [
                 {
-                    "src": "/assets/icons/bookmark.svg",
+                    "src": "/assets/icons/bookmark.png",
                     "sizes": "192x192"
                 }
             ]
@@ -73,7 +73,7 @@
             "url": "/jobs/dashboard",
             "icons": [
                 {
-                    "src": "/assets/icons/plus-circle.svg",
+                    "src": "/assets/icons/plus.png",
                     "sizes": "192x192"
                 }
             ]
