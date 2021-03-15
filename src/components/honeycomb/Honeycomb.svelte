@@ -8,10 +8,16 @@
     .beehive .honeycomb:not(:first-child) {
         margin-top: -29px;
     }
+
+    @media screen and (min-width: 450px) {
+        nav section {
+            padding: 25px;
+        }
+    }
 </style>
 
 <nav>
-    <section class="mb-10 text-gray-900 beehive">
+    <section class="py-10 mb-10 overflow-hidden text-gray-900 beehive">
         <div class="relative flex justify-center honeycomb">
             <Hex classes="relative hex focus:outline-none" title="Startups" icon="#rocket" />
             <Hex classes="relative hidden lg:block hex focus:outline-none" title="Game Dev" icon="#gamepad" />
