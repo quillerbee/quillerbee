@@ -41,8 +41,7 @@ const externalAssetsConfig = () => ({
 
 /** precache only fallback files */
 precacheAndRoute(files.filter(file =>
-    ['index.html', '404.svg', 'manifest.json']
-        .includes(file.url)
+    /index|404|manifest|folder/.test(file.url)
 ))
 
 skipWaiting() // auto update service workers across all tabs when new release is available
