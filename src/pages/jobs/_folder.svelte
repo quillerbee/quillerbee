@@ -47,7 +47,7 @@
     <div class="relative max-w-3xl px-6 mx-auto">
         <div class="absolute top-0 left-0 flex items-center h-10 pl-10 mt-1">
             <svg class="w-4 h-4 text-gray-600 fill-current">
-                <use xlink:href="symbol-defs.svg#search" />
+                <use xlink:href="#search" />
             </svg>
         </div>
         <input id="search-toggle" type="search" placeholder="Enter search term ('/' to focus)"

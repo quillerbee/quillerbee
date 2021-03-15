@@ -37,7 +37,7 @@
                     <div class="astronaut-body"></div>
                 </div>
                 <svg class="astronaut-wire" width="259" height="823">
-                    <use xlink:href="symbol-defs.svg#astronaut-wire" />
+                    <use xlink:href="#astronaut-wire" />
                 </svg>
                 <div class="circle planet">
                     <div class="craters">
@@ -52,12 +52,12 @@
                 <div class="astronaut-hands">
                     <div class="astronaut-hand hand--left">
                         <svg>
-                            <use xlink:href="symbol-defs.svg#astronaut-left-hand" />
+                            <use xlink:href="#astronaut-left-hand" />
                         </svg>
                     </div>
                     <div class="astronaut-hand hand--right">
                         <svg>
-                            <use xlink:href="symbol-defs.svg#astronaugh-right-hand" />
+                            <use xlink:href="#astronaugh-right-hand" />
                         </svg>
                     </div>
                 </div>

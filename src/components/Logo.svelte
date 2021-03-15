@@ -19,10 +19,10 @@
 
 <a use:$url href="/jobs" class="flex items-center outline-none pointer-events-auto logo-link">
     <svg class="absolute z-10 text-dark-gray" height="50" width="50">
-        <use xlink:href="symbol-defs.svg#hex" />
+        <use xlink:href="#hex" />
     </svg>
     <svg class="ml-1.5 z-20 w-10 h-10 p-2 rounded-full logo">
-        <use xlink:href="symbol-defs.svg#logo" />
+        <use xlink:href="#logo" />
     </svg>
     <span class="ml-3 -mt-1 text-xl font-semibold text-white">Quiller Bee</span>
 </a>

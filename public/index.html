@@ -26,6 +26,55 @@
 	<link rel='stylesheet' href='/build/bundle.css'>
 
 	<script defer type="module" src="/build/main.js"></script>
+
+	<script>
+		(function (window, document) {
+			'use strict';
+
+			var file = './symbol-defs.svg',
+				hash = "f6de7c25";
+
+			if (!document.createElementNS || !document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect)
+				return true;
+
+			var isLocalStorage = 'localStorage' in window && window['localStorage'] !== null,
+				request,
+				data,
+				insertIT = function () {
+					document.body.insertAdjacentHTML('afterbegin', data);
+				},
+				insert = function () {
+					if (document.body) insertIT();
+					else document.addEventListener('DOMContentLoaded', insertIT);
+				};
+
+			if (isLocalStorage && localStorage.getItem('symbol-defs-hash') == hash) {
+				data = localStorage.getItem('symbol-defs');
+				if (data) {
+					insert();
+					return true;
+				}
+			}
+
+			try {
+				request = new XMLHttpRequest();
+				request.open('GET', file, true);
+				request.onload = function () {
+					if (request.status >= 200 && request.status < 400) {
+						data = request.responseText;
+						insert();
+						if (isLocalStorage) {
+							localStorage.setItem('symbol-defs', data);
+							localStorage.setItem('symbol-defs-hash', hash);
+						}
+					}
+				}
+				request.send();
+			}
+			catch (e) { }
+
+		}(window, document));
+	</script>
 </head>
 
 <body class="flex flex-col items-center text-center">

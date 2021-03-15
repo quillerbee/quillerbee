@@ -150,7 +150,7 @@
                             <div class="flex ml-2 text-gray-400">
                                 <svg class="mr-1 fill-current inline-inline-block" width="15" height="15"
                                     fill="currentColor">
-                                    <use xlink:href="symbol-defs.svg#users" />
+                                    <use xlink:href="#users" />
                                 </svg>
                                 51 - 200
                             </div>
@@ -180,7 +180,7 @@
                 <button onclick="this.blur();"
                     class="focus:outline-none focus:ring-2 focus:ring-indigo-400 p-1.5 rounded-full hover:bg-indigo-200">
                     <svg width="24" height="24">
-                        <use xlink:href="symbol-defs.svg#chevron-down" />
+                        <use xlink:href="#chevron-down" />
                     </svg>
                 </button>
             </div>
@@ -190,13 +190,13 @@
                 <div class="flex">
                     <div class="flex items-center mr-3">
                         <svg class="mr-1 mb-0.5" width="15" height="15">
-                            <use xlink:href="symbol-defs.svg#briefcase" />
+                            <use xlink:href="#briefcase" />
                         </svg>
                         3
                     </div>
                     <div class="flex items-center justify-center mr-2">
                         <svg class="mr-0.5" width="15" height="15">
-                            <use xlink:href="symbol-defs.svg#hashtag" />
+                            <use xlink:href="#hashtag" />
                         </svg>
                         <a class="focus:outline-none hover:text-gray-300 focus:text-gray-300"
                             href="https://www.quillerbee.com/">
@@ -205,7 +205,7 @@
                     </div>
                     <div class="flex items-center justify-center mr-2">
                         <svg class="mr-0.5" width="15" height="15">
-                            <use xlink:href="symbol-defs.svg#hashtag" />
+                            <use xlink:href="#hashtag" />
                         </svg>
                         <a class="focus:outline-none hover:text-gray-300 focus:text-gray-300"
                             href="https://www.quillerbee.com/">
@@ -222,13 +222,13 @@
                 <button onclick="this.blur();"
                     class="focus:outline-none focus:ring-2 focus:ring-purple-400 p-1.5 mr-1 rounded-full cursor-pointer hover:bg-purple-200">
                     <svg width="24" height="24">
-                        <use xlink:href="symbol-defs.svg#flag" />
+                        <use xlink:href="#flag" />
                     </svg>
                 </button>
                 <button onclick="this.blur();"
                     class="focus:outline-none focus:ring-2 focus:ring-red-400 p-1.5 rounded-full cursor-pointer hover:bg-red-200">
                     <svg width="24" height="24">
-                        <use xlink:href="symbol-defs.svg#eye" />
+                        <use xlink:href="#eye" />
                     </svg>
                 </button>
             </div>
@@ -283,7 +283,7 @@
             <button onclick="this.blur();"
                 class="focus:outline-none focus:ring-2 focus:ring-red-400 p-1.5 rounded-full cursor-pointer hover:bg-red-200">
                 <svg width="24" height="24">
-                    <use xlink:href="symbol-defs.svg#eye-off" />
+                    <use xlink:href="#eye-off" />
                 </svg>
             </button>
         </div>
@@ -309,7 +309,7 @@
                             <div class="flex ml-2 text-gray-500">
                                 <svg class="mr-1 fill-current inline-inline-block" width="15" height="15"
                                     fill="currentColor">
-                                    <use xlink:href="symbol-defs.svg#users" />
+                                    <use xlink:href="#users" />
                                 </svg>
                                 51 - 200
                             </div>
@@ -338,7 +338,7 @@
                 <button onclick="this.blur();"
                     class="focus:outline-none focus:ring-2 focus:ring-indigo-400 p-1.5 rounded-full hover:bg-indigo-200">
                     <svg width="24" height="24">
-                        <use xlink:href="symbol-defs.svg#chevron-down" />
+                        <use xlink:href="#chevron-down" />
                     </svg>
                 </button>
             </div>
@@ -348,13 +348,13 @@
                 <div class="flex">
                     <div class="flex items-center mr-3">
                         <svg class="mr-1 mb-0.5" width="15" height="15">
-                            <use xlink:href="symbol-defs.svg#briefcase" />
+                            <use xlink:href="#briefcase" />
                         </svg>
                         3
                     </div>
                     <div class="flex items-center justify-center mr-2">
                         <svg class="mr-0.5" width="15" height="15">
-                            <use xlink:href="symbol-defs.svg#hashtag" />
+                            <use xlink:href="#hashtag" />
                         </svg>
                         <a class="focus:outline-none hover:text-gray-700 focus:text-gray-700"
                             href="https://www.quillerbee.com/">
@@ -363,7 +363,7 @@
                     </div>
                     <div class="flex items-center justify-center mr-2">
                         <svg class="mr-0.5" width="15" height="15">
-                            <use xlink:href="symbol-defs.svg#hashtag" />
+                            <use xlink:href="#hashtag" />
                         </svg>
                         <a class="focus:outline-none hover:text-gray-700 focus:text-gray-700"
                             href="https://www.quillerbee.com/">
@@ -380,13 +380,13 @@
                 <button onclick="this.blur();"
                     class="focus:outline-none focus:ring-2 focus:ring-purple-400 p-1.5 mr-1 rounded-full cursor-pointer hover:bg-purple-200">
                     <svg width="24" height="24">
-                        <use xlink:href="symbol-defs.svg#flag" />
+                        <use xlink:href="#flag" />
                     </svg>
                 </button>
                 <button onclick="this.blur();"
                     class="focus:outline-none focus:ring-2 focus:ring-red-400 p-1.5 rounded-full cursor-pointer hover:bg-red-200">
                     <svg width="24" height="24">
-                        <use xlink:href="symbol-defs.svg#eye" />
+                        <use xlink:href="#eye" />
                     </svg>
                 </button>
             </div>
@@ -416,7 +416,7 @@
                             <div class="flex ml-2 text-gray-400">
                                 <svg class="mr-1 fill-current inline-inline-block" width="15" height="15"
                                     fill="currentColor">
-                                    <use xlink:href="symbol-defs.svg#users" />
+                                    <use xlink:href="#users" />
                                 </svg>
                                 51 - 200
                             </div>
@@ -446,7 +446,7 @@
                 <button onclick="this.blur();"
                     class="focus:outline-none focus:ring-2 focus:ring-indigo-400 p-1.5 rounded-full hover:bg-indigo-200">
                     <svg width="24" height="24">
-                        <use xlink:href="symbol-defs.svg#chevron-down" />
+                        <use xlink:href="#chevron-down" />
                     </svg>
                 </button>
             </div>
@@ -456,13 +456,13 @@
                 <div class="flex">
                     <div class="flex items-center mr-3">
                         <svg class="mr-1 mb-0.5" width="15" height="15">
-                            <use xlink:href="symbol-defs.svg#briefcase" />
+                            <use xlink:href="#briefcase" />
                         </svg>
                         3
                     </div>
                     <div class="flex items-center justify-center mr-2">
                         <svg class="mr-0.5" width="15" height="15">
-                            <use xlink:href="symbol-defs.svg#hashtag" />
+                            <use xlink:href="#hashtag" />
                         </svg>
                         <a class="focus:outline-none hover:text-gray-300 focus:text-gray-300"
                             href="https://www.quillerbee.com/">
@@ -471,7 +471,7 @@
                     </div>
                     <div class="flex items-center justify-center mr-2">
                         <svg class="mr-0.5" width="15" height="15">
-                            <use xlink:href="symbol-defs.svg#hashtag" />
+                            <use xlink:href="#hashtag" />
                         </svg>
                         <a class="focus:outline-none hover:text-gray-300 focus:text-gray-300"
                             href="https://www.quillerbee.com/">
@@ -488,13 +488,13 @@
                 <button onclick="this.blur();"
                     class="focus:outline-none focus:ring-2 focus:ring-purple-400 p-1.5 mr-1 rounded-full cursor-pointer hover:bg-purple-200">
                     <svg width="24" height="24">
-                        <use xlink:href="symbol-defs.svg#flag" />
+                        <use xlink:href="#flag" />
                     </svg>
                 </button>
                 <button onclick="this.blur();"
                     class="focus:outline-none focus:ring-2 focus:ring-red-400 p-1.5 rounded-full cursor-pointer hover:bg-red-200">
                     <svg width="24" height="24">
-                        <use xlink:href="symbol-defs.svg#eye" />
+                        <use xlink:href="#eye" />
                     </svg>
                 </button>
             </div>

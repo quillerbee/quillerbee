@@ -41,7 +41,7 @@ const externalAssetsConfig = () => ({
 
 /** precache only fallback files */
 precacheAndRoute(files.filter(file =>
-    ['index.html', '404.svg']
+    ['index.html', '404.svg', 'manifest.json']
         .includes(file.url)
 ))
 

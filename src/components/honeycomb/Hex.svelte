@@ -108,17 +108,17 @@
 
 <button class={classes} onclick="this.blur();">
     <svg class="transition-all duration-200 fill transform-gpu" height="150" width="124">
-        <use xlink:href="symbol-defs.svg#hex" />
+        <use xlink:href="#hex" />
     </svg>
     <svg class="absolute top-0 transform-gpu stroke" height="150" width="124">
-        <use xlink:href="symbol-defs.svg#hex" />
+        <use xlink:href="#hex" />
     </svg>
     <svg class="absolute top-0 transform-gpu thick-stroke" height="150" width="124">
-        <use xlink:href="symbol-defs.svg#hex-ring" />
+        <use xlink:href="#hex-ring" />
     </svg>
     <div class="absolute top-0 flex flex-col items-center w-full h-full pt-10 text-xs transform-gpu">
         <svg class="mb-3 text-gray-400 icon" width="35" height="35">
-            <use xlink:href={`symbol-defs.svg#${icon}`} />
+            <use xlink:href={icon} />
         </svg>
         <div class="font-semibold text-gray-300 uppercase title">{title}</div>
     </div>

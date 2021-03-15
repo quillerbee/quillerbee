@@ -13,11 +13,11 @@
 <nav>
     <section class="mb-10 text-gray-900 beehive">
         <div class="relative flex justify-center honeycomb">
-            <Hex classes="relative hex focus:outline-none" title="Startups" icon="rocket" />
-            <Hex classes="relative hidden lg:block hex focus:outline-none" title="Game Dev" icon="gamepad" />
-            <Hex classes="relative hex focus:outline-none" title="Remote" icon="laptop-house" />
-            <Hex classes="relative hidden lg:block hex focus:outline-none" title="Design" icon="paint-brush" />
-            <Hex classes="relative focus:outline-none hex" title="Support" icon="headset" />
+            <Hex classes="relative hex focus:outline-none" title="Startups" icon="#rocket" />
+            <Hex classes="relative hidden lg:block hex focus:outline-none" title="Game Dev" icon="#gamepad" />
+            <Hex classes="relative hex focus:outline-none" title="Remote" icon="#laptop-house" />
+            <Hex classes="relative hidden lg:block hex focus:outline-none" title="Design" icon="#paint-brush" />
+            <Hex classes="relative focus:outline-none hex" title="Support" icon="#headset" />
         </div>
         <div class="relative flex justify-center honeycomb">
             <Hex classes="relative hex focus:outline-none" />
