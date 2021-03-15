@@ -78,6 +78,72 @@
 </head>
 
 <body class="flex flex-col items-center text-center">
+	<noscript>
+		<div>
+			<img src="./android-chrome-192x192.png">
+			<h1>I <span>❤️</span> JS</h1>
+			<h2>Please Enable JavaScript</h2>
+		</div>
+		<style type="text/css">
+			div {
+				display: flex;
+				justify-content: center;
+				margin-top: 10vh;
+				flex-direction: column;
+				position: relative;
+				width: 192px;
+				color: white;
+			}
+
+			img {
+				border-radius: 50%;
+			}
+
+			h1 {
+				margin: 0;
+				padding: 26px 5px 0 8px;
+				font-size: 1.1rem;
+				color: #111827;
+				position: absolute;
+				left: -10px;
+				top: 35px;
+				z-index: 2;
+				color: white;
+			}
+
+			h1::before {
+				z-index: -1;
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 0;
+				content: ' ';
+				width: 70px;
+				height: 70px;
+				background: #111827;
+				border-top-left-radius: 32px;
+				border-bottom-left-radius: 32px;
+				border-top-right-radius: 32px;
+				border-bottom-right-radius: 8px;
+				filter: blur(1px);
+				opacity: 0.9;
+			}
+
+			h2 {
+				font-size: 0.9em;
+				margin-top: 10px;
+				font-weight: bold;
+			}
+
+			span {
+				color: #ce5b5c;
+			}
+
+			main {
+				display: none;
+			}
+		</style>
+	</noscript>
 </body>
 
 </html>

@@ -7,7 +7,6 @@
     "start_url": "/",
     "display": "standalone",
     "scope": "/",
-    "orientation": "natural",
     "lang": "English",
     "categories": [
         "website",
