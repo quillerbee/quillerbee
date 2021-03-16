@@ -5,11 +5,11 @@
 
 	let showLoader = true;
 
-	$beforeUrlChange((event, store) => {
+	$beforeUrlChange(() => {
 		return (showLoader = true);
 	});
 
-	$afterPageLoad((page) => {
+	$afterPageLoad(() => {
 		showLoader = false;
 	});
 

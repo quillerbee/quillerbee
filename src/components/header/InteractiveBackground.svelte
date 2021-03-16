@@ -23,7 +23,6 @@
 	onMount(() => {
 		context = canvas.getContext("2d");
 		canvas.onmousemove = onMouseMove;
-		// canvas.ontouchmove = onTouchMove;
 		canvas.ontouchend = onMouseLeave;
 		document.onmouseleave = onMouseLeave;
 		resize();
@@ -183,14 +182,6 @@
 		touchInput = false;
 
 		movePointer(event.clientX, event.clientY);
-	}
-
-	function onTouchMove(event) {
-		touchInput = true;
-
-		movePointer(event.touches[0].clientX, event.touches[0].clientY, true);
-
-		event.preventDefault();
 	}
 
 	function onMouseLeave() {
