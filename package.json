@@ -6,8 +6,8 @@
 		"dev": "rollup -c -w",
 		"routify": "routify",
 		"dev:routify": "run-p dev routify",
-		"fix": "pnpx eslint --fix \"{,!(node_modules|public)/**/}*.{js,svelte}\"",
-		"format": "pnpx prettier --write --plugin-search-dir=. \"{,!(node_modules|public)/**/}*.{js,svelte}\"",
+		"fix": "pnpx eslint --fix \"{,!(node_modules|public|.routify)/**/}*.{js,svelte}\"",
+		"format": "pnpx prettier --write --plugin-search-dir=. \"{,!(node_modules|public|.routify)/**/}*.{js,svelte}\"",
 		"prebuild": "test \"$CI\" = true && npx pnpm install --store=node_modules/.pnpm-store || echo skiping pnpm install",
 		"build": "routify -b && rollup -c",
 		"start": "sirv public --single"

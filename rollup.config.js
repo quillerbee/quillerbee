@@ -45,8 +45,10 @@ export default {
 		format: "esm",
 		name: "app",
 		dir: "public/build",
-		// for performance, disabling filename hashing in development
-		chunkFileNames: `[name]${(production && "-[hash]") || ""}.js`,
+		// For Performance, disabling filename hashing in development
+		// chunkFileNames: `[name]${(production && "-[hash]") || ""}.js`,
+		// For Netlify, disabling hashing entirely. See: https://answers.netlify.com/t/support-guide-making-the-most-of-netlifys-cdn-cache/127
+		chunkFileNames: "[name].js",
 	},
 	plugins: [
 		postcss({ extract: "bundle.css" }),
@@ -108,7 +110,7 @@ export default {
 				globPatterns: ["**/*.{html,js,css,svg,png,ico}"],
 				swSrc: `src/sw.js`,
 				swDest: `public/sw.js`,
-				maximumFileSizeToCacheInBytes: 20000000, // 10 MB,
+				maximumFileSizeToCacheInBytes: 20000000, // 20 MB,
 				mode: "production",
 			}),
 
