@@ -105,7 +105,7 @@ export default {
 		production &&
 			injectManifest({
 				globDirectory: "public/",
-				globPatterns: ["**/*.{html,js,css,svg,png}"],
+				globPatterns: ["**/*.{html,js,css,svg,png,ico}"],
 				swSrc: `src/sw.js`,
 				swDest: `public/sw.js`,
 				maximumFileSizeToCacheInBytes: 20000000, // 10 MB,
