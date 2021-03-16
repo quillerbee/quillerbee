@@ -7,3 +7,14 @@ NPM_FLAGS = "--prefix=/dev/null"
 from = "/*"
 to = "/index.html"
 status = 200
+
+[[headers]]
+# Define which paths this specific [[headers]] block will cover.
+for = "/*"
+
+# Experiment to make Service Worker update better
+cache-control = '''
+	max-age=0,
+	no-cache,
+	no-store,
+	must-revalidate'''
