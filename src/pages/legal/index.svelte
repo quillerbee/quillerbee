@@ -1,5 +1,5 @@
 <script>
-    import { goto } from "@roxi/routify";
+	import { goto } from "@roxi/routify";
 
-    $goto('./privacy-policy');
+	$goto("./privacy-policy");
 </script>

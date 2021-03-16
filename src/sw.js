@@ -2,32 +2,37 @@
  * Taken from Svelte Routify *
  **********/
 
-import { registerRoute, setDefaultHandler, setCatchHandler } from 'workbox-routing';
-import { CacheFirst, NetworkFirst } from 'workbox-strategies';
-import { skipWaiting, clientsClaim } from 'workbox-core';
-import { precacheAndRoute, matchPrecache } from 'workbox-precaching';
-import { ExpirationPlugin } from 'workbox-expiration';
-import { RoutifyPlugin, freshCacheData } from '@roxi/routify/workbox-plugin'
+import {
+	registerRoute,
+	setDefaultHandler,
+	setCatchHandler,
+} from "workbox-routing";
+import { CacheFirst, NetworkFirst } from "workbox-strategies";
+import { skipWaiting, clientsClaim } from "workbox-core";
+import { precacheAndRoute, matchPrecache } from "workbox-precaching";
+import { ExpirationPlugin } from "workbox-expiration";
+import { RoutifyPlugin, freshCacheData } from "@roxi/routify/workbox-plugin";
 
 /**********
  * CONFIG *
  **********/
 
-const entrypointUrl = 'index.html' // entrypoint
-const fallbackImage = '404.svg'
-const files = self.__WB_MANIFEST // files matching globDirectory and globPattern in rollup.config.js
+const entrypointUrl = "index.html"; // entrypoint
+const fallbackImage = "404.svg";
+const files = self.__WB_MANIFEST; // files matching globDirectory and globPattern in rollup.config.js
 
 const externalAssetsConfig = () => ({
-    cacheName: 'external',
-    plugins: [
-        RoutifyPlugin({
-            validFor: 60 // cache is considered fresh for n seconds.
-        }),
-        new ExpirationPlugin({
-            maxEntries: 50, // last used entries will be purged when we hit this limit
-            purgeOnQuotaError: true // purge external assets on quota error
-        })]
-})
+	cacheName: "external",
+	plugins: [
+		RoutifyPlugin({
+			validFor: 60, // cache is considered fresh for n seconds.
+		}),
+		new ExpirationPlugin({
+			maxEntries: 50, // last used entries will be purged when we hit this limit
+			purgeOnQuotaError: true, // purge external assets on quota error
+		}),
+	],
+});
 
 /**************
  * INITIALIZE *
@@ -40,14 +45,14 @@ const externalAssetsConfig = () => ({
 // precacheAndRoute(files)
 
 /** precache only fallback files */
-precacheAndRoute(files.filter(file =>
-    /index|404|manifest|folder/.test(file.url)
-))
+precacheAndRoute(
+	files.filter((file) => /index|404|manifest|folder/.test(file.url))
+);
 
-skipWaiting() // auto update service workers across all tabs when new release is available
-clientsClaim() // take control of client without having to wait for refresh
+skipWaiting(); // auto update service workers across all tabs when new release is available
+clientsClaim(); // take control of client without having to wait for refresh
 
-/** 
+/**
  * manually upgrade service worker by sending a SKIP_WAITING message.
  * (remember to disable skipWaiting() above)
  */
@@ -58,33 +63,41 @@ clientsClaim() // take control of client without having to wait for refresh
  **********/
 
 // serve local pages from the SPA entry point (index.html)
-registerRoute(isLocalPage, matchPrecache(entrypointUrl))
+registerRoute(isLocalPage, matchPrecache(entrypointUrl));
 
 // serve local assets from cache first
-registerRoute(isLocalAsset, new CacheFirst())
+registerRoute(isLocalAsset, new CacheFirst());
 
 // serve external assets from cache if they're fresh
-registerRoute(hasFreshCache, new CacheFirst(externalAssetsConfig()))
+registerRoute(hasFreshCache, new CacheFirst(externalAssetsConfig()));
 
 // serve external pages and assets
 setDefaultHandler(new NetworkFirst(externalAssetsConfig()));
 
 // serve a fallback for 404s if possible or respond with an error
 setCatchHandler(async ({ event }) => {
-    switch (event.request.destination) {
-        case 'document':
-            return await matchPrecache(entrypointUrl)
-        case 'image':
-            return await matchPrecache(fallbackImage)
-        default:
-            return Response.error();
-    }
-})
+	switch (event.request.destination) {
+		case "document":
+			return await matchPrecache(entrypointUrl);
+		case "image":
+			return await matchPrecache(fallbackImage);
+		default:
+			return Response.error();
+	}
+});
 
 /**********
  * CONDITIONS *
  **********/
 
-function isLocalAsset({ url, request }) { return url.host === self.location.host && request.destination != 'document' }
-function isLocalPage({ url, request }) { return url.host === self.location.host && request.destination === 'document' }
-function hasFreshCache(event) { return !!freshCacheData(event) }
+function isLocalAsset({ url, request }) {
+	return url.host === self.location.host && request.destination != "document";
+}
+function isLocalPage({ url, request }) {
+	return (
+		url.host === self.location.host && request.destination === "document"
+	);
+}
+function hasFreshCache(event) {
+	return !!freshCacheData(event);
+}

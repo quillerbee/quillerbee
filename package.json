@@ -6,6 +6,7 @@
     "dev": "rollup -c -w",
     "routify": "routify",
     "dev:routify": "run-p dev routify",
+    "format": "pnpx prettier --write --plugin-search-dir=. src/**/*.{js,svelte}",
     "prebuild": "test \"$CI\" = true && npx pnpm install --store=node_modules/.pnpm-store || echo skiping pnpm install",
     "build": "routify -b && rollup -c",
     "start": "sirv public --single"
@@ -26,6 +27,8 @@
     "postcss": "^8.2.8",
     "postcss-import": "^14.0.0",
     "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.2.1",
+    "prettier-plugin-svelte": "^2.2.0",
     "rollup": "^2.3.4",
     "rollup-plugin-cleaner": "^1.0.0",
     "rollup-plugin-livereload": "^2.0.0",

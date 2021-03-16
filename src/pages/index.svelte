@@ -1,5 +1,5 @@
 <script>
-    import { goto } from "@roxi/routify";
+	import { goto } from "@roxi/routify";
 
-    $goto('/jobs');
+	$goto("/jobs");
 </script>
