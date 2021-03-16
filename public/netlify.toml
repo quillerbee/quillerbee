@@ -8,11 +8,10 @@ from = "/*"
 to = "/index.html"
 status = 200
 
+# Not caching Service Worker for better install experience
 [[headers]]
-# Define which paths this specific [[headers]] block will cover.
-for = "/*"
+for = "/sw.js"
 
-# Experiment to make Service Worker update better
 cache-control = '''
 	max-age=0,
 	no-cache,
