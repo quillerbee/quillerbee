@@ -10,3 +10,16 @@
 
 ## Motivation
 [15+ Deceptive Practices by Companies & What We Can Do About It](https://www.derpycoder.com/15-deceptive-practices-by-companies-what-we-can-do-about-it/)
+
+## Tech
+- Svelte
+- Rollup
+- Routify
+- Workbox | PWA Install
+- Tailwind CSS
+- Apollo GraphQL
+- PNPM
+- Loglevel
+
+- Netlify
+- Dgraph
