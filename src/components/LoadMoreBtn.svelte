@@ -108,7 +108,8 @@
 			<span class="icon arrow"></span>
 		</span>
 		<span
-			class="flex items-center justify-center text-sm text-gray-500 button-text"
-			>Load More</span>
+			class="flex items-center justify-center text-sm text-gray-500 button-text">
+			Load More
+		</span>
 	</button>
 </div>

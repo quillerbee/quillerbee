@@ -5,5 +5,8 @@
     "svelteStrictMode": true,
     "svelteBracketNewLine": false,
     "svelteAllowShorthand": true,
-    "svelteIndentScriptAndStyle": true
+    "svelteIndentScriptAndStyle": true,
+    "plugins": [
+        "prettier-plugin-svelte"
+    ]
 }
