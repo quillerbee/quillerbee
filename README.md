@@ -9,4 +9,4 @@
 [![License](https://img.shields.io/github/license/quillerbee/job-portal)]()
 
 ## Motivation
-[15 Deceptive Practices by Companies & What we can do about it](https://www.derpycoder.com/15-deceptive-practices-by-companies-what-we-can-do-about-it/)
+[15+ Deceptive Practices by Companies & What We Can Do About It](https://www.derpycoder.com/15-deceptive-practices-by-companies-what-we-can-do-about-it/)

@@ -12,6 +12,8 @@ status = 200
 [[headers]]
 for = "/sw.js"
 
+etag = "off"
+
 cache-control = '''
 	max-age=0,
 	no-cache,
