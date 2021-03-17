@@ -11,6 +11,9 @@
 ## Motivation
 [15+ Deceptive Practices by Companies & What We Can Do About It](https://www.derpycoder.com/15-deceptive-practices-by-companies-what-we-can-do-about-it/)
 
+## Blog Posts
+[How to approach Web Design without a Designer in Tow?](https://www.derpycoder.com/how-to-approach-web-design-without-a-designer-in-tow/)
+
 ## Tech
 - Svelte
 - Rollup
