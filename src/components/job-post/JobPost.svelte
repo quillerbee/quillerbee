@@ -19,7 +19,7 @@
 		"Full-Time": "1",
 		Remote: "1",
 		"Part-Time": "0.5",
-		"Office": "0.2",
+		Office: "0.2",
 	};
 </script>
 
