@@ -70,9 +70,6 @@
 	</h1>
 </section>
 
-<Honeycomb />
-
 <main id="main" class="flex flex-row-reverse justify-around w-full">
 	<slot />
-	<Filter />
 </main>

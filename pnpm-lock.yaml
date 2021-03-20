@@ -1,6 +1,7 @@
 dependencies:
   loglevel: 1.7.1
   sirv-cli: 1.0.11
+  timeago.js: 4.0.2
   typewriter-effect: 2.17.0
 devDependencies:
   '@babel/core': 7.13.10
@@ -5498,6 +5499,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
+  /timeago.js/4.0.2:
+    dev: false
+    resolution:
+      integrity: sha512-a7wPxPdVlQL7lqvitHGGRsofhdwtkoSXPGATFuSOA2i1ZNQEPLrGnj68vOp2sOJTCFAQVXPeNMX/GctBaO9L2w==
   /timsort/0.3.0:
     dev: true
     resolution:
@@ -5885,4 +5890,5 @@ specifiers:
   svelte: ^3.0.0
   svelte-preprocess: ^4.6.9
   tailwindcss: ^2.0.3
+  timeago.js: ^4.0.2
   typewriter-effect: ^2.17.0
