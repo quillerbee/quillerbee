@@ -1,10 +1,14 @@
 <script>
-    let collapse = false;
+	let showJobPost = true;
+	let showJobLevels = false;
 
-    let togglePostVisibility = () => {
-        collapse = !collapse;
-        this.blur();
-    }
+	const togglePostVisibility = () => {
+		showJobPost = !showJobPost;
+	};
+
+	const toggleLevelVisibility = () => {
+		showJobLevels = !showJobLevels;
+	};
 </script>
 
 <style>
@@ -136,12 +140,107 @@
 		height: 75px;
 		max-height: 75px;
 	}
+
+	/* https://codepen.io/ahmadbassamemran/pen/zXwZKo */
+
+	.job-levels {
+		background: #273057;
+		overflow: hidden;
+	}
+
+	.job-levels::before {
+		content: "";
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-left: 8px solid transparent;
+		border-right: 8px solid transparent;
+		border-top: 10px solid #111827;
+		top: -1px;
+		right: 15px;
+		z-index: 9;
+	}
+
+	.job-levels > div {
+		padding: 9px 25px;
+		color: #fff;
+		font-size: 14px;
+		border-bottom: 1px solid #394c7f;
+		position: relative;
+		outline: none;
+	}
+
+	.job-levels > div::before {
+		position: absolute;
+		content: "";
+		opacity: 0;
+		transition: opacity 0.3s;
+	}
+
+	.job-levels > div:hover:before {
+		content: "";
+		position: absolute;
+		height: 0;
+		width: 6px;
+		left: 0;
+		top: 0;
+		opacity: 1;
+		/* background-color: #d8d824; */
+		border-top: 24px solid transparent;
+		border-left: 11px solid #27273c;
+		border-bottom: 24px solid transparent;
+	}
+
+	.job-levels > div:after {
+		position: absolute;
+		content: "";
+		opacity: 0;
+		transition: opacity 0.3s;
+	}
+
+	.job-levels > div:hover:after {
+		content: "";
+		position: absolute;
+		height: 0;
+		width: 6px;
+		right: 0px;
+		top: 0;
+		opacity: 1;
+		/* background-color: #d8d824; */
+		border-top: 24px solid transparent;
+		border-right: 11px solid #27273c;
+		border-bottom: 24px solid transparent;
+	}
+
+	.job-levels > div:hover {
+		background: #273057;
+		background: linear-gradient(
+			to bottom,
+			#273057 0%,
+			#273057 50%,
+			#394c7f 51%,
+			#394c7f 100%
+		);
+		transition: all 0.3s;
+		border-bottom: 1px solid #394c7f;
+	}
+
+	.job-levels > div:last-child {
+		border: none;
+	}
+
+	/* 48 * 3 - 1 */
+	.h-3x {
+		height: 143px;
+	}
 </style>
 
 <section
-	class={`relative flex-col pb-0 mb-6 transition-shadow duration-300 ease-in-out bg-gray-900 rounded-lg hover:shadow-lg ${collapse ? 'hidden' : 'flex'}`}>
+	class="{`relative flex-col pb-0 mb-6 transition-shadow duration-300 ease-in-out bg-gray-900 rounded-lg hover:shadow-lg ${
+		showJobPost ? 'flex' : 'hidden'
+	}`}">
 	<div class="ribbon top-left"><span>popular</span></div>
-	<div class="flex items-start justify-between mb-5">
+	<div class="flex items-start justify-between">
 		<div class="flex p-5">
 			<div
 				class="flex items-center justify-center text-4xl font-bold text-center text-gray-900 bg-pink-400 rounded-full w-logo h-logo">
@@ -192,12 +291,54 @@
 			</button>
 
 			<button
-				onclick="this.blur();"
-				class="focus:outline-none focus:ring-2 focus:ring-indigo-400 p-1.5 rounded-full hover:bg-indigo-200">
+				on:click="{toggleLevelVisibility}"
+				class="focus:outline-none focus:ring-2 focus:ring-indigo-400 p-1.5 rounded-full hover:bg-gray-800">
 				<svg width="24" height="24">
-					<use xlink:href="#chevron-down"></use>
+					{#if showJobLevels}
+                        <use xlink:href="#chevron-up"></use>
+                    {:else}
+                        <use xlink:href="#chevron-down"></use>
+                    {/if}
 				</svg>
 			</button>
+		</div>
+	</div>
+	<div
+		class="{`job-levels duration-300 transform-gpu ${
+			showJobLevels ? 'h-3x' : 'h-0'
+		}`}">
+		<div class="flex items-center justify-between transform-gpu">
+			<div>Junior Frontend Engineer</div>
+			<div>
+				<a class="flex items-center text-white" href="/"
+					>Apply
+					<svg width="14" height="14" class="ml-2">
+						<use xlink:href="#external-link"></use>
+					</svg>
+				</a>
+			</div>
+		</div>
+		<div class="flex items-center justify-between transform-gpu">
+			<div>Senior Frontend Engineer</div>
+			<div>
+				<a class="flex items-center text-white" href="/"
+					>Apply
+					<svg width="14" height="14" class="ml-2">
+						<use xlink:href="#external-link"></use>
+					</svg>
+				</a>
+			</div>
+		</div>
+		<div class="flex items-center justify-between transform-gpu">
+			<div>Lead Frontend Engineer</div>
+			<div>
+				<a class="flex items-center text-white" href="/"
+					>Apply
+					<svg width="14" height="14" class="ml-2">
+						<use xlink:href="#external-link"></use>
+					</svg>
+				</a>
+			</div>
 		</div>
 	</div>
 	<div
@@ -239,14 +380,14 @@
 		<div class="flex">
 			<button
 				onclick="this.blur();"
-				class="focus:outline-none focus:ring-2 focus:ring-purple-400 p-1.5 mr-1 rounded-full cursor-pointer hover:bg-purple-200">
+				class="focus:outline-none focus:ring-2 focus:ring-purple-400 p-1.5 mr-1 rounded-full cursor-pointer hover:bg-gray-800">
 				<svg width="24" height="24">
 					<use xlink:href="#flag"></use>
 				</svg>
 			</button>
 			<button
-				on:click={togglePostVisibility}
-				class="focus:outline-none focus:ring-2 focus:ring-red-400 p-1.5 rounded-full cursor-pointer hover:bg-red-200">
+				on:click="{togglePostVisibility}"
+				class="focus:outline-none focus:ring-2 focus:ring-red-400 p-1.5 rounded-full cursor-pointer hover:bg-gray-800">
 				<svg width="24" height="24">
 					<use xlink:href="#eye"></use>
 				</svg>
@@ -256,12 +397,14 @@
 </section>
 
 <section
-	class={`relative flex-col pb-0 mb-6 transition-shadow duration-300 ease-in-out bg-gray-900 rounded-lg hover:shadow-lg ${collapse ? 'flex' : 'hidden'}`}>
+	class="{`relative flex-col pb-0 mb-6 transition-shadow duration-300 ease-in-out bg-gray-900 rounded-lg hover:shadow-lg ${
+		showJobPost ? 'hidden' : 'flex'
+	}`}">
 	<div
 		class="flex justify-end px-5 py-2 text-gray-500 border-t border-gray-800 border-solid">
 		<button
-			on:click={togglePostVisibility}
-			class="focus:outline-none focus:ring-2 focus:ring-red-400 p-1.5 rounded-full cursor-pointer hover:bg-red-200">
+			on:click="{togglePostVisibility}"
+			class="focus:outline-none focus:ring-2 focus:ring-red-400 p-1.5 rounded-full cursor-pointer hover:bg-gray-800">
 			<svg width="24" height="24">
 				<use xlink:href="#eye-off"></use>
 			</svg>
