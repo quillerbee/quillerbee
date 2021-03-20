@@ -10,7 +10,7 @@
 			company: {
 				name: "Dgraph",
 			},
-			flairs: ["Fulltime", "Remote"],
+			flairs: ["Part-Time", "Office"],
 			tags: ["JavaScript", "Svelte"],
 			flag: "Urgent",
 			url: "/",
@@ -21,7 +21,7 @@
 			company: {
 				name: "Ghost",
 			},
-			flairs: ["Partime", "Remote"],
+			flairs: ["Full-Time", "Remote"],
 			tags: ["JavaScript", "React"],
 			url: "/",
 			datePosted: "2021-03-19T17:28:18.619Z",

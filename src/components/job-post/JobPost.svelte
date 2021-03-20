@@ -1,5 +1,6 @@
 <script>
 	import { format } from "timeago.js";
+	import chroma from "chroma-js";
 
 	export let position = "";
 	export let company = {
@@ -12,6 +13,14 @@
 	export let datePosted = "";
 
 	const initial = company?.name?.[0] || "";
+
+	const scale = chroma.scale(["#ff3399", "#fafa6e", "#80ff80"]);
+	const scaleMap = {
+		"Full-Time": "1",
+		Remote: "1",
+		"Part-Time": "0.5",
+		"Office": "0.2",
+	};
 </script>
 
 <style>
@@ -106,11 +115,14 @@
 						{company?.name}
 					</div>
 				</div>
-				<div class="flex text-xs font-semibold text-green-900">
+				<div class="flex text-xs font-semibold">
 					{#each flairs as flair}
 						<button
 							onclick="this.blur();"
-							class="px-2 py-1 mr-2 font-medium text-center bg-green-200 focus:outline-none focus:ring-2 focus:ring-green-500 w-max rounded-2xl hover:shadow-lg focus:shadow-lg">
+							class="px-2 py-1 mr-2 font-medium text-center focus:outline-none focus:ring-2 focus:ring-green-500 w-max rounded-2xl hover:shadow-lg focus:shadow-lg"
+							style="{`background-color: ${scale(
+								scaleMap[flair]
+							)};`}">
 							{flair}
 						</button>
 					{/each}

@@ -46,6 +46,7 @@
 		"tailwindcss": "^2.0.3"
 	},
 	"dependencies": {
+		"chroma-js": "^2.1.1",
 		"loglevel": "^1.7.1",
 		"sirv-cli": "^1.0.0",
 		"timeago.js": "^4.0.2",
