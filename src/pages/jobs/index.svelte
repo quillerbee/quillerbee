@@ -122,6 +122,18 @@
 		-o-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
 		transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
 	}
+
+	.w-logo {
+		min-width: 75px;
+		width: 75px;
+		max-width: 75px;
+	}
+
+	.h-logo {
+		min-height: 75px;
+		height: 75px;
+		max-height: 75px;
+	}
 </style>
 
 <div
@@ -136,7 +148,7 @@
 		<div class="flex items-start justify-between mb-5">
 			<div class="flex p-5">
 				<div
-					class="flex items-center justify-center text-4xl font-bold text-center text-gray-900 bg-pink-400 rounded-full w-[75px] h-[75px]">
+					class="flex items-center justify-center text-4xl font-bold text-center text-gray-900 bg-pink-400 rounded-full w-logo h-logo">
 					D
 				</div>
 				<div class="flex flex-col ml-4 text-left">
@@ -251,7 +263,7 @@
 		<div class="flex items-start justify-between mb-5">
 			<div class="flex p-5">
 				<div
-					class="bg-gray-700 rounded-full w-[75px] h-[75px] animate-pulse">
+					class="bg-gray-700 rounded-full w-logo h-logo animate-pulse">
 				</div>
 				<div class="flex flex-col ml-4 text-left">
 					<div>
@@ -331,7 +343,7 @@
 		<div class="flex items-start justify-between mb-5">
 			<div class="flex p-5">
 				<div
-					class="flex items-center justify-center text-4xl font-bold text-center text-white bg-pink-400 rounded-full w-[75px] h-[75px]">
+					class="flex items-center justify-center text-4xl font-bold text-center text-white bg-pink-400 rounded-full w-logo h-logo">
 					D
 				</div>
 				<div class="flex flex-col ml-4 text-left">
@@ -448,7 +460,7 @@
 		<div class="flex items-start justify-between mb-5">
 			<div class="flex p-5">
 				<div
-					class="flex items-center justify-center text-4xl font-bold text-center text-gray-900 bg-pink-400 rounded-full w-[75px] h-[75px]">
+					class="flex items-center justify-center text-4xl font-bold text-center text-gray-900 bg-pink-400 rounded-full w-logo h-logo">
 					D
 				</div>
 				<div class="flex flex-col ml-4 text-left">

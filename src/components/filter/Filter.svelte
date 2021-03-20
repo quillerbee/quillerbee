@@ -61,13 +61,17 @@
 	.ribbon-container:hover .ribbon.left {
 		padding-left: 1em;
 	}
+
+	.h-filter {
+		height: 650px;
+	}
 </style>
 
 <aside
 	class="relative hidden m-10 text-white lg:block lg:w-4/12 ribbon-container">
 	<span class="ribbon left"> Filters </span>
 	<div
-		class="w-full overflow-x-hidden overflow-y-auto bg-gray-900 shadow-lg rounded-2xl h-[650px]">
+		class="w-full overflow-x-hidden overflow-y-auto bg-gray-900 shadow-lg rounded-2xl h-filter">
 	</div>
 	<div class="p-3">
 		<a
