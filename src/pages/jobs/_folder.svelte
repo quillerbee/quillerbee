@@ -69,6 +69,6 @@
 	</h1>
 </section>
 
-<main id="main" class="flex flex-row-reverse justify-around w-full">
+<main id="main" class="flex justify-center w-full">
 	<slot />
 </main>

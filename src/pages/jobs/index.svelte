@@ -30,7 +30,7 @@
 </script>
 
 <div
-	class="flex flex-col w-11/12 m-10 mb-10 items-left lg:ml-0 sm:w-10/12 md:w-9/12 lg:w-8/12">
+	class="flex flex-col w-11/12 m-10 mb-10 items-left sm:w-10/12 md:w-9/12 lg:w-8/12">
 	{#each jobs as jobPost}
 		<JobPost {...jobPost} />
 	{/each}
