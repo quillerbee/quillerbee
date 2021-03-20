@@ -1,7 +1,6 @@
 <script>
 	import { onMount } from "svelte";
 	import Typewriter from "typewriter-effect/dist/core";
-	import { Honeycomb, Filter } from "components";
 
 	let header;
 

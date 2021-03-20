@@ -1,5 +1,5 @@
 <script>
-	import { format } from 'timeago.js';
+	import { format } from "timeago.js";
 
 	export let position = "";
 	export let company = {
@@ -117,6 +117,18 @@
 				</div>
 			</div>
 		</div>
+		<div class="flex pt-4 pr-5">
+			<a
+				href="{url}"
+				target="blank"
+				rel="noopener"
+				class="flex items-center px-2 text-sm font-bold text-white bg-purple-800 rounded-full focus:outline-none ">
+				Apply
+				<svg class="ml-2" width="14" height="14">
+					<use xlink:href="#external-link"></use>
+				</svg>
+			</a>
+		</div>
 	</div>
 	<div
 		class="flex justify-between px-5 py-2 text-gray-400 border-t border-gray-800 border-solid">
@@ -137,16 +149,7 @@
 			</div>
 		</div>
 		<div class="flex items-center">
-			<div class="mr-3 text-xs">{format(datePosted)}</div>
-			<a
-				href="{url}"
-				target="blank"
-				class="flex items-center px-2 text-sm font-bold text-white bg-purple-800 rounded-full focus:outline-none ">
-				Apply
-				<svg class="ml-2" width="14" height="14">
-					<use xlink:href="#external-link"></use>
-				</svg>
-			</a>
+			<div class="text-xs">{format(datePosted)}</div>
 		</div>
 	</div>
 </section>
