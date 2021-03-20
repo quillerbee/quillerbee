@@ -7,13 +7,6 @@
 		CloudWave,
 	} from "./";
 	import Logo from "../Logo.svelte";
-
-	// Dynamically load component on demand (lazy load)
-	let PWAInstallBtn;
-
-	import("./PWAInstallBtn.svelte").then(
-		(result) => (PWAInstallBtn = result.default)
-	);
 </script>
 
 <style>
@@ -90,8 +83,4 @@
 	</nav>
 	<InteractiveBackground />
 	<CloudWave />
-
-	{#if PWAInstallBtn}
-		<svelte:component this="{PWAInstallBtn}" />
-	{/if}
 </header>

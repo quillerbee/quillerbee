@@ -18,7 +18,6 @@
 - Svelte
 - Rollup
 - Routify
-- Workbox | PWA Install
 - Tailwind CSS
 - Apollo GraphQL
 - PNPM

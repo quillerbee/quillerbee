@@ -7,13 +7,3 @@ NPM_FLAGS = "--prefix=/dev/null"
 from = "/*"
 to = "/index.html"
 status = 200
-
-# Not caching Service Worker for better install experience
-[[headers]]
-for = "/sw.js"
-
-cache-control = '''
-	max-age=0,
-	no-cache,
-	no-store,
-	must-revalidate'''

@@ -1,6 +1,5 @@
 /node_modules/
 /public/build/
-/public/sw.js
 
 .DS_Store
 .routify

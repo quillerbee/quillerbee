@@ -6,7 +6,6 @@ import { terser } from "rollup-plugin-terser";
 import postcss from "rollup-plugin-postcss";
 import cleaner from "rollup-plugin-cleaner";
 import sveltePreprocess from "svelte-preprocess";
-import { injectManifest } from "rollup-plugin-workbox";
 import replace from "@rollup/plugin-replace";
 
 const production = !process.env.ROLLUP_WATCH;
@@ -102,16 +101,6 @@ export default {
 		commonjs({
 			esmExternals: ["/node_modules/@roxi/routify"],
 		}),
-
-		production &&
-			injectManifest({
-				globDirectory: "public/",
-				globPatterns: ["**/*.{html,js,css,svg,png,ico}"],
-				swSrc: `src/sw.js`,
-				swDest: `public/sw.js`,
-				maximumFileSizeToCacheInBytes: 20000000, // 20 MB,
-				mode: "production",
-			}),
 
 		// In dev mode, call `npm run start` once
 		// the bundle has been generated

@@ -16,21 +16,3 @@ const app = new App({
 });
 
 export default app;
-
-if (process.env.NODE_ENV === "production" && "serviceWorker" in navigator) {
-	import("workbox-window").then(async ({ Workbox }) => {
-		const wb = new Workbox("/sw.js");
-		await wb.register();
-
-		wb.addEventListener("installed", () =>
-			log.info("Installed Service Worker")
-		);
-		wb.addEventListener("externalinstalled", () =>
-			log.info("Externally Installed Service Worker")
-		);
-		wb.addEventListener("redundant", () => {
-			location.reload();
-			log.info("Updated App");
-		});
-	});
-}
