@@ -1,6 +1,6 @@
 <script>
 	import { metatags } from "@roxi/routify";
-	import { Loader, LoadMoreBtn, JobPost, JobPostSkeleton } from "components";
+	import { Loader, LoadMoreBtn, JobPost } from "components";
 
 	metatags.template("title", (title) => `Jobs - ${title}`);
 </script>

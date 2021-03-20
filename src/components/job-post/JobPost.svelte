@@ -295,10 +295,10 @@
 				class="focus:outline-none focus:ring-2 focus:ring-indigo-400 p-1.5 rounded-full hover:bg-gray-800">
 				<svg width="24" height="24">
 					{#if showJobLevels}
-                        <use xlink:href="#chevron-up"></use>
-                    {:else}
-                        <use xlink:href="#chevron-down"></use>
-                    {/if}
+						<use xlink:href="#chevron-up"></use>
+					{:else}
+						<use xlink:href="#chevron-down"></use>
+					{/if}
 				</svg>
 			</button>
 		</div>
