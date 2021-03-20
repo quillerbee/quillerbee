@@ -72,7 +72,6 @@
 	<span class="ribbon left"> Filters </span>
 	<div
 		class="w-full overflow-x-hidden overflow-y-auto bg-gray-900 shadow-lg rounded-2xl h-filter">
-		test
 	</div>
 	<div class="p-3">
 		<a
