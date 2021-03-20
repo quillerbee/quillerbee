@@ -11,24 +11,24 @@ module.exports = {
 		!production && tailwindcss(),
 		production && tailwindcssProd(),
 		production &&
-		purgecss({
-			content: ["./public/**/*.html", "./src/**/*.{html,svelte}"],
-			defaultExtractor: (content) =>
-				content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || [],
-			safelist: [/^svelte-/],
-		}),
+			purgecss({
+				content: ["./public/**/*.html", "./src/**/*.{html,svelte}"],
+				defaultExtractor: (content) =>
+					content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || [],
+				safelist: [/^svelte-/],
+			}),
 		production && require("autoprefixer"),
 		production && postcssPresetEnv(),
 		production &&
-		cssnano({
-			preset: [
-				"default",
-				{
-					discardComments: {
-						removeAll: true,
+			cssnano({
+				preset: [
+					"default",
+					{
+						discardComments: {
+							removeAll: true,
+						},
 					},
-				},
-			],
-		}),
+				],
+			}),
 	],
 };
