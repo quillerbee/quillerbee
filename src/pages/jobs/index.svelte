@@ -6,7 +6,7 @@
 
 	const jobs = [
 		{
-			position: "Frontend Engineer",
+			name: "Frontend Engineer",
 			company: {
 				name: "Dgraph",
 			},
@@ -14,17 +14,17 @@
 			tags: ["JavaScript", "Svelte"],
 			flag: "Urgent",
 			url: "/",
-			datePosted: "2021-03-20T17:28:18.619Z",
+			created: "2021-03-20T17:28:18.619Z",
 		},
 		{
-			position: "Backend Engineer",
+			name: "Backend Engineer",
 			company: {
 				name: "Ghost",
 			},
 			flairs: ["Full-Time", "Remote"],
 			tags: ["JavaScript", "React"],
 			url: "/",
-			datePosted: "2021-03-19T17:28:18.619Z",
+			created: "2021-03-19T17:28:18.619Z",
 		},
 	];
 </script>

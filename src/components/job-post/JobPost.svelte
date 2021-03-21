@@ -2,7 +2,7 @@
 	import { format } from "timeago.js";
 	import chroma from "chroma-js";
 
-	export let position = "";
+	export let name = "";
 	export let company = {
 		name: "",
 	};
@@ -10,7 +10,7 @@
 	export let tags = [];
 	export let flag = "";
 	export let url = "";
-	export let datePosted = "";
+	export let created = "";
 
 	const initial = company?.name?.[0] || "";
 
@@ -108,7 +108,7 @@
 				<div class="mb-1">
 					<div class="relative flex items-center">
 						<div class="mr-2 text-gray-300 truncate">
-							{position}
+							{name}
 						</div>
 					</div>
 					<div class="flex items-center text-xs text-gray-400">
@@ -161,7 +161,7 @@
 			</div>
 		</div>
 		<div class="flex items-center">
-			<div class="text-xs">{format(datePosted)}</div>
+			<div class="text-xs">{format(created)}</div>
 		</div>
 	</div>
 </section>
