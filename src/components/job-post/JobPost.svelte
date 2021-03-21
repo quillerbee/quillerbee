@@ -2,7 +2,7 @@
 	import { format } from "timeago.js";
 	import chroma from "chroma-js";
 
-	export let name = "";
+	export let title = "";
 	export let company = {
 		name: "",
 	};
@@ -16,9 +16,9 @@
 
 	const scale = chroma.scale(["#ff3399", "#fafa6e", "#80ff80"]);
 	const scaleMap = {
-		"Full-Time": "1",
+		Fulltime: "1",
 		Remote: "1",
-		"Part-Time": "0.5",
+		Parttime: "0.5",
 		Office: "0.2",
 	};
 </script>
@@ -108,7 +108,7 @@
 				<div class="mb-1">
 					<div class="relative flex items-center">
 						<div class="mr-2 text-gray-300 truncate">
-							{name}
+							{title}
 						</div>
 					</div>
 					<div class="flex items-center text-xs text-gray-400">

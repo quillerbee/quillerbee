@@ -6,22 +6,22 @@
 
 	const jobs = [
 		{
-			name: "Frontend Engineer",
+			title: "Frontend Engineer",
 			company: {
 				name: "Dgraph",
 			},
-			flairs: ["Part-Time", "Office"],
+			flairs: ["Parttime", "Office"],
 			tags: ["JavaScript", "Svelte"],
 			flag: "Urgent",
 			url: "/",
 			created: "2021-03-20T17:28:18.619Z",
 		},
 		{
-			name: "Backend Engineer",
+			title: "Backend Engineer",
 			company: {
 				name: "Ghost",
 			},
-			flairs: ["Full-Time", "Remote"],
+			flairs: ["Fulltime", "Remote"],
 			tags: ["JavaScript", "React"],
 			url: "/",
 			created: "2021-03-19T17:28:18.619Z",
