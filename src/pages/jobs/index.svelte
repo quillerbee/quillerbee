@@ -19,6 +19,10 @@
 					currency
 				}
 				remote
+				timezone {
+					min
+					max
+				}
 				hashtags {
 					name
 				}

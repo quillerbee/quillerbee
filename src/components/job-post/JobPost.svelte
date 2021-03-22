@@ -9,13 +9,14 @@
 		company,
 		locations,
 		salary,
-		remote,
 		hashtags,
 		flag,
 		category,
 		type,
 		url,
 		created,
+		remote,
+		timezone,
 	} = jobPost;
 
 	const initials = company?.name?.[0] || "";
@@ -47,6 +48,10 @@
 		currency: salary?.currency,
 		compactDisplay: "short",
 		notation: "compact",
+	});
+
+	const numberFormatter = new Intl.NumberFormat("en-US", {
+		signDisplay: "exceptZero",
 	});
 </script>
 
@@ -158,11 +163,21 @@
 								{#each locations as location}
 									<li>{location}</li>
 								{/each}
+								{#if remote}
+									<li>
+										UTC {numberFormatter?.format(
+											timezone?.min
+										)}/{numberFormatter?.format(
+											timezone?.max
+										)}
+									</li>
+								{/if}
 							</ul>
 						</div>
 					</div>
 				</div>
-				<div class="grid grid-flow-row gap-2 text-xs font-semibold md:grid-flow-col">
+				<div
+					class="grid grid-flow-row gap-2 text-xs font-semibold md:grid-flow-col">
 					<button
 						onclick="this.blur();"
 						class="px-2 py-1 font-medium text-center bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 w-max rounded-2xl hover:shadow-lg focus:shadow-lg">
