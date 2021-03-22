@@ -7,7 +7,7 @@
 
 	const jobs = operationStore(gql`
 		query GetJobs {
-			queryJob {
+			jobPosts:queryJob {
 				company {
 					name
 				}
@@ -46,7 +46,7 @@
 	{:else if $jobs.error}
 		<p>Oh no... {$jobs.error.message}</p>
 	{:else}
-		{#each $jobs.data.queryJob as jobPost}
+		{#each $jobs.data.jobPosts as jobPost}
 			<JobPost jobPost="{jobPost}" company="{jobPost?.company}" />
 		{/each}
 	{/if}
