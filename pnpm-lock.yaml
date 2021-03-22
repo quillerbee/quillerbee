@@ -1,5 +1,7 @@
 dependencies:
+  '@urql/svelte': 1.2.0_graphql@15.5.0+svelte@3.35.0
   chroma-js: 2.1.1
+  graphql: 15.5.0
   loglevel: 1.7.1
   sirv-cli: 1.0.11
   timeago.js: 4.0.2
@@ -1028,6 +1030,14 @@ packages:
       postcss: ^8.0.0
     resolution:
       integrity: sha512-Qm8M89v4HVUTBQwuWREtzQojSqAbdp98kALMEw2NTrtrgHVqbLQrdiTBr0DAiNmG3hcqXSEexF/78uNUthMM9w==
+  /@graphql-typed-document-node/core/3.1.0_graphql@15.5.0:
+    dependencies:
+      graphql: 15.5.0
+    dev: false
+    peerDependencies:
+      graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
+    resolution:
+      integrity: sha512-wYn6r8zVZyQJ6rQaALBEln5B1pzxb9shV5Ef97kTvn6yVGrqyXVnDqnU24MXnFubR+rZjBY9NWuxX3FB2sTsjg==
   /@nodelib/fs.scandir/2.1.4:
     dependencies:
       '@nodelib/fs.stat': 2.0.4
@@ -1211,6 +1221,28 @@ packages:
     dev: true
     resolution:
       integrity: sha512-2XZovu4NwcqmtZtsBR5XYLw18T8cBCnU2USFHTnYLLHz9fkhnoEMoDsqShJIOFsFhn5aJHjweiUUdTrDGujegA==
+  /@urql/core/2.0.0_graphql@15.5.0:
+    dependencies:
+      '@graphql-typed-document-node/core': 3.1.0_graphql@15.5.0
+      graphql: 15.5.0
+      wonka: 4.0.15
+    dev: false
+    peerDependencies:
+      graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
+    resolution:
+      integrity: sha512-Qj24CG8ullqZZsYmjrSH0JhH+nY7kj8GbVbA9si3KUjlYs75A/MBQU3i97j6oWyGldDBapyis2CfaQeXKbv8rA==
+  /@urql/svelte/1.2.0_graphql@15.5.0+svelte@3.35.0:
+    dependencies:
+      '@urql/core': 2.0.0_graphql@15.5.0
+      graphql: 15.5.0
+      svelte: 3.35.0
+      wonka: 4.0.15
+    dev: false
+    peerDependencies:
+      graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
+      svelte: ^3.0.0
+    resolution:
+      integrity: sha512-VLcLVzwy2hBFXB8LMcTqbPYjKD3Tnr16/xP+0gL9XWiqRhl4Z6AvHfsXM5NMsekSM2IuwUpmS+CyFjiwsiVzxg==
   /abab/2.0.5:
     dev: true
     resolution:
@@ -2731,6 +2763,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-nTnJ528pbqxYanhpDYsi4Rd8MAeaBA67+RZ10CM1m3bTAVFEDcd5AuA4a6W5YkGZ1iNXHzZz8T6TBKLeBuNriQ==
+  /graphql/15.5.0:
+    dev: false
+    engines:
+      node: '>= 10.x'
+    resolution:
+      integrity: sha512-OmaM7y0kaK31NKG31q4YbD2beNYa6jBBKtMFT6gLYJljHLJr42IqJ8KX08u3Li/0ifzTU5HjmoOOrwa5BRLeDA==
   /har-schema/2.0.0:
     dev: true
     engines:
@@ -5815,6 +5853,10 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==
+  /wonka/4.0.15:
+    dev: false
+    resolution:
+      integrity: sha512-U0IUQHKXXn6PFo9nqsHphVCE5m3IntqZNB9Jjn7EB1lrR7YTDY3YWgFvEvwniTzXSvOH/XMzAZaIfJF/LvHYXg==
   /word-wrap/1.2.3:
     dev: true
     engines:
@@ -5877,6 +5919,7 @@ specifiers:
   '@rollup/plugin-replace': ^2.4.1
   '@roxi/routify': ^2.14.0
   '@tailwindcss/jit': ^0.1.4
+  '@urql/svelte': ^1.2.0
   autoprefixer: ^10.2.5
   chroma-js: ^2.1.1
   cssnano: ^4.1.10
@@ -5884,6 +5927,7 @@ specifiers:
   eslint-plugin-import: ^2.22.1
   eslint-plugin-jsx-a11y: ^6.4.1
   eslint-plugin-svelte3: ^3.1.2
+  graphql: ^15.5.0
   loglevel: ^1.7.1
   npm-run-all: ^4.1.5
   pnpm: ^5.18.6

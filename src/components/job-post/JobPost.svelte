@@ -2,25 +2,52 @@
 	import { format } from "timeago.js";
 	import chroma from "chroma-js";
 
-	export let title = "";
-	export let company = {
-		name: "",
-	};
-	export let flairs = [];
-	export let tags = [];
-	export let flag = "";
-	export let url = "";
-	export let created = "";
+	export let jobPost;
 
-	const initial = company?.name?.[0] || "";
+	let {
+		title,
+		company,
+		locations,
+		salary,
+		remote,
+		hashtags,
+		flag,
+		category,
+		type,
+		url,
+		created,
+	} = jobPost;
+
+	const initials = company?.name?.[0] || "";
 
 	const scale = chroma.scale(["#ff3399", "#fafa6e", "#80ff80"]);
 	const scaleMap = {
-		Fulltime: "1",
-		Remote: "1",
-		Parttime: "0.5",
-		Office: "0.2",
+		FullTime: "1",
+		PartTime: "0.9",
+		Contract: "0.8",
+		Temporary: "0.7",
+		Volunteer: "0.6",
+		Internship: "0.5",
+		Other: "0.4",
 	};
+
+	const categoryMap = {
+		SoftwareDevelopment: "Software Development",
+		QualityAssurance: "Quality Assurance",
+		GameDevelopment: "Game Development",
+		CustomerSupport: "Customer Support",
+		Sales: "Sales",
+		Marketing: "Marketing",
+		Design: "Design",
+		Legal: "Legal",
+	};
+
+	const currencyFormatter = new Intl.NumberFormat("en-US", {
+		style: "currency",
+		currency: salary?.currency,
+		compactDisplay: "short",
+		notation: "compact",
+	});
 </script>
 
 <style>
@@ -91,6 +118,13 @@
 		height: 75px;
 		max-height: 75px;
 	}
+
+	ul.locations li {
+		margin-right: 5px;
+	}
+	ul.locations li:not(:first-child)::before {
+		content: "| ";
+	}
 </style>
 
 <section
@@ -102,7 +136,7 @@
 		<div class="flex p-5">
 			<div
 				class="flex items-center justify-center text-4xl font-bold text-center text-gray-900 bg-pink-400 rounded-full w-logo h-logo">
-				{initial}
+				{initials}
 			</div>
 			<div class="flex flex-col ml-4 text-left">
 				<div class="mb-1">
@@ -113,19 +147,52 @@
 					</div>
 					<div class="flex items-center text-xs text-gray-400">
 						{company?.name}
+						<div class="flex ml-2 text-gray-400">
+							<svg
+								class="mr-1 fill-current inline-inline-block"
+								width="15"
+								height="15">
+								<use xlink:href="#location-marker"></use>
+							</svg>
+							<ul class="flex items-center locations">
+								{#each locations as location}
+									<li>{location}</li>
+								{/each}
+							</ul>
+						</div>
 					</div>
 				</div>
 				<div class="flex text-xs font-semibold">
-					{#each flairs as flair}
+					<button
+						onclick="this.blur();"
+						class="px-2 py-1 mr-2 font-medium text-center bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 w-max rounded-2xl hover:shadow-lg focus:shadow-lg">
+						{currencyFormatter.format(salary?.min)} -
+						{currencyFormatter.format(salary?.max)}
+					</button>
+					{#if remote}
 						<button
 							onclick="this.blur();"
-							class="px-2 py-1 mr-2 font-medium text-center focus:outline-none focus:ring-2 focus:ring-green-500 w-max rounded-2xl hover:shadow-lg focus:shadow-lg"
-							style="{`background-color: ${scale(
-								scaleMap[flair]
-							)};`}">
-							{flair}
+							class="px-2 py-1 mr-2 font-medium text-center bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 w-max rounded-2xl hover:shadow-lg focus:shadow-lg">
+							Remote
 						</button>
-					{/each}
+					{/if}
+					<button
+						onclick="this.blur();"
+						class="flex px-2 py-1 mr-2 font-medium text-center bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 w-max rounded-2xl hover:shadow-lg focus:shadow-lg">
+						<svg class="mr-1" width="15" height="15">
+							<use xlink:href="#briefcase"></use>
+						</svg>
+						{categoryMap[category]}
+					</button>
+					<button
+						onclick="this.blur();"
+						class="flex px-2 py-1 mr-2 font-medium text-center focus:outline-none focus:ring-2 focus:ring-green-500 w-max rounded-2xl hover:shadow-lg focus:shadow-lg"
+						style="{`background-color: ${scale(scaleMap[type])};`}">
+						<svg class="mr-1" width="15" height="15">
+							<use xlink:href="#clock"></use>
+						</svg>
+						{type}
+					</button>
 				</div>
 			</div>
 		</div>
@@ -146,15 +213,13 @@
 		class="flex justify-between px-5 py-2 text-gray-400 border-t border-gray-800 border-solid">
 		<div class="flex items-center justify-between text-xs">
 			<div class="flex">
-				{#each tags as tag}
+				{#each hashtags as hashtag}
 					<div class="flex items-center justify-center mr-2">
-						<svg class="mr-0.5" width="15" height="15">
-							<use xlink:href="#hashtag"></use>
-						</svg>
+						<span class="mr-1 text-sm font-bold">#</span>
 						<a
 							class="focus:outline-none hover:text-gray-300 focus:text-gray-300"
 							href="https://www.quillerbee.com/">
-							{tag}
+							{hashtag?.name}
 						</a>
 					</div>
 				{/each}

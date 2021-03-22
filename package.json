@@ -46,7 +46,9 @@
 		"tailwindcss": "^2.0.3"
 	},
 	"dependencies": {
+		"@urql/svelte": "^1.2.0",
 		"chroma-js": "^2.1.1",
+		"graphql": "^15.5.0",
 		"loglevel": "^1.7.1",
 		"sirv-cli": "^1.0.0",
 		"timeago.js": "^4.0.2",
