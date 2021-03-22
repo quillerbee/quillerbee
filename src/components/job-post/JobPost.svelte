@@ -28,7 +28,7 @@
 		(initials.shift()?.[1] || "") + (initials.pop()?.[1] || "")
 	).toUpperCase();
 
-	const scale = chroma.scale(["#ff3399", "#fafa6e", "#80ff80"]);
+	const scale = chroma.scale(["#ff3399", "#fafa6e", "#10b981"]);
 	const scaleMap = {
 		FullTime: "1",
 		PartTime: "0.9",
@@ -199,6 +199,16 @@
 						</svg>
 						{categoryMap[category]}
 					</button>
+					{#if remote}
+					<button
+						onclick="this.blur();"
+						class="flex px-2 py-1 font-medium text-center bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 w-max rounded-2xl hover:shadow-lg focus:shadow-lg">
+						<svg class="mr-1" width="15" height="15">
+							<use xlink:href="#home"></use>
+						</svg>
+						Remote
+					</button>
+					{/if}
 					<button
 						onclick="this.blur();"
 						class="flex px-2 py-1 font-medium text-center focus:outline-none focus:ring-2 focus:ring-green-500 w-max rounded-2xl hover:shadow-lg focus:shadow-lg"
@@ -208,13 +218,6 @@
 						</svg>
 						{type}
 					</button>
-					{#if remote}
-						<button
-							onclick="this.blur();"
-							class="px-2 py-1 font-medium text-center bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 w-max rounded-2xl hover:shadow-lg focus:shadow-lg">
-							Remote
-						</button>
-					{/if}
 				</div>
 			</div>
 		</div>
