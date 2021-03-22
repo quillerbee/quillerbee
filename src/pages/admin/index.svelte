@@ -28,7 +28,9 @@
 						hashtags {
 							name
 						}
-						category
+						category {
+							name
+						}
 						type
 						status
 						created

@@ -26,7 +26,9 @@
 				hashtags {
 					name
 				}
-				category
+				category {
+					name
+				}
 				type
 				url
 				created

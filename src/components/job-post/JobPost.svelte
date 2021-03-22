@@ -39,17 +39,6 @@
 		Other: "0.4",
 	};
 
-	const categoryMap = {
-		SoftwareDevelopment: "Software Development",
-		QualityAssurance: "Quality Assurance",
-		GameDevelopment: "Game Development",
-		CustomerSupport: "Customer Support",
-		Sales: "Sales",
-		Marketing: "Marketing",
-		Design: "Design",
-		Legal: "Legal",
-	};
-
 	const currencyFormatter = new Intl.NumberFormat("en-US", {
 		style: "currency",
 		currency: salary?.currency,
@@ -197,7 +186,7 @@
 						<svg class="mr-1" width="15" height="15">
 							<use xlink:href="#briefcase"></use>
 						</svg>
-						{categoryMap[category]}
+						{category?.name}
 					</button>
 					{#if remote}
 					<button
