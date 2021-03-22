@@ -162,23 +162,16 @@
 						</div>
 					</div>
 				</div>
-				<div class="flex text-xs font-semibold">
+				<div class="grid grid-flow-row gap-2 text-xs font-semibold md:grid-flow-col">
 					<button
 						onclick="this.blur();"
-						class="px-2 py-1 mr-2 font-medium text-center bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 w-max rounded-2xl hover:shadow-lg focus:shadow-lg">
+						class="px-2 py-1 font-medium text-center bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 w-max rounded-2xl hover:shadow-lg focus:shadow-lg">
 						{currencyFormatter.format(salary?.min)} -
 						{currencyFormatter.format(salary?.max)}
 					</button>
-					{#if remote}
-						<button
-							onclick="this.blur();"
-							class="px-2 py-1 mr-2 font-medium text-center bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 w-max rounded-2xl hover:shadow-lg focus:shadow-lg">
-							Remote
-						</button>
-					{/if}
 					<button
 						onclick="this.blur();"
-						class="flex px-2 py-1 mr-2 font-medium text-center bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 w-max rounded-2xl hover:shadow-lg focus:shadow-lg">
+						class="flex px-2 py-1 font-medium text-center bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 w-max rounded-2xl hover:shadow-lg focus:shadow-lg">
 						<svg class="mr-1" width="15" height="15">
 							<use xlink:href="#briefcase"></use>
 						</svg>
@@ -186,13 +179,20 @@
 					</button>
 					<button
 						onclick="this.blur();"
-						class="flex px-2 py-1 mr-2 font-medium text-center focus:outline-none focus:ring-2 focus:ring-green-500 w-max rounded-2xl hover:shadow-lg focus:shadow-lg"
+						class="flex px-2 py-1 font-medium text-center focus:outline-none focus:ring-2 focus:ring-green-500 w-max rounded-2xl hover:shadow-lg focus:shadow-lg"
 						style="{`background-color: ${scale(scaleMap[type])};`}">
 						<svg class="mr-1" width="15" height="15">
 							<use xlink:href="#clock"></use>
 						</svg>
 						{type}
 					</button>
+					{#if remote}
+						<button
+							onclick="this.blur();"
+							class="px-2 py-1 font-medium text-center bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 w-max rounded-2xl hover:shadow-lg focus:shadow-lg">
+							Remote
+						</button>
+					{/if}
 				</div>
 			</div>
 		</div>
