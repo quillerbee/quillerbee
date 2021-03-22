@@ -1,6 +1,6 @@
 <script>
 	import { metatags } from "@roxi/routify";
-	import { Loader, LoadMoreBtn, JobPost } from "components";
+	import { LoadMoreBtn, JobPost, JobPostSkeleton } from "components";
 	import { gql, operationStore, query } from "@urql/svelte";
 
 	metatags.template("title", (title) => `Post a Job - ${title}`);
@@ -58,7 +58,7 @@
 <div
 	class="flex flex-col w-11/12 m-10 mb-10 items-left sm:w-10/12 md:w-9/12 lg:w-8/12">
 	{#if $getCompany.fetching}
-		<Loader />
+		<JobPostSkeleton />
 	{:else if $getCompany.error}
 		<p>Oh no... {$getCompany.error.message}</p>
 	{:else}
