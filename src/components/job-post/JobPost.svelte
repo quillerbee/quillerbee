@@ -192,6 +192,15 @@
 						</svg>
 						{category?.name}
 					</button>
+					<button
+						onclick="this.blur();"
+						class="flex px-2 py-1 font-medium text-center focus:outline-none focus:ring-2 focus:ring-green-500 w-max rounded-2xl hover:shadow-lg focus:shadow-lg"
+						style="{`background-color: ${scale(scaleMap[type])};`}">
+						<svg class="mr-1" width="15" height="15">
+							<use xlink:href="#clock"></use>
+						</svg>
+						{type}
+					</button>
 					{#if remote}
 						<button
 							onclick="this.blur();"
@@ -202,15 +211,6 @@
 							Remote
 						</button>
 					{/if}
-					<button
-						onclick="this.blur();"
-						class="flex px-2 py-1 font-medium text-center focus:outline-none focus:ring-2 focus:ring-green-500 w-max rounded-2xl hover:shadow-lg focus:shadow-lg"
-						style="{`background-color: ${scale(scaleMap[type])};`}">
-						<svg class="mr-1" width="15" height="15">
-							<use xlink:href="#clock"></use>
-						</svg>
-						{type}
-					</button>
 				</div>
 			</div>
 		</div>
