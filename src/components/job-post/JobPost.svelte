@@ -124,7 +124,7 @@
 		margin-right: 5px;
 	}
 	ul.locations li:not(:first-child)::before {
-		content: "| ";
+		content: "/ ";
 	}
 </style>
 
@@ -148,7 +148,7 @@
 					</div>
 					<div class="flex items-center text-xs text-gray-400">
 						{company?.name}
-						<div class="flex ml-2 text-gray-400">
+						<div class="flex ml-2">
 							<svg
 								class="mr-1 fill-current inline-inline-block"
 								width="15"
@@ -159,17 +159,21 @@
 								{#each locations as location}
 									<li>{location}</li>
 								{/each}
-								{#if remote}
-									<li>
-										UTC {numberFormatter?.format(
-											timezone?.min
-										)}/{numberFormatter?.format(
-											timezone?.max
-										)}
-									</li>
-								{/if}
 							</ul>
 						</div>
+						{#if remote}
+							<div class="flex ml-1">
+								<svg
+									class="mr-1 fill-current inline-inline-block"
+									width="15"
+									height="15">
+									<use xlink:href="#globe-alt"></use>
+								</svg>
+								UTC {numberFormatter?.format(
+									timezone?.min
+								)}/{numberFormatter?.format(timezone?.max)}
+							</div>
+						{/if}
 					</div>
 				</div>
 				<div
@@ -189,14 +193,14 @@
 						{category?.name}
 					</button>
 					{#if remote}
-					<button
-						onclick="this.blur();"
-						class="flex px-2 py-1 font-medium text-center bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 w-max rounded-2xl hover:shadow-lg focus:shadow-lg">
-						<svg class="mr-1" width="15" height="15">
-							<use xlink:href="#home"></use>
-						</svg>
-						Remote
-					</button>
+						<button
+							onclick="this.blur();"
+							class="flex px-2 py-1 font-medium text-center bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 w-max rounded-2xl hover:shadow-lg focus:shadow-lg">
+							<svg class="mr-1" width="15" height="15">
+								<use xlink:href="#home"></use>
+							</svg>
+							Remote
+						</button>
 					{/if}
 					<button
 						onclick="this.blur();"

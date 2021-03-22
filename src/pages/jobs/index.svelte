@@ -7,7 +7,7 @@
 
 	const getJobs = operationStore(gql`
 		query GetJobs {
-			jobs:queryJob {
+			jobs: queryJob {
 				company {
 					name
 				}

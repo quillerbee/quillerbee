@@ -7,7 +7,7 @@
 	const getCompany = operationStore(
 		gql`
 			query GetCompany($input: String!) {
-				company:getCompany(email: $input) {
+				company: getCompany(email: $input) {
 					email
 					name
 					jobs {
