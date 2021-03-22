@@ -19,7 +19,14 @@
 		timezone,
 	} = jobPost;
 
-	const initials = company?.name?.[0] || "";
+	/**
+	 * https://stackoverflow.com/a/33076482/9368649
+	 */
+	let rgx = new RegExp(/(\p{L}{1})\p{L}+/, "gu");
+	let initials = [...company?.name?.matchAll(rgx)] || [];
+	initials = (
+		(initials.shift()?.[1] || "") + (initials.pop()?.[1] || "")
+	).toUpperCase();
 
 	const scale = chroma.scale(["#ff3399", "#fafa6e", "#80ff80"]);
 	const scaleMap = {
