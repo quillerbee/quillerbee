@@ -79,6 +79,7 @@ export default {
 		alias({
 			entries: {
 				components: path.resolve(__dirname, "./src/components"),
+				stores: path.resolve(__dirname, "./src/stores"),
 			},
 		}),
 
