@@ -45,7 +45,7 @@
 		<p>Oh no... {$jobs.error.message}</p>
 	{:else}
 		{#each $jobs.data.queryJob as jobPost}
-			<JobPost jobPost="{jobPost}" company={jobPost?.company} />
+			<JobPost jobPost="{jobPost}" company="{jobPost?.company}" />
 		{/each}
 	{/if}
 	<LoadMoreBtn />

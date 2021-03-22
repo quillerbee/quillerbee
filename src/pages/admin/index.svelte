@@ -61,7 +61,7 @@
 		<p>Oh no... {$jobs.error.message}</p>
 	{:else}
 		{#each $jobs?.data?.getCompany?.jobs as jobPost}
-			<JobPost jobPost="{jobPost}" company={$jobs?.data?.getCompany} />
+			<JobPost jobPost="{jobPost}" company="{$jobs?.data?.getCompany}" />
 		{/each}
 	{/if}
 	<LoadMoreBtn />
