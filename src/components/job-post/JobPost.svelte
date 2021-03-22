@@ -3,10 +3,10 @@
 	import chroma from "chroma-js";
 
 	export let jobPost;
+	export let company;
 
 	let {
 		title,
-		company,
 		locations,
 		salary,
 		hashtags,
