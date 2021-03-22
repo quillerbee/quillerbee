@@ -10,7 +10,7 @@
 				company:getCompany(email: $input) {
 					email
 					name
-					jobPosts:jobs {
+					jobs {
 						id
 						title
 						description
@@ -62,7 +62,7 @@
 	{:else if $getCompany.error}
 		<p>Oh no... {$getCompany.error.message}</p>
 	{:else}
-		{#each $getCompany.data.company.jobPosts as jobPost}
+		{#each $getCompany.data.company.jobs as jobPost}
 			<JobPost jobPost="{jobPost}" company="{$getCompany.data.company}" />
 		{/each}
 	{/if}
