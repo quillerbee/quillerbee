@@ -4,10 +4,10 @@
 	import { gql, operationStore, query } from "@urql/svelte";
 
 	metatags.template("title", (title) => `Post a Job - ${title}`);
-	const company = operationStore(
+	const getCompany = operationStore(
 		gql`
 			query GetCompany($input: String!) {
-				getCompany(email: $input) {
+				company:getCompany(email: $input) {
 					email
 					name
 					jobPosts:jobs {
@@ -44,7 +44,7 @@
 		}
 	);
 
-	query(company);
+	query(getCompany);
 </script>
 
 <section
@@ -57,13 +57,13 @@
 
 <div
 	class="flex flex-col w-11/12 m-10 mb-10 items-left sm:w-10/12 md:w-9/12 lg:w-8/12">
-	{#if $company.fetching}
+	{#if $getCompany.fetching}
 		<Loader />
-	{:else if $company.error}
-		<p>Oh no... {$company.error.message}</p>
+	{:else if $getCompany.error}
+		<p>Oh no... {$getCompany.error.message}</p>
 	{:else}
-		{#each $company.data.getCompany.jobPosts as jobPost}
-			<JobPost jobPost="{jobPost}" company="{$company.data.getCompany}" />
+		{#each $getCompany.data.company.jobPosts as jobPost}
+			<JobPost jobPost="{jobPost}" company="{$getCompany.data.company}" />
 		{/each}
 	{/if}
 	<LoadMoreBtn />

@@ -5,7 +5,7 @@
 
 	metatags.template("title", (title) => `Jobs - ${title}`);
 
-	const jobs = operationStore(gql`
+	const getJobs = operationStore(gql`
 		query GetJobs {
 			jobPosts:queryJob {
 				company {
@@ -36,17 +36,17 @@
 		}
 	`);
 
-	query(jobs);
+	query(getJobs);
 </script>
 
 <div
 	class="flex flex-col w-11/12 m-10 mb-10 items-left sm:w-10/12 md:w-9/12 lg:w-8/12">
-	{#if $jobs.fetching}
+	{#if $getJobs.fetching}
 		<Loader />
-	{:else if $jobs.error}
-		<p>Oh no... {$jobs.error.message}</p>
+	{:else if $getJobs.error}
+		<p>Oh no... {$getJobs.error.message}</p>
 	{:else}
-		{#each $jobs.data.jobPosts as jobPost}
+		{#each $getJobs.data.jobPosts as jobPost}
 			<JobPost jobPost="{jobPost}" company="{jobPost?.company}" />
 		{/each}
 	{/if}
