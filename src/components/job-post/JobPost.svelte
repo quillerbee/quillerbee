@@ -10,7 +10,7 @@
 		locations,
 		salary,
 		hashtags,
-		flag,
+		flair,
 		category,
 		type,
 		url,
@@ -130,8 +130,8 @@
 
 <section
 	class="relative flex-col pb-0 mb-6 transition-shadow duration-300 ease-in-out bg-gray-900 rounded-lg hover:shadow-lg">
-	{#if flag}
-		<div class="ribbon top-left"><span>{flag}</span></div>
+	{#if flair}
+		<div class="ribbon top-left"><span>{flair}</span></div>
 	{/if}
 	<div class="flex items-start justify-between">
 		<div class="flex p-5">

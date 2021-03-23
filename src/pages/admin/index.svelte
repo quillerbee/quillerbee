@@ -33,6 +33,7 @@
 						}
 						type
 						status
+						flair
 						created
 						url
 					}

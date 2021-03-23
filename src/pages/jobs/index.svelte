@@ -30,6 +30,7 @@
 					name
 				}
 				type
+				flair
 				url
 				created
 			}
