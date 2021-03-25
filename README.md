@@ -27,4 +27,4 @@
 - [x] ESLint
 
 - [x] Netlify
-- Dgraph - Slash GraphQL
+- [ ] Dgraph - Slash GraphQL
