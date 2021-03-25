@@ -4,6 +4,7 @@
 	import { gql, operationStore, query } from "@urql/svelte";
 
 	metatags.template("title", (title) => `Post a Job - ${title}`);
+
 	const getCompany = operationStore(
 		gql`
 			query GetCompany($input: String!) {
