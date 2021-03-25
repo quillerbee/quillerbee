@@ -1,0 +1,1 @@
+import{S as s,i as t,s as o,o as r,y as e}from"./index.js";import"./vendor.js";function n(s,t,o){let n;return r(s,e,(s=>o(0,n=s))),n("/jobs"),[]}export default class extends s{constructor(s){super(),t(this,s,n,null,o,{})}}

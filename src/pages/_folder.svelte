@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from "svelte";
 	import { beforeUrlChange, afterPageLoad, metatags } from "@roxi/routify";
-	import { Loader, Header, Footer } from "components";
+	import { Loader, Header, Footer } from "@components";
 
 	let showLoader = true;
 

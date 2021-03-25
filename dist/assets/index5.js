@@ -1,0 +1,1 @@
+import{S as s,i as r,s as t,o,y as e}from"./index.js";import"./vendor.js";function a(s,r,t){let a;return o(s,e,(s=>t(0,a=s))),a("./privacy-policy"),[]}export default class extends s{constructor(s){super(),r(this,s,a,null,t,{})}}
