@@ -1,6 +1,6 @@
 <script>
 	import { metatags } from "@roxi/routify";
-	import { LoadMoreBtn, JobPost, JobPostSkeleton } from "components";
+	import { LoadMoreBtn, JobPost, JobPostSkeleton } from "@components";
 	import { gql, operationStore, query } from "@urql/svelte";
 
 	metatags.template("title", (title) => `Post a Job - ${title}`);
