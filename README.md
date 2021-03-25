@@ -16,13 +16,15 @@
 [How to approach Web Design without a Designer in Tow?](https://www.derpycoder.com/how-to-approach-web-design-without-a-designer-in-tow/)
 
 ## Tech
-- Svelte
-- Rollup
-- Routify
-- Tailwind CSS
-- Apollo GraphQL
-- PNPM
-- Loglevel
+- [x] Svelte
+- [x] Vite
+- [x] Routify
+- [x] Tailwind CSS JIT
+- [x] URQL
+- [x] PNPM
+- [x] Loglevel
+- [x] Prettier
+- [x] ESLint
 
-- Netlify
-- Dgraph
+- [x] Netlify
+- Dgraph - Slash GraphQL
