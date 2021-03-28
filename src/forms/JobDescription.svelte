@@ -56,9 +56,11 @@
 	const { form, errors, handleChange, handleSubmit } = createForm({
 		initialValues: {
 			title: "",
+			url: "",
 		},
 		validationSchema: yup.object().shape({
-			title: yup.string().trim().required().ensure(),
+			title: yup.string().trim().required(),
+			url: yup.string().url().required(),
 		}),
 		onSubmit: (values) => {
 			log.info(JSON.stringify(values));
@@ -101,25 +103,35 @@
 	</div>
 
 	<div>
-		<label
-			for="company_website"
-			class="block text-sm font-medium text-gray-300">
+		<label for="url" class="block text-sm font-medium text-gray-300">
 			Link
 		</label>
 		<div class="flex mt-1 rounded-md shadow-sm">
-			<span
-				class="inline-flex items-center px-3 text-sm text-gray-300 bg-gray-700 border border-r-0 border-gray-700 rounded-l-md">
-				https://
-			</span>
 			<input
+				id="url"
 				type="text"
-				name="company_website"
-				class="flex-1 block w-full bg-gray-800 border-gray-700 rounded-none focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm"
+				name="url"
+				autocomplete="url"
+				on:change="{handleChange}"
+				on:blur="{handleChange}"
+				bind:value="{$form.url}"
+				class="{`flex-1 block w-full bg-gray-800 rounded-md shadow-sm sm:text-sm
+					${
+						$errors.url
+							? 'border-red-500 ring-1 ring-red-500 focus:ring-red-500 focus:border-red-500'
+							: 'border-gray-700 focus:ring-indigo-500 focus:border-indigo-500'
+					}`}"
 				placeholder="www.example.com" />
 		</div>
-		<p class="mt-2 text-xs text-gray-400">
-			Link to the job post in your website.
-		</p>
+		{#if $errors.url}
+			<p class="mt-2 text-xs text-red-500">
+				{$errors.url}
+			</p>
+		{:else}
+			<p class="mt-2 text-xs text-gray-400">
+				Link to the job post in your website.
+			</p>
+		{/if}
 	</div>
 
 	<div>
