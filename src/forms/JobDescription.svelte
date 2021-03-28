@@ -76,8 +76,8 @@
 			title: "",
 			url: "",
 			salary: {
-				min: "0",
-				max: "0",
+				min: "",
+				max: "",
 				currency: "USD",
 			},
 		},
