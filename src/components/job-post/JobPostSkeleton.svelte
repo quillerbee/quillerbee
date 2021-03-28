@@ -2,7 +2,8 @@
 	class="relative flex flex-col pb-0 mb-6 transition-shadow duration-300 ease-in-out bg-gray-900 rounded-lg hover:shadow-lg">
 	<div class="flex items-start justify-between mb-5">
 		<div class="flex p-5">
-			<div class="bg-gray-700 rounded-full w-[75px] h-[75px] animate-pulse">
+			<div
+				class="bg-gray-700 rounded-full w-[75px] h-[75px] animate-pulse">
 			</div>
 			<div class="flex flex-col ml-4 text-left">
 				<div>
