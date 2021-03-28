@@ -3,13 +3,10 @@
 	<span class="ribbon left"> Company </span>
 	<div class="absolute left-0 flex justify-center w-full -top-16">
 		<div class="flex items-center mt-1">
-			<span
-				class="inline-block overflow-hidden bg-gray-900 rounded-full w-[75px] h-[75px]">
-				<div
-					class="inline-block mb-5 text-4xl font-bold text-center text-gray-900 bg-purple-400 rounded-full w-[75px] h-[75px] leading-[75px]">
-					D
-				</div>
-			</span>
+			<div
+				class="flex justify-center items-center mb-5 text-4xl font-bold text-center text-gray-900 bg-pink-400 rounded-full w-[75px] h-[75px]">
+				D
+			</div>
 		</div>
 	</div>
 

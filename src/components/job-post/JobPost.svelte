@@ -108,18 +108,6 @@
 		border-top: 3px solid #79a70a;
 	}
 
-	.w-logo {
-		min-width: 75px;
-		width: 75px;
-		max-width: 75px;
-	}
-
-	.h-logo {
-		min-height: 75px;
-		height: 75px;
-		max-height: 75px;
-	}
-
 	ul.locations li {
 		margin-right: 5px;
 	}
@@ -136,7 +124,7 @@
 	<div class="flex items-start justify-between">
 		<div class="flex p-5">
 			<div
-				class="flex items-center justify-center text-4xl font-bold text-center text-gray-900 bg-pink-400 rounded-full w-logo h-logo">
+				class="flex items-center justify-center text-4xl font-bold text-center text-gray-900 bg-pink-400 rounded-full w-[75px] h-[75px]">
 				{initials}
 			</div>
 			<div class="flex flex-col ml-4 text-left">
