@@ -1,5 +1,6 @@
 <script>
 	import { gql, mutation } from "@urql/svelte";
+	import { createForm } from "svelte-forms-lib";
 
 	const createJob = mutation({
 		query: gql`
@@ -7,31 +8,6 @@
 				jobs: addJob(input: $input) {
 					job {
 						id
-						company {
-							name
-						}
-						title
-						description
-						locations
-						salary {
-							min
-							max
-						}
-						timezone {
-							min
-							max
-						}
-						remote
-						hashtags {
-							name
-						}
-						category {
-							name
-						}
-						type
-						status
-						flair
-						created
 					}
 				}
 			}
@@ -76,23 +52,32 @@
 		},
 	});
 
-	const onSubmit = () => {
-		createJob();
-	};
+	const { form, handleChange, handleSubmit } = createForm({
+		initialValues: {
+			title: "",
+		},
+		onSubmit: (values) => {
+			log.info(JSON.stringify(values));
+			createJob();
+		},
+	});
 </script>
 
 <form
-	on:submit|preventDefault="{onSubmit}"
+	on:submit|preventDefault="{handleSubmit}"
 	class="relative flex flex-col px-4 py-5 mb-6 space-y-6 text-white transition-shadow duration-300 ease-in-out bg-gray-900 rounded-lg hover:shadow-lg ribbon-container">
 	<span class="ribbon left"> Job Post </span>
 
 	<div class="col-span-6 sm:col-span-3">
-		<label for="first_name" class="block text-sm font-medium text-gray-300"
+		<label for="name" class="block text-sm font-medium text-gray-300"
 			>Title</label>
 		<input
+			id="title"
 			type="text"
-			name="first_name"
-			autocomplete="given-name"
+			name="title"
+			autocomplete="title"
+			on:change={handleChange}
+			bind:value={$form.title}
 			class="block w-full mt-1 bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
 		<p class="mt-2 text-xs text-gray-400">
 			Job Title. i.e. Software Engineer, Backend Developer, ...
