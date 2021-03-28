@@ -53,20 +53,37 @@
 		},
 	});
 
+	let validationSchema = yup.object().shape({
+		title: yup.string().trim().required("Job Title is Required!"),
+		url: yup
+			.string()
+			.url("URL must be Proper!")
+			.required("Job URL is Required!"),
+		salary: yup.object({
+			min: yup.number().required().positive().integer().min(1),
+			max: yup
+				.number()
+				.required()
+				.positive()
+				.integer()
+				.moreThan(yup.ref("min")),
+			currency: yup.string().required(),
+		}),
+	});
+
 	const { form, errors, handleChange, handleSubmit } = createForm({
 		initialValues: {
 			title: "",
 			url: "",
+			salary: {
+				min: "0",
+				max: "0",
+				currency: "USD",
+			},
 		},
-		validationSchema: yup.object().shape({
-			title: yup.string().trim().required('Job Title is Required!'),
-			url: yup
-				.string()
-				.url("URL must be Proper!")
-				.required("Job URL is Required!"),
-		}),
+		validationSchema,
 		onSubmit: (values) => {
-			log.info(JSON.stringify(values));
+			log.info(validationSchema.cast(values));
 			createJob();
 		},
 	});
@@ -100,7 +117,12 @@
 			</p>
 		{:else}
 			<p class="mt-2 text-xs text-gray-400">
-				Job Title. i.e. Software Engineer, Backend Developer, ...
+				Please specify as single job position like "Marketing Manager"
+				or "Node JS Developer", not a sentence like "Looking for PM /
+				Biz Dev / Manager". We know your job is important but please DO
+				NOT WRITE IN FULL CAPS. If posting multiple roles, please create
+				multiple job posts. A job post is limited to a single job. We
+				only allow real jobs.
 			</p>
 		{/if}
 	</div>
@@ -132,7 +154,10 @@
 			</p>
 		{:else}
 			<p class="mt-2 text-xs text-gray-400">
-				Link to the job post in your website.
+				Apply URLs with a form an applicant can fill out generally
+				receive a lot more applicants than having people apply by email
+				(below). A good platform to have applicants apply on is Lever.co
+				(not affiliated).
 			</p>
 		{/if}
 	</div>
@@ -142,12 +167,15 @@
 			>Salary Range</label>
 		<div class="grid grid-flow-col gap-2">
 			<select
-				id="salary"
-				name="salary"
+				id="salary.currency"
+				name="salary.currency"
+				on:change="{handleChange}"
+				on:blur="{handleChange}"
+				bind:value="{$form.salary.currency}"
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-				<option class="bg-gray-900">USD</option>
-				<option class="bg-gray-900">CAD</option>
-				<option class="bg-gray-900">EUR</option>
+				<option class="bg-gray-900" value="USD">USD</option>
+				<option class="bg-gray-900" value="CAD">CAD</option>
+				<option class="bg-gray-900" value="EUR">EUR</option>
 			</select>
 			<div class="relative rounded-md shadow-sm">
 				<div
@@ -155,8 +183,12 @@
 					<span class="text-gray-500 sm:text-sm"> $ </span>
 				</div>
 				<input
-					type="text"
-					name="price"
+					id="salary.min"
+					type="number"
+					name="salary.min"
+					on:change="{handleChange}"
+					on:blur="{handleChange}"
+					bind:value="{$form.salary.min}"
 					class="block w-full pr-12 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500 pl-7 sm:text-sm"
 					placeholder="0.00" />
 			</div>
@@ -166,12 +198,30 @@
 					<span class="text-gray-500 sm:text-sm"> $ </span>
 				</div>
 				<input
-					type="text"
-					name="price"
+					id="salary.max"
+					type="number"
+					name="salary.max"
+					on:change="{handleChange}"
+					on:blur="{handleChange}"
+					bind:value="{$form.salary.max}"
 					class="block w-full pr-12 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500 pl-7 sm:text-sm"
 					placeholder="0.00" />
 			</div>
 		</div>
+		{#if $errors.salary.currency || $errors.salary.min || $errors.salary.max}
+			<p class="mt-2 text-xs text-red-500">
+				{$errors.salary.currency ||
+					$errors.salary.min ||
+					$errors.salary.max}
+			</p>
+		{:else}
+			<p class="mt-2 text-xs text-gray-400">
+				Required because Google does not index jobs without salary data
+				since 2021! If it's a short-term gig, use the annual equivalent.
+				For example, if it's a 2-week project for $2,000, the annual
+				equivalent would be $2,000 / 2 weeks * 52 weeks = $48,000.
+			</p>
+		{/if}
 	</div>
 
 	<div>
