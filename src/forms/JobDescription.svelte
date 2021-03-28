@@ -1,6 +1,7 @@
 <script>
 	import { gql, mutation } from "@urql/svelte";
 	import { createForm } from "svelte-forms-lib";
+	import * as yup from "yup";
 
 	const createJob = mutation({
 		query: gql`
@@ -52,10 +53,13 @@
 		},
 	});
 
-	const { form, handleChange, handleSubmit } = createForm({
+	const { form, errors, handleChange, handleSubmit } = createForm({
 		initialValues: {
 			title: "",
 		},
+		validationSchema: yup.object().shape({
+			title: yup.string().trim().required().ensure(),
+		}),
 		onSubmit: (values) => {
 			log.info(JSON.stringify(values));
 			createJob();
@@ -76,12 +80,24 @@
 			type="text"
 			name="title"
 			autocomplete="title"
-			on:change={handleChange}
-			bind:value={$form.title}
-			class="block w-full mt-1 bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
-		<p class="mt-2 text-xs text-gray-400">
-			Job Title. i.e. Software Engineer, Backend Developer, ...
-		</p>
+			on:change="{handleChange}"
+			on:blur="{handleChange}"
+			bind:value="{$form.title}"
+			class="{`block w-full mt-1 bg-gray-800 rounded-md shadow-sm sm:text-sm
+			${
+				$errors.title
+					? 'border-red-500 ring-1 ring-red-500 focus:ring-red-500 focus:border-red-500'
+					: 'border-gray-700 focus:ring-indigo-500 focus:border-indigo-500'
+			}`}" />
+		{#if $errors.title}
+			<p class="mt-2 text-xs text-red-500">
+				{$errors.title}
+			</p>
+		{:else}
+			<p class="mt-2 text-xs text-gray-400">
+				Job Title. i.e. Software Engineer, Backend Developer, ...
+			</p>
+		{/if}
 	</div>
 
 	<div>
