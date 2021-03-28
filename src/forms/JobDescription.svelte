@@ -47,9 +47,9 @@
 				id="salary"
 				name="salary"
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-				<option>USD</option>
-				<option>CAD</option>
-				<option>EUR</option>
+				<option class="bg-gray-800">USD</option>
+				<option class="bg-gray-800">CAD</option>
+				<option class="bg-gray-800">EUR</option>
 			</select>
 			<div class="relative rounded-md shadow-sm">
 				<div
@@ -88,8 +88,8 @@
 				id="remote"
 				name="remote"
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-				<option>YES</option>
-				<option>NO</option>
+				<option class="bg-gray-800">YES</option>
+				<option class="bg-gray-800">NO</option>
 			</select>
 			<div class="relative rounded-md shadow-sm">
 				<div
@@ -128,8 +128,8 @@
 				id="remote"
 				name="remote"
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-				<option>India</option>
-				<option>United States</option>
+				<option class="bg-gray-800">India</option>
+				<option class="bg-gray-800">United States</option>
 			</select>
 		</div>
 	</div>
@@ -144,8 +144,8 @@
 				id="remote"
 				name="remote"
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-				<option>JavaScript</option>
-				<option>Svelte</option>
+				<option class="bg-gray-800">JavaScript</option>
+				<option class="bg-gray-800">Svelte</option>
 			</select>
 		</div>
 	</div>
@@ -160,8 +160,8 @@
 				id="remote"
 				name="remote"
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-				<option>Software Engineer</option>
-				<option>Game Developer</option>
+				<option class="bg-gray-800">Software Engineer</option>
+				<option class="bg-gray-800">Game Developer</option>
 			</select>
 		</div>
 	</div>
@@ -176,8 +176,8 @@
 				id="remote"
 				name="remote"
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-				<option>Full Time</option>
-				<option>Part Time</option>
+				<option class="bg-gray-800">Full Time</option>
+				<option class="bg-gray-800">Part Time</option>
 			</select>
 		</div>
 	</div>
@@ -192,8 +192,8 @@
 				id="remote"
 				name="remote"
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-				<option>Hot</option>
-				<option>Urgent</option>
+				<option class="bg-gray-800">Hot</option>
+				<option class="bg-gray-800">Urgent</option>
 			</select>
 		</div>
 	</div>
