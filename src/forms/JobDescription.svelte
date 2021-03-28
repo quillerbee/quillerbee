@@ -77,7 +77,6 @@
 	});
 
 	const onSubmit = () => {
-		log.info("Yay");
 		createJob();
 	};
 </script>
@@ -130,9 +129,9 @@
 				id="salary"
 				name="salary"
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-				<option class="bg-gray-800">USD</option>
-				<option class="bg-gray-800">CAD</option>
-				<option class="bg-gray-800">EUR</option>
+				<option class="bg-gray-900">USD</option>
+				<option class="bg-gray-900">CAD</option>
+				<option class="bg-gray-900">EUR</option>
 			</select>
 			<div class="relative rounded-md shadow-sm">
 				<div
@@ -168,8 +167,8 @@
 			<select
 				name="remote"
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-				<option class="bg-gray-800">YES</option>
-				<option class="bg-gray-800">NO</option>
+				<option class="bg-gray-900">YES</option>
+				<option class="bg-gray-900">NO</option>
 			</select>
 			<div class="relative rounded-md shadow-sm">
 				<div
@@ -205,8 +204,8 @@
 			<select
 				name="remote"
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-				<option class="bg-gray-800">India</option>
-				<option class="bg-gray-800">United States</option>
+				<option class="bg-gray-900">India</option>
+				<option class="bg-gray-900">United States</option>
 			</select>
 		</div>
 	</div>
@@ -220,8 +219,8 @@
 			<select
 				name="remote"
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-				<option class="bg-gray-800">JavaScript</option>
-				<option class="bg-gray-800">Svelte</option>
+				<option class="bg-gray-900">JavaScript</option>
+				<option class="bg-gray-900">Svelte</option>
 			</select>
 		</div>
 	</div>
@@ -235,8 +234,8 @@
 			<select
 				name="remote"
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-				<option class="bg-gray-800">Software Engineer</option>
-				<option class="bg-gray-800">Game Developer</option>
+				<option class="bg-gray-900">Software Engineer</option>
+				<option class="bg-gray-900">Game Developer</option>
 			</select>
 		</div>
 	</div>
@@ -250,8 +249,8 @@
 			<select
 				name="remote"
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-				<option class="bg-gray-800">Full Time</option>
-				<option class="bg-gray-800">Part Time</option>
+				<option class="bg-gray-900">Full Time</option>
+				<option class="bg-gray-900">Part Time</option>
 			</select>
 		</div>
 	</div>
@@ -265,8 +264,8 @@
 			<select
 				name="remote"
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-				<option class="bg-gray-800">Hot</option>
-				<option class="bg-gray-800">Urgent</option>
+				<option class="bg-gray-900">Hot</option>
+				<option class="bg-gray-900">Urgent</option>
 			</select>
 		</div>
 	</div>
