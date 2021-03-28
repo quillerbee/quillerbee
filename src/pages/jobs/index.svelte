@@ -46,6 +46,8 @@
 		<JobPostSkeleton />
 	{:else if $getJobs.error}
 		<p>Oh no... {$getJobs.error.message}</p>
+	{:else if $getJobs.data.jobs.length === 0}
+		<p>Doh...</p>
 	{:else}
 		{#each $getJobs.data.jobs as jobPost}
 			<JobPost jobPost="{jobPost}" company="{jobPost?.company}" />
