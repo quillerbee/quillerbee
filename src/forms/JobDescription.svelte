@@ -59,8 +59,11 @@
 			url: "",
 		},
 		validationSchema: yup.object().shape({
-			title: yup.string().trim().required(),
-			url: yup.string().url().required(),
+			title: yup.string().trim().required('Job Title is Required!'),
+			url: yup
+				.string()
+				.url("URL must be Proper!")
+				.required("Job URL is Required!"),
 		}),
 		onSubmit: (values) => {
 			log.info(JSON.stringify(values));
@@ -115,7 +118,7 @@
 				on:change="{handleChange}"
 				on:blur="{handleChange}"
 				bind:value="{$form.url}"
-				class="{`flex-1 block w-full bg-gray-800 rounded-md shadow-sm sm:text-sm
+				class="{`block w-full bg-gray-800 rounded-md shadow-sm sm:text-sm
 					${
 						$errors.url
 							? 'border-red-500 ring-1 ring-red-500 focus:ring-red-500 focus:border-red-500'
