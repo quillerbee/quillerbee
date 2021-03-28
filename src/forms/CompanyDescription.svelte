@@ -1,4 +1,5 @@
-<form on:submit|preventDefault
+<form
+	on:submit|preventDefault
 	class="relative flex flex-col px-4 py-5 mb-6 space-y-6 text-white transition-shadow duration-300 ease-in-out bg-gray-900 rounded-lg sm:p-6 hover:shadow-lg ribbon-container">
 	<span class="ribbon left"> Company </span>
 	<div class="absolute left-0 flex justify-center w-full -top-16">
@@ -16,7 +17,6 @@
 		<input
 			type="text"
 			name="first_name"
-			id="first_name"
 			autocomplete="given-name"
 			class="block w-full mt-1 bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
 		<p class="mt-2 text-xs text-gray-400">
@@ -55,7 +55,6 @@
 			<input
 				type="text"
 				name="company_website"
-				id="company_website"
 				class="flex-1 block w-full bg-gray-800 border-gray-700 rounded-none focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm"
 				placeholder="www.example.com" />
 		</div>
@@ -70,7 +69,6 @@
 			About
 		</label>
 		<textarea
-			id="about"
 			name="about"
 			rows="3"
 			class="block w-full mt-1 bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"

@@ -1,4 +1,89 @@
-<form on:submit|preventDefault
+<script>
+	import { gql, mutation } from "@urql/svelte";
+
+	const createJob = mutation({
+		query: gql`
+			mutation CreateJob($input: [AddJobInput!]!) {
+				jobs: addJob(input: $input) {
+					job {
+						id
+						company {
+							name
+						}
+						title
+						description
+						locations
+						salary {
+							min
+							max
+						}
+						timezone {
+							min
+							max
+						}
+						remote
+						hashtags {
+							name
+						}
+						category {
+							name
+						}
+						type
+						status
+						flair
+						created
+					}
+				}
+			}
+		`,
+		variables: {
+			input: [
+				{
+					company: {
+						email: "abhijit.kar@quillerbee.com",
+					},
+					title: "Backend Developer",
+					description: "Create Backend for QuillerBee",
+					url: "https://www.quillerbee.com",
+					salary: {
+						min: 10000,
+						max: 20000,
+						currency: "JPY",
+					},
+					locations: ["India", "Australia"],
+					timezone: {
+						min: -1,
+						max: 2,
+					},
+					remote: false,
+					hashtags: [
+						{
+							name: "Svelte",
+						},
+						{
+							name: "JavaScript",
+						},
+					],
+					category: {
+						name: "Software Development",
+					},
+					type: "FullTime",
+					flair: "Urgent",
+					status: "Active",
+					created: "2021-03-21T10:59:12.986Z",
+				},
+			],
+		}
+	});
+
+	const onSubmit = () => {
+		log.info("Yay");
+		createJob();
+	};
+</script>
+
+<form
+	on:submit|preventDefault="{onSubmit}"
 	class="relative flex flex-col px-4 py-5 mb-6 space-y-6 text-white transition-shadow duration-300 ease-in-out bg-gray-900 rounded-lg hover:shadow-lg ribbon-container">
 	<span class="ribbon left"> Job Post </span>
 
@@ -8,7 +93,6 @@
 		<input
 			type="text"
 			name="first_name"
-			id="first_name"
 			autocomplete="given-name"
 			class="block w-full mt-1 bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
 		<p class="mt-2 text-xs text-gray-400">
@@ -30,7 +114,6 @@
 			<input
 				type="text"
 				name="company_website"
-				id="company_website"
 				class="flex-1 block w-full bg-gray-800 border-gray-700 rounded-none focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm"
 				placeholder="www.example.com" />
 		</div>
@@ -59,7 +142,6 @@
 				<input
 					type="text"
 					name="price"
-					id="price"
 					class="block w-full pr-12 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500 pl-7 sm:text-sm"
 					placeholder="0.00" />
 			</div>
@@ -71,7 +153,6 @@
 				<input
 					type="text"
 					name="price"
-					id="price"
 					class="block w-full pr-12 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500 pl-7 sm:text-sm"
 					placeholder="0.00" />
 			</div>
@@ -85,7 +166,6 @@
 			>Remote</label>
 		<div class="grid grid-flow-col gap-2">
 			<select
-				id="remote"
 				name="remote"
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 				<option class="bg-gray-800">YES</option>
@@ -99,7 +179,6 @@
 				<input
 					type="text"
 					name="price"
-					id="price"
 					class="block w-full pl-12 pr-12 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
 					placeholder="-5" />
 			</div>
@@ -111,7 +190,6 @@
 				<input
 					type="text"
 					name="price"
-					id="price"
 					class="block w-full pl-12 pr-12 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
 					placeholder="+5" />
 			</div>
@@ -125,7 +203,6 @@
 			>Locations</label>
 		<div class="grid grid-flow-col gap-2">
 			<select
-				id="remote"
 				name="remote"
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 				<option class="bg-gray-800">India</option>
@@ -141,7 +218,6 @@
 			>HashTags</label>
 		<div class="grid grid-flow-col gap-2">
 			<select
-				id="remote"
 				name="remote"
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 				<option class="bg-gray-800">JavaScript</option>
@@ -157,7 +233,6 @@
 			>Category</label>
 		<div class="grid grid-flow-col gap-2">
 			<select
-				id="remote"
 				name="remote"
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 				<option class="bg-gray-800">Software Engineer</option>
@@ -173,7 +248,6 @@
 			>Job Type</label>
 		<div class="grid grid-flow-col gap-2">
 			<select
-				id="remote"
 				name="remote"
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 				<option class="bg-gray-800">Full Time</option>
@@ -189,7 +263,6 @@
 			>Flair</label>
 		<div class="grid grid-flow-col gap-2">
 			<select
-				id="remote"
 				name="remote"
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 				<option class="bg-gray-800">Hot</option>
@@ -203,7 +276,6 @@
 			Description
 		</label>
 		<textarea
-			id="about"
 			name="about"
 			rows="3"
 			class="block w-full mt-1 bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
@@ -216,7 +288,6 @@
 
 	<div class="py-3 text-right">
 		<button
-			type="submit"
 			class="inline-flex justify-center px-4 py-2 mr-2 text-sm font-medium text-white bg-gray-800 border border-transparent rounded-md shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
 			Cancel
 		</button>
