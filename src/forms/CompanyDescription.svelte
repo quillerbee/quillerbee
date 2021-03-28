@@ -1,0 +1,98 @@
+<form
+	class="relative flex flex-col px-4 py-5 mb-6 space-y-6 text-white transition-shadow duration-300 ease-in-out bg-gray-900 rounded-lg sm:p-6 hover:shadow-lg ribbon-container">
+	<span class="ribbon left"> Company </span>
+	<div class="absolute left-0 flex justify-center w-full -top-16">
+		<div class="flex items-center mt-1">
+			<span
+				class="inline-block overflow-hidden bg-gray-900 rounded-full w-[75px] h-[75px]">
+				<div
+					class="inline-block mb-5 text-4xl font-bold text-center text-gray-900 bg-purple-400 rounded-full w-[75px] h-[75px] leading-[75px]">
+					D
+				</div>
+			</span>
+		</div>
+	</div>
+
+	<div class="col-span-6 sm:col-span-3">
+		<label for="first_name" class="block text-sm font-medium text-gray-300"
+			>Name</label>
+		<input
+			type="text"
+			name="first_name"
+			id="first_name"
+			autocomplete="given-name"
+			class="block w-full mt-1 bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
+		<p class="mt-2 text-xs text-gray-400">
+			Your company's brand/trade name: without Inc., Ltd., B.V., Pte.,
+			etc.
+		</p>
+	</div>
+
+	<div class="col-span-6 sm:col-span-4">
+		<label
+			for="email_address"
+			class="block text-sm font-medium text-gray-300">Email</label>
+		<input
+			type="text"
+			name="email_address"
+			id="email_address"
+			autocomplete="email"
+			class="block w-full mt-1 bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
+		<p class="mt-2 text-xs text-gray-400">
+			This email is public, Make sure this email is accessible by you!
+			It's the unique identifier for the company.
+		</p>
+	</div>
+
+	<div>
+		<label
+			for="company_website"
+			class="block text-sm font-medium text-gray-300">
+			Website
+		</label>
+		<div class="flex mt-1 rounded-md shadow-sm">
+			<span
+				class="inline-flex items-center px-3 text-sm text-gray-300 bg-gray-700 border border-r-0 border-gray-700 rounded-l-md">
+				https://
+			</span>
+			<input
+				type="text"
+				name="company_website"
+				id="company_website"
+				class="flex-1 block w-full bg-gray-800 border-gray-700 rounded-none focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm"
+				placeholder="www.example.com" />
+		</div>
+		<p class="mt-2 text-xs text-gray-400">
+			It is mandatory to have a website for a company posting jobs with
+			us, and it must be served over https!
+		</p>
+	</div>
+
+	<div>
+		<label for="about" class="block text-sm font-medium text-gray-300">
+			About
+		</label>
+		<textarea
+			id="about"
+			name="about"
+			rows="3"
+			class="block w-full mt-1 bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+			placeholder="you@example.com"></textarea>
+		<p class="mt-2 text-xs text-gray-400">
+			Brief description for your profile. You can use markdown to add
+			pizzaz to the description.
+		</p>
+	</div>
+	<div class="py-3 text-right">
+		<button
+			type="submit"
+			class="inline-flex justify-center px-4 py-2 mr-2 text-sm font-medium text-white bg-gray-800 border border-transparent rounded-md shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+			Cancel
+		</button>
+		<button
+			type="submit"
+			class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+			Save
+		</button>
+	</div>
+</form>
