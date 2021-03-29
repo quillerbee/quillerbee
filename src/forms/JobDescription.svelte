@@ -4,6 +4,7 @@
 	import { createForm } from "svelte-forms-lib";
 	import * as yup from "yup";
 	import SlimSelect from "slim-select";
+	import { CODES } from "currencies-map";
 
 	let currencySelector;
 
@@ -97,6 +98,17 @@
 			createJob();
 		},
 	});
+
+	const currencySymbol = (code) => {
+		const formatter = new Intl.NumberFormat("en-US", {
+			style: "currency",
+			currency: code,
+			compactDisplay: "short",
+			notation: "compact",
+		});
+
+		return formatter.format(1)?.[0];
+	};
 </script>
 
 <form
@@ -184,14 +196,15 @@
 				bind:this="{currencySelector}"
 				bind:value="{$form.salary.currency}"
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-				<option class="bg-gray-900" value="USD">USD</option>
-				<option class="bg-gray-900" value="CAD">CAD</option>
-				<option class="bg-gray-900" value="EUR">EUR</option>
+				{#each CODES as currency}
+					<option class="bg-gray-900" value="{currency}"
+						>{currency}</option>
+				{/each}
 			</select>
 			<div class="relative rounded-md shadow-sm">
 				<div
 					class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-					<span class="text-gray-500 sm:text-sm"> $ </span>
+					<span class="text-gray-500 sm:text-sm">{currencySymbol($form.salary.currency)}</span>
 				</div>
 				<input
 					id="salary.min"
@@ -206,7 +219,7 @@
 			<div class="relative rounded-md shadow-sm">
 				<div
 					class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-					<span class="text-gray-500 sm:text-sm"> $ </span>
+					<span class="text-gray-500 sm:text-sm">{currencySymbol($form.salary.currency)}</span>
 				</div>
 				<input
 					id="salary.max"
