@@ -19,14 +19,35 @@
 		});
 		new SlimSelect({
 			select: remoteSelector,
+			showSearch: false,
 		});
 		new SlimSelect({
 			select: countriesSelector,
+			limit: 5,
+			closeOnSelect: false,
+			placeholder: "Select Countries",
 		});
 		new SlimSelect({
 			select: hashtagsSelector,
-			addable: function (value) {
+			limit: 5,
+			closeOnSelect: false,
+			addable: (value) => {
 				log.info(value);
+			},
+			searchingText: "Searching...",
+			ajax: (search, callback) => {
+				if (search.length < 3) {
+					callback("Need 3 Characters");
+					return;
+				}
+				const data = [
+					{ text: "Java" },
+					{ text: "JavaScript" },
+					{ text: "Java Script" },
+				];
+				setTimeout(() => {
+					callback(data);
+				}, 1000);
 			},
 		});
 	});
@@ -269,8 +290,8 @@
 				name="remote"
 				bind:this="{remoteSelector}"
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-				<option class="bg-gray-900">YES</option>
-				<option class="bg-gray-900">NO</option>
+				<option class="bg-gray-900" value="true">YES</option>
+				<option class="bg-gray-900" value="false">NO</option>
 			</select>
 			<div class="flex rounded-md shadow-sm">
 				<div
@@ -329,9 +350,8 @@
 			<select
 				name="hashtags"
 				bind:this="{hashtagsSelector}"
+				multiple
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-				<option class="bg-gray-900">JavaScript</option>
-				<option class="bg-gray-900">Svelte</option>
 			</select>
 		</div>
 	</div>
