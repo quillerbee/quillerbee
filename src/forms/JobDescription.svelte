@@ -27,7 +27,7 @@
 						max: 20000,
 						currency: "JPY",
 					},
-					countries: ["India", "Australia"],
+					countries: ["IN", "AU"],
 					timezone: {
 						min: -1,
 						max: 2,
