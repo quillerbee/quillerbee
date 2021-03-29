@@ -108,13 +108,6 @@
 		border-bottom: 3px solid transparent;
 		border-top: 3px solid #79a70a;
 	}
-
-	ul.countries li {
-		margin-right: 5px;
-	}
-	ul.countries li:not(:first-child)::before {
-		content: " ";
-	}
 </style>
 
 <section
@@ -139,14 +132,14 @@
 						{company?.name}
 						<div class="flex items-center ml-2">
 							<svg
-								class="mr-1 fill-current inline-inline-block"
+								class="mr-1.5 fill-current inline-inline-block"
 								width="15"
 								height="15">
 								<use xlink:href="#location-marker"></use>
 							</svg>
 							<ul class="flex items-center text-base countries">
 								{#each countries as country}
-									<li>{flag(country)}</li>
+									<li class="mr-1.5">{flag(country)}</li>
 								{/each}
 							</ul>
 						</div>
