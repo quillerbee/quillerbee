@@ -289,8 +289,9 @@
 	<div>
 		<label
 			for="price"
-			class="block mb-1 text-sm font-medium text-gray-300 grid-col-2"
-			>countries</label>
+			class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
+			Countries
+		</label>
 		<div class="grid grid-flow-col gap-2">
 			<select
 				name="remote"
