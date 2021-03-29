@@ -11,7 +11,7 @@
 	const currencyCodes = Object.keys(currencyToSymbolMap);
 	const countryCodes = Object.keys(countries);
 
-	let currencySelector, remoteSelector, countriesSelector;
+	let currencySelector, remoteSelector, countriesSelector, hashtagsSelector;
 
 	onMount(() => {
 		new SlimSelect({
@@ -22,6 +22,12 @@
 		});
 		new SlimSelect({
 			select: countriesSelector,
+		});
+		new SlimSelect({
+			select: hashtagsSelector,
+			addable: function (value) {
+				log.info(value);
+			},
 		});
 	});
 
@@ -293,18 +299,20 @@
 
 	<div>
 		<label
-			for="price"
+			for="countries"
 			class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
 			Countries
 		</label>
 		<div class="grid grid-flow-col gap-2">
 			<select
-				name="remote"
+				id="countries"
+				name="countries"
 				bind:this="{countriesSelector}"
 				multiple
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 				{#each countryCodes as countryCode}
-					<option class="bg-gray-900" value={countryCode}>{flag(countryCode)} {name(countryCode)}</option>
+					<option class="bg-gray-900" value="{countryCode}"
+						>{flag(countryCode)} {name(countryCode)}</option>
 				{/each}
 				<option class="bg-gray-900">United States</option>
 			</select>
@@ -314,11 +322,13 @@
 	<div>
 		<label
 			for="price"
-			class="block mb-1 text-sm font-medium text-gray-300 grid-col-2"
-			>HashTags</label>
+			class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
+			Hash Tags
+		</label>
 		<div class="grid grid-flow-col gap-2">
 			<select
-				name="remote"
+				name="hashtags"
+				bind:this="{hashtagsSelector}"
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 				<option class="bg-gray-900">JavaScript</option>
 				<option class="bg-gray-900">Svelte</option>

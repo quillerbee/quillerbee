@@ -474,8 +474,9 @@ a:hover::after, a:focus::after {
 	font-size: 22px;
 	font-weight: 700;
 	flex: 0 0 30px;
-	height: 38px;
-	margin: 0 0 0 8px;
+	height: 30px;
+	margin-left: 8px;
+	padding-bottom: 3px;
 	border: 1px solid #374151;
 	border-radius: 4px;
 	box-sizing: border-box
