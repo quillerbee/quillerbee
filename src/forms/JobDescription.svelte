@@ -4,7 +4,10 @@
 	import { createForm } from "svelte-forms-lib";
 	import * as yup from "yup";
 	import SlimSelect from "slim-select";
-	import { CODES } from "currencies-map";
+	import currencyToSymbolMap from "currency-symbol-map/map";
+	import getSymbolFromCurrency from "currency-symbol-map";
+
+	const currencies = Object.keys(currencyToSymbolMap);
 
 	let currencySelector;
 
@@ -98,17 +101,6 @@
 			createJob();
 		},
 	});
-
-	const currencySymbol = (code) => {
-		const formatter = new Intl.NumberFormat("en-US", {
-			style: "currency",
-			currency: code,
-			compactDisplay: "short",
-			notation: "compact",
-		});
-
-		return formatter.format(1)?.[0];
-	};
 </script>
 
 <form
@@ -196,15 +188,18 @@
 				bind:this="{currencySelector}"
 				bind:value="{$form.salary.currency}"
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-				{#each CODES as currency}
-					<option class="bg-gray-900" value="{currency}"
-						>{currency}</option>
+				{#each currencies as currency}
+					<option class="bg-gray-900" value="{currency}">
+						{currency}
+					</option>
 				{/each}
 			</select>
-			<div class="relative rounded-md shadow-sm">
+			<div class="flex rounded-md shadow-sm">
 				<div
-					class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-					<span class="text-gray-500 sm:text-sm">{currencySymbol($form.salary.currency)}</span>
+					class="flex items-center px-3 bg-gray-700 border border-r-0 border-gray-700 pointer-events-none rounded-l-md">
+					<span class="text-gray-500 sm:text-sm">
+						{getSymbolFromCurrency($form.salary.currency)}
+					</span>
 				</div>
 				<input
 					id="salary.min"
@@ -213,13 +208,14 @@
 					on:change="{handleChange}"
 					on:blur="{handleChange}"
 					bind:value="{$form.salary.min}"
-					class="block w-full pr-12 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500 pl-7 sm:text-sm"
+					class="block w-full pr-12 bg-gray-800 border-l-0 border-gray-700 rounded-r-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
 					placeholder="0.00" />
 			</div>
-			<div class="relative rounded-md shadow-sm">
+			<div class="flex rounded-md shadow-sm">
 				<div
-					class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-					<span class="text-gray-500 sm:text-sm">{currencySymbol($form.salary.currency)}</span>
+					class="flex items-center px-3 bg-gray-700 border border-r-0 border-gray-700 pointer-events-none rounded-l-md">
+					<span class="text-gray-500 sm:text-sm"
+						>{getSymbolFromCurrency($form.salary.currency)}</span>
 				</div>
 				<input
 					id="salary.max"
@@ -228,7 +224,7 @@
 					on:change="{handleChange}"
 					on:blur="{handleChange}"
 					bind:value="{$form.salary.max}"
-					class="block w-full pr-12 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500 pl-7 sm:text-sm"
+					class="block w-full pr-12 bg-gray-800 border-gray-700 rounded-r-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
 					placeholder="0.00" />
 			</div>
 		</div>

@@ -2,7 +2,7 @@ dependencies:
   '@urql/svelte': 1.2.0_graphql@15.5.0+svelte@3.35.0
   chroma-js: 2.1.1
   country-emoji: 1.5.6
-  currencies-map: 3.2.1
+  currency-symbol-map: 5.0.1
   graphql: 15.5.0
   loglevel: 1.7.1
   slim-select: 1.27.0
@@ -1077,10 +1077,10 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-AZL67abkUzIuvcHqk7c09cezpGNcxUxU4Ioi/05xHk4DQeTkWmGYftIE6ctU6AEt+Gn4n1lDStOtj7FKycP71A==
-  /currencies-map/3.2.1:
+  /currency-symbol-map/5.0.1:
     dev: false
     resolution:
-      integrity: sha512-LKg9GKYhhkiH9LNnp3BdnV+uO3EVGpdep1ARk446se2/FlTe877QZ3ugM2nlsEQ+sZhDUtHfhOPWtsv8y+P+UA==
+      integrity: sha512-2yHvoVBPIS9Dx7fjritu9l7UHWo4Z3D2oQnQj8AYwUee2j/PAcoHB4issCqwabfbipISZ/iG6vVYsfrAoks2eA==
   /currently-unhandled/0.4.1:
     dependencies:
       array-find-index: 1.0.2
@@ -4116,7 +4116,7 @@ specifiers:
   autoprefixer: ^10.2.5
   chroma-js: ^2.1.1
   country-emoji: ^1.5.6
-  currencies-map: ^3.2.1
+  currency-symbol-map: ^5.0.1
   eslint: ^7.22.0
   eslint-plugin-svelte3: ^3.1.2
   graphql: ^15.5.0
