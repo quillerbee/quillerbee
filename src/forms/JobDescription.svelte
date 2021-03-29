@@ -27,7 +27,7 @@
 						max: 20000,
 						currency: "JPY",
 					},
-					locations: ["India", "Australia"],
+					countries: ["India", "Australia"],
 					timezone: {
 						min: -1,
 						max: 2,
@@ -265,7 +265,7 @@
 		<label
 			for="price"
 			class="block mb-1 text-sm font-medium text-gray-300 grid-col-2"
-			>Locations</label>
+			>countries</label>
 		<div class="grid grid-flow-col gap-2">
 			<select
 				name="remote"

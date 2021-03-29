@@ -16,7 +16,7 @@
 						id
 						title
 						description
-						locations
+						countries
 						salary {
 							min
 							max

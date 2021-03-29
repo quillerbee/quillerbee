@@ -12,7 +12,7 @@
 					name
 				}
 				title
-				locations
+				countries
 				salary {
 					min
 					max

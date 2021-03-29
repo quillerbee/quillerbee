@@ -7,7 +7,7 @@
 
 	let {
 		title,
-		locations,
+		countries,
 		salary,
 		hashtags,
 		flair,
@@ -108,10 +108,10 @@
 		border-top: 3px solid #79a70a;
 	}
 
-	ul.locations li {
+	ul.countries li {
 		margin-right: 5px;
 	}
-	ul.locations li:not(:first-child)::before {
+	ul.countries li:not(:first-child)::before {
 		content: "/ ";
 	}
 </style>
@@ -143,8 +143,8 @@
 								height="15">
 								<use xlink:href="#location-marker"></use>
 							</svg>
-							<ul class="flex items-center locations">
-								{#each locations as location}
+							<ul class="flex items-center countries">
+								{#each countries as location}
 									<li>{location}</li>
 								{/each}
 							</ul>
