@@ -1,6 +1,7 @@
 <script>
 	import { format } from "timeago.js";
 	import chroma from "chroma-js";
+	import { flag } from "country-emoji";
 
 	export let jobPost;
 	export let company;
@@ -112,7 +113,7 @@
 		margin-right: 5px;
 	}
 	ul.countries li:not(:first-child)::before {
-		content: "/ ";
+		content: " ";
 	}
 </style>
 
@@ -136,16 +137,16 @@
 					</div>
 					<div class="flex items-center text-xs text-gray-400">
 						{company?.name}
-						<div class="flex ml-2">
+						<div class="flex items-center ml-2">
 							<svg
 								class="mr-1 fill-current inline-inline-block"
 								width="15"
 								height="15">
 								<use xlink:href="#location-marker"></use>
 							</svg>
-							<ul class="flex items-center countries">
-								{#each countries as location}
-									<li>{location}</li>
+							<ul class="flex items-center text-base countries">
+								{#each countries as country}
+									<li>{flag(country)}</li>
 								{/each}
 							</ul>
 						</div>

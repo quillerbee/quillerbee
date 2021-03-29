@@ -1,6 +1,7 @@
 dependencies:
   '@urql/svelte': 1.2.0_graphql@15.5.0+svelte@3.35.0
   chroma-js: 2.1.1
+  country-emoji: 1.5.6
   graphql: 15.5.0
   loglevel: 1.7.1
   svelte-forms-lib: 1.10.1
@@ -768,6 +769,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
+  /country-emoji/1.5.6:
+    dev: false
+    resolution:
+      integrity: sha512-pSB8OOROfimFc2bcN+H41DuzXYIod/JQ6SgF4pYXkRCm9f8uF1JAJ0vXPhenug6xkpt3Gv33mdypMXB49CJWRA==
   /cross-env/6.0.3:
     dependencies:
       cross-spawn: 7.0.3
@@ -2677,6 +2682,7 @@ specifiers:
   '@urql/svelte': ^1.2.0
   autoprefixer: ^10.2.5
   chroma-js: ^2.1.1
+  country-emoji: ^1.5.6
   eslint: ^7.22.0
   eslint-plugin-svelte3: ^3.1.2
   graphql: ^15.5.0
