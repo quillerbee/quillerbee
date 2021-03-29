@@ -9,11 +9,14 @@
 
 	const currencies = Object.keys(currencyToSymbolMap);
 
-	let currencySelector;
+	let currencySelector, remoteSelector;
 
 	onMount(() => {
 		new SlimSelect({
 			select: currencySelector,
+		});
+		new SlimSelect({
+			select: remoteSelector,
 		});
 	});
 
@@ -247,35 +250,37 @@
 	<div>
 		<label
 			for="price"
-			class="block mb-1 text-sm font-medium text-gray-300 grid-col-2"
-			>Remote</label>
+			class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
+			Remote
+		</label>
 		<div class="grid grid-flow-col gap-2">
 			<select
 				name="remote"
+				bind:this="{remoteSelector}"
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 				<option class="bg-gray-900">YES</option>
 				<option class="bg-gray-900">NO</option>
 			</select>
-			<div class="relative rounded-md shadow-sm">
+			<div class="flex rounded-md shadow-sm">
 				<div
-					class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+					class="flex items-center px-3 bg-gray-700 border border-r-0 border-gray-700 pointer-events-none rounded-l-md">
 					<span class="text-gray-500 sm:text-sm"> UTC </span>
 				</div>
 				<input
 					type="text"
 					name="price"
-					class="block w-full pl-12 pr-12 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+					class="block w-full pr-12 bg-gray-800 border-gray-700 rounded-r-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
 					placeholder="-5" />
 			</div>
-			<div class="relative rounded-md shadow-sm">
+			<div class="flex rounded-md shadow-sm">
 				<div
-					class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+					class="flex items-center px-3 pl-3 bg-gray-700 border border-r-0 border-gray-700 pointer-events-none rounded-l-md">
 					<span class="text-gray-500 sm:text-sm"> UTC </span>
 				</div>
 				<input
 					type="text"
 					name="price"
-					class="block w-full pl-12 pr-12 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+					class="block w-full pr-12 bg-gray-800 border-gray-700 rounded-r-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
 					placeholder="+5" />
 			</div>
 		</div>
