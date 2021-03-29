@@ -1,7 +1,17 @@
 <script>
+	import { onMount } from "svelte";
 	import { gql, mutation } from "@urql/svelte";
 	import { createForm } from "svelte-forms-lib";
 	import * as yup from "yup";
+	import SlimSelect from "slim-select";
+
+	let currencySelector;
+
+	onMount(() => {
+		new SlimSelect({
+			select: currencySelector,
+		});
+	});
 
 	const createJob = mutation({
 		query: gql`
@@ -171,6 +181,7 @@
 				name="salary.currency"
 				on:change="{handleChange}"
 				on:blur="{handleChange}"
+				bind:this="{currencySelector}"
 				bind:value="{$form.salary.currency}"
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 				<option class="bg-gray-900" value="USD">USD</option>
