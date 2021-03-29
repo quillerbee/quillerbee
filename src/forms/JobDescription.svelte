@@ -6,10 +6,12 @@
 	import SlimSelect from "slim-select";
 	import currencyToSymbolMap from "currency-symbol-map/map";
 	import getSymbolFromCurrency from "currency-symbol-map";
+	import { countries, flag, name } from "country-emoji";
 
-	const currencies = Object.keys(currencyToSymbolMap);
+	const currencyCodes = Object.keys(currencyToSymbolMap);
+	const countryCodes = Object.keys(countries);
 
-	let currencySelector, remoteSelector;
+	let currencySelector, remoteSelector, countriesSelector;
 
 	onMount(() => {
 		new SlimSelect({
@@ -17,6 +19,9 @@
 		});
 		new SlimSelect({
 			select: remoteSelector,
+		});
+		new SlimSelect({
+			select: countriesSelector,
 		});
 	});
 
@@ -191,9 +196,9 @@
 				bind:this="{currencySelector}"
 				bind:value="{$form.salary.currency}"
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-				{#each currencies as currency}
-					<option class="bg-gray-900" value="{currency}">
-						{currency}
+				{#each currencyCodes as currencyCode}
+					<option class="bg-gray-900" value="{currencyCode}">
+						{currencyCode}
 					</option>
 				{/each}
 			</select>
@@ -295,8 +300,12 @@
 		<div class="grid grid-flow-col gap-2">
 			<select
 				name="remote"
+				bind:this="{countriesSelector}"
+				multiple
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-				<option class="bg-gray-900">India</option>
+				{#each countryCodes as countryCode}
+					<option class="bg-gray-900" value={countryCode}>{flag(countryCode)} {name(countryCode)}</option>
+				{/each}
 				<option class="bg-gray-900">United States</option>
 			</select>
 		</div>

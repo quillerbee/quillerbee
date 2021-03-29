@@ -275,7 +275,7 @@ a:hover::after, a:focus::after {
 	padding: 0 0 0 3px;
 	border: 1px solid #374151;
 	border-radius: 4px;
-	background-color: #fff;
+	background-color: #111827;
 	outline: 0;
 	box-sizing: border-box;
 	transition: background-color .2s
@@ -352,7 +352,7 @@ a:hover::after, a:focus::after {
 	user-select: none;
 	align-items: center;
 	font-size: 12px;
-	padding: 3px 5px;
+	padding: 3px 10px;
 	margin: 3px 5px 3px 0;
 	color: #fff;
 	background-color: #5897fb;
@@ -370,14 +370,17 @@ a:hover::after, a:focus::after {
 }
 
 .ss-main .ss-multi-selected .ss-values .ss-value .ss-value-delete {
-	margin: 0 0 0 5px;
-	cursor: pointer
+	margin-left: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: monospace;
 }
 
 .ss-main .ss-multi-selected .ss-add {
 	display: flex;
+	align-items: center;
 	flex: 0 1 3px;
-	margin: 9px 12px 0 5px
+	margin-right: 15px;
 }
 
 .ss-main .ss-multi-selected .ss-add .ss-plus {
