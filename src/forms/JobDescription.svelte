@@ -11,15 +11,11 @@
 	const currencyCodes = Object.keys(currencyToSymbolMap);
 	const countryCodes = Object.keys(countries);
 
-	let currencySelector, remoteSelector, countriesSelector, hashtagsSelector;
+	let currencySelector, countriesSelector, hashtagsSelector;
 
 	onMount(() => {
 		new SlimSelect({
 			select: currencySelector,
-		});
-		new SlimSelect({
-			select: remoteSelector,
-			showSearch: false,
 		});
 		new SlimSelect({
 			select: countriesSelector,
@@ -296,16 +292,9 @@
 			<label
 				for="price"
 				class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
-				Remote
+				Time Zone
 			</label>
 			<div class="grid grid-flow-col gap-2">
-				<select
-					name="remote"
-					bind:this="{remoteSelector}"
-					class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-					<option class="bg-gray-900" value="true">YES</option>
-					<option class="bg-gray-900" value="false">NO</option>
-				</select>
 				<div class="flex rounded-md shadow-sm">
 					<div
 						class="flex items-center px-3 bg-gray-700 border border-r-0 border-gray-700 pointer-events-none rounded-l-md">
@@ -377,7 +366,7 @@
 			>Category</label>
 		<div class="grid grid-flow-col gap-2">
 			<select
-				name="remote"
+				name="category"
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 				<option class="bg-gray-900">Software Engineer</option>
 				<option class="bg-gray-900">Game Developer</option>
@@ -392,7 +381,7 @@
 			>Job Type</label>
 		<div class="grid grid-flow-col gap-2">
 			<select
-				name="remote"
+				name="type"
 				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 				<option class="bg-gray-900">Full Time</option>
 				<option class="bg-gray-900">Part Time</option>
