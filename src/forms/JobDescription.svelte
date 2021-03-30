@@ -302,11 +302,11 @@
 	<div></div>
 	<div
 		class="relative flex flex-col p-3 pt-6 border border-gray-700">
-		<label
+		<div
 			for="currency"
 			class="absolute px-4 text-sm bg-gray-800 border border-gray-700 -top-3 left-5 rounded-xl">
 			Salary
-		</label>
+		</div>
 		<div class="grid grid-flow-col gap-2">
 			<select
 				id="currency"
