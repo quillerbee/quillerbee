@@ -12,7 +12,22 @@
 	const currencyCodes = Object.keys(currencyToSymbolMap);
 	const countryCodes = Object.keys(countries);
 
-	let currencySelector, countriesSelector, citiesSelector, hashtagsSelector;
+	let currencySelector,
+		countriesSelector,
+		citiesSelector,
+		hashtagsSelector,
+		categorySelector;
+
+	const categories = [
+		{ text: "Software Development" },
+		{ text: "Game Development" },
+		{ text: "Quality Assurance" },
+		{ text: "Customer Support" },
+		{ text: "Sales" },
+		{ text: "Marketing" },
+		{ text: "Design" },
+		{ text: "Legal" },
+	];
 
 	onMount(() => {
 		new SlimSelect({
@@ -52,6 +67,7 @@
 		new SlimSelect({
 			select: hashtagsSelector,
 			limit: 5,
+			placeholder: "Select Hash Tags",
 			closeOnSelect: false,
 			addable: (value) => {
 				log.info(value);
@@ -75,6 +91,11 @@
 					callback(data);
 				}, 1000);
 			},
+		});
+		new SlimSelect({
+			select: categorySelector,
+			placeholder: "Select Category",
+			data: categories,
 		});
 	});
 
@@ -448,9 +469,8 @@
 			<div class="grid grid-flow-row gap-2">
 				<select
 					name="category"
+					bind:this="{categorySelector}"
 					class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-					<option class="bg-gray-800">Software Engineer</option>
-					<option class="bg-gray-800">Game Developer</option>
 				</select>
 			</div>
 		</div>
