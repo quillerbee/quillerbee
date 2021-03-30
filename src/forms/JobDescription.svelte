@@ -238,6 +238,7 @@
 				type="text"
 				name="title"
 				autocomplete="title"
+				placeholder="Job Title"
 				on:change="{handleChange}"
 				on:blur="{handleChange}"
 				bind:value="{$form.title}"
@@ -282,7 +283,7 @@
 							? 'border-red-500 ring-1 ring-red-500 focus:ring-red-500 focus:border-red-500'
 							: 'border-gray-700 focus:ring-indigo-500 focus:border-indigo-500'
 					}`}"
-					placeholder="www.example.com" />
+					placeholder="https://example.com/job-post" />
 			</div>
 			{#if $errors.url}
 				<p class="mt-2 text-xs text-red-500">
@@ -557,7 +558,7 @@
 			name="about"
 			rows="3"
 			class="block w-full mt-1 bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-			placeholder="you@example.com"></textarea>
+			placeholder="Describe the Job eloquently."></textarea>
 		<p class="mt-2 text-xs text-gray-400">
 			Brief description of the job. You can use markdown to add pizzaz to
 			the description.

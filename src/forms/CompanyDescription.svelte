@@ -20,6 +20,7 @@
 				type="text"
 				name="first_name"
 				autocomplete="given-name"
+				placeholder="Company Name"
 				class="block w-full mt-1 bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
 			<p class="hidden mt-2 text-xs text-gray-400">
 				Your company's brand/trade name: without Inc., Ltd., B.V., Pte.,
@@ -36,6 +37,9 @@
 				name="email_address"
 				id="email_address"
 				autocomplete="email"
+				readonly="true"
+				disabled="true"
+				placeholder="you@example.com"
 				class="block w-full mt-1 bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
 			<p class="hidden mt-2 text-xs text-gray-400">
 				This email is public, Make sure this email is accessible by you!
@@ -54,7 +58,7 @@
 					type="text"
 					name="company_website"
 					class="flex-1 block w-full bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-					placeholder="www.example.com" />
+					placeholder="https://example.com" />
 			</div>
 			<p class="hidden mt-2 text-xs text-gray-400">
 				It is mandatory to have a website for a company posting jobs
@@ -71,7 +75,7 @@
 			name="about"
 			rows="3"
 			class="block w-full mt-1 bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-			placeholder="you@example.com"></textarea>
+			placeholder="Describe your company, but keep it short."></textarea>
 		<p class="hidden mt-2 text-xs text-gray-400">
 			Brief description for your profile. You can use markdown to add
 			pizzaz to the description.
