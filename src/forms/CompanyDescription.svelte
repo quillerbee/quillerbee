@@ -76,7 +76,7 @@
 			name="about"
 			rows="3"
 			class="block w-full mt-1 bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-			placeholder="Describe your company, but keep it short."></textarea>
+			placeholder="Describe your Company, but keep it short."></textarea>
 		<p class="hidden mt-2 text-xs text-gray-400">
 			Brief description for your profile. You can use markdown to add
 			pizzaz to the description.
