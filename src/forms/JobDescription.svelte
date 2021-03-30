@@ -230,8 +230,11 @@
 
 	<div class="grid grid-flow-row grid-cols-2 grid-rows-1 gap-x-4 gap-y-6">
 		<div>
-			<label for="title" class="block text-sm font-medium text-gray-300">
+			<label for="title" class="flex text-sm font-medium text-gray-300">
 				Title
+				<svg class="mt-0.5 ml-1" width="15" height="15">
+					<use xlink:href="#information-circle"></use>
+				</svg>
 			</label>
 			<input
 				id="title"
