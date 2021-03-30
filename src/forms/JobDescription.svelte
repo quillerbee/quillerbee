@@ -259,7 +259,7 @@
 				on:change="{handleChange}"
 				on:blur="{handleChange}"
 				bind:value="{$form.title}"
-				class="{`block w-full mt-1 bg-gray-800 rounded-md shadow-sm sm:text-sm
+				class="{`block w-full bg-gray-800 rounded-md shadow-sm sm:text-sm
 			${
 				$errors.title
 					? 'border-red-500 ring-1 ring-red-500 focus:ring-red-500 focus:border-red-500'
