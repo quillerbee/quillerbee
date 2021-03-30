@@ -301,7 +301,7 @@
 	</div>
 	<div></div>
 	<div
-		class="relative flex flex-col p-3 pt-6 border border-gray-700 rounded-lg">
+		class="relative flex flex-col p-3 pt-6 border border-gray-700">
 		<label
 			for="currency"
 			class="absolute px-4 text-sm bg-gray-800 border border-gray-700 -top-3 left-5 rounded-xl">

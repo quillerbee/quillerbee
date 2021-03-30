@@ -178,7 +178,7 @@ a:hover::after, a:focus::after {
 	height: 38px;
 	padding: 12px 8px;
 	border: 1px solid #374151;
-	border-radius: 4px;
+	border-radius: 6px;
 	background-color: transparent;
 	outline: 0;
 	box-sizing: border-box;
@@ -274,7 +274,7 @@ a:hover::after, a:focus::after {
 	width: 100%;
 	padding: 0 0 0 3px;
 	border: 1px solid #374151;
-	border-radius: 4px;
+	border-radius: 6px;
 	background-color: transparent;
 	outline: 0;
 	box-sizing: border-box;
@@ -356,7 +356,7 @@ a:hover::after, a:focus::after {
 	margin: 3px 5px 3px 0;
 	color: #fff;
 	background-color: #5897fb;
-	border-radius: 4px;
+	border-radius: 6px;
 	animation-name: scaleIn;
 	animation-duration: .2s;
 	animation-timing-function: ease-out;
@@ -452,7 +452,7 @@ a:hover::after, a:focus::after {
 	padding: 6px 8px;
 	margin: 0;
 	border: 1px solid #374151;
-	border-radius: 4px;
+	border-radius: 6px;
 	background-color: #111827;
 	outline: 0;
 	text-align: left;
@@ -478,7 +478,7 @@ a:hover::after, a:focus::after {
 	margin-left: 8px;
 	padding-bottom: 3px;
 	border: 1px solid #374151;
-	border-radius: 4px;
+	border-radius: 6px;
 	box-sizing: border-box
 }
 
