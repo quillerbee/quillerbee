@@ -230,7 +230,7 @@
 
 	<div class="grid grid-flow-row grid-cols-2 grid-rows-1 gap-x-4 gap-y-6">
 		<div>
-			<label for="name" class="block text-sm font-medium text-gray-300">
+			<label for="title" class="block text-sm font-medium text-gray-300">
 				Title
 			</label>
 			<input
@@ -303,13 +303,13 @@
 	<div
 		class="relative flex flex-col p-3 pt-6 border border-gray-700 rounded-lg">
 		<label
-			for="price"
+			for="currency"
 			class="absolute px-4 text-sm bg-gray-800 border border-gray-700 -top-3 left-5 rounded-xl">
 			Salary Range
 		</label>
 		<div class="grid grid-flow-col gap-2">
 			<select
-				id="salary.currency"
+				id="currency"
 				name="salary.currency"
 				on:change="{handleChange}"
 				on:blur="{handleChange}"
@@ -330,7 +330,7 @@
 					</span>
 				</div>
 				<input
-					id="salary.min"
+					id="min-salary"
 					type="number"
 					name="salary.min"
 					on:change="{handleChange}"
@@ -346,7 +346,7 @@
 						>{getSymbolFromCurrency($form.salary.currency)}</span>
 				</div>
 				<input
-					id="salary.max"
+					id="max-salary"
 					type="number"
 					name="salary.max"
 					on:change="{handleChange}"
@@ -381,19 +381,19 @@
 		<div class="grid grid-flow-row gap-2">
 			<div class="flex items-center justify-between p-2 pr-0">
 				<label
-					for="price"
+					for="remote"
 					class="block mb-1 text-sm font-medium text-gray-300">
 					Is this a Remote Position?
 				</label>
-				<ToggleBtn />
+				<ToggleBtn id="remote" />
 			</div>
 			<div class="flex items-center justify-between p-2 pr-0">
 				<label
-					for="price"
+					for="worldwide"
 					class="block mb-1 text-sm font-medium text-gray-300">
 					Is this Worldwide?
 				</label>
-				<ToggleBtn />
+				<ToggleBtn id="worldwide" />
 			</div>
 		</div>
 
@@ -422,12 +422,13 @@
 			</div>
 			<div>
 				<label
-					for="price"
+					for="cities"
 					class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
 					Cities
 				</label>
 				<div class="grid grid-flow-row gap-2">
 					<select
+						id="cities"
 						name="cities"
 						bind:this="{citiesSelector}"
 						multiple
@@ -442,7 +443,7 @@
 		<div
 			class="relative flex flex-col p-3 pt-6 border border-gray-700 rounded-lg">
 			<label
-				for="price"
+				for="time-zone"
 				class="absolute px-4 text-sm bg-gray-800 border border-gray-700 -top-3 left-5 rounded-xl">
 				Time Zone
 			</label>
@@ -453,6 +454,7 @@
 						<span class="text-gray-500 sm:text-sm"> UTC </span>
 					</div>
 					<input
+						id="time-zone"
 						type="text"
 						name="price"
 						class="block w-full pr-12 bg-gray-800 border-gray-700 rounded-r-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
@@ -513,19 +515,19 @@
 
 		<div>
 			<label
-				for="type"
+				for="job-type"
 				class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
 				Job Type
 			</label>
 			<div class="grid grid-flow-row gap-2">
 				<select
-					id="type"
+					id="job-type"
 					name="type"
 					bind:this="{jobTypeSelector}"
 					class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 					<option data-placeholder="true"></option>
 					{#each jobTypes as jobType}
-						<option value={jobType.value}>{jobType.text}</option>
+						<option value="{jobType.value}">{jobType.text}</option>
 					{/each}
 				</select>
 			</div>
@@ -539,6 +541,7 @@
 			</label>
 			<div class="grid grid-flow-row gap-2">
 				<select
+					id="flair"
 					name="flair"
 					bind:this="{flairSelector}"
 					class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
@@ -551,11 +554,12 @@
 		</div>
 	</div>
 	<div>
-		<label for="about" class="block text-sm font-medium text-gray-300">
+		<label for="description" class="block text-sm font-medium text-gray-300">
 			Description
 		</label>
 		<textarea
-			name="about"
+			id="description"
+			name="description"
 			rows="3"
 			class="block w-full mt-1 bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
 			placeholder="Describe the Job eloquently."></textarea>

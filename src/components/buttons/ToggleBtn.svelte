@@ -1,5 +1,7 @@
 <script>
 	/** https://codepen.io/cl0udc0ntr0l/pen/xhBtF */
+	export let id;
+
 	let toggle = false;
 
 	const toggleBtn = () => {
@@ -119,6 +121,7 @@
 </style>
 
 <button
+	id="{id}"
 	class="{`toggle border-2 border-gray-700 focus:ring-indigo-500 transform scale-75 focus:border-indigo-500 ${
 		toggle ? 'toggle-on' : ''
 	}`}"
