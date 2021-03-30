@@ -7,6 +7,7 @@
 	import currencyToSymbolMap from "currency-symbol-map/map";
 	import getSymbolFromCurrency from "currency-symbol-map";
 	import { countries, flag, name } from "country-emoji";
+	import { ToggleBtn } from "@components";
 
 	const currencyCodes = Object.keys(currencyToSymbolMap);
 	const countryCodes = Object.keys(countries);
@@ -284,9 +285,29 @@
 		{/if}
 	</div>
 
-	<div class="relative flex flex-col p-3 space-y-6 border border-gray-700 rounded-lg">
-		<div class="absolute px-4 text-sm bg-gray-900 border border-gray-700 -top-3 left-5 rounded-xl">
+	<div
+		class="relative flex flex-col p-3 space-y-6 border border-gray-700 rounded-lg">
+		<div
+			class="absolute px-4 text-sm bg-gray-900 border border-gray-700 -top-3 left-5 rounded-xl">
 			Location
+		</div>
+		<div class="grid grid-flow-row gap-2">
+			<div class="flex items-center justify-between p-2 pr-0">
+				<label
+					for="price"
+					class="block mb-1 text-sm font-medium text-gray-300">
+					Is this a Remote Position?
+				</label>
+				<ToggleBtn />
+			</div>
+			<div class="flex items-center justify-between p-2 pr-0">
+				<label
+					for="price"
+					class="block mb-1 text-sm font-medium text-gray-300">
+					Is this Worldwide?
+				</label>
+				<ToggleBtn />
+			</div>
 		</div>
 		<div>
 			<label
@@ -319,7 +340,7 @@
 				</div>
 			</div>
 		</div>
-	
+
 		<div>
 			<label
 				for="countries"
