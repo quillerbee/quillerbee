@@ -314,7 +314,7 @@
 			</div>
 		</div>
 
-		<div class="grid grid-flow-row grid-cols-2 grid-rows-1 gap-4">
+		<div class="grid grid-flow-row grid-cols-1 grid-rows-2 gap-6">
 			<div>
 				<label
 					for="countries"
@@ -389,8 +389,8 @@
 		</div>
 	</div>
 
-	<div class="grid grid-flow-row grid-cols-2 grid-rows-2 gap-x-4 gap-y-6">
-		<div>
+	<div class="grid grid-flow-row grid-cols-3 grid-rows-2 gap-x-4 gap-y-6">
+		<div class="col-span-3">
 			<label
 				for="price"
 				class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
