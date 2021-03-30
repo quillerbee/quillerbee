@@ -17,17 +17,18 @@
 		citiesSelector,
 		hashtagsSelector,
 		categorySelector,
-		jobTypeSelector;
+		jobTypeSelector,
+		flairSelector;
 
 	const categories = [
-		{ text: "Software Development" },
-		{ text: "Game Development" },
-		{ text: "Quality Assurance" },
-		{ text: "Customer Support" },
-		{ text: "Sales" },
-		{ text: "Marketing" },
-		{ text: "Design" },
-		{ text: "Legal" },
+		"Software Development",
+		"Game Development",
+		"Quality Assurance",
+		"Customer Support",
+		"Sales",
+		"Marketing",
+		"Design",
+		"Legal",
 	];
 
 	const jobTypes = [
@@ -38,6 +39,16 @@
 		{ text: "Volunteer", value: "Volunteer" },
 		{ text: "Internship", value: "Internship" },
 		{ text: "Other", value: "Other" },
+	];
+
+	const flairs = [
+		"Hot",
+		"Urgent",
+		"Popular",
+		"Promoted",
+		"Exclusive",
+		"Sponsored",
+		"Featured",
 	];
 
 	onMount(() => {
@@ -106,12 +117,14 @@
 		new SlimSelect({
 			select: categorySelector,
 			placeholder: "Select Category",
-			data: categories,
 		});
 		new SlimSelect({
 			select: jobTypeSelector,
 			placeholder: "Select Job Type",
-			data: jobTypes,
+		});
+		new SlimSelect({
+			select: flairSelector,
+			placeholder: "Select Flair",
 		});
 	});
 
@@ -462,12 +475,13 @@
 	<div class="grid grid-flow-row grid-cols-3 grid-rows-2 gap-x-4 gap-y-6">
 		<div class="col-span-3">
 			<label
-				for="price"
+				for="hashtags"
 				class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
 				Hash Tags
 			</label>
 			<div class="grid grid-flow-row gap-2">
 				<select
+					id="hashtags"
 					name="hashtags"
 					bind:this="{hashtagsSelector}"
 					multiple
@@ -478,45 +492,59 @@
 
 		<div>
 			<label
-				for="price"
+				for="category"
 				class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
 				Category
 			</label>
 			<div class="grid grid-flow-row gap-2">
 				<select
+					id="category"
 					name="category"
 					bind:this="{categorySelector}"
 					class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+					<option data-placeholder="true"></option>
+					{#each categories as category}
+						<option>{category}</option>
+					{/each}
 				</select>
 			</div>
 		</div>
 
 		<div>
 			<label
-				for="price"
+				for="type"
 				class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
 				Job Type
 			</label>
 			<div class="grid grid-flow-row gap-2">
 				<select
+					id="type"
 					name="type"
-					bind:this={jobTypeSelector}
+					bind:this="{jobTypeSelector}"
 					class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+					<option data-placeholder="true"></option>
+					{#each jobTypes as jobType}
+						<option value={jobType.value}>{jobType.text}</option>
+					{/each}
 				</select>
 			</div>
 		</div>
 
 		<div>
 			<label
-				for="price"
-				class="block mb-1 text-sm font-medium text-gray-300 grid-col-2"
-				>Flair</label>
+				for="flair"
+				class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
+				Flair
+			</label>
 			<div class="grid grid-flow-row gap-2">
 				<select
-					name="remote"
+					name="flair"
+					bind:this="{flairSelector}"
 					class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-					<option class="bg-gray-800">Hot</option>
-					<option class="bg-gray-800">Urgent</option>
+					<option data-placeholder="true"></option>
+					{#each flairs as flair}
+						<option>{flair}</option>
+					{/each}
 				</select>
 			</div>
 		</div>
