@@ -284,7 +284,7 @@
 			</p>
 		{/if}
 	</div>
-
+	<div></div>
 	<div
 		class="relative flex flex-col p-3 space-y-6 border border-gray-700 rounded-lg">
 		<div

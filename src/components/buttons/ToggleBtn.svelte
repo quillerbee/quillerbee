@@ -1,4 +1,5 @@
 <script>
+	/** https://codepen.io/cl0udc0ntr0l/pen/xhBtF */
 	let toggle = false;
 
 	const toggleBtn = () => {
@@ -10,7 +11,7 @@
 	.toggle {
 		position: relative;
 		width: 75px;
-		height: 38px;
+		height: 40px;
 		border-radius: 20px;
 		-webkit-transition: border-color 0.6s ease-out;
 		transition: border-color 0.6s ease-out;
@@ -118,7 +119,9 @@
 </style>
 
 <button
-	class="{`toggle border-2 border-gray-700 focus:ring-indigo-500 focus:border-indigo-500 ${toggle ? 'toggle-on' : ''}`}"
+	class="{`toggle border-2 border-gray-700 focus:ring-indigo-500 transform scale-75 focus:border-indigo-500 ${
+		toggle ? 'toggle-on' : ''
+	}`}"
 	on:click|preventDefault="{toggleBtn}">
 	<div class="text-gray-700 toggle-text-off">NO</div>
 	<div class="glow-comp"></div>
