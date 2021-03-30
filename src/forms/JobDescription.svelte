@@ -12,7 +12,7 @@
 	const currencyCodes = Object.keys(currencyToSymbolMap);
 	const countryCodes = Object.keys(countries);
 
-	let currencySelector, countriesSelector, hashtagsSelector;
+	let currencySelector, countriesSelector, citiesSelector, hashtagsSelector;
 
 	onMount(() => {
 		new SlimSelect({
@@ -25,11 +25,40 @@
 			placeholder: "Select Countries",
 		});
 		new SlimSelect({
+			select: citiesSelector,
+			limit: 5,
+			closeOnSelect: false,
+			placeholder: "Select Cities",
+			addable: (value) => {
+				log.info(value);
+				return value;
+			},
+			searchingText: "Searching...",
+			ajax: (search, callback) => {
+				if (search.length < 3) {
+					callback("Need 3 Characters");
+					return;
+				}
+				const data = [
+					{ text: "New York" },
+					{ text: "New Delhi" },
+					{ text: "New Hampshire" },
+				];
+				setTimeout(() => {
+					callback(data);
+				}, 1000);
+			},
+		});
+		new SlimSelect({
 			select: hashtagsSelector,
 			limit: 5,
 			closeOnSelect: false,
 			addable: (value) => {
 				log.info(value);
+				return {
+					text: value,
+					value: value,
+				};
 			},
 			searchingText: "Searching...",
 			ajax: (search, callback) => {
@@ -220,8 +249,11 @@
 		</div>
 	</div>
 	<div></div>
-	<div class="relative flex flex-col p-3 pt-6 border border-gray-700 rounded-lg">
-		<label for="price" class="absolute px-4 text-sm bg-gray-800 border border-gray-700 -top-3 left-5 rounded-xl">
+	<div
+		class="relative flex flex-col p-3 pt-6 border border-gray-700 rounded-lg">
+		<label
+			for="price"
+			class="absolute px-4 text-sm bg-gray-800 border border-gray-700 -top-3 left-5 rounded-xl">
 			Salary Range
 		</label>
 		<div class="grid grid-flow-col gap-2">
@@ -346,17 +378,18 @@
 				<div class="grid grid-flow-row gap-2">
 					<select
 						name="cities"
+						bind:this="{citiesSelector}"
+						multiple
 						class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-						<option class="bg-gray-800">Software Engineer</option>
-						<option class="bg-gray-800">Game Developer</option>
 					</select>
 				</div>
 			</div>
 		</div>
 
 		<div></div>
-		
-		<div class="relative flex flex-col p-3 pt-6 border border-gray-700 rounded-lg">
+
+		<div
+			class="relative flex flex-col p-3 pt-6 border border-gray-700 rounded-lg">
 			<label
 				for="price"
 				class="absolute px-4 text-sm bg-gray-800 border border-gray-700 -top-3 left-5 rounded-xl">
