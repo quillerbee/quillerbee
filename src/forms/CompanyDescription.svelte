@@ -13,13 +13,13 @@
 	<div></div>
 	<div class="grid grid-flow-row grid-cols-3 grid-rows-1 gap-x-4 gap-y-6">
 		<div>
-			<label
-				for="first_name"
-				class="block text-sm font-medium text-gray-300">Name</label>
+			<label for="name" class="block text-sm font-medium text-gray-300"
+				>Name</label>
 			<input
 				type="text"
-				name="first_name"
-				autocomplete="given-name"
+				id="name"
+				name="name"
+				autocomplete="name"
 				placeholder="Company Name"
 				class="block w-full mt-1 bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
 			<p class="hidden mt-2 text-xs text-gray-400">
@@ -29,13 +29,12 @@
 		</div>
 
 		<div>
-			<label
-				for="email_address"
-				class="block text-sm font-medium text-gray-300">Email</label>
+			<label for="email" class="block text-sm font-medium text-gray-300"
+				>Email</label>
 			<input
+				id="email"
 				type="text"
-				name="email_address"
-				id="email_address"
+				name="email"
 				autocomplete="email"
 				readonly="true"
 				disabled="true"
@@ -49,14 +48,15 @@
 
 		<div>
 			<label
-				for="company_website"
+				for="website"
 				class="block text-sm font-medium text-gray-300">
 				Website
 			</label>
 			<div class="flex mt-1 rounded-md shadow-sm">
 				<input
 					type="text"
-					name="company_website"
+					id="website"
+					name="website"
 					class="flex-1 block w-full bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
 					placeholder="https://example.com" />
 			</div>
@@ -72,6 +72,7 @@
 			About
 		</label>
 		<textarea
+			id="about"
 			name="about"
 			rows="3"
 			class="block w-full mt-1 bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
