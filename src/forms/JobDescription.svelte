@@ -219,12 +219,12 @@
 			{/if}
 		</div>
 	</div>
-
-	<div>
-		<label for="price" class="block mb-1 text-sm font-medium text-gray-300">
+	<div></div>
+	<div class="relative flex flex-col p-3 space-y-3 border border-gray-700 rounded-lg">
+		<label for="price" class="absolute px-4 text-sm bg-gray-800 border border-gray-700 -top-3 left-5 rounded-xl">
 			Salary Range
 		</label>
-		<div class="grid grid-flow-col gap-4">
+		<div class="grid grid-flow-col gap-2">
 			<select
 				id="salary.currency"
 				name="salary.currency"
@@ -290,7 +290,7 @@
 	</div>
 	<div></div>
 	<div
-		class="relative flex flex-col p-3 space-y-6 border border-gray-700 rounded-lg">
+		class="relative flex flex-col p-3 space-y-3 border border-gray-700 rounded-lg">
 		<div
 			class="absolute px-4 text-sm bg-gray-800 border border-gray-700 -top-3 left-5 rounded-xl">
 			Location
@@ -313,13 +313,14 @@
 				<ToggleBtn />
 			</div>
 		</div>
-		<div>
+		<div></div>
+		<div class="relative flex flex-col p-3 space-y-3 border border-gray-700 rounded-lg">
 			<label
 				for="price"
-				class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
+				class="absolute px-4 text-sm bg-gray-800 border border-gray-700 -top-3 left-5 rounded-xl">
 				Time Zone
 			</label>
-			<div class="grid grid-flow-col gap-4">
+			<div class="grid grid-flow-col gap-2">
 				<div class="flex rounded-md shadow-sm">
 					<div
 						class="flex items-center px-3 bg-gray-700 border border-r-0 border-gray-700 pointer-events-none rounded-l-md">
