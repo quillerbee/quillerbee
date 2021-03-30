@@ -220,7 +220,7 @@
 		</div>
 	</div>
 	<div></div>
-	<div class="relative flex flex-col p-3 space-y-3 border border-gray-700 rounded-lg">
+	<div class="relative flex flex-col p-3 pt-6 border border-gray-700 rounded-lg">
 		<label for="price" class="absolute px-4 text-sm bg-gray-800 border border-gray-700 -top-3 left-5 rounded-xl">
 			Salary Range
 		</label>
@@ -290,7 +290,7 @@
 	</div>
 	<div></div>
 	<div
-		class="relative flex flex-col p-3 space-y-3 border border-gray-700 rounded-lg">
+		class="relative flex flex-col p-3 pt-0 space-y-6 border border-gray-700 rounded-lg">
 		<div
 			class="absolute px-4 text-sm bg-gray-800 border border-gray-700 -top-3 left-5 rounded-xl">
 			Location
@@ -311,38 +311,6 @@
 					Is this Worldwide?
 				</label>
 				<ToggleBtn />
-			</div>
-		</div>
-		<div></div>
-		<div class="relative flex flex-col p-3 space-y-3 border border-gray-700 rounded-lg">
-			<label
-				for="price"
-				class="absolute px-4 text-sm bg-gray-800 border border-gray-700 -top-3 left-5 rounded-xl">
-				Time Zone
-			</label>
-			<div class="grid grid-flow-col gap-2">
-				<div class="flex rounded-md shadow-sm">
-					<div
-						class="flex items-center px-3 bg-gray-700 border border-r-0 border-gray-700 pointer-events-none rounded-l-md">
-						<span class="text-gray-500 sm:text-sm"> UTC </span>
-					</div>
-					<input
-						type="text"
-						name="price"
-						class="block w-full pr-12 bg-gray-800 border-gray-700 rounded-r-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-						placeholder="-5" />
-				</div>
-				<div class="flex rounded-md shadow-sm">
-					<div
-						class="flex items-center px-3 pl-3 bg-gray-700 border border-r-0 border-gray-700 pointer-events-none rounded-l-md">
-						<span class="text-gray-500 sm:text-sm"> UTC </span>
-					</div>
-					<input
-						type="text"
-						name="price"
-						class="block w-full pr-12 bg-gray-800 border-gray-700 rounded-r-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-						placeholder="+5" />
-				</div>
 			</div>
 		</div>
 
@@ -382,6 +350,40 @@
 						<option class="bg-gray-800">Software Engineer</option>
 						<option class="bg-gray-800">Game Developer</option>
 					</select>
+				</div>
+			</div>
+		</div>
+
+		<div></div>
+		
+		<div class="relative flex flex-col p-3 pt-6 border border-gray-700 rounded-lg">
+			<label
+				for="price"
+				class="absolute px-4 text-sm bg-gray-800 border border-gray-700 -top-3 left-5 rounded-xl">
+				Time Zone
+			</label>
+			<div class="grid grid-flow-col gap-2">
+				<div class="flex rounded-md shadow-sm">
+					<div
+						class="flex items-center px-3 bg-gray-700 border border-r-0 border-gray-700 pointer-events-none rounded-l-md">
+						<span class="text-gray-500 sm:text-sm"> UTC </span>
+					</div>
+					<input
+						type="text"
+						name="price"
+						class="block w-full pr-12 bg-gray-800 border-gray-700 rounded-r-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+						placeholder="-5" />
+				</div>
+				<div class="flex rounded-md shadow-sm">
+					<div
+						class="flex items-center px-3 pl-3 bg-gray-700 border border-r-0 border-gray-700 pointer-events-none rounded-l-md">
+						<span class="text-gray-500 sm:text-sm"> UTC </span>
+					</div>
+					<input
+						type="text"
+						name="price"
+						class="block w-full pr-12 bg-gray-800 border-gray-700 rounded-r-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+						placeholder="+5" />
 				</div>
 			</div>
 		</div>

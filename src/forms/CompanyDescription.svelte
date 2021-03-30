@@ -11,7 +11,7 @@
 		</div>
 	</div>
 	<div></div>
-	<div class="grid grid-flow-row grid-cols-2 grid-rows-2 gap-x-4 gap-y-6">
+	<div class="grid grid-flow-row grid-cols-3 grid-rows-1 gap-x-4 gap-y-6">
 		<div>
 			<label
 				for="first_name"
@@ -43,21 +43,17 @@
 			</p>
 		</div>
 
-		<div class="col-span-2">
+		<div>
 			<label
 				for="company_website"
 				class="block text-sm font-medium text-gray-300">
 				Website
 			</label>
 			<div class="flex mt-1 rounded-md shadow-sm">
-				<span
-					class="inline-flex items-center px-3 text-sm text-gray-300 bg-gray-700 border border-r-0 border-gray-700 rounded-l-md">
-					https://
-				</span>
 				<input
 					type="text"
 					name="company_website"
-					class="flex-1 block w-full bg-gray-800 border-gray-700 rounded-none focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm"
+					class="flex-1 block w-full bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
 					placeholder="www.example.com" />
 			</div>
 			<p class="hidden mt-2 text-xs text-gray-400">
