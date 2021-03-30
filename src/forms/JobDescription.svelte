@@ -68,34 +68,43 @@
 					company: {
 						email: "abhijit.kar@quillerbee.com",
 					},
-					title: "Backend Developer",
-					description: "Create Backend for QuillerBee",
+					title: "Fullstack Developer",
+					description: "Do Fullstack for QuillerBee",
 					url: "https://www.quillerbee.com",
 					salary: {
 						min: 10000,
 						max: 20000,
 						currency: "JPY",
 					},
-					countries: ["IN", "AU"],
-					timezone: {
-						min: -1,
-						max: 2,
+					location: {
+						remote: true,
+						countries: ["IN", "US", "JP"],
+						cities: [
+							{
+								name: "Hyderabad",
+							},
+							{
+								name: "Texas",
+							},
+							{
+								name: "Tokyo",
+							},
+						],
 					},
-					remote: false,
 					hashtags: [
 						{
-							name: "Svelte",
+							name: "JavaScript",
 						},
 						{
-							name: "JavaScript",
+							name: "TypeScript",
 						},
 					],
 					category: {
 						name: "Software Development",
 					},
-					type: "FullTime",
-					flair: "Urgent",
+					type: "Other",
 					status: "Active",
+					flair: "Sponsored",
 					created: "2021-03-21T10:59:12.986Z",
 				},
 			],
