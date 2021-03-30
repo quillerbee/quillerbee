@@ -179,7 +179,7 @@ a:hover::after, a:focus::after {
 	padding: 12px 8px;
 	border: 1px solid #374151;
 	border-radius: 4px;
-	background-color: #111827;
+	background-color: transparent;
 	outline: 0;
 	box-sizing: border-box;
 	transition: background-color .2s
@@ -275,7 +275,7 @@ a:hover::after, a:focus::after {
 	padding: 0 0 0 3px;
 	border: 1px solid #374151;
 	border-radius: 4px;
-	background-color: #111827;
+	background-color: transparent;
 	outline: 0;
 	box-sizing: border-box;
 	transition: background-color .2s

@@ -231,9 +231,9 @@
 				on:blur="{handleChange}"
 				bind:this="{currencySelector}"
 				bind:value="{$form.salary.currency}"
-				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+				class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 				{#each currencyCodes as currencyCode}
-					<option class="bg-gray-900" value="{currencyCode}">
+					<option class="bg-gray-800" value="{currencyCode}">
 						{currencyCode}
 					</option>
 				{/each}
@@ -291,7 +291,7 @@
 	<div
 		class="relative flex flex-col p-3 space-y-6 border border-gray-700 rounded-lg">
 		<div
-			class="absolute px-4 text-sm bg-gray-900 border border-gray-700 -top-3 left-5 rounded-xl">
+			class="absolute px-4 text-sm bg-gray-800 border border-gray-700 -top-3 left-5 rounded-xl">
 			Location
 		</div>
 		<div class="grid grid-flow-row gap-2">
@@ -356,12 +356,12 @@
 					name="countries"
 					bind:this="{countriesSelector}"
 					multiple
-					class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+					class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 					{#each countryCodes as countryCode}
-						<option class="bg-gray-900" value="{countryCode}"
+						<option class="bg-gray-800" value="{countryCode}"
 							>{flag(countryCode)} {name(countryCode)}</option>
 					{/each}
-					<option class="bg-gray-900">United States</option>
+					<option class="bg-gray-800">United States</option>
 				</select>
 			</div>
 		</div>
@@ -379,7 +379,7 @@
 					name="hashtags"
 					bind:this="{hashtagsSelector}"
 					multiple
-					class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+					class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 				</select>
 			</div>
 		</div>
@@ -392,9 +392,9 @@
 			<div class="grid grid-flow-col gap-2">
 				<select
 					name="category"
-					class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-					<option class="bg-gray-900">Software Engineer</option>
-					<option class="bg-gray-900">Game Developer</option>
+					class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+					<option class="bg-gray-800">Software Engineer</option>
+					<option class="bg-gray-800">Game Developer</option>
 				</select>
 			</div>
 		</div>
@@ -407,9 +407,9 @@
 			<div class="grid grid-flow-col gap-2">
 				<select
 					name="type"
-					class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-					<option class="bg-gray-900">Full Time</option>
-					<option class="bg-gray-900">Part Time</option>
+					class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+					<option class="bg-gray-800">Full Time</option>
+					<option class="bg-gray-800">Part Time</option>
 				</select>
 			</div>
 		</div>
@@ -422,9 +422,9 @@
 			<div class="grid grid-flow-col gap-2">
 				<select
 					name="remote"
-					class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-					<option class="bg-gray-900">Hot</option>
-					<option class="bg-gray-900">Urgent</option>
+					class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+					<option class="bg-gray-800">Hot</option>
+					<option class="bg-gray-800">Urgent</option>
 				</select>
 			</div>
 		</div>
