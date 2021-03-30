@@ -16,7 +16,8 @@
 		countriesSelector,
 		citiesSelector,
 		hashtagsSelector,
-		categorySelector;
+		categorySelector,
+		jobTypeSelector;
 
 	const categories = [
 		{ text: "Software Development" },
@@ -27,6 +28,16 @@
 		{ text: "Marketing" },
 		{ text: "Design" },
 		{ text: "Legal" },
+	];
+
+	const jobTypes = [
+		{ text: "Full Time", value: "FullTime" },
+		{ text: "Part Time", value: "PartTime" },
+		{ text: "Contract", value: "Contract" },
+		{ text: "Temporary", value: "Temporary" },
+		{ text: "Volunteer", value: "Volunteer" },
+		{ text: "Internship", value: "Internship" },
+		{ text: "Other", value: "Other" },
 	];
 
 	onMount(() => {
@@ -96,6 +107,11 @@
 			select: categorySelector,
 			placeholder: "Select Category",
 			data: categories,
+		});
+		new SlimSelect({
+			select: jobTypeSelector,
+			placeholder: "Select Job Type",
+			data: jobTypes,
 		});
 	});
 
@@ -478,14 +494,14 @@
 		<div>
 			<label
 				for="price"
-				class="block mb-1 text-sm font-medium text-gray-300 grid-col-2"
-				>Job Type</label>
+				class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
+				Job Type
+			</label>
 			<div class="grid grid-flow-row gap-2">
 				<select
 					name="type"
+					bind:this={jobTypeSelector}
 					class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-					<option class="bg-gray-800">Full Time</option>
-					<option class="bg-gray-800">Part Time</option>
 				</select>
 			</div>
 		</div>
