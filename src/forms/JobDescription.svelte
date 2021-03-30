@@ -221,9 +221,10 @@
 	</div>
 
 	<div>
-		<label for="price" class="block mb-1 text-sm font-medium text-gray-300"
-			>Salary Range</label>
-		<div class="grid grid-flow-col gap-2">
+		<label for="price" class="block mb-1 text-sm font-medium text-gray-300">
+			Salary Range
+		</label>
+		<div class="grid grid-flow-col gap-4">
 			<select
 				id="salary.currency"
 				name="salary.currency"
@@ -318,7 +319,7 @@
 				class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
 				Time Zone
 			</label>
-			<div class="grid grid-flow-col gap-2">
+			<div class="grid grid-flow-col gap-4">
 				<div class="flex rounded-md shadow-sm">
 					<div
 						class="flex items-center px-3 bg-gray-700 border border-r-0 border-gray-700 pointer-events-none rounded-l-md">
@@ -344,25 +345,43 @@
 			</div>
 		</div>
 
-		<div>
-			<label
-				for="countries"
-				class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
-				Countries
-			</label>
-			<div class="grid grid-flow-row gap-2">
-				<select
-					id="countries"
-					name="countries"
-					bind:this="{countriesSelector}"
-					multiple
-					class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-					{#each countryCodes as countryCode}
-						<option class="bg-gray-800" value="{countryCode}"
-							>{flag(countryCode)} {name(countryCode)}</option>
-					{/each}
-					<option class="bg-gray-800">United States</option>
-				</select>
+		<div class="grid grid-flow-row grid-cols-2 grid-rows-1 gap-4">
+			<div>
+				<label
+					for="countries"
+					class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
+					Countries
+				</label>
+				<div class="grid grid-flow-row gap-2">
+					<select
+						id="countries"
+						name="countries"
+						bind:this="{countriesSelector}"
+						multiple
+						class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+						{#each countryCodes as countryCode}
+							<option class="bg-gray-800" value="{countryCode}"
+								>{flag(countryCode)}
+								{name(countryCode)}</option>
+						{/each}
+						<option class="bg-gray-800">United States</option>
+					</select>
+				</div>
+			</div>
+			<div>
+				<label
+					for="price"
+					class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
+					Cities
+				</label>
+				<div class="grid grid-flow-row gap-2">
+					<select
+						name="cities"
+						class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+						<option class="bg-gray-800">Software Engineer</option>
+						<option class="bg-gray-800">Game Developer</option>
+					</select>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -387,8 +406,9 @@
 		<div>
 			<label
 				for="price"
-				class="block mb-1 text-sm font-medium text-gray-300 grid-col-2"
-				>Category</label>
+				class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
+				Category
+			</label>
 			<div class="grid grid-flow-row gap-2">
 				<select
 					name="category"
