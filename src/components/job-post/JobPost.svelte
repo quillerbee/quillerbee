@@ -1,14 +1,13 @@
 <script>
 	import { format } from "timeago.js";
 	import chroma from "chroma-js";
-	import { flag } from "country-emoji";
+	import { flag, name } from "country-emoji";
 
 	export let jobPost;
 	export let company;
 
 	let {
 		title,
-		countries,
 		salary,
 		hashtags,
 		flair,
@@ -16,8 +15,7 @@
 		type,
 		url,
 		created,
-		remote,
-		timezone,
+		location,
 	} = jobPost;
 
 	/**
@@ -131,30 +129,43 @@
 					<div class="flex items-center text-xs text-gray-400">
 						{company?.name}
 						<div class="flex items-center ml-2">
-							<svg
-								class="mr-1.5 fill-current inline-inline-block"
-								width="15"
-								height="15">
-								<use xlink:href="#location-marker"></use>
-							</svg>
-							<ul class="flex items-center text-base countries">
-								{#each countries as country}
-									<li class="mr-1.5">{flag(country)}</li>
-								{/each}
-							</ul>
+							<span class="mr-1">📍</span>
+							{#if !location.worldwide}
+								{#if location.countries.length > 1}
+									<ul
+										class="flex items-center text-base countries">
+										{#each location.countries as country}
+											<li class="mr-1.5">
+												{flag(country)}
+											</li>
+										{/each}
+									</ul>
+								{:else}
+									<div
+										class="flex items-center font-semibold">
+										<span class="mr-1.5">
+											{flag(location.countries?.[0])}
+										</span>
+										{name(location.countries?.[0])} Only
+									</div>
+								{/if}
+							{/if}
 						</div>
-						{#if remote}
-							<div class="flex ml-1">
-								<svg
-									class="mr-1 fill-current inline-inline-block"
-									width="15"
-									height="15">
-									<use xlink:href="#globe-alt"></use>
-								</svg>
-								UTC {numberFormatter?.format(
-									timezone?.min
-								)}/{numberFormatter?.format(timezone?.max)}
-							</div>
+						{#if location.remote}
+							{#if location.worldwide}
+								<div class="flex font-semibold">
+									<span class="mr-1.5">🌏</span> Worldwide
+								</div>
+							{:else if location.countries.length > 1}
+								<div class="flex ml-1 font-semibold">
+									<span class="mr-1">🌎</span>
+									UTC {numberFormatter?.format(
+										location.timezone?.min
+									)}/{numberFormatter?.format(
+										location.timezone?.max
+									)}
+								</div>
+							{/if}
 						{/if}
 					</div>
 				</div>
@@ -183,7 +194,7 @@
 						</svg>
 						{type}
 					</button>
-					{#if remote}
+					{#if location.remote}
 						<button
 							onclick="this.blur();"
 							class="flex px-2 py-1 font-medium text-center bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 w-max rounded-2xl hover:shadow-lg focus:shadow-lg">

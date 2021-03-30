@@ -16,17 +16,23 @@
 						id
 						title
 						description
-						countries
 						salary {
 							min
 							max
 							currency
 						}
-						timezone {
-							min
-							max
+						location {
+							remote
+							worldwide
+							countries
+							timezone {
+								min
+								max
+							}
+							cities {
+								name
+							}
 						}
-						remote
 						hashtags {
 							name
 						}

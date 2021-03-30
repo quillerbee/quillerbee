@@ -12,16 +12,22 @@
 					name
 				}
 				title
-				countries
 				salary {
 					min
 					max
 					currency
 				}
-				remote
-				timezone {
-					min
-					max
+				location {
+					remote
+					worldwide
+					countries
+					timezone {
+						min
+						max
+					}
+					cities {
+						name
+					}
 				}
 				hashtags {
 					name
