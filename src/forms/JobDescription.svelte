@@ -288,64 +288,69 @@
 		{/if}
 	</div>
 
-	<div>
-		<label
-			for="price"
-			class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
-			Remote
-		</label>
-		<div class="grid grid-flow-col gap-2">
-			<select
-				name="remote"
-				bind:this="{remoteSelector}"
-				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-				<option class="bg-gray-900" value="true">YES</option>
-				<option class="bg-gray-900" value="false">NO</option>
-			</select>
-			<div class="flex rounded-md shadow-sm">
-				<div
-					class="flex items-center px-3 bg-gray-700 border border-r-0 border-gray-700 pointer-events-none rounded-l-md">
-					<span class="text-gray-500 sm:text-sm"> UTC </span>
+	<div class="relative flex flex-col p-3 space-y-6 border border-gray-700 rounded-lg">
+		<div class="absolute px-4 text-sm bg-gray-900 border border-gray-700 -top-3 left-5 rounded-xl">
+			Location
+		</div>
+		<div>
+			<label
+				for="price"
+				class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
+				Remote
+			</label>
+			<div class="grid grid-flow-col gap-2">
+				<select
+					name="remote"
+					bind:this="{remoteSelector}"
+					class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+					<option class="bg-gray-900" value="true">YES</option>
+					<option class="bg-gray-900" value="false">NO</option>
+				</select>
+				<div class="flex rounded-md shadow-sm">
+					<div
+						class="flex items-center px-3 bg-gray-700 border border-r-0 border-gray-700 pointer-events-none rounded-l-md">
+						<span class="text-gray-500 sm:text-sm"> UTC </span>
+					</div>
+					<input
+						type="text"
+						name="price"
+						class="block w-full pr-12 bg-gray-800 border-gray-700 rounded-r-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+						placeholder="-5" />
 				</div>
-				<input
-					type="text"
-					name="price"
-					class="block w-full pr-12 bg-gray-800 border-gray-700 rounded-r-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-					placeholder="-5" />
-			</div>
-			<div class="flex rounded-md shadow-sm">
-				<div
-					class="flex items-center px-3 pl-3 bg-gray-700 border border-r-0 border-gray-700 pointer-events-none rounded-l-md">
-					<span class="text-gray-500 sm:text-sm"> UTC </span>
+				<div class="flex rounded-md shadow-sm">
+					<div
+						class="flex items-center px-3 pl-3 bg-gray-700 border border-r-0 border-gray-700 pointer-events-none rounded-l-md">
+						<span class="text-gray-500 sm:text-sm"> UTC </span>
+					</div>
+					<input
+						type="text"
+						name="price"
+						class="block w-full pr-12 bg-gray-800 border-gray-700 rounded-r-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+						placeholder="+5" />
 				</div>
-				<input
-					type="text"
-					name="price"
-					class="block w-full pr-12 bg-gray-800 border-gray-700 rounded-r-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-					placeholder="+5" />
 			</div>
 		</div>
-	</div>
-
-	<div>
-		<label
-			for="countries"
-			class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
-			Countries
-		</label>
-		<div class="grid grid-flow-col gap-2">
-			<select
-				id="countries"
-				name="countries"
-				bind:this="{countriesSelector}"
-				multiple
-				class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-				{#each countryCodes as countryCode}
-					<option class="bg-gray-900" value="{countryCode}"
-						>{flag(countryCode)} {name(countryCode)}</option>
-				{/each}
-				<option class="bg-gray-900">United States</option>
-			</select>
+	
+		<div>
+			<label
+				for="countries"
+				class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
+				Countries
+			</label>
+			<div class="grid grid-flow-col gap-2">
+				<select
+					id="countries"
+					name="countries"
+					bind:this="{countriesSelector}"
+					multiple
+					class="text-sm text-gray-300 bg-transparent bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+					{#each countryCodes as countryCode}
+						<option class="bg-gray-900" value="{countryCode}"
+							>{flag(countryCode)} {name(countryCode)}</option>
+					{/each}
+					<option class="bg-gray-900">United States</option>
+				</select>
+			</div>
 		</div>
 	</div>
 
