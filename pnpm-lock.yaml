@@ -7,6 +7,7 @@ dependencies:
   loglevel: 1.7.1
   slim-select: 1.27.0
   svelte-forms-lib: 1.10.1
+  sveltejs-tippy: 3.0.0
   timeago.js: 4.0.2
   typewriter-effect: 2.17.0
   yup: 0.32.9
@@ -308,6 +309,10 @@ packages:
       node: '>= 8'
     resolution:
       integrity: sha512-8Broas6vTtW4GIXTAHDoE32hnN2M5ykgCpWGbuXHQ15vEMqr23pB76e/GZcYsZCHALv50ktd24qhEyKr6wBtow==
+  /@popperjs/core/2.9.1:
+    dev: false
+    resolution:
+      integrity: sha512-DvJbbn3dUgMxDnJLH+RZQPnXak1h4ZVYQ7CWiFWjQwBFkVajT4rfw2PdpHLTSTwxrYfnoEXkuBiwkDm6tPMQeA==
   /@rollup/pluginutils/4.1.0:
     dependencies:
       estree-walker: 2.0.2
@@ -3600,6 +3605,12 @@ packages:
       node: '>= 8'
     resolution:
       integrity: sha512-gknlZkR2sXheu/X+B7dDImwANVvK1R0QGQLd8CNIfxxGPeXBmePnxfzb6fWwTQRsYQG7lYkZXvpXJvxvpsoB7g==
+  /sveltejs-tippy/3.0.0:
+    dependencies:
+      tippy.js: 6.0.3
+    dev: false
+    resolution:
+      integrity: sha512-LAfQikm61AeqZW1hCFWUsmGEMmhMHDvrPV0JhbT38Ell9SqBjmFaY//+YKUxaJvx6nLMxGQdlcHA1rDg2Ml8tQ==
   /symbol-tree/3.2.4:
     dev: true
     resolution:
@@ -3676,6 +3687,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-8y6srFoXW+ol1/q1Zas+2HQe9W8=
+  /tippy.js/6.0.3:
+    dependencies:
+      '@popperjs/core': 2.9.1
+    dev: false
+    resolution:
+      integrity: sha512-buQF6HugTA4YeSA/s9xBhu0ferEAx7sRSn45G+Juh3p+Dz3vEKfxtqdg6JUnHIWDCV/r0u8Lrobs9AB4dtYcUQ==
   /to-fast-properties/2.0.0:
     engines:
       node: '>=4'
@@ -4126,6 +4143,7 @@ specifiers:
   slim-select: ^1.27.0
   svelte: ^3.35.0
   svelte-forms-lib: ^1.10.1
+  sveltejs-tippy: ^3.0.0
   tailwindcss: ^2.0.4
   timeago.js: ^4.0.2
   typewriter-effect: ^2.17.0

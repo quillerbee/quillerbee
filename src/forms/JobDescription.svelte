@@ -8,6 +8,7 @@
 	import getSymbolFromCurrency from "currency-symbol-map";
 	import { countries, flag, name } from "country-emoji";
 	import { ToggleBtn } from "@components";
+	import tippy from "sveltejs-tippy";
 
 	const currencyCodes = Object.keys(currencyToSymbolMap);
 	const countryCodes = Object.keys(countries);
@@ -230,13 +231,24 @@
 
 	<div class="grid grid-flow-row grid-cols-2 grid-rows-1 gap-x-4 gap-y-6">
 		<div>
-			<label for="title" class="flex items-center text-sm font-medium text-gray-300">
+			<label
+				for="title"
+				class="inline-flex items-center text-sm font-medium text-gray-300 focus:outline-none"
+				tabindex="0"
+				use:tippy="{{
+					content: `Please specify as single job position like "Marketing
+					Manager" or "Node JS Developer", not a sentence like
+					"Looking for PM / Biz Dev / Manager". We know your job is
+					important but please <b>DO NOT WRITE IN FULL CAPS</b>. If posting
+					multiple roles, please create multiple job posts. A job post
+					is limited to a single job. We only allow real jobs.`,
+					theme: 'warn',
+					allowHTML: true,
+				}}">
 				Title
-				<button class="ml-1 -mt-0.5 outline-none focus:outline-none" on:click|preventDefault>
-					<svg width="15" height="15">
-						<use xlink:href="#information-circle"></use>
-					</svg>
-				</button>
+				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
+					<use xlink:href="#information-circle"></use>
+				</svg>
 			</label>
 			<input
 				id="title"
@@ -559,7 +571,9 @@
 		</div>
 	</div>
 	<div>
-		<label for="description" class="block text-sm font-medium text-gray-300">
+		<label
+			for="description"
+			class="block text-sm font-medium text-gray-300">
 			Description
 		</label>
 		<textarea
