@@ -10,58 +10,61 @@
 			</div>
 		</div>
 	</div>
-
-	<div class="col-span-6 sm:col-span-3">
-		<label for="first_name" class="block text-sm font-medium text-gray-300"
-			>Name</label>
-		<input
-			type="text"
-			name="first_name"
-			autocomplete="given-name"
-			class="block w-full mt-1 bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
-		<p class="mt-2 text-xs text-gray-400">
-			Your company's brand/trade name: without Inc., Ltd., B.V., Pte.,
-			etc.
-		</p>
-	</div>
-
-	<div class="col-span-6 sm:col-span-4">
-		<label
-			for="email_address"
-			class="block text-sm font-medium text-gray-300">Email</label>
-		<input
-			type="text"
-			name="email_address"
-			id="email_address"
-			autocomplete="email"
-			class="block w-full mt-1 bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
-		<p class="mt-2 text-xs text-gray-400">
-			This email is public, Make sure this email is accessible by you!
-			It's the unique identifier for the company.
-		</p>
-	</div>
-
-	<div>
-		<label
-			for="company_website"
-			class="block text-sm font-medium text-gray-300">
-			Website
-		</label>
-		<div class="flex mt-1 rounded-md shadow-sm">
-			<span
-				class="inline-flex items-center px-3 text-sm text-gray-300 bg-gray-700 border border-r-0 border-gray-700 rounded-l-md">
-				https://
-			</span>
+	<div></div>
+	<div class="grid grid-flow-row grid-cols-2 grid-rows-2 gap-x-4 gap-y-6">
+		<div>
+			<label
+				for="first_name"
+				class="block text-sm font-medium text-gray-300">Name</label>
 			<input
 				type="text"
-				name="company_website"
-				class="flex-1 block w-full bg-gray-800 border-gray-700 rounded-none focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm"
-				placeholder="www.example.com" />
+				name="first_name"
+				autocomplete="given-name"
+				class="block w-full mt-1 bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
+			<p class="hidden mt-2 text-xs text-gray-400">
+				Your company's brand/trade name: without Inc., Ltd., B.V., Pte.,
+				etc.
+			</p>
 		</div>
-		<p class="mt-2 text-xs text-gray-400">
-			It is mandatory to have a website for a company posting jobs with
-			us, and it must be served over https!
-		</p>
+
+		<div>
+			<label
+				for="email_address"
+				class="block text-sm font-medium text-gray-300">Email</label>
+			<input
+				type="text"
+				name="email_address"
+				id="email_address"
+				autocomplete="email"
+				class="block w-full mt-1 bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
+			<p class="hidden mt-2 text-xs text-gray-400">
+				This email is public, Make sure this email is accessible by you!
+				It's the unique identifier for the company.
+			</p>
+		</div>
+
+		<div class="col-span-2">
+			<label
+				for="company_website"
+				class="block text-sm font-medium text-gray-300">
+				Website
+			</label>
+			<div class="flex mt-1 rounded-md shadow-sm">
+				<span
+					class="inline-flex items-center px-3 text-sm text-gray-300 bg-gray-700 border border-r-0 border-gray-700 rounded-l-md">
+					https://
+				</span>
+				<input
+					type="text"
+					name="company_website"
+					class="flex-1 block w-full bg-gray-800 border-gray-700 rounded-none focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm"
+					placeholder="www.example.com" />
+			</div>
+			<p class="hidden mt-2 text-xs text-gray-400">
+				It is mandatory to have a website for a company posting jobs
+				with us, and it must be served over https!
+			</p>
+		</div>
 	</div>
 
 	<div>
@@ -73,11 +76,12 @@
 			rows="3"
 			class="block w-full mt-1 bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
 			placeholder="you@example.com"></textarea>
-		<p class="mt-2 text-xs text-gray-400">
+		<p class="hidden mt-2 text-xs text-gray-400">
 			Brief description for your profile. You can use markdown to add
 			pizzaz to the description.
 		</p>
 	</div>
+
 	<div class="py-3 text-right">
 		<button
 			type="submit"

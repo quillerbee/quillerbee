@@ -149,7 +149,7 @@
 	class="relative flex flex-col px-4 py-5 mb-6 space-y-6 text-white transition-shadow duration-300 ease-in-out bg-gray-900 rounded-lg hover:shadow-lg ribbon-container">
 	<span class="ribbon left"> Job Post </span>
 
-	<div class="grid grid-flow-col grid-cols-2 grid-rows-1 gap-x-4 gap-y-6">
+	<div class="grid grid-flow-row grid-cols-2 grid-rows-1 gap-x-4 gap-y-6">
 		<div>
 			<label for="name" class="block text-sm font-medium text-gray-300">
 				Title
@@ -350,7 +350,7 @@
 				class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
 				Countries
 			</label>
-			<div class="grid grid-flow-col gap-2">
+			<div class="grid grid-flow-row gap-2">
 				<select
 					id="countries"
 					name="countries"
@@ -367,14 +367,14 @@
 		</div>
 	</div>
 
-	<div class="grid grid-flow-col grid-cols-2 grid-rows-2 gap-x-4 gap-y-6">
+	<div class="grid grid-flow-row grid-cols-2 grid-rows-2 gap-x-4 gap-y-6">
 		<div>
 			<label
 				for="price"
 				class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
 				Hash Tags
 			</label>
-			<div class="grid grid-flow-col gap-2">
+			<div class="grid grid-flow-row gap-2">
 				<select
 					name="hashtags"
 					bind:this="{hashtagsSelector}"
@@ -389,7 +389,7 @@
 				for="price"
 				class="block mb-1 text-sm font-medium text-gray-300 grid-col-2"
 				>Category</label>
-			<div class="grid grid-flow-col gap-2">
+			<div class="grid grid-flow-row gap-2">
 				<select
 					name="category"
 					class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
@@ -404,7 +404,7 @@
 				for="price"
 				class="block mb-1 text-sm font-medium text-gray-300 grid-col-2"
 				>Job Type</label>
-			<div class="grid grid-flow-col gap-2">
+			<div class="grid grid-flow-row gap-2">
 				<select
 					name="type"
 					class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
@@ -419,7 +419,7 @@
 				for="price"
 				class="block mb-1 text-sm font-medium text-gray-300 grid-col-2"
 				>Flair</label>
-			<div class="grid grid-flow-col gap-2">
+			<div class="grid grid-flow-row gap-2">
 				<select
 					name="remote"
 					class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
