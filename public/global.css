@@ -560,6 +560,10 @@ a:hover::after, a:focus::after {
 	background-color: #fc0;
 }
 
+.tippy-box[data-theme~='error'] {
+	background-color: #ef4444;
+}
+
 .tippy-box[data-theme~='warn'][data-placement^='top']>.tippy-arrow::before {
 	border-top-color: #fc0;
 }
@@ -574,6 +578,22 @@ a:hover::after, a:focus::after {
 
 .tippy-box[data-theme~='warn'][data-placement^='right']>.tippy-arrow::before {
 	border-right-color: #fc0;
+}
+
+.tippy-box[data-theme~='error'][data-placement^='top']>.tippy-arrow::before {
+	border-top-color: #ef4444;
+}
+
+.tippy-box[data-theme~='error'][data-placement^='bottom']>.tippy-arrow::before {
+	border-bottom-color: #ef4444;
+}
+
+.tippy-box[data-theme~='error'][data-placement^='left']>.tippy-arrow::before {
+	border-left-color: #ef4444;
+}
+
+.tippy-box[data-theme~='error'][data-placement^='right']>.tippy-arrow::before {
+	border-right-color: #ef4444;
 }
 
 /* http://jsfiddle.net/PhilQ/caob79u5/ */
