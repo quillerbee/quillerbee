@@ -343,6 +343,7 @@
 				id="currency"
 				name="currency"
 				bind:this="{currencySelector}"
+				bind:value={$data.salary.currency}
 				class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 				{#each currencyCodes as currencyCode}
 					<option class="bg-gray-800" value="{currencyCode}">
