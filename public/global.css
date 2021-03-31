@@ -575,3 +575,48 @@ a:hover::after, a:focus::after {
 .tippy-box[data-theme~='warn'][data-placement^='right']>.tippy-arrow::before {
 	border-right-color: #fc0;
 }
+
+/* http://jsfiddle.net/PhilQ/caob79u5/ */
+
+*, *:before, *:after {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+ul.hex {
+    list-style: none;
+    padding: 0px;
+}
+
+ul.hex > li {
+    padding-left: 15px;
+    position: relative;
+    border-color: #222;
+}
+
+ul.hex > li:before, ul.hex > li:after {
+    position: absolute;
+    content: "";
+    left: 0%;
+    top: 50%;
+    border-color: transparent;
+    border-style: solid;
+    width: 11px;
+    height: 5px;
+    border-width: 0px 3px;
+}
+
+ul.hex > li:before {
+    margin-top: -5px;
+    border-bottom: 5px solid;
+    border-bottom-color: inherit;
+}
+
+ul.hex > li:after {
+    margin-top: 0px;
+    border-top: 5px solid;
+    border-top-color: inherit;
+}
+
+/* http://jsfiddle.net/PhilQ/caob79u5/ */

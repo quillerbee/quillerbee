@@ -233,15 +233,19 @@
 		<div>
 			<label
 				for="title"
-				class="inline-flex items-center text-sm font-medium text-gray-300 focus:outline-none"
+				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
 				tabindex="0"
 				use:tippy="{{
-					content: `Please specify as single job position like "Marketing
-					Manager" or "Node JS Developer", not a sentence like
-					"Looking for PM / Biz Dev / Manager". We know your job is
-					important but please <b>DO NOT WRITE IN FULL CAPS</b>. If posting
-					multiple roles, please create multiple job posts. A job post
-					is limited to a single job. We only allow real jobs.`,
+					content: `
+						<b>Title (Required)</b>
+						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
+						<ul class="text-left hex">
+							<li>Keep it short & simple.</li>
+							<li>Create multiple job posts for multiple roles.</li>
+							<li>A job post is limited to a single job.</li>
+							<li>Must be a real job.</li>
+							<li><b>DO NOT WRITE IN FULL CAPS</b>.</li>
+						</ul>`,
 					theme: 'warn',
 					allowHTML: true,
 				}}">

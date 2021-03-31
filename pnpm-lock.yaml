@@ -1,4 +1,5 @@
 dependencies:
+  '@tailwindcss/typography': 0.4.0_tailwindcss@2.0.4
   '@urql/svelte': 1.2.0_graphql@15.5.0+svelte@3.35.0
   chroma-js: 2.1.1
   country-emoji: 1.5.6
@@ -396,6 +397,18 @@ packages:
       tailwindcss: ^2.0.3
     resolution:
       integrity: sha512-YNzq0mUimcJldY0u2B475u7fnyOWQkWbQvHcEftkf7VqQIwQrBvSRM7Cycg0MAU42IMgT14MGOmmV8ObUXzNMQ==
+  /@tailwindcss/typography/0.4.0_tailwindcss@2.0.4:
+    dependencies:
+      lodash.castarray: 4.4.0
+      lodash.isplainobject: 4.0.6
+      lodash.merge: 4.6.2
+      lodash.uniq: 4.5.0
+      tailwindcss: 2.0.4_autoprefixer@10.2.5
+    dev: false
+    peerDependencies:
+      tailwindcss: 2.0.0-alpha.24 || ^2.0.0
+    resolution:
+      integrity: sha512-3BfOYT5MYNEq81Ism3L2qu/HRP2Q5vWqZtZRQqQrthHuaTK9qpuPfbMT5WATjAM5J1OePKBaI5pLoX4S1JGNMQ==
   /@types/lodash/4.14.168:
     dev: false
     resolution:
@@ -2332,6 +2345,18 @@ packages:
     dev: false
     resolution:
       integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==
+  /lodash.castarray/4.4.0:
+    dev: false
+    resolution:
+      integrity: sha1-wCUTUV4wna3dTCTGDP3c9ZdtkRU=
+  /lodash.isplainobject/4.0.6:
+    dev: false
+    resolution:
+      integrity: sha1-fFJqUtibRcRcxpC4gWO+BJf1UMs=
+  /lodash.merge/4.6.2:
+    dev: false
+    resolution:
+      integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
   /lodash.sortby/4.7.0:
     dev: true
     resolution:
@@ -2343,6 +2368,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-NhY1Hzu6YZlKCTGYlmC9AyVP0Ak=
+  /lodash.uniq/4.5.0:
+    dev: false
+    resolution:
+      integrity: sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
   /lodash/4.17.21:
     resolution:
       integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -4129,6 +4158,7 @@ specifiers:
   '@sveltejs/vite-plugin-svelte': ^1.0.0-next.5
   '@tailwindcss/forms': ^0.3.2
   '@tailwindcss/jit': ^0.1.7
+  '@tailwindcss/typography': ^0.4.0
   '@urql/svelte': ^1.2.0
   autoprefixer: ^10.2.5
   chroma-js: ^2.1.1
