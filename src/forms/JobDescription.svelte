@@ -199,13 +199,12 @@
 			.url("URL must be Proper!")
 			.required("Job URL is Required!"),
 		salary: yup.object({
-			min: yup.number().required().positive().integer().min(1),
+			min: yup.number().positive("Salary must be greater than 0!").integer("Salary must be an Integer!"),
 			max: yup
 				.number()
-				.required()
-				.positive()
-				.integer()
-				.moreThan(yup.ref("min")),
+				.positive("Salary must be greater than 0!")
+				.integer("Salary must be an Integer!")
+				.moreThan(yup.ref("min"), "Max Salary must be larger than Minimum!"),
 			currency: yup.string().required(),
 		}),
 	});
@@ -316,8 +315,23 @@
 		class="relative flex flex-col p-3 pt-6 border border-gray-700 rounded-lg">
 		<div
 			for="currency"
-			class="absolute px-4 text-sm bg-gray-800 border border-gray-700 -top-3 left-5 rounded-xl">
+			class="absolute inline-flex items-center pl-4 pr-3 text-sm bg-gray-800 border border-gray-700 cursor-pointer focus:outline-none -top-3 left-5 rounded-xl"
+			tabindex="0"
+			use:tippy="{{
+				content: `
+					<b>Salary (Required)</b>
+					<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
+					<ul class="text-left hex">
+						<li>Google doesn't index jobs without salary.</li>
+						<li>Must be in yearly format.</li>
+					</ul>`,
+				theme: 'warn',
+				allowHTML: true,
+			}}">
 			Salary
+			<svg width="15" height="15" class="text-[#fc0] ml-1.5 -mt-0.5">
+				<use xlink:href="#information-circle"></use>
+			</svg>
 		</div>
 		<div class="grid grid-flow-col gap-2">
 			<select
@@ -342,7 +356,12 @@
 					id="min-salary"
 					type="number"
 					name="min"
-					class="block w-full pr-12 bg-gray-800 border-l-0 border-gray-700 rounded-r-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+					class="{`block w-full bg-gray-800 border-l-0 rounded-r-md shadow-sm sm:text-sm
+						${
+							$errors.salary.min
+								? 'border-red-500 ring-1 ring-red-500 focus:ring-red-500 focus:border-red-500'
+								: 'border-gray-700 focus:ring-indigo-500 focus:border-indigo-500'
+						}`}"
 					placeholder="0.00" />
 			</div>
 			<div class="flex rounded-md shadow-sm">
@@ -355,24 +374,15 @@
 					id="max-salary"
 					type="number"
 					name="max"
-					class="block w-full pr-12 bg-gray-800 border-gray-700 rounded-r-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+					class="{`block w-full bg-gray-800 border-l-0 rounded-r-md shadow-sm sm:text-sm
+						${
+							$errors.salary.max
+								? 'border-red-500 ring-1 ring-red-500 focus:ring-red-500 focus:border-red-500'
+								: 'border-gray-700 focus:ring-indigo-500 focus:border-indigo-500'
+						}`}"
 					placeholder="0.00" />
 			</div>
 		</div>
-		{#if $errors.salary.currency || $errors.salary.min || $errors.salary.max}
-			<p class="mt-2 text-xs text-red-500">
-				{$errors.salary.currency ||
-					$errors.salary.min ||
-					$errors.salary.max}
-			</p>
-		{:else}
-			<p class="hidden mt-2 text-xs text-gray-400">
-				Required because Google does not index jobs without salary data
-				since 2021! If it's a short-term gig, use the annual equivalent.
-				For example, if it's a 2-week project for $2,000, the annual
-				equivalent would be $2,000 / 2 weeks * 52 weeks = $48,000.
-			</p>
-		{/if}
 	</fieldset>
 	<div></div>
 	<div
