@@ -537,7 +537,10 @@
 						<b>Hash Tags (Required)</b>
 						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
 						<ul class="text-left hex">
-							<li>Hash Tags.</li>
+							<li>Tag the job with your Tech Stack.</li>
+							<li>Search and use existing Hash Tags.</li>
+							<li>Carefully create new Hash Tag.</li>
+							<li>Jobs can be searched with Hash Tags.</li>
 						</ul>`,
 					theme: 'warn',
 					allowHTML: true,
