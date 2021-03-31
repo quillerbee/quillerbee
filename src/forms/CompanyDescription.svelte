@@ -52,14 +52,12 @@
 				class="block text-sm font-medium text-gray-300">
 				Website
 			</label>
-			<div class="flex mt-1 rounded-md shadow-sm">
-				<input
-					type="text"
-					id="website"
-					name="website"
-					class="flex-1 block w-full bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-					placeholder="https://example.com" />
-			</div>
+			<input
+				type="text"
+				id="website"
+				name="website"
+				class="flex-1 block w-full mt-1 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+				placeholder="https://example.com" />
 			<p class="hidden mt-2 text-xs text-gray-400">
 				It is mandatory to have a website for a company posting jobs
 				with us, and it must be served over https!

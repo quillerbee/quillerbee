@@ -270,7 +270,7 @@
 				name="title"
 				autocomplete="title"
 				placeholder="Job Title"
-				class="{`block w-full bg-gray-800 rounded-md shadow-sm sm:text-sm
+				class="{`block w-full mt-1 bg-gray-800 rounded-md shadow-sm sm:text-sm
 			${
 				$errors.title
 					? 'border-red-500 ring-1 ring-red-500 focus:ring-red-500 focus:border-red-500'
@@ -299,20 +299,18 @@
 					<use xlink:href="#information-circle"></use>
 				</svg>
 			</label>
-			<div class="flex mt-1 rounded-md shadow-sm">
-				<input
-					id="url"
-					type="text"
-					name="url"
-					autocomplete="url"
-					class="{`block w-full bg-gray-800 rounded-md shadow-sm sm:text-sm
+			<input
+				id="url"
+				type="text"
+				name="url"
+				autocomplete="url"
+				class="{`block w-full mt-1 bg-gray-800 rounded-md shadow-sm sm:text-sm
 					${
 						$errors.url
 							? 'border-red-500 ring-1 ring-red-500 focus:ring-red-500 focus:border-red-500'
 							: 'border-gray-700 focus:ring-indigo-500 focus:border-indigo-500'
 					}`}"
-					placeholder="https://example.com/job-post" />
-			</div>
+				placeholder="https://example.com/job-post" />
 		</div>
 	</div>
 	<div></div>
