@@ -2,6 +2,7 @@
 	import { onMount } from "svelte";
 	import { gql, mutation } from "@urql/svelte";
 
+	import tippy from "sveltejs-tippy";
 	import { createForm } from "felte";
 	import { validator } from "@felte/validator-yup";
 	import reporter from "@felte/reporter-tippy";
@@ -11,8 +12,8 @@
 	import currencyToSymbolMap from "currency-symbol-map/map";
 	import getSymbolFromCurrency from "currency-symbol-map";
 	import { countries, flag, name } from "country-emoji";
+
 	import { ToggleBtn } from "@components";
-	import tippy from "sveltejs-tippy";
 
 	const currencyCodes = Object.keys(currencyToSymbolMap);
 	const countryCodes = Object.keys(countries);
@@ -444,7 +445,7 @@
 						name="countries"
 						bind:this="{countriesSelector}"
 						multiple
-						class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+						class="mt-1 text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 						{#each countryCodes as countryCode}
 							<option class="bg-gray-800" value="{countryCode}"
 								>{flag(countryCode)}
@@ -466,7 +467,7 @@
 						name="cities"
 						bind:this="{citiesSelector}"
 						multiple
-						class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+						class="mt-1 text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 					</select>
 				</div>
 			</div>
@@ -529,8 +530,22 @@
 		<div class="col-span-3">
 			<label
 				for="hashtags"
-				class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
+				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
+				tabindex="0"
+				use:tippy="{{
+					content: `
+						<b>Hash Tags (Required)</b>
+						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
+						<ul class="text-left hex">
+							<li>Hash Tags.</li>
+						</ul>`,
+					theme: 'warn',
+					allowHTML: true,
+				}}">
 				Hash Tags
+				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
+					<use xlink:href="#information-circle"></use>
+				</svg>
 			</label>
 			<div class="grid grid-flow-row gap-2">
 				<select
@@ -538,7 +553,7 @@
 					name="hashtags"
 					bind:this="{hashtagsSelector}"
 					multiple
-					class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+					class="mt-1 text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 				</select>
 			</div>
 		</div>
@@ -546,15 +561,29 @@
 		<div>
 			<label
 				for="category"
-				class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
+				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
+				tabindex="0"
+				use:tippy="{{
+					content: `
+						<b>Category (Required)</b>
+						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
+						<ul class="text-left hex">
+							<li>Category.</li>
+						</ul>`,
+					theme: 'warn',
+					allowHTML: true,
+				}}">
 				Category
+				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
+					<use xlink:href="#information-circle"></use>
+				</svg>
 			</label>
 			<div class="grid grid-flow-row gap-2">
 				<select
 					id="category"
 					name="category"
 					bind:this="{categorySelector}"
-					class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+					class="mt-1 text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 					<option data-placeholder="true"></option>
 					{#each categories as category}
 						<option>{category}</option>
@@ -566,15 +595,29 @@
 		<div>
 			<label
 				for="job-type"
-				class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
+				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
+				tabindex="0"
+				use:tippy="{{
+					content: `
+						<b>Job Type (Required)</b>
+						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
+						<ul class="text-left hex">
+							<li>Job Type.</li>
+						</ul>`,
+					theme: 'warn',
+					allowHTML: true,
+				}}">
 				Job Type
+				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
+					<use xlink:href="#information-circle"></use>
+				</svg>
 			</label>
 			<div class="grid grid-flow-row gap-2">
 				<select
 					id="job-type"
 					name="type"
 					bind:this="{jobTypeSelector}"
-					class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+					class="mt-1 text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 					<option data-placeholder="true"></option>
 					{#each jobTypes as jobType}
 						<option value="{jobType.value}">{jobType.text}</option>
@@ -586,15 +629,29 @@
 		<div>
 			<label
 				for="flair"
-				class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
+				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
+				tabindex="0"
+				use:tippy="{{
+					content: `
+						<b>Flair</b>
+						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
+						<ul class="text-left hex">
+							<li>Hash Tags.</li>
+						</ul>`,
+					theme: 'warn',
+					allowHTML: true,
+				}}">
 				Flair
+				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
+					<use xlink:href="#information-circle"></use>
+				</svg>
 			</label>
 			<div class="grid grid-flow-row gap-2">
 				<select
 					id="flair"
 					name="flair"
 					bind:this="{flairSelector}"
-					class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+					class="mt-1 text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 					<option data-placeholder="true"></option>
 					{#each flairs as flair}
 						<option>{flair}</option>
@@ -605,10 +662,24 @@
 	</div>
 	<div>
 		<label
-			for="description"
-			class="block text-sm font-medium text-gray-300">
-			Description
-		</label>
+				for="description"
+				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
+				tabindex="0"
+				use:tippy="{{
+					content: `
+						<b>Description (Required)</b>
+						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
+						<ul class="text-left hex">
+							<li>Hash Tags.</li>
+						</ul>`,
+					theme: 'warn',
+					allowHTML: true,
+				}}">
+				Description
+				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
+					<use xlink:href="#information-circle"></use>
+				</svg>
+			</label>
 		<textarea
 			id="description"
 			name="description"

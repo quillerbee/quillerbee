@@ -1,3 +1,7 @@
+<script>
+	import tippy from "sveltejs-tippy";
+</script>
+
 <form
 	on:submit|preventDefault
 	class="relative flex flex-col px-4 py-5 mb-6 space-y-6 text-white transition-shadow duration-300 ease-in-out bg-gray-900 rounded-lg sm:p-6 hover:shadow-lg ribbon-container">
@@ -13,8 +17,25 @@
 	<div></div>
 	<div class="grid grid-flow-row grid-cols-3 grid-rows-1 gap-x-4 gap-y-6">
 		<div>
-			<label for="name" class="block text-sm font-medium text-gray-300"
-				>Name</label>
+			<label
+				for="name"
+				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
+				tabindex="0"
+				use:tippy="{{
+					content: `
+						<b>Company Name (Required)</b>
+						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
+						<ul class="text-left hex">
+							<li>Company Name.</li>
+						</ul>`,
+					theme: 'warn',
+					allowHTML: true,
+				}}">
+				Name
+				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
+					<use xlink:href="#information-circle"></use>
+				</svg>
+			</label>
 			<input
 				type="text"
 				id="name"
@@ -29,8 +50,25 @@
 		</div>
 
 		<div>
-			<label for="email" class="block text-sm font-medium text-gray-300"
-				>Email</label>
+			<label
+				for="email"
+				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
+				tabindex="0"
+				use:tippy="{{
+					content: `
+						<b>Company Email (Read Only)</b>
+						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
+						<ul class="text-left hex">
+							<li>Company Email.</li>
+						</ul>`,
+					theme: 'warn',
+					allowHTML: true,
+				}}">
+				Email
+				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
+					<use xlink:href="#information-circle"></use>
+				</svg>
+			</label>
 			<input
 				id="email"
 				type="text"
@@ -49,8 +87,22 @@
 		<div>
 			<label
 				for="website"
-				class="block text-sm font-medium text-gray-300">
+				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
+				tabindex="0"
+				use:tippy="{{
+					content: `
+						<b>Company Website (Required)</b>
+						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
+						<ul class="text-left hex">
+							<li>Company Website.</li>
+						</ul>`,
+					theme: 'warn',
+					allowHTML: true,
+				}}">
 				Website
+				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
+					<use xlink:href="#information-circle"></use>
+				</svg>
 			</label>
 			<input
 				type="text"
@@ -66,9 +118,25 @@
 	</div>
 
 	<div>
-		<label for="about" class="block text-sm font-medium text-gray-300">
-			About
-		</label>
+		<label
+				for="about"
+				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
+				tabindex="0"
+				use:tippy="{{
+					content: `
+						<b>About (Required)</b>
+						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
+						<ul class="text-left hex">
+							<li>About.</li>
+						</ul>`,
+					theme: 'warn',
+					allowHTML: true,
+				}}">
+				About
+				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
+					<use xlink:href="#information-circle"></use>
+				</svg>
+			</label>
 		<textarea
 			id="about"
 			name="about"
