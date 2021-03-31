@@ -389,8 +389,24 @@
 		name="location"
 		class="relative flex flex-col p-3 pt-0 space-y-6 border border-gray-700 rounded-lg">
 		<div
-			class="absolute px-4 text-sm bg-gray-800 border border-gray-700 -top-3 left-5 rounded-xl">
+			for="currency"
+			class="absolute inline-flex items-center pl-4 pr-3 text-sm bg-gray-800 border border-gray-700 cursor-pointer focus:outline-none -top-3 left-5 rounded-xl"
+			tabindex="0"
+			use:tippy="{{
+				content: `
+					<b>Location (Required)</b>
+					<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
+					<ul class="text-left hex">
+						<li>Jobs will be presented to candidates accordingly.</li>
+						<li>Worldwide Remote positions will get widest exposure.</li>
+					</ul>`,
+				theme: 'warn',
+				allowHTML: true,
+			}}">
 			Location
+			<svg width="15" height="15" class="text-[#fc0] ml-1.5 -mt-0.5">
+				<use xlink:href="#information-circle"></use>
+			</svg>
 		</div>
 		<div class="grid grid-flow-row gap-2">
 			<div class="flex items-center justify-between p-2 pr-0">
