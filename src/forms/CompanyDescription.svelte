@@ -56,7 +56,7 @@
 				tabindex="0"
 				use:tippy="{{
 					content: `
-						<b>Company Email (Read Only)</b>
+						<b>Company Email (Required)</b>
 						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
 						<ul class="text-left hex">
 							<li>Company Email.</li>
@@ -74,8 +74,6 @@
 				type="text"
 				name="email"
 				autocomplete="email"
-				readonly="true"
-				disabled="true"
 				placeholder="you@example.com"
 				class="block w-full mt-1 bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
 			<p class="hidden mt-2 text-xs text-gray-400">
