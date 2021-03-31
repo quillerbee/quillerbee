@@ -385,7 +385,8 @@
 		</div>
 	</fieldset>
 	<div></div>
-	<div
+	<fieldset
+		name="location"
 		class="relative flex flex-col p-3 pt-0 space-y-6 border border-gray-700 rounded-lg">
 		<div
 			class="absolute px-4 text-sm bg-gray-800 border border-gray-700 -top-3 left-5 rounded-xl">
@@ -453,7 +454,8 @@
 
 		<div></div>
 
-		<div
+		<fieldset
+			name="timezone"
 			class="relative flex flex-col p-3 pt-6 border border-gray-700 rounded-lg">
 			<label
 				for="time-zone"
@@ -485,8 +487,8 @@
 						placeholder="+5" />
 				</div>
 			</div>
-		</div>
-	</div>
+		</fieldset>
+	</fieldset>
 
 	<div class="grid grid-flow-row grid-cols-3 grid-rows-2 gap-x-4 gap-y-6">
 		<div class="col-span-3">
