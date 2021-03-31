@@ -547,53 +547,51 @@ a:hover::after, a:focus::after {
 
 /* slim-select */
 
-.tippy-box[data-theme~='warn'] {
-    color: #222;
-	border-radius: 10px;
-	font-size: 0.75em;
+.tippy-box {
+	background-color: #ef4444 !important;
+    color: white !important;
+	font-size: 0.75em !important;
 	-webkit-box-shadow: inset 0 1px 0 rgb(255 255 255 / 50%), 0 1px 5px rgb(0 0 0 / 50%);
     -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),0 1px 5px rgba(0,0,0,0.5);
     box-shadow: inset 0 1px 0 rgb(255 255 255 / 50%), 0 1px 5px rgb(0 0 0 / 50%);
 }
 
-.tippy-box[data-theme~='warn'] {
-	background-color: #fc0;
+.tippy-box[data-placement^='top']>.tippy-arrow::before {
+	border-top-color: #ef4444 !important;
 }
 
-.tippy-box[data-theme~='error'] {
-	background-color: #ef4444;
+.tippy-box[data-placement^='bottom']>.tippy-arrow::before {
+	border-bottom-color: #ef4444 !important;
+}
+
+.tippy-box[data-placement^='left']>.tippy-arrow::before {
+	border-left-color: #ef4444 !important;
+}
+
+.tippy-box[data-placement^='right']>.tippy-arrow::before {
+	border-right-color: #ef4444 !important;
+}
+
+.tippy-box[data-theme~='warn'] {
+	background-color: #fc0 !important;
+	color: #222 !important;
+	border-radius: 10px !important;
 }
 
 .tippy-box[data-theme~='warn'][data-placement^='top']>.tippy-arrow::before {
-	border-top-color: #fc0;
+	border-top-color: #fc0 !important;
 }
 
 .tippy-box[data-theme~='warn'][data-placement^='bottom']>.tippy-arrow::before {
-	border-bottom-color: #fc0;
+	border-bottom-color: #fc0 !important;
 }
 
 .tippy-box[data-theme~='warn'][data-placement^='left']>.tippy-arrow::before {
-	border-left-color: #fc0;
+	border-left-color: #fc0 !important;
 }
 
 .tippy-box[data-theme~='warn'][data-placement^='right']>.tippy-arrow::before {
 	border-right-color: #fc0;
-}
-
-.tippy-box[data-theme~='error'][data-placement^='top']>.tippy-arrow::before {
-	border-top-color: #ef4444;
-}
-
-.tippy-box[data-theme~='error'][data-placement^='bottom']>.tippy-arrow::before {
-	border-bottom-color: #ef4444;
-}
-
-.tippy-box[data-theme~='error'][data-placement^='left']>.tippy-arrow::before {
-	border-left-color: #ef4444;
-}
-
-.tippy-box[data-theme~='error'][data-placement^='right']>.tippy-arrow::before {
-	border-right-color: #ef4444;
 }
 
 /* http://jsfiddle.net/PhilQ/caob79u5/ */

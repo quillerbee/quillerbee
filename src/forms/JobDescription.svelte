@@ -1,8 +1,12 @@
 <script>
 	import { onMount } from "svelte";
 	import { gql, mutation } from "@urql/svelte";
-	import { createForm } from "svelte-forms-lib";
+
+	import { createForm } from "felte";
+	import { validator } from '@felte/validator-yup';
+	import reporter from '@felte/reporter-tippy';
 	import * as yup from "yup";
+
 	import SlimSelect from "slim-select";
 	import currencyToSymbolMap from "currency-symbol-map/map";
 	import getSymbolFromCurrency from "currency-symbol-map";
@@ -188,8 +192,8 @@
 		},
 	});
 
-	let validationSchema = yup.object().shape({
-		title: yup.string().trim().required("Job Title is Required!"),
+	let validateSchema = yup.object().shape({
+		title: yup.string().trim().required("Title Required!"),
 		url: yup
 			.string()
 			.url("URL must be Proper!")
@@ -206,7 +210,7 @@
 		}),
 	});
 
-	const { form, errors, handleChange, handleSubmit } = createForm({
+	const { form, data, errors } = createForm({
 		initialValues: {
 			title: "",
 			url: "",
@@ -216,16 +220,17 @@
 				currency: "USD",
 			},
 		},
-		validationSchema,
+		extend: [validator, reporter],
+		validateSchema,
 		onSubmit: (values) => {
-			log.info(validationSchema.cast(values));
+			log.info(validateSchema.cast(values));
 			createJob();
 		},
 	});
 </script>
 
 <form
-	on:submit|preventDefault="{handleSubmit}"
+	use:form
 	class="relative flex flex-col px-4 py-5 mb-6 space-y-6 text-white transition-shadow duration-300 ease-in-out bg-gray-900 rounded-lg hover:shadow-lg ribbon-container">
 	<span class="ribbon left"> Job Post </span>
 
@@ -260,29 +265,12 @@
 				name="title"
 				autocomplete="title"
 				placeholder="Job Title"
-				on:change="{handleChange}"
-				on:blur="{handleChange}"
-				bind:value="{$form.title}"
 				class="{`block w-full bg-gray-800 rounded-md shadow-sm sm:text-sm
 			${
 				$errors.title
 					? 'border-red-500 ring-1 ring-red-500 focus:ring-red-500 focus:border-red-500'
 					: 'border-gray-700 focus:ring-indigo-500 focus:border-indigo-500'
 			}`}" />
-			{#if $errors.title}
-				<p class="mt-2 text-xs text-red-500">
-					{$errors.title}
-				</p>
-			{:else}
-				<p class="hidden mt-2 text-xs text-gray-400">
-					Please specify as single job position like "Marketing
-					Manager" or "Node JS Developer", not a sentence like
-					"Looking for PM / Biz Dev / Manager". We know your job is
-					important but please DO NOT WRITE IN FULL CAPS. If posting
-					multiple roles, please create multiple job posts. A job post
-					is limited to a single job. We only allow real jobs.
-				</p>
-			{/if}
 		</div>
 
 		<div>
@@ -295,9 +283,6 @@
 					type="text"
 					name="url"
 					autocomplete="url"
-					on:change="{handleChange}"
-					on:blur="{handleChange}"
-					bind:value="{$form.url}"
 					class="{`block w-full bg-gray-800 rounded-md shadow-sm sm:text-sm
 					${
 						$errors.url
@@ -321,7 +306,8 @@
 		</div>
 	</div>
 	<div></div>
-	<div
+	<fieldset
+		name="salary"
 		class="relative flex flex-col p-3 pt-6 border border-gray-700 rounded-lg">
 		<div
 			for="currency"
@@ -331,11 +317,8 @@
 		<div class="grid grid-flow-col gap-2">
 			<select
 				id="currency"
-				name="salary.currency"
-				on:change="{handleChange}"
-				on:blur="{handleChange}"
+				name="currency"
 				bind:this="{currencySelector}"
-				bind:value="{$form.salary.currency}"
 				class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 				{#each currencyCodes as currencyCode}
 					<option class="bg-gray-800" value="{currencyCode}">
@@ -347,16 +330,13 @@
 				<div
 					class="flex items-center px-3 bg-gray-700 border border-r-0 border-gray-700 pointer-events-none rounded-l-md">
 					<span class="text-gray-500 sm:text-sm">
-						{getSymbolFromCurrency($form.salary.currency)}
+						{getSymbolFromCurrency($data.salary.currency)}
 					</span>
 				</div>
 				<input
 					id="min-salary"
 					type="number"
-					name="salary.min"
-					on:change="{handleChange}"
-					on:blur="{handleChange}"
-					bind:value="{$form.salary.min}"
+					name="min"
 					class="block w-full pr-12 bg-gray-800 border-l-0 border-gray-700 rounded-r-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
 					placeholder="0.00" />
 			</div>
@@ -364,15 +344,12 @@
 				<div
 					class="flex items-center px-3 bg-gray-700 border border-r-0 border-gray-700 pointer-events-none rounded-l-md">
 					<span class="text-gray-500 sm:text-sm"
-						>{getSymbolFromCurrency($form.salary.currency)}</span>
+						>{getSymbolFromCurrency($data.salary.currency)}</span>
 				</div>
 				<input
 					id="max-salary"
 					type="number"
-					name="salary.max"
-					on:change="{handleChange}"
-					on:blur="{handleChange}"
-					bind:value="{$form.salary.max}"
+					name="max"
 					class="block w-full pr-12 bg-gray-800 border-gray-700 rounded-r-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
 					placeholder="0.00" />
 			</div>
@@ -391,7 +368,7 @@
 				equivalent would be $2,000 / 2 weeks * 52 weeks = $48,000.
 			</p>
 		{/if}
-	</div>
+	</fieldset>
 	<div></div>
 	<div
 		class="relative flex flex-col p-3 pt-0 space-y-6 border border-gray-700 rounded-lg">
