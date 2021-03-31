@@ -3,8 +3,8 @@
 	import { gql, mutation } from "@urql/svelte";
 
 	import { createForm } from "felte";
-	import { validator } from '@felte/validator-yup';
-	import reporter from '@felte/reporter-tippy';
+	import { validator } from "@felte/validator-yup";
+	import reporter from "@felte/reporter-tippy";
 	import * as yup from "yup";
 
 	import SlimSelect from "slim-select";
@@ -274,8 +274,25 @@
 		</div>
 
 		<div>
-			<label for="url" class="block text-sm font-medium text-gray-300">
+			<label
+				for="url"
+				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
+				tabindex="0"
+				use:tippy="{{
+					content: `
+						<b>Link (Required)</b>
+						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
+						<ul class="text-left hex">
+							<li>A link to your job application site.</li>
+							<li>If you don't have one, create one with Lever.co.</li>
+						</ul>`,
+					theme: 'warn',
+					allowHTML: true,
+				}}">
 				Link
+				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
+					<use xlink:href="#information-circle"></use>
+				</svg>
 			</label>
 			<div class="flex mt-1 rounded-md shadow-sm">
 				<input
@@ -291,18 +308,6 @@
 					}`}"
 					placeholder="https://example.com/job-post" />
 			</div>
-			{#if $errors.url}
-				<p class="mt-2 text-xs text-red-500">
-					{$errors.url}
-				</p>
-			{:else}
-				<p class="hidden mt-2 text-xs text-gray-400">
-					Apply URLs with a form an applicant can fill out generally
-					receive a lot more applicants than having people apply by
-					email (below). A good platform to have applicants apply on
-					is Lever.co (not affiliated).
-				</p>
-			{/if}
 		</div>
 	</div>
 	<div></div>
