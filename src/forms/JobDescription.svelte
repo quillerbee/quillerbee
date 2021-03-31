@@ -401,8 +401,8 @@
 					<b>Location (Required)</b>
 					<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
 					<ul class="text-left hex">
-						<li>Jobs will be presented to candidates accordingly.</li>
-						<li>Worldwide Remote positions will get widest exposure.</li>
+						<li>Jobs will be presented to candidates based on location.</li>
+						<li>Worldwide positions will get widest exposure.</li>
 					</ul>`,
 				theme: 'warn',
 				allowHTML: true,
