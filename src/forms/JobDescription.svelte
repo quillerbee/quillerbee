@@ -21,7 +21,7 @@
 	let currencySelector,
 		countriesSelector,
 		citiesSelector,
-		hashtagsSelector,
+		tagsSelector,
 		categorySelector,
 		jobTypeSelector,
 		flairSelector;
@@ -93,9 +93,9 @@
 			},
 		});
 		new SlimSelect({
-			select: hashtagsSelector,
+			select: tagsSelector,
 			limit: 5,
-			placeholder: "Select Hash Tags",
+			placeholder: "Select Tags",
 			closeOnSelect: false,
 			addable: (value) => {
 				log.info(value);
@@ -173,7 +173,7 @@
 							},
 						],
 					},
-					hashtags: [
+					tags: [
 						{
 							name: "JavaScript",
 						},
@@ -529,32 +529,33 @@
 	<div class="grid grid-flow-row grid-cols-3 grid-rows-2 gap-x-4 gap-y-6">
 		<div class="col-span-3">
 			<label
-				for="hashtags"
+				for="tags"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
 				tabindex="0"
 				use:tippy="{{
 					content: `
-						<b>Hash Tags (Required)</b>
+						<b>Tags (Required)</b>
 						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
 						<ul class="text-left hex">
 							<li>Tag the job with your Tech Stack.</li>
-							<li>Search and use existing Hash Tags.</li>
-							<li>Carefully create new Hash Tag.</li>
-							<li>Jobs can be searched with Hash Tags.</li>
+							<li>Upto 5 tags are allowed.</li>
+							<li>Search and use existing Tags.</li>
+							<li>Carefully create new Tag.</li>
+							<li>Jobs can be searched with Tags.</li>
 						</ul>`,
 					theme: 'warn',
 					allowHTML: true,
 				}}">
-				Hash Tags
+				Tags
 				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
 					<use xlink:href="#information-circle"></use>
 				</svg>
 			</label>
 			<div class="grid grid-flow-row gap-2">
 				<select
-					id="hashtags"
-					name="hashtags"
-					bind:this="{hashtagsSelector}"
+					id="tags"
+					name="tags"
+					bind:this="{tagsSelector}"
 					multiple
 					class="mt-1 text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 				</select>
@@ -639,7 +640,7 @@
 						<b>Flair</b>
 						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
 						<ul class="text-left hex">
-							<li>Hash Tags.</li>
+							<li>Tags.</li>
 						</ul>`,
 					theme: 'warn',
 					allowHTML: true,
@@ -673,7 +674,7 @@
 						<b>Description (Required)</b>
 						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
 						<ul class="text-left hex">
-							<li>Hash Tags.</li>
+							<li>Tags.</li>
 						</ul>`,
 					theme: 'warn',
 					allowHTML: true,

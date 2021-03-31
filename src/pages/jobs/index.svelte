@@ -29,7 +29,7 @@
 						name
 					}
 				}
-				hashtags {
+				tags {
 					name
 				}
 				category {

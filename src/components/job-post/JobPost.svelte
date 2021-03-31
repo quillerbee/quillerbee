@@ -9,7 +9,7 @@
 	let {
 		title,
 		salary,
-		hashtags,
+		tags,
 		flair,
 		category,
 		type,
@@ -224,13 +224,13 @@
 		class="flex justify-between px-5 py-2 text-gray-400 border-t border-gray-800 border-solid">
 		<div class="flex items-center justify-between text-xs">
 			<div class="flex">
-				{#each hashtags as hashtag}
+				{#each tags as tag}
 					<div class="flex items-center justify-center mr-2">
 						<span class="mr-1 text-sm font-bold">#</span>
 						<a
 							class="focus:outline-none hover:text-gray-300 focus:text-gray-300"
 							href="https://www.quillerbee.com/">
-							{hashtag?.name}
+							{tag?.name}
 						</a>
 					</div>
 				{/each}
