@@ -245,7 +245,6 @@
 			<label
 				for="title"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				tabindex="0"
 				use:tippy="{{
 					content: `
 						<b>Title (Required)</b>
@@ -283,7 +282,6 @@
 			<label
 				for="url"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				tabindex="0"
 				use:tippy="{{
 					content: `
 						<b>Link (Required)</b>
@@ -321,7 +319,6 @@
 		<div
 			for="currency"
 			class="absolute inline-flex items-center pl-4 pr-3 text-sm bg-gray-800 border border-gray-700 cursor-pointer focus:outline-none -top-3 left-5 rounded-xl"
-			tabindex="0"
 			use:tippy="{{
 				content: `
 					<b>Salary (Required)</b>
@@ -343,7 +340,7 @@
 				id="currency"
 				name="currency"
 				bind:this="{currencySelector}"
-				bind:value={$data.salary.currency}
+				bind:value="{$data.salary.currency}"
 				class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 				{#each currencyCodes as currencyCode}
 					<option class="bg-gray-800" value="{currencyCode}">
@@ -359,9 +356,9 @@
 					</span>
 				</div>
 				<input
-					id="min-salary"
-					type="number"
+					type="text"
 					name="min"
+					bind:value="{$data.salary.min}"
 					class="{`block w-full bg-gray-800 border-l-0 rounded-r-md shadow-sm sm:text-sm
 						${
 							$errors.salary.min
@@ -377,9 +374,9 @@
 						>{getSymbolFromCurrency($data.salary.currency)}</span>
 				</div>
 				<input
-					id="max-salary"
-					type="number"
+					type="text"
 					name="max"
+					bind:value="{$data.salary.max}"
 					class="{`block w-full bg-gray-800 border-l-0 rounded-r-md shadow-sm sm:text-sm
 						${
 							$errors.salary.max
@@ -397,7 +394,6 @@
 		<div
 			for="currency"
 			class="absolute inline-flex items-center pl-4 pr-3 text-sm bg-gray-800 border border-gray-700 cursor-pointer focus:outline-none -top-3 left-5 rounded-xl"
-			tabindex="0"
 			use:tippy="{{
 				content: `
 					<b>Location (Required)</b>
@@ -482,7 +478,6 @@
 			<div
 				for="currency"
 				class="absolute inline-flex items-center pl-4 pr-3 text-sm bg-gray-800 border border-gray-700 cursor-pointer focus:outline-none -top-3 left-5 rounded-xl"
-				tabindex="0"
 				use:tippy="{{
 					content: `
 					<b>Time Zone (Required)</b>
@@ -532,7 +527,6 @@
 			<label
 				for="tags"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				tabindex="0"
 				use:tippy="{{
 					content: `
 						<b>Tags (Required)</b>
@@ -567,7 +561,6 @@
 			<label
 				for="category"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				tabindex="0"
 				use:tippy="{{
 					content: `
 						<b>Category (Required)</b>
@@ -601,7 +594,6 @@
 			<label
 				for="job-type"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				tabindex="0"
 				use:tippy="{{
 					content: `
 						<b>Job Type (Required)</b>
@@ -635,7 +627,6 @@
 			<label
 				for="flair"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				tabindex="0"
 				use:tippy="{{
 					content: `
 						<b>Flair</b>
@@ -667,24 +658,23 @@
 	</div>
 	<div>
 		<label
-				for="description"
-				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				tabindex="0"
-				use:tippy="{{
-					content: `
+			for="description"
+			class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
+			use:tippy="{{
+				content: `
 						<b>Description (Required)</b>
 						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
 						<ul class="text-left hex">
 							<li>Tags.</li>
 						</ul>`,
-					theme: 'warn',
-					allowHTML: true,
-				}}">
-				Description
-				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
-					<use xlink:href="#information-circle"></use>
-				</svg>
-			</label>
+				theme: 'warn',
+				allowHTML: true,
+			}}">
+			Description
+			<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
+				<use xlink:href="#information-circle"></use>
+			</svg>
+		</label>
 		<textarea
 			id="description"
 			name="description"

@@ -117,24 +117,24 @@
 
 	<div>
 		<label
-				for="about"
-				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				tabindex="0"
-				use:tippy="{{
-					content: `
+			for="about"
+			class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
+			tabindex="0"
+			use:tippy="{{
+				content: `
 						<b>About (Required)</b>
 						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
 						<ul class="text-left hex">
 							<li>About.</li>
 						</ul>`,
-					theme: 'warn',
-					allowHTML: true,
-				}}">
-				About
-				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
-					<use xlink:href="#information-circle"></use>
-				</svg>
-			</label>
+				theme: 'warn',
+				allowHTML: true,
+			}}">
+			About
+			<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
+				<use xlink:href="#information-circle"></use>
+			</svg>
+		</label>
 		<textarea
 			id="about"
 			name="about"
