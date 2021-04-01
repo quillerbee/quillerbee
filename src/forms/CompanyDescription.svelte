@@ -76,6 +76,7 @@
 			<input
 				id="email"
 				type="text"
+				inputmode="email"
 				name="email"
 				autocomplete="email"
 				placeholder="you@example.com"
@@ -109,6 +110,7 @@
 			</label>
 			<input
 				type="text"
+				inputmode="url"
 				id="website"
 				name="website"
 				class="flex-1 block w-full mt-1 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"

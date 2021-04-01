@@ -291,6 +291,7 @@
 			<input
 				id="url"
 				type="text"
+				inputmode="url"
 				name="url"
 				autocomplete="url"
 				class="{`block w-full mt-1 bg-gray-800 rounded-md shadow-sm sm:text-sm
@@ -347,6 +348,7 @@
 				</div>
 				<input
 					type="text"
+					inputmode="numeric"
 					name="min"
 					bind:value="{$data.salary.min}"
 					class="{`block w-full bg-gray-800 border-l-0 rounded-r-md shadow-sm sm:text-sm
@@ -365,6 +367,7 @@
 				</div>
 				<input
 					type="text"
+					inputmode="numeric"
 					name="max"
 					bind:value="{$data.salary.max}"
 					class="{`block w-full bg-gray-800 border-l-0 rounded-r-md shadow-sm sm:text-sm
