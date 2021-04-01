@@ -1,5 +1,13 @@
 <script>
+	import { onMount } from "svelte";
 	import tippy from "sveltejs-tippy";
+	import autosize from "autosize";
+
+	let textarea;
+
+	onMount(() => {
+		autosize(textarea);
+	});
 </script>
 
 <form
@@ -44,10 +52,6 @@
 				autocomplete="name"
 				placeholder="Company Name"
 				class="block w-full mt-1 bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
-			<p class="hidden mt-2 text-xs text-gray-400">
-				Your company's brand/trade name: without Inc., Ltd., B.V., Pte.,
-				etc.
-			</p>
 		</div>
 
 		<div>
@@ -81,10 +85,6 @@
 				autocomplete="email"
 				placeholder="you@example.com"
 				class="block w-full mt-1 bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
-			<p class="hidden mt-2 text-xs text-gray-400">
-				This email is public, Make sure this email is accessible by you!
-				It's the unique identifier for the company.
-			</p>
 		</div>
 
 		<div>
@@ -147,12 +147,9 @@
 			id="about"
 			name="about"
 			rows="3"
+			bind:this="{textarea}"
 			class="block w-full mt-1 bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
 			placeholder="Describe your Company, but keep it short."></textarea>
-		<p class="hidden mt-2 text-xs text-gray-400">
-			Brief description for your profile. You can use markdown to add
-			pizzaz to the description.
-		</p>
 	</div>
 
 	<div class="py-3 text-right">
