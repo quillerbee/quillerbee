@@ -48,13 +48,13 @@
 	];
 
 	const flairs = [
-		"Hot",
-		"Urgent",
-		"Popular",
-		"Promoted",
-		"Exclusive",
-		"Sponsored",
-		"Featured",
+		{ text: "$20 - Urgent", value: "Urgent" },
+		{ text: "$30 - Exclusive", value: "Exclusive" },
+		{ text: "$40 - Promoted", value: "Promoted" },
+		{ text: "$50 - Sponsored", value: "Sponsored" },
+		{ text: "$60 - Hot", value: "Hot" },
+		{ text: "$80 - Popular", value: "Popular" },
+		{ text: "$90 - Featured", value: "Featured" },
 	];
 
 	onMount(() => {
@@ -197,17 +197,11 @@
 		title: yup.string().trim().required("Required"),
 		url: yup.string().url("Must be a URL").required("Required"),
 		salary: yup.object({
-			min: yup
-				.number()
-				.truncate()
-				.positive("Must be more than Zero"),
+			min: yup.number().truncate().positive("Must be more than Zero"),
 			max: yup
 				.number()
 				.truncate()
-				.moreThan(
-					yup.ref("min"),
-					"Must be more than Minimum"
-				),
+				.moreThan(yup.ref("min"), "Must be more than Minimum"),
 			currency: yup.string(),
 		}),
 	});
@@ -562,7 +556,9 @@
 						<b>Category (Required)</b>
 						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
 						<ul class="text-left hex">
-							<li>Category.</li>
+							<li>Broad Category, the Job belongs to.</li>
+							<li>Reach out to us, if we don't conver a Category.</li>
+							<li>Job will show up in the selected Category.</li>
 						</ul>`,
 					theme: 'warn',
 					allowHTML: true,
@@ -595,7 +591,8 @@
 						<b>Job Type (Required)</b>
 						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
 						<ul class="text-left hex">
-							<li>Job Type.</li>
+							<li>Depicts the Duration & Severity of the Job.</li>
+							<li>It will be color coded.</li>
 						</ul>`,
 					theme: 'warn',
 					allowHTML: true,
@@ -628,7 +625,8 @@
 						<b>Flair</b>
 						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
 						<ul class="text-left hex">
-							<li>Tags.</li>
+							<li>Add flair to stand out of the other job posts.</li>
+							<li>Costs money to add a flair.</li>
 						</ul>`,
 					theme: 'warn',
 					allowHTML: true,
@@ -646,7 +644,7 @@
 					class="mt-1 text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 					<option data-placeholder="true"></option>
 					{#each flairs as flair}
-						<option>{flair}</option>
+						<option value="{flair.value}">{flair.text}</option>
 					{/each}
 				</select>
 			</div>
@@ -661,7 +659,9 @@
 						<b>Description (Required)</b>
 						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
 						<ul class="text-left hex">
-							<li>Tags.</li>
+							<li>Describe the responsibilities of the Job.</li>
+							<li>Keep it to 1000 words.</li>
+							<li>Use Markdown.</li>
 						</ul>`,
 				theme: 'warn',
 				allowHTML: true,

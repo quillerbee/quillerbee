@@ -26,7 +26,8 @@
 						<b>Company Name (Required)</b>
 						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
 						<ul class="text-left hex">
-							<li>Company Name.</li>
+							<li>Your company's brand/trade name.</li>
+							<li>Don't keep Inc., Ltd., etc at the end.</li>
 						</ul>`,
 					theme: 'warn',
 					allowHTML: true,
@@ -59,7 +60,10 @@
 						<b>Company Email (Required)</b>
 						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
 						<ul class="text-left hex">
-							<li>Company Email.</li>
+							<li>This is unique id of the company.</li>
+							<li>Once it is set, it can't be changed.</li>
+							<li>Make sure this email is accessible by you!</li>
+							<li>Invoices are sent via this email.</li>
 						</ul>`,
 					theme: 'warn',
 					allowHTML: true,
@@ -92,7 +96,8 @@
 						<b>Company Website (Required)</b>
 						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
 						<ul class="text-left hex">
-							<li>Company Website.</li>
+							<li>Every business posting job here, must have a Website.</li>
+							<li>It adds credibility to the Company.</li>
 						</ul>`,
 					theme: 'warn',
 					allowHTML: true,
@@ -125,7 +130,8 @@
 						<b>About (Required)</b>
 						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
 						<ul class="text-left hex">
-							<li>About.</li>
+							<li>Describe what the Company is all about.</li>
+							<li>Keep it short.</li>
 						</ul>`,
 				theme: 'warn',
 				allowHTML: true,
