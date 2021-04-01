@@ -3,6 +3,7 @@ dependencies:
   '@felte/validator-yup': 0.2.0_yup@0.32.9
   '@tailwindcss/typography': 0.4.0_tailwindcss@2.0.4
   '@urql/svelte': 1.2.0_graphql@15.5.0+svelte@3.35.0
+  autosize: 4.0.2
   chroma-js: 2.1.1
   country-emoji: 1.5.6
   currency-symbol-map: 5.0.1
@@ -682,6 +683,10 @@ packages:
       postcss: ^8.1.0
     resolution:
       integrity: sha512-7H4AJZXvSsn62SqZyJCP+1AWwOuoYpUfK6ot9vm0e87XD6mT8lDywc9D9OTJPMULyGcvmIxzTAMeG2Cc+YX+fA==
+  /autosize/4.0.2:
+    dev: false
+    resolution:
+      integrity: sha512-jnSyH2d+qdfPGpWlcuhGiHmqBJ6g3X+8T+iRwFrHPLVcdoGJE/x6Qicm6aDHfTsbgZKxyV8UU/YB2p4cjKDRRA==
   /aws-sign2/0.7.0:
     dev: true
     resolution:
@@ -4192,6 +4197,7 @@ specifiers:
   '@tailwindcss/typography': ^0.4.0
   '@urql/svelte': ^1.2.0
   autoprefixer: ^10.2.5
+  autosize: ^4.0.2
   chroma-js: ^2.1.1
   country-emoji: ^1.5.6
   currency-symbol-map: ^5.0.1

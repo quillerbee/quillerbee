@@ -15,6 +15,8 @@
 
 	import { ToggleBtn } from "@components";
 
+	import autosize from "autosize";
+
 	const currencyCodes = Object.keys(currencyToSymbolMap);
 	const countryCodes = Object.keys(countries);
 
@@ -25,6 +27,8 @@
 		categorySelector,
 		jobTypeSelector,
 		flairSelector;
+
+	let textarea;
 
 	const categories = [
 		"Software Development",
@@ -132,6 +136,8 @@
 			select: flairSelector,
 			placeholder: "Select Flair",
 		});
+
+		autosize(textarea);
 	});
 
 	const createJob = mutation({
@@ -678,6 +684,7 @@
 			id="description"
 			name="description"
 			rows="3"
+			bind:this={textarea}
 			class="block w-full mt-1 bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
 			placeholder="Describe the Job Eloquently."></textarea>
 	</div>
