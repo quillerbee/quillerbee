@@ -210,6 +210,7 @@
 				.moreThan(yup.ref("min"), "Must be more than Minimum"),
 			currency: yup.string(),
 		}),
+		description: yup.string().max(1000, "Keep it Short").required("Required"),
 	});
 
 	const { form, data, errors } = createForm({
@@ -221,6 +222,7 @@
 				max: "",
 				currency: "USD",
 			},
+			description: "",
 		},
 		extend: [validator, reporter],
 		validateSchema,
@@ -687,8 +689,22 @@
 			name="description"
 			rows="3"
 			bind:this="{textarea}"
-			class="block w-full mt-1 bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+			bind:value="{$data.description}"
+			class="{`block w-full mt-1 bg-gray-800 rounded-md shadow-sm sm:text-sm
+				${
+					$errors.description
+						? 'border-red-500 ring-1 ring-red-500 focus:ring-red-500 focus:border-red-500'
+						: 'border-gray-700 focus:ring-indigo-500 focus:border-indigo-500'
+				}`}"
 			placeholder="Describe the Job Eloquently."></textarea>
+		<div
+			class="{`mt-1 text-xs text-right  ${
+				$data.description.length > 1000
+					? 'text-red-500'
+					: 'text-gray-400'
+			}`}">
+			{$data.description.length} / 1000
+		</div>
 	</div>
 
 	<div class="py-3 text-right">
