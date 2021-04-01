@@ -6,7 +6,7 @@ dependencies:
   chroma-js: 2.1.1
   country-emoji: 1.5.6
   currency-symbol-map: 5.0.1
-  felte: 0.6.0_svelte@3.35.0
+  felte: 0.6.2_svelte@3.35.0
   graphql: 15.5.0
   loglevel: 1.7.1
   slim-select: 1.27.0
@@ -280,6 +280,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-9ZZbKdaNNF5lO+vUwpiR3ZEMLtKVVu7PAK4Coc0IOXxM2U0Ga34y8lSg4wUnxzb5xUDTWQahLEHYzKMogcFJtQ==
+  /@felte/common/0.3.1:
+    dependencies:
+      lodash-es: 4.17.21
+    dev: false
+    resolution:
+      integrity: sha512-nH4W2muKM6USORqlO2WQ+bSDQqVBtiQy5EN4tNRsKUDEQfO9KVvbPJYK8xKCHeMdPEFuit7nLbJW2ORN44ArIQ==
   /@felte/reporter-tippy/0.1.14:
     dependencies:
       '@felte/common': 0.3.0
@@ -1603,16 +1609,16 @@ packages:
     dev: true
     resolution:
       integrity: sha512-7Eczs8gIPDrVzT+EksYBcupqMyxSHXXrHOLRRxU2/DicV8789MRBRR8+Hc2uWzUupOs4YS4JzBmBxjjCVBxD/g==
-  /felte/0.6.0_svelte@3.35.0:
+  /felte/0.6.2_svelte@3.35.0:
     dependencies:
-      '@felte/common': 0.3.0
+      '@felte/common': 0.3.1
       lodash-es: 4.17.21
       svelte: 3.35.0
     dev: false
     peerDependencies:
       svelte: ^3.31.0
     resolution:
-      integrity: sha512-YvhcDgOAsfKA4cCNMf+HRu+JQ57kU7PtV6DYnJ6E0YMk6TZ1aQo1J25WQPxpB72c7SGn76gaXGzpzjpwkbFEUg==
+      integrity: sha512-YLjjZSZN2ktqgoTR5IFZgifEam1dWesSxpF27XA7qq+yu9rd1L0Fg9XMUg5PRQnGTfFVY3xVswRsupRejWJPwA==
   /figures/1.7.0:
     dependencies:
       escape-string-regexp: 1.0.5
@@ -4191,7 +4197,7 @@ specifiers:
   currency-symbol-map: ^5.0.1
   eslint: ^7.22.0
   eslint-plugin-svelte3: ^3.1.2
-  felte: ^0.6.0
+  felte: ^0.6.2
   graphql: ^15.5.0
   loglevel: ^1.7.1
   prettier: ^2.2.1
