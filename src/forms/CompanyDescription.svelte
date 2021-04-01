@@ -23,7 +23,7 @@
 				tabindex="0"
 				use:tippy="{{
 					content: `
-						<b>Company Name (Required)</b>
+						<b>Name (Required)</b>
 						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
 						<ul class="text-left hex">
 							<li>Your company's brand/trade name.</li>
@@ -57,7 +57,7 @@
 				tabindex="0"
 				use:tippy="{{
 					content: `
-						<b>Company Email (Required)</b>
+						<b>Email (Required)</b>
 						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
 						<ul class="text-left hex">
 							<li>This is unique id of the company.</li>
@@ -93,7 +93,7 @@
 				tabindex="0"
 				use:tippy="{{
 					content: `
-						<b>Company Website (Required)</b>
+						<b>Website (Required)</b>
 						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
 						<ul class="text-left hex">
 							<li>Every business posting job here, must have a Website.</li>
