@@ -202,11 +202,13 @@
 		salary: yup.object({
 			min: yup
 				.number()
-				.positive("Salary must be greater than 0!")
+				.truncate()
+				.positive("Salary must be greater than Zero!")
 				.integer("Salary must be an Integer!"),
 			max: yup
 				.number()
-				.positive("Salary must be greater than 0!")
+				.truncate()
+				.positive("Salary must be greater than Zero!")
 				.integer("Salary must be an Integer!")
 				.moreThan(
 					yup.ref("min"),
