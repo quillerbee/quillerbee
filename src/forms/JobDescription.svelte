@@ -194,27 +194,21 @@
 	});
 
 	let validateSchema = yup.object().shape({
-		title: yup.string().trim().required("Title Required!"),
-		url: yup
-			.string()
-			.url("URL must be Proper!")
-			.required("Job URL is Required!"),
+		title: yup.string().trim().required("Required"),
+		url: yup.string().url("Must be a URL").required("Required"),
 		salary: yup.object({
 			min: yup
 				.number()
 				.truncate()
-				.positive("Salary must be greater than Zero!")
-				.integer("Salary must be an Integer!"),
+				.positive("Must be more than Zero"),
 			max: yup
 				.number()
 				.truncate()
-				.positive("Salary must be greater than Zero!")
-				.integer("Salary must be an Integer!")
 				.moreThan(
 					yup.ref("min"),
-					"Max Salary must be larger than Minimum!"
+					"Must be more than Minimum"
 				),
-			currency: yup.string().required(),
+			currency: yup.string(),
 		}),
 	});
 
