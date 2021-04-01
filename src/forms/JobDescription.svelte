@@ -286,7 +286,7 @@
 						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
 						<ul class="text-left hex">
 							<li>A link to your job application site.</li>
-							<li>If you don't have one, make it with <a class="inline font-bold" target="_blank" rel="noopener" href="https://www.lever.co/">Lever.co</a>.</li>
+							<li>If you don't have one, make it with <a class="inline font-bold text-purple-900" target="_blank" rel="noopener" href="https://www.lever.co/">Lever.co</a>.</li>
 						</ul>`,
 					theme: 'warn',
 					allowHTML: true,
@@ -673,7 +673,7 @@
 						<ul class="text-left hex">
 							<li>Describe the responsibilities of the Job.</li>
 							<li>Keep it to 1000 letters.</li>
-							<li>Use Markdown. See <a class="inline font-bold" target="_blank" rel="noopener" href="https://simplemde.com/markdown-guide">Basic</a> & <a class="inline font-bold" target="_blank" rel="noopener" href="https://www.markdownguide.org/basic-syntax/">Comprehensive</a> guide.</li>
+							<li>Use Markdown. See <a class="inline font-bold text-purple-900" target="_blank" rel="noopener" href="https://simplemde.com/markdown-guide">Basic</a> & <a class="inline font-bold text-purple-900" target="_blank" rel="noopener" href="https://www.markdownguide.org/basic-syntax/">Comprehensive</a> guide.</li>
 						</ul>`,
 				theme: 'warn',
 				allowHTML: true,
