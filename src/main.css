@@ -2,6 +2,10 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+html {
+    scroll-behavior: smooth;
+}
+
 .mdv, .mdv h1, .mdv h2, .mdv h3, .mdv strong, .mdv blockquote {
     @apply text-gray-200;
 }
