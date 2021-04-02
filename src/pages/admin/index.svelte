@@ -3,20 +3,9 @@
 	import { LoadMoreBtn, JobPost, JobPostSkeleton } from "@components";
 	import { gql, operationStore, query } from "@urql/svelte";
 	import { CompanyDescription, JobDescription } from "@forms";
-	import * as yup from "yup";
+	import addCustomMethodsToYup from "@forms/yup-defs";
 
-	function wordLimit(limit, message) {
-		return this.test("wordLimit", message, function (value) {
-			const { path, createError } = this;
-
-			return (
-				value.match(/\w+/g)?.length <= limit ||
-				createError({ path, message })
-			);
-		});
-	}
-
-	yup.addMethod(yup.mixed, "wordLimit", wordLimit);
+	addCustomMethodsToYup();
 
 	metatags.template("title", (title) => `Post a Job - ${title}`);
 
