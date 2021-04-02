@@ -210,7 +210,10 @@
 				.moreThan(yup.ref("min"), "Must be more than Minimum"),
 			currency: yup.string(),
 		}),
-		description: yup.string().max(1000, "Keep it Short").required("Required"),
+		description: yup
+			.string()
+			.wordLimit(1000, "Keep it Short")
+			.required("Required"),
 	});
 
 	const { form, data, errors } = createForm({
@@ -232,6 +235,13 @@
 		},
 	});
 </script>
+
+<style>
+	textarea {
+		resize: vertical;
+		max-height: 50vh;
+	}
+</style>
 
 <form
 	use:form
@@ -687,7 +697,7 @@
 		<textarea
 			id="description"
 			name="description"
-			rows="3"
+			rows="8"
 			bind:this="{textarea}"
 			bind:value="{$data.description}"
 			class="{`block w-full mt-1 bg-gray-800 rounded-md shadow-sm sm:text-sm
@@ -698,12 +708,12 @@
 				}`}"
 			placeholder="Describe the Job Eloquently."></textarea>
 		<div
-			class="{`mt-1 text-xs text-right  ${
-				$data.description.length > 1000
+			class="{`mt-1 text-xs text-right ${
+				$data.description?.match(/\w+/g)?.length > 1000
 					? 'text-red-500'
 					: 'text-gray-400'
 			}`}">
-			{$data.description.length} / 1000
+			{$data.description?.match(/\w+/g)?.length || 0} / 1000
 		</div>
 	</div>
 
