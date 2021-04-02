@@ -708,7 +708,7 @@
 				}`}"
 			placeholder="Describe the Job Eloquently."></textarea>
 		<div
-			class="{`mt-1 text-xs text-right ${
+			class="{`mt-1 text-xs text-right font-medium ${
 				$data.description?.match(/\w+/g)?.length > 1000
 					? 'text-red-500'
 					: 'text-gray-400'
