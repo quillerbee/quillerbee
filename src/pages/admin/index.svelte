@@ -9,7 +9,10 @@
 		return this.test("wordLimit", message, function (value) {
 			const { path, createError } = this;
 
-			return value.match(/\w+/g)?.length <= limit || createError({ path, message });
+			return (
+				value.match(/\w+/g)?.length <= limit ||
+				createError({ path, message })
+			);
 		});
 	}
 
