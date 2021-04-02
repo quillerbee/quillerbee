@@ -10,6 +10,7 @@ dependencies:
   felte: 0.6.2_svelte@3.35.0
   graphql: 15.5.0
   loglevel: 1.7.1
+  marked: 2.0.1
   slim-select: 1.27.0
   sveltejs-tippy: 3.0.0
   timeago.js: 4.0.2
@@ -2480,6 +2481,13 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-2TPOuSBdgr3PSIb2dCvcK03qFG0=
+  /marked/2.0.1:
+    dev: false
+    engines:
+      node: '>= 8.16.2'
+    hasBin: true
+    resolution:
+      integrity: sha512-5+/fKgMv2hARmMW7DOpykr2iLhl0NgjyELk5yn92iE7z8Se1IS9n3UsFm86hFXIkvMBmVxki8+ckcpjBeyo/hw==
   /meow/3.7.0:
     dependencies:
       camelcase-keys: 2.1.0
@@ -4206,6 +4214,7 @@ specifiers:
   felte: ^0.6.2
   graphql: ^15.5.0
   loglevel: ^1.7.1
+  marked: ^2.0.1
   prettier: ^2.2.1
   prettier-plugin-svelte: ^2.2.0
   slim-select: ^1.27.0
