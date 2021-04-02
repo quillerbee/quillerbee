@@ -700,20 +700,31 @@
 			rows="8"
 			bind:this="{textarea}"
 			bind:value="{$data.description}"
-			class="{`block w-full mt-1 bg-gray-800 rounded-md shadow-sm sm:text-sm
+			class="{`block w-full mt-1 bg-gray-800 rounded-bl-none rounded-md shadow-sm sm:text-sm
 				${
 					$errors.description
 						? 'border-red-500 ring-1 ring-red-500 focus:ring-red-500 focus:border-red-500'
 						: 'border-gray-700 focus:ring-indigo-500 focus:border-indigo-500'
 				}`}"
 			placeholder="Describe the Job Eloquently."></textarea>
-		<div
-			class="{`mt-1 text-xs text-right font-medium ${
-				$data.description?.match(/\w+/g)?.length > 1000
-					? 'text-red-500'
-					: 'text-gray-400'
-			}`}">
-			{$data.description?.match(/\w+/g)?.length || 0} / 1000
+		<div class="flex items-center justify-between text-xs border-gray-700 rounded-b-md">
+			<div class="flex">
+				<button on:click|preventDefault class="p-2 mt-[-3px] bg-gray-800 border border-t-0 border-gray-700 rounded-b-md focus:outline-none">Edit</button>
+				<button on:click|preventDefault class="p-2 focus:outline-none">Preview</button>
+			</div>
+			<div class="flex p-2">
+				<div
+					class="{`font-medium flex items-center ${
+						$data.description?.match(/\w+/g)?.length > 1000
+							? 'text-red-500'
+							: 'text-gray-400'
+					}`}">
+					{$data.description?.match(/\w+/g)?.length || 0} / 1000
+				</div>
+				<svg class="ml-2 text-[#fc0]" width="20" height="20">
+					<use xlink:href="#markdown"></use>
+				</svg>
+			</div>
 		</div>
 	</div>
 
