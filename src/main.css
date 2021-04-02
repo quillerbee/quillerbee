@@ -1,3 +1,15 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+.mdv, .mdv h1, .mdv h2, .mdv h3, .mdv strong, .mdv blockquote {
+    @apply text-gray-200;
+}
+
+.mdv a {
+    @apply inline text-[#f7485f] no-underline;
+}
+
+.mdv blockquote {
+    @apply border-white border-opacity-25;
+}

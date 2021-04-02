@@ -38,7 +38,7 @@
 			rows="{rows}"
 			bind:this="{textarea}"
 			bind:value="{$data.description}"
-			class="{`w-full bg-gray-800 rounded-md shadow-sm sm:text-sm
+			class="{`w-full bg-gray-800 rounded-md shadow-sm sm:text-sm text-gray-200
             ${
 				$errors.description
 					? 'border-red-500 ring-1 ring-red-500 focus:ring-red-500 focus:border-red-500'
@@ -46,11 +46,11 @@
 			}
             ${isEditMode ? 'rounded-bl-none block' : 'hidden'}`}"
 			placeholder="Describe the Job Eloquently."></textarea>
-		<div
-			class="{`min-h-[178px] max-h-[50vh] overflow-auto prose px-3 py-2 min-w-full border bg-gray-800 rounded-md shadow-sm sm:text-sm border-gray-700 focus:ring-indigo-500 focus:border-indigo-500
+		<article
+			class="{`mdv min-h-[178px] max-h-[50vh] overflow-auto prose px-3 py-2 min-w-full border bg-gray-800 rounded-md shadow-sm sm:text-sm border-gray-700 focus:ring-indigo-500 focus:border-indigo-500
                 ${!isEditMode ? 'block' : 'hidden'}`}">
 			{@html marked($data.description)}
-		</div>
+		</article>
 	</div>
 	<div
 		class="flex items-center justify-between text-xs text-gray-500 border-gray-700 rounded-b-md">
