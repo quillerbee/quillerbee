@@ -713,7 +713,7 @@
 				${isEditMode ? 'rounded-bl-none block' : 'hidden'}`}"
 				placeholder="Describe the Job Eloquently."></textarea>
 			<div
-				class="{`max-h-[50vh] overflow-auto prose px-3 py-2 min-w-full bg-white rounded-md shadow-sm sm:text-sm border-gray-700 focus:ring-indigo-500 focus:border-indigo-500
+				class="{`max-h-[50vh] overflow-auto prose px-3 py-2 min-w-full border bg-gray-800 rounded-md shadow-sm sm:text-sm border-gray-700 focus:ring-indigo-500 focus:border-indigo-500
 			${!isEditMode ? 'block' : 'hidden'}`}">
 				{@html marked($data.description)}
 			</div>
@@ -728,7 +728,7 @@
 					class="{`flex items-center p-2 focus:outline-none
 					${
 						isEditMode
-							? 'text-gray-400 bg-gray-800 border border-t-0 border-gray-700 rounded-b-md'
+							? 'text-gray-300 bg-gray-800 border border-t-0 border-gray-700 rounded-b-md'
 							: ''
 					}`}">
 					<svg class="mr-1" width="15" height="15">
@@ -743,7 +743,7 @@
 					class="{`flex items-center p-2 focus:outline-none
 					${
 						!isEditMode
-							? 'text-gray-400 mt-[-3px] bg-gray-800 border border-t-0 border-gray-700 rounded-b-md'
+							? 'text-gray-300 bg-gray-800 border border-t-0 border-gray-700 rounded-b-md'
 							: ''
 					}`}">
 					<svg class="mr-1" width="15" height="15">
@@ -767,7 +767,7 @@
 			</div>
 		</div>
 	</div>
-
+	<div></div>
 	<div class="py-3 text-right">
 		<button
 			class="inline-flex justify-center px-4 py-2 mr-2 text-sm font-medium text-white bg-gray-800 border border-transparent rounded-md shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
