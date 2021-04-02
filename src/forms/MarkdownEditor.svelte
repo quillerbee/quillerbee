@@ -4,7 +4,11 @@
 	import autosize from "autosize";
 	import tippy from "sveltejs-tippy";
 
-    export let data, errors, maxLength = 1000, rows= 8, tooltip = "";
+	export let data,
+		errors,
+		maxLength = 1000,
+		rows = 8,
+		tooltip = "";
 
 	let textarea,
 		isEditMode = true;
@@ -49,7 +53,7 @@
 		<article
 			class="{`mdv min-h-[178px] max-h-[50vh] overflow-auto prose px-3 py-2 min-w-full border bg-gray-800 rounded-md shadow-sm sm:text-sm border-gray-700 focus:ring-indigo-500 focus:border-indigo-500
                 ${!isEditMode ? 'block' : 'hidden'}`}">
-			{@html !isEditMode ? marked($data.description) : ''}
+			{@html !isEditMode ? marked($data.description) : ""}
 		</article>
 	</div>
 	<div
@@ -89,7 +93,7 @@
 		<div class="absolute right-0 flex p-2 bottom-[-32px]">
 			<div
 				class="{`font-medium flex items-center ${
-					$data.description?.match(/\w+/g)?.length > {maxLength}
+					$data.description?.match(/\w+/g)?.length > { maxLength }
 						? 'text-red-500'
 						: 'text-gray-400'
 				}`}">

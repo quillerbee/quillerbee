@@ -570,7 +570,10 @@
 			</div>
 		</div>
 	</div>
-	<MarkdownEditor data="{data}" errors="{errors}" tooltip="{descriptionTooltip}" />
+	<MarkdownEditor
+		data="{data}"
+		errors="{errors}"
+		tooltip="{descriptionTooltip}" />
 	<div></div>
 	<div class="py-3 text-right">
 		<button

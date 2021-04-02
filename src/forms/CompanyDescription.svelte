@@ -35,7 +35,6 @@
 			<label
 				for="name"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				tabindex="0"
 				use:tippy="{nameTooltip}">
 				Name
 				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
@@ -55,7 +54,6 @@
 			<label
 				for="email"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				tabindex="0"
 				use:tippy="{emailTooltip}">
 				Email
 				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
@@ -76,7 +74,6 @@
 			<label
 				for="website"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				tabindex="0"
 				use:tippy="{websiteTooltip}">
 				Website
 				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
@@ -101,7 +98,6 @@
 		<label
 			for="about"
 			class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-			tabindex="0"
 			use:tippy="{aboutTooltip}">
 			About
 			<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
