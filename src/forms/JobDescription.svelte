@@ -492,22 +492,8 @@
 			class="relative flex flex-col p-3 pt-6 border border-gray-700 rounded-lg">
 			<div
 				for="currency"
-				class="absolute inline-flex items-center pl-4 pr-3 text-sm bg-gray-800 border border-gray-700 cursor-pointer focus:outline-none -top-3 left-5 rounded-xl"
-				use:tippy="{{
-					content: `
-					<b>Time Zone (Required)</b>
-					<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
-					<ul class="text-left hex">
-						<li>Must be in UTC format.</li>
-						<li>Jobs will be served based on candidate's Time Zone.</li>
-					</ul>`,
-					theme: 'warn',
-					allowHTML: true,
-				}}">
+				class="absolute inline-flex items-center px-4 text-sm bg-gray-800 border border-gray-700 cursor-pointer focus:outline-none -top-3 left-5 rounded-xl">
 				Time Zone
-				<svg width="15" height="15" class="text-[#fc0] ml-1.5 -mt-0.5">
-					<use xlink:href="#information-circle"></use>
-				</svg>
 			</div>
 			<div class="grid grid-flow-col gap-2">
 				<div class="flex rounded-md shadow-sm">
