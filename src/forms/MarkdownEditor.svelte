@@ -49,7 +49,7 @@
 		<article
 			class="{`mdv min-h-[178px] max-h-[50vh] overflow-auto prose px-3 py-2 min-w-full border bg-gray-800 rounded-md shadow-sm sm:text-sm border-gray-700 focus:ring-indigo-500 focus:border-indigo-500
                 ${!isEditMode ? 'block' : 'hidden'}`}">
-			{@html marked($data.description)}
+			{@html !isEditMode ? marked($data.description) : ''}
 		</article>
 	</div>
 	<div

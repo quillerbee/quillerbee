@@ -13,3 +13,16 @@
 .mdv blockquote {
     @apply border-white border-opacity-25;
 }
+
+.mdv input {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.mdv li[data-children-count] {
+    @apply pl-0;
+}
+
+.mdv li[data-children-count]::before {
+    @apply hidden;
+}
