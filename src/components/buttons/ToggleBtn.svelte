@@ -3,7 +3,6 @@
 	export let id, data, setField;
 
 	let toggle = $data.location?.[id];
-	setField(`location.${id}`, false);
 
 	const toggleBtn = () => {
 		toggle = !toggle;

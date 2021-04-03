@@ -36,11 +36,13 @@
 		jobTypeSelector,
 		flairSelector;
 
+	let countriesSlimSelector;
+
 	onMount(() => {
 		new SlimSelect({
 			select: currencySelector,
 		});
-		new SlimSelect({
+		countriesSlimSelector = new SlimSelect({
 			select: countriesSelector,
 			limit: 5,
 			closeOnSelect: false,
@@ -173,7 +175,12 @@
 	});
 
 	let validateSchema = yup.object().shape({
-		title: yup.string().trim().min(3, "Min 3 Characters").max(25, "Maximum 25 Characters").required("Required"),
+		title: yup
+			.string()
+			.trim()
+			.min(3, "Min 3 Characters")
+			.max(25, "Maximum 25 Characters")
+			.required("Required"),
 		url: yup.string().url("Must be a URL").required("Required"),
 		salary: yup.object({
 			min: yup.number().truncate().positive("Must be more than Zero"),
@@ -199,7 +206,8 @@
 				currency: "USD",
 			},
 			location: {
-				remote: false,
+				remote: true,
+				worldwide: true,
 			},
 			description: "",
 		},
@@ -408,8 +416,10 @@
 				</label>
 				<ToggleBtn id="remote" data="{data}" setField="{setField}" />
 			</div>
-			{#if $data.location.remote}
-			<div class="flex items-center justify-between p-2 pr-0">
+			<div
+				class="{`items-center justify-between p-2 pr-0 ${
+					$data.location.remote ? 'flex' : 'hidden'
+				}`}">
 				<label
 					for="worldwide"
 					class="block mb-1 text-sm font-medium text-gray-300">
@@ -417,10 +427,13 @@
 				</label>
 				<ToggleBtn id="worldwide" data="{data}" setField="{setField}" />
 			</div>
-			{/if}
 		</div>
 
-		<div class="grid grid-flow-row grid-cols-1 grid-rows-2 gap-6">
+		<div
+			class="{`grid-flow-row grid-cols-1
+			${$data.location.remote && $data.location.worldwide ? 'hidden' : 'grid'}
+			${$data.location.countries?.length ? 'grid-rows-2 gap-6' : ''}
+			`}">
 			<div>
 				<label
 					for="countries"
@@ -428,22 +441,29 @@
 					Countries
 				</label>
 				<div class="grid grid-flow-row gap-2">
+					<!-- svelte-ignore a11y-no-onchange -->
 					<select
 						id="countries"
 						name="countries"
 						bind:this="{countriesSelector}"
+						on:change="{() =>
+							($data.location.countries = countriesSlimSelector.selected())}"
 						multiple
 						class="mt-1 text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 						{#each countryCodes as countryCode}
-							<option class="bg-gray-800" value="{countryCode}"
-								>{flag(countryCode)}
-								{name(countryCode)}</option>
+							<option class="bg-gray-800" value="{countryCode}">
+								{flag(countryCode)}
+								{name(countryCode)}
+							</option>
 						{/each}
 						<option class="bg-gray-800">United States</option>
 					</select>
 				</div>
 			</div>
-			<div>
+			<div
+				class="{`${
+					$data.location.countries?.length ? 'block' : 'hidden'
+				}`}">
 				<label
 					for="cities"
 					class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
@@ -465,7 +485,14 @@
 
 		<fieldset
 			name="timezone"
-			class="relative flex flex-col p-3 pt-6 border border-gray-700 rounded-lg">
+			class="{`relative flex flex-col p-3 pt-6 border border-gray-700 rounded-lg
+					${
+						$data.location.remote &&
+						!$data.location.worldwide &&
+						$data.location.countries?.length > 1
+							? 'flex'
+							: 'hidden'
+					}`}">
 			<div
 				for="currency"
 				class="absolute inline-flex items-center px-4 text-sm bg-gray-800 border border-gray-700 cursor-pointer focus:outline-none -top-3 left-5 rounded-xl">
