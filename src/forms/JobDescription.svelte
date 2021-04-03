@@ -15,17 +15,12 @@
 	import { countries, flag, name } from "country-emoji";
 
 	import { ToggleBtn } from "@components";
-	import {
-		titleTooltip,
-		linkTooltip,
-		salaryTooltip,
-		locationTooltip,
-		tagsTooltip,
-		categoryTooltip,
-		jobTypeTooltip,
-		flairTooltip,
-		descriptionTooltip,
-	} from "@forms/tooltips";
+
+	const commonTippyConfig = {
+		theme: "warn",
+		allowHTML: true,
+	};
+
 	import MarkdownEditor from "@forms/MarkdownEditor.svelte";
 
 	const currencyCodes = Object.keys(currencyToSymbolMap);
@@ -253,7 +248,19 @@
 			<label
 				for="title"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				use:tippy="{titleTooltip}">
+				use:tippy="{{
+					...commonTippyConfig,
+					content: `
+						<b>Title (Required)</b>
+						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
+						<ul class="text-left hex">
+							<li>Keep it short & simple.</li>
+							<li>Create multiple job posts for multiple roles.</li>
+							<li>A job post is limited to a single job.</li>
+							<li>Must be a real job.</li>
+							<li><b>DO NOT WRITE IN FULL CAPS</b>.</li>
+						</ul>`,
+				}}">
 				Title
 				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
 					<use xlink:href="#information-circle"></use>
@@ -277,7 +284,17 @@
 			<label
 				for="url"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				use:tippy="{linkTooltip}">
+				use:tippy="{{
+					...commonTippyConfig,
+					content: `
+						<center><b>Link (Required)</b></center>
+						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
+						<ul class="text-left hex">
+							<li>A link to your job application site.</li>
+							<li>If you don't have one, make it with <a class="inline font-bold" target="_blank" rel="noopener" href="https://www.lever.co/">Lever.co</a>.</li>
+						</ul>`,
+					interactive: true,
+				}}">
 				Link
 				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
 					<use xlink:href="#information-circle"></use>
@@ -305,7 +322,16 @@
 		<div
 			for="currency"
 			class="absolute inline-flex items-center pl-4 pr-3 text-sm bg-gray-800 border border-gray-700 cursor-pointer focus:outline-none -top-3 left-5 rounded-xl"
-			use:tippy="{salaryTooltip}">
+			use:tippy="{{
+				...commonTippyConfig,
+				content: `
+					<b>Salary (Required)</b>
+					<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
+					<ul class="text-left hex">
+						<li>Google doesn't index jobs without salary.</li>
+						<li>Must be in yearly format.</li>
+					</ul>`,
+			}}">
 			Salary
 			<svg width="15" height="15" class="text-[#fc0] ml-1.5 -mt-0.5">
 				<use xlink:href="#information-circle"></use>
@@ -372,7 +398,16 @@
 		<div
 			for="currency"
 			class="absolute inline-flex items-center pl-4 pr-3 text-sm bg-gray-800 border border-gray-700 cursor-pointer focus:outline-none -top-3 left-5 rounded-xl"
-			use:tippy="{locationTooltip}">
+			use:tippy="{{
+				...commonTippyConfig,
+				content: `
+					<b>Location (Required)</b>
+					<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
+					<ul class="text-left hex">
+						<li>Jobs will be presented to candidates based on location.</li>
+						<li>Worldwide positions will get widest exposure.</li>
+					</ul>`,
+			}}">
 			Location
 			<svg width="15" height="15" class="text-[#fc0] ml-1.5 -mt-0.5">
 				<use xlink:href="#information-circle"></use>
@@ -481,7 +516,19 @@
 			<label
 				for="tags"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				use:tippy="{tagsTooltip}">
+				use:tippy="{{
+					...commonTippyConfig,
+					content: `
+						<b>Tags (Required)</b>
+						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
+						<ul class="text-left hex">
+							<li>Tag the job with your Tech Stack.</li>
+							<li>Upto 5 tags are allowed.</li>
+							<li>Search and use existing Tags.</li>
+							<li>Carefully create new Tag.</li>
+							<li>Jobs can be searched with Tags.</li>
+						</ul>`,
+				}}">
 				Tags
 				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
 					<use xlink:href="#information-circle"></use>
@@ -502,7 +549,17 @@
 			<label
 				for="category"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				use:tippy="{categoryTooltip}">
+				use:tippy="{{
+					...commonTippyConfig,
+					content: `
+						<b>Category (Required)</b>
+						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
+						<ul class="text-left hex">
+							<li>Broad Category, the Job belongs to.</li>
+							<li>Reach out to us, if we don't conver a Category.</li>
+							<li>Job will show up in the selected Category.</li>
+						</ul>`,
+				}}">
 				Category
 				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
 					<use xlink:href="#information-circle"></use>
@@ -526,7 +583,16 @@
 			<label
 				for="job-type"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				use:tippy="{jobTypeTooltip}">
+				use:tippy="{{
+					...commonTippyConfig,
+					content: `
+						<b>Job Type (Required)</b>
+						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
+						<ul class="text-left hex">
+							<li>Depicts the Duration & Severity of the Job.</li>
+							<li>It will be color coded.</li>
+						</ul>`,
+				}}">
 				Job Type
 				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
 					<use xlink:href="#information-circle"></use>
@@ -550,7 +616,16 @@
 			<label
 				for="flair"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				use:tippy="{flairTooltip}">
+				use:tippy="{{
+					...commonTippyConfig,
+					content: `
+						<b>Flair</b>
+						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
+						<ul class="text-left hex">
+							<li>Add flair to stand out of the other job posts.</li>
+							<li>Costs money to add a flair.</li>
+						</ul>`,
+				}}">
 				Flair
 				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
 					<use xlink:href="#annotation"></use>
@@ -573,7 +648,18 @@
 	<MarkdownEditor
 		data="{data}"
 		errors="{errors}"
-		tooltip="{descriptionTooltip}" />
+		tooltip="{{
+			...commonTippyConfig,
+			content: `
+					<center><b>Description (Required)</b><center>
+					<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
+					<ul class="text-left hex">
+						<li>Describe the responsibilities of the Job.</li>
+						<li>Keep it to 1000 letters.</li>
+						<li>Use Markdown. See <a class="inline font-bold" target="_blank" rel="noopener" href="https://simplemde.com/markdown-guide">Basic</a> & <a class="inline font-bold" target="_blank" rel="noopener" href="https://www.markdownguide.org/basic-syntax/">Comprehensive</a> guide.</li>
+					</ul>`,
+			interactive: true,
+		}}" />
 	<div></div>
 	<div class="py-3 text-right">
 		<button

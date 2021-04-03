@@ -3,12 +3,10 @@
 	import tippy from "sveltejs-tippy";
 	import autosize from "autosize";
 
-	import {
-		nameTooltip,
-		emailTooltip,
-		websiteTooltip,
-		aboutTooltip,
-	} from "@forms/tooltips";
+	const commonTippyConfig = {
+		theme: "warn",
+		allowHTML: true,
+	};
 
 	let textarea;
 
@@ -35,7 +33,16 @@
 			<label
 				for="name"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				use:tippy="{nameTooltip}">
+				use:tippy="{{
+					...commonTippyConfig,
+					content: `
+						<b>Name (Required)</b>
+						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
+						<ul class="text-left hex">
+							<li>Your company's brand/trade name.</li>
+							<li>Don't keep Inc., Ltd., etc at the end.</li>
+						</ul>`,
+				}}">
 				Name
 				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
 					<use xlink:href="#information-circle"></use>
@@ -54,7 +61,18 @@
 			<label
 				for="email"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				use:tippy="{emailTooltip}">
+				use:tippy="{{
+					...commonTippyConfig,
+					content: `
+						<b>Email (Required)</b>
+						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
+						<ul class="text-left hex">
+							<li>This is unique id of the company.</li>
+							<li>Once it is set, it can't be changed.</li>
+							<li>Make sure this email is accessible by you!</li>
+							<li>Invoices are sent via this email.</li>
+						</ul>`,
+				}}">
 				Email
 				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
 					<use xlink:href="#information-circle"></use>
@@ -74,7 +92,16 @@
 			<label
 				for="website"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				use:tippy="{websiteTooltip}">
+				use:tippy="{{
+					...commonTippyConfig,
+					content: `
+						<b>Website (Required)</b>
+						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
+						<ul class="text-left hex">
+							<li>Every business posting job here, must have a Website.</li>
+							<li>It adds credibility to the Company.</li>
+						</ul>`,
+				}}">
 				Website
 				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
 					<use xlink:href="#information-circle"></use>
@@ -98,7 +125,16 @@
 		<label
 			for="about"
 			class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-			use:tippy="{aboutTooltip}">
+			use:tippy="{{
+				...commonTippyConfig,
+				content: `
+						<b>About (Required)</b>
+						<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
+						<ul class="text-left hex">
+							<li>Describe what the Company is all about.</li>
+							<li>Keep it short.</li>
+						</ul>`,
+			}}">
 			About
 			<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
 				<use xlink:href="#information-circle"></use>
