@@ -21,6 +21,15 @@ html {
     @apply border-white border-opacity-25;
 }
 
+.mdv thead {
+    @apply border-b-2;
+}
+
+.mdv img {
+    max-width: 35%;
+    display: inline-block;
+}
+
 .mdv input {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
