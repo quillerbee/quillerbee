@@ -63,8 +63,8 @@
 
 <div class="skip-link">
 	<div class="mb-2">Skip to</div>
-	<a href="#main" class="focus:outline-none">Content</a>
+	<a href="#main" class="focus:outline-none" onclick="this.blur();">Content</a>
 	or
-	<a href="#footer" class="focus:outline-none">Footer</a>
+	<a href="#footer" class="focus:outline-none" onclick="this.blur();">Footer</a>
 	<div class="ribbon banner transform-gpu"></div>
 </div>
