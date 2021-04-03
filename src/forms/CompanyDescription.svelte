@@ -4,6 +4,12 @@
 	import { commonTippyConfig } from "@constants";
 </script>
 
+<style>
+	textarea {
+		resize: none;
+	}
+</style>
+
 <form
 	on:submit|preventDefault
 	class="relative flex flex-col px-4 py-5 mb-6 space-y-6 text-white transition-shadow duration-300 ease-in-out bg-gray-900 rounded-lg sm:p-6 hover:shadow-lg ribbon-container">

@@ -173,7 +173,7 @@
 	});
 
 	let validateSchema = yup.object().shape({
-		title: yup.string().trim().required("Required"),
+		title: yup.string().trim().min(3, "Min 3 Characters").max(25, "Maximum 25 Characters").required("Required"),
 		url: yup.string().url("Must be a URL").required("Required"),
 		salary: yup.object({
 			min: yup.number().truncate().positive("Must be more than Zero"),
