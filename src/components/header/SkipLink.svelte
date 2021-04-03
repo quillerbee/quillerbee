@@ -1,6 +1,10 @@
 <style>
 	/* https://codepen.io/andywillekens/pen/zBBpdm */
 
+	a {
+		display: block;
+	}
+
 	.skip-link {
 		color: #fff;
 		font-weight: 700;
