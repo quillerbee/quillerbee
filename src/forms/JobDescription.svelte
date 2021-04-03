@@ -192,13 +192,21 @@
 		}),
 		location: yup.object({
 			remote: yup.boolean(),
-			worldwide: yup.boolean().when('remote', {
+			worldwide: yup.boolean().when("remote", {
 				is: true,
 				then: yup.boolean(),
 				otherwise: yup.boolean().strip(),
 			}),
-			countries: yup.array(),
-			cities: yup.array(),
+			countries: yup.array().when(["remote", "worldwide"], {
+				is: (remote, worldwide) => remote && worldwide,
+				then: yup.array().strip(),
+				otherwise: yup.array().min(1).max(5),
+			}),
+			cities: yup.array().when("countries", {
+				is: (countries) => countries == null || countries?.length == 0,
+				then: yup.array().strip(),
+				otherwise: yup.array().min(1).max(5),
+			}),
 			timezone: yup.object().when(["remote", "worldwide", "countries"], {
 				is: (remote, worldwide, countries) =>
 					remote && !worldwide && countries?.length > 1,
@@ -228,6 +236,8 @@
 				remote: true,
 				worldwide: true,
 				timezone: {},
+				countries: [],
+				cities: [],
 			},
 			description: "",
 		},
