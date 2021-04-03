@@ -3,10 +3,7 @@
 	import tippy from "sveltejs-tippy";
 	import autosize from "autosize";
 
-	const commonTippyConfig = {
-		theme: "warn",
-		allowHTML: true,
-	};
+	import { commonTippyConfig } from "@constants";
 
 	let textarea;
 

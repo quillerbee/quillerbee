@@ -15,11 +15,7 @@
 	import { countries, flag, name } from "country-emoji";
 
 	import { ToggleBtn } from "@components";
-
-	const commonTippyConfig = {
-		theme: "warn",
-		allowHTML: true,
-	};
+	import { commonTippyConfig } from "@constants";
 
 	import MarkdownEditor from "@forms/MarkdownEditor.svelte";
 
