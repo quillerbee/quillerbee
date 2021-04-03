@@ -36,7 +36,7 @@
 		jobTypeSelector,
 		flairSelector;
 
-	let countriesSlimSelector;
+	let countriesSlimSelector, citiesSlimSelector;
 
 	onMount(() => {
 		new SlimSelect({
@@ -48,7 +48,7 @@
 			closeOnSelect: false,
 			placeholder: "Select Countries",
 		});
-		new SlimSelect({
+		citiesSlimSelector = new SlimSelect({
 			select: citiesSelector,
 			limit: 5,
 			closeOnSelect: false,
@@ -190,6 +190,25 @@
 				.moreThan(yup.ref("min"), "Must be more than Minimum"),
 			currency: yup.string(),
 		}),
+		location: yup.object({
+			remote: yup.boolean(),
+			worldwide: yup.boolean().when('remote', {
+				is: true,
+				then: yup.boolean(),
+				otherwise: yup.boolean().strip(),
+			}),
+			countries: yup.array(),
+			cities: yup.array(),
+			timezone: yup.object().when(["remote", "worldwide", "countries"], {
+				is: (remote, worldwide, countries) =>
+					remote && !worldwide && countries?.length > 1,
+				then: yup.object({
+					min: yup.number().min(-12).max(14).lessThan(yup.ref("max")),
+					max: yup.number().min(-12).max(14).moreThan(yup.ref("min")),
+				}),
+				otherwise: yup.object().strip(),
+			}),
+		}),
 		description: yup
 			.string()
 			.wordLimit(1000, "Keep it Short")
@@ -208,6 +227,7 @@
 			location: {
 				remote: true,
 				worldwide: true,
+				timezone: {},
 			},
 			description: "",
 		},
@@ -470,10 +490,13 @@
 					Cities
 				</label>
 				<div class="grid grid-flow-row gap-2">
+					<!-- svelte-ignore a11y-no-onchange -->
 					<select
 						id="cities"
 						name="cities"
 						bind:this="{citiesSelector}"
+						on:change="{() =>
+							($data.location.cities = citiesSlimSelector.selected())}"
 						multiple
 						class="mt-1 text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 					</select>
@@ -494,7 +517,7 @@
 							: 'hidden'
 					}`}">
 			<div
-				for="currency"
+				for="timezone"
 				class="absolute inline-flex items-center px-4 text-sm bg-gray-800 border border-gray-700 cursor-pointer focus:outline-none -top-3 left-5 rounded-xl">
 				Time Zone
 			</div>
@@ -505,9 +528,10 @@
 						<span class="text-gray-500 sm:text-sm"> UTC </span>
 					</div>
 					<input
-						id="time-zone"
-						type="text"
-						name="price"
+						id="timezone"
+						type="number"
+						name="min"
+						bind:value="{$data.location.timezone.min}"
 						class="block w-full pr-12 bg-gray-800 border-gray-700 rounded-r-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
 						placeholder="-5" />
 				</div>
@@ -517,8 +541,9 @@
 						<span class="text-gray-500 sm:text-sm"> UTC </span>
 					</div>
 					<input
-						type="text"
-						name="price"
+						type="number"
+						name="max"
+						bind:value="{$data.location.timezone.max}"
 						class="block w-full pr-12 bg-gray-800 border-gray-700 rounded-r-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
 						placeholder="+5" />
 				</div>
