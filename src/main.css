@@ -1,20 +1,23 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-
 html {
     scroll-behavior: smooth;
 }
 
-.mdv, .mdv h1, .mdv h2, .mdv h3, .mdv strong, .mdv blockquote {
+.mdv, .mdv h1, .mdv h2, .mdv h3, .mdv h4, .mdv h5, .mdv h6, .mdv strong, .mdv blockquote, .mdv>ol>li::before, .mdv thead {
     @apply text-gray-200;
 }
 
-.mdv a {
+.mdv>ul>li::before {
+    @apply bg-gray-200;
+}
+
+.mdv a, .mdv code {
     @apply inline text-[#f7485f] no-underline;
 }
 
-.mdv blockquote {
+.mdv blockquote, .mdv thead, .mdv tbody tr {
     @apply border-white border-opacity-25;
 }
 
@@ -29,4 +32,12 @@ html {
 
 .mdv li[data-children-count]::before {
     @apply hidden;
+}
+
+.mdv hr {
+    @apply my-3 opacity-20;
+}
+
+.mdv pre {
+    @apply border border-white border-opacity-25;
 }
