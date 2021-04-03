@@ -198,6 +198,9 @@
 				max: "",
 				currency: "USD",
 			},
+			location: {
+				remote: false,
+			},
 			description: "",
 		},
 		extend: [validator, reporter],
@@ -403,16 +406,18 @@
 					class="block mb-1 text-sm font-medium text-gray-300">
 					Is this a Remote Position?
 				</label>
-				<ToggleBtn id="remote" />
+				<ToggleBtn id="remote" data="{data}" setField="{setField}" />
 			</div>
+			{#if $data.location.remote}
 			<div class="flex items-center justify-between p-2 pr-0">
 				<label
 					for="worldwide"
 					class="block mb-1 text-sm font-medium text-gray-300">
 					Is this Worldwide?
 				</label>
-				<ToggleBtn id="worldwide" />
+				<ToggleBtn id="worldwide" data="{data}" setField="{setField}" />
 			</div>
+			{/if}
 		</div>
 
 		<div class="grid grid-flow-row grid-cols-1 grid-rows-2 gap-6">

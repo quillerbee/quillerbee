@@ -1,11 +1,13 @@
 <script>
 	/** https://codepen.io/cl0udc0ntr0l/pen/xhBtF */
-	export let id;
+	export let id, data, setField;
 
-	let toggle = false;
+	let toggle = $data.location?.[id];
+	setField(`location.${id}`, false);
 
 	const toggleBtn = () => {
 		toggle = !toggle;
+		setField(`location.${id}`, toggle);
 	};
 </script>
 
