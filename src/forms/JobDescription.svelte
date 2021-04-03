@@ -15,7 +15,12 @@
 	import { countries, flag, name } from "country-emoji";
 
 	import { ToggleBtn } from "@components";
-	import { commonTippyConfig, categories, jobTypes, flairs } from "@constants";
+	import {
+		commonTippyConfig,
+		categories,
+		jobTypes,
+		flairs,
+	} from "@constants";
 
 	import MarkdownEditor from "@forms/MarkdownEditor.svelte";
 
@@ -183,7 +188,7 @@
 			.required("Required"),
 	});
 
-	const { form, data, errors } = createForm({
+	const { form, data, errors, setField } = createForm({
 		initialValues: {
 			title: "",
 			url: "",
@@ -613,6 +618,7 @@
 	<MarkdownEditor
 		data="{data}"
 		errors="{errors}"
+		setField="{setField}"
 		tooltip="{{
 			...commonTippyConfig,
 			content: `
@@ -622,6 +628,7 @@
 						<li>Describe the responsibilities of the Job.</li>
 						<li>Keep it to 1000 letters.</li>
 						<li>Use Markdown. See <a class="inline font-bold" target="_blank" rel="noopener" href="https://simplemde.com/markdown-guide">Basic</a> & <a class="inline font-bold" target="_blank" rel="noopener" href="https://www.markdownguide.org/basic-syntax/">Comprehensive</a> guide.</li>
+						<li>Click on Markdown Icon to see an Example.</li>
 					</ul>`,
 			interactive: true,
 		}}" />

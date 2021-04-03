@@ -1,27 +1,26 @@
 <script>
-	import { onMount } from "svelte";
 	import marked from "marked";
-	import autosize from "autosize";
 	import tippy from "sveltejs-tippy";
+
+	import { commonTippyConfig, markdownExample } from "@constants";
 
 	export let data,
 		errors,
+		setField,
 		maxLength = 1000,
-		rows = 8,
+		rows = 12,
 		tooltip = "";
 
-	let textarea,
-		isEditMode = true;
+	let isEditMode = true;
 
-	onMount(() => {
-		autosize(textarea);
-	});
+	const showExample = () => {
+		setField("description", markdownExample);
+	};
 </script>
 
 <style>
 	textarea {
-		resize: vertical;
-		max-height: 50vh;
+		resize: none;
 	}
 </style>
 
@@ -40,7 +39,6 @@
 			id="description"
 			name="description"
 			rows="{rows}"
-			bind:this="{textarea}"
 			bind:value="{$data.description}"
 			class="{`w-full bg-gray-800 rounded-md shadow-sm sm:text-sm text-gray-200
             ${
@@ -51,7 +49,7 @@
             ${isEditMode ? 'rounded-bl-none block' : 'hidden'}`}"
 			placeholder="Describe the Job Eloquently."></textarea>
 		<article
-			class="{`mdv min-h-[178px] max-h-[50vh] overflow-auto prose px-3 py-2 min-w-full border bg-gray-800 rounded-md shadow-sm sm:text-sm border-gray-700 focus:ring-indigo-500 focus:border-indigo-500
+			class="{`mdv h-[258px] overflow-auto prose px-3 py-2 min-w-full border bg-gray-800 rounded-md shadow-sm sm:text-sm border-gray-700 focus:ring-indigo-500 focus:border-indigo-500
                 ${!isEditMode ? 'block' : 'hidden'}`}">
 			{@html !isEditMode ? marked($data.description) : ""}
 		</article>
@@ -99,9 +97,23 @@
 				}`}">
 				{$data.description?.match(/\w+/g)?.length || 0} / {maxLength}
 			</div>
-			<svg class="ml-2 text-[#fc0]" width="20" height="20">
-				<use xlink:href="#markdown"></use>
-			</svg>
+			<button
+				class="focus:outline-none"
+				on:click|preventDefault="{showExample}"
+				use:tippy="{{
+					...commonTippyConfig,
+					content: `
+					<b>Markdown</b>
+					<hr class="my-2 -mx-2 border-yellow-500 border-opacity-50" />
+					<ul class="text-left hex">
+						<li>Click to see a Markdown example.</li>
+						<li>It will replace any existing text.</li>
+					</ul>`,
+				}}">
+				<svg class="ml-2 text-[#fc0]" width="20" height="20">
+					<use xlink:href="#markdown"></use>
+				</svg>
+			</button>
 		</div>
 	</div>
 </div>

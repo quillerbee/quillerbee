@@ -1,15 +1,7 @@
 <script>
-	import { onMount } from "svelte";
 	import tippy from "sveltejs-tippy";
-	import autosize from "autosize";
 
 	import { commonTippyConfig } from "@constants";
-
-	let textarea;
-
-	onMount(() => {
-		autosize(textarea);
-	});
 </script>
 
 <form
@@ -141,7 +133,6 @@
 			id="about"
 			name="about"
 			rows="3"
-			bind:this="{textarea}"
 			class="block w-full mt-1 bg-gray-800 border-gray-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
 			placeholder="Describe your Company, but keep it short."></textarea>
 	</div>
