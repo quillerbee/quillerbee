@@ -253,7 +253,7 @@
 			.required("Required"),
 	});
 
-	const { form, data, errors, setField, setFields } = createForm({
+	const { form, data, errors, setField, reset } = createForm({
 		initialValues,
 		extend: [validator, reporter],
 		validateSchema,
@@ -831,7 +831,7 @@
 	<div></div>
 	<div class="py-3 text-right">
 		<button
-			on:click|preventDefault="{() => setFields(initialValues)}"
+			on:click|preventDefault="{reset}"
 			class="inline-flex justify-center px-4 py-2 mr-2 text-sm font-medium text-white bg-gray-800 border border-transparent rounded-md shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
 			Reset
 		</button>
