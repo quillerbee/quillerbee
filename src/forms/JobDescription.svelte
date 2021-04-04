@@ -548,7 +548,7 @@
 									? 'border-red-500 ring-1 ring-red-500 focus:ring-red-500 focus:border-red-500'
 									: 'border-gray-700 focus:ring-indigo-500 focus:border-indigo-500'
 							}`}"
-						placeholder="-5" />
+						placeholder="-0" />
 				</div>
 				<div class="flex rounded-md shadow-sm">
 					<div
@@ -565,7 +565,7 @@
 									? 'border-red-500 ring-1 ring-red-500 focus:ring-red-500 focus:border-red-500'
 									: 'border-gray-700 focus:ring-indigo-500 focus:border-indigo-500'
 							}`}"
-						placeholder="+5" />
+						placeholder="+0" />
 				</div>
 			</div>
 		</fieldset>
