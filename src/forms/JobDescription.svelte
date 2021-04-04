@@ -278,7 +278,7 @@
 	}
 
 	.markdown-btn:focus {
-		box-shadow: inset 0 1px 0 rgb(255 255 255 / 50%),
+		box-shadow: inset 0 1px 0 rgb(255 204 0 / 50%),
 			0 1px 5px rgb(0 0 0 / 50%);
 	}
 </style>
