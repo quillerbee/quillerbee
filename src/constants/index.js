@@ -14,7 +14,7 @@ export const categories = [
 	"Legal",
 ];
 
-export const jobTypes = [
+export const types = [
 	{ text: "Full Time", value: "FullTime" },
 	{ text: "Part Time", value: "PartTime" },
 	{ text: "Contract", value: "Contract" },

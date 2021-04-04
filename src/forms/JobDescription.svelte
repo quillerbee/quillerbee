@@ -20,7 +20,7 @@
 	import {
 		commonTippyConfig,
 		categories,
-		jobTypes,
+		types,
 		flairs,
 		markdownExample,
 	} from "@constants";
@@ -33,10 +33,10 @@
 		citiesSelector,
 		tagsSelector,
 		categorySelector,
-		jobTypeSelector,
+		typeSelector,
 		flairSelector;
 
-	let countriesSlimSelector, citiesSlimSelector;
+	let countriesSlimSelector, citiesSlimSelector, tagsSlimSelector;
 
 	onMount(() => {
 		new SlimSelect({
@@ -73,7 +73,7 @@
 				}, 1000);
 			},
 		});
-		new SlimSelect({
+		tagsSlimSelector = new SlimSelect({
 			select: tagsSelector,
 			limit: 5,
 			placeholder: "Select Tags",
@@ -106,12 +106,13 @@
 			placeholder: "Select Category",
 		});
 		new SlimSelect({
-			select: jobTypeSelector,
+			select: typeSelector,
 			placeholder: "Select Job Type",
 		});
 		new SlimSelect({
 			select: flairSelector,
 			placeholder: "Select Flair",
+			allowDeselect: true,
 		});
 	});
 
@@ -225,6 +226,10 @@
 				otherwise: yup.object().strip(),
 			}),
 		}),
+		tags: yup.array().min(1).max(5),
+		category: yup.string().required(),
+		type: yup.string().required(),
+		flair: yup.string().notRequired(),
 		description: yup
 			.string()
 			.wordLimit(1000, "Keep it Short")
@@ -250,13 +255,15 @@
 			tags: [],
 			category: "",
 			type: "",
-			flair: "",
+			flair: null,
 			description: "",
 		},
 		extend: [validator, reporter],
 		validateSchema,
 		onSubmit: (values) => {
 			log.info(validateSchema.cast(values));
+			// Remove null values
+			// Add other values like: created, status, ...
 			createJob();
 		},
 	});
@@ -629,10 +636,13 @@
 				</svg>
 			</label>
 			<div class="grid grid-flow-row gap-2">
+				<!-- svelte-ignore a11y-no-onchange -->
 				<select
 					id="tags"
 					name="tags"
 					bind:this="{tagsSelector}"
+					on:change="{() =>
+						($data.tags = tagsSlimSelector.selected())}"
 					multiple
 					class="mt-1 text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 				</select>
@@ -665,6 +675,7 @@
 					id="category"
 					name="category"
 					bind:this="{categorySelector}"
+					bind:value="{$data.category}"
 					class="mt-1 text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 					<option data-placeholder="true"></option>
 					{#each categories as category}
@@ -676,7 +687,7 @@
 
 		<div>
 			<label
-				for="job-type"
+				for="type"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
 				tabindex="0"
 				use:tippy="{{
@@ -696,13 +707,14 @@
 			</label>
 			<div class="grid grid-flow-row gap-2">
 				<select
-					id="job-type"
+					id="type"
 					name="type"
-					bind:this="{jobTypeSelector}"
+					bind:this="{typeSelector}"
+					bind:value="{$data.type}"
 					class="mt-1 text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 					<option data-placeholder="true"></option>
-					{#each jobTypes as jobType}
-						<option value="{jobType.value}">{jobType.text}</option>
+					{#each types as type}
+						<option value="{type.value}">{type.text}</option>
 					{/each}
 				</select>
 			</div>
@@ -733,6 +745,7 @@
 					id="flair"
 					name="flair"
 					bind:this="{flairSelector}"
+					bind:value="{$data.flair}"
 					class="mt-1 text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 					<option data-placeholder="true"></option>
 					{#each flairs as flair}
