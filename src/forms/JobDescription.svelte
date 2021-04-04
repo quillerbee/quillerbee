@@ -454,17 +454,19 @@
 				</label>
 				<ToggleBtn id="remote" data="{data}" setField="{setField}" />
 			</div>
-			<div
-				class="{`items-center justify-between p-2 pr-0 ${
-					$data.location.remote ? 'flex' : 'hidden'
-				}`}">
-				<label
-					for="worldwide"
-					class="block mb-1 text-sm font-medium text-gray-300">
-					Is this Worldwide?
-				</label>
-				<ToggleBtn id="worldwide" data="{data}" setField="{setField}" />
-			</div>
+			{#if $data.location.remote}
+				<div class="flex items-center justify-between p-2 pr-0">
+					<label
+						for="worldwide"
+						class="block mb-1 text-sm font-medium text-gray-300">
+						Is this Worldwide?
+					</label>
+					<ToggleBtn
+						id="worldwide"
+						data="{data}"
+						setField="{setField}" />
+				</div>
+			{/if}
 		</div>
 
 		<div
@@ -508,7 +510,8 @@
 					class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
 					Cities
 				</label>
-				<div class="{`grid grid-flow-row gap-2 pointer-events-auto bg-gray-800 rounded-md shadow-sm mt-1 sm:text-sm
+				<div
+					class="{`grid grid-flow-row gap-2 pointer-events-auto bg-gray-800 rounded-md shadow-sm mt-1 sm:text-sm
 					${
 						$errors.location.cities
 							? 'border-red-500 ring-2 ring-red-500 focus:ring-red-500 focus:border-red-500'
@@ -530,59 +533,54 @@
 
 		<div></div>
 
-		<fieldset
-			name="timezone"
-			class="{`relative flex flex-col p-3 pt-6 border border-gray-700 rounded-lg
-					${
-						$data.location.remote &&
-						!$data.location.worldwide &&
-						$data.location.countries?.length > 1
-							? 'flex'
-							: 'hidden'
-					}`}">
-			<div
-				for="timezone"
-				class="absolute inline-flex items-center px-4 text-sm bg-gray-800 border border-gray-700 cursor-pointer focus:outline-none -top-3 left-5 rounded-xl">
-				Time Zone
-			</div>
-			<div class="grid grid-flow-col gap-2">
-				<div class="flex rounded-md shadow-sm">
-					<div
-						class="flex items-center px-3 bg-gray-700 border border-r-0 border-gray-700 pointer-events-none rounded-l-md">
-						<span class="text-gray-500 sm:text-sm"> UTC </span>
-					</div>
-					<input
-						id="timezone"
-						type="text"
-						name="min"
-						bind:value="{$data.location.timezone.min}"
-						class="{`block w-full bg-gray-800 border-l-0 rounded-r-md shadow-sm sm:text-sm
+		{#if $data.location.remote && !$data.location.worldwide && $data.location.countries?.length > 1}
+			<fieldset
+				name="timezone"
+				class="relative flex flex-col p-3 pt-6 border border-gray-700 rounded-lg">
+				<div
+					for="timezone"
+					class="absolute inline-flex items-center px-4 text-sm bg-gray-800 border border-gray-700 cursor-pointer focus:outline-none -top-3 left-5 rounded-xl">
+					Time Zone
+				</div>
+				<div class="grid grid-flow-col gap-2">
+					<div class="flex rounded-md shadow-sm">
+						<div
+							class="flex items-center px-3 bg-gray-700 border border-r-0 border-gray-700 pointer-events-none rounded-l-md">
+							<span class="text-gray-500 sm:text-sm"> UTC </span>
+						</div>
+						<input
+							id="timezone"
+							type="text"
+							name="min"
+							bind:value="{$data.location.timezone.min}"
+							class="{`block w-full bg-gray-800 border-l-0 rounded-r-md shadow-sm sm:text-sm
 							${
 								$errors.location.timezone.min
 									? 'border-red-500 ring-1 ring-red-500 focus:ring-red-500 focus:border-red-500'
 									: 'border-gray-700 focus:ring-indigo-500 focus:border-indigo-500'
 							}`}"
-						placeholder="-0" />
-				</div>
-				<div class="flex rounded-md shadow-sm">
-					<div
-						class="flex items-center px-3 pl-3 bg-gray-700 border border-r-0 border-gray-700 pointer-events-none rounded-l-md">
-						<span class="text-gray-500 sm:text-sm"> UTC </span>
+							placeholder="-0" />
 					</div>
-					<input
-						type="text"
-						name="max"
-						bind:value="{$data.location.timezone.max}"
-						class="{`block w-full bg-gray-800 border-l-0 rounded-r-md shadow-sm sm:text-sm
+					<div class="flex rounded-md shadow-sm">
+						<div
+							class="flex items-center px-3 pl-3 bg-gray-700 border border-r-0 border-gray-700 pointer-events-none rounded-l-md">
+							<span class="text-gray-500 sm:text-sm"> UTC </span>
+						</div>
+						<input
+							type="text"
+							name="max"
+							bind:value="{$data.location.timezone.max}"
+							class="{`block w-full bg-gray-800 border-l-0 rounded-r-md shadow-sm sm:text-sm
 							${
 								$errors.location.timezone.max
 									? 'border-red-500 ring-1 ring-red-500 focus:ring-red-500 focus:border-red-500'
 									: 'border-gray-700 focus:ring-indigo-500 focus:border-indigo-500'
 							}`}"
-						placeholder="+0" />
+							placeholder="+0" />
+					</div>
 				</div>
-			</div>
-		</fieldset>
+			</fieldset>
+		{/if}
 	</fieldset>
 
 	<div class="grid grid-flow-row grid-cols-3 grid-rows-2 gap-x-4 gap-y-6">
