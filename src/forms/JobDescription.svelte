@@ -174,7 +174,29 @@
 		},
 	});
 
-	let validateSchema = yup.object().shape({
+	const initialValues = {
+		title: "",
+		url: "",
+		salary: {
+			min: "",
+			max: "",
+			currency: "USD",
+		},
+		location: {
+			remote: true,
+			worldwide: true,
+			countries: [],
+			cities: [],
+			timezone: {},
+		},
+		tags: [],
+		category: "",
+		type: "",
+		flair: "",
+		description: "",
+	};
+
+	const validateSchema = yup.object().shape({
 		title: yup
 			.string()
 			.trim()
@@ -231,24 +253,8 @@
 			.required("Required"),
 	});
 
-	const { form, data, errors, setField } = createForm({
-		initialValues: {
-			title: "",
-			url: "",
-			salary: {
-				min: "",
-				max: "",
-				currency: "USD",
-			},
-			location: {
-				remote: true,
-				worldwide: true,
-				countries: [],
-				cities: [],
-				timezone: {},
-			},
-			description: "",
-		},
+	const { form, data, errors, setField, setFields } = createForm({
+		initialValues,
 		extend: [validator, reporter],
 		validateSchema,
 		onSubmit: (values) => {
@@ -824,6 +830,11 @@
 	</div>
 	<div></div>
 	<div class="py-3 text-right">
+		<button
+			on:click|preventDefault="{() => setFields(initialValues)}"
+			class="inline-flex justify-center px-4 py-2 mr-2 text-sm font-medium text-white bg-gray-800 border border-transparent rounded-md shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+			Reset
+		</button>
 		<button
 			class="inline-flex justify-center px-4 py-2 mr-2 text-sm font-medium text-white bg-gray-800 border border-transparent rounded-md shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
 			Cancel
