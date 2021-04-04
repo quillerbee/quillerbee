@@ -202,8 +202,8 @@
 				then: yup.array().strip(),
 				otherwise: yup.array().min(1).max(5),
 			}),
-			cities: yup.array().when("countries", {
-				is: (countries) => countries == null || countries?.length == 0,
+			cities: yup.array().when(["remote", "worldwide"], {
+				is: (remote, worldwide) => remote && worldwide,
 				then: yup.array().strip(),
 				otherwise: yup.array().min(1).max(5),
 			}),
@@ -211,8 +211,16 @@
 				is: (remote, worldwide, countries) =>
 					remote && !worldwide && countries?.length > 1,
 				then: yup.object({
-					min: yup.number().truncate().min(-12).lessThan(yup.ref("max"), "Must be less than Max"),
-					max: yup.number().truncate().moreThan(yup.ref("min"), "Must be more than Min").max(14),
+					min: yup
+						.number()
+						.truncate()
+						.min(-12)
+						.lessThan(yup.ref("max"), "Must be less than Max"),
+					max: yup
+						.number()
+						.truncate()
+						.moreThan(yup.ref("min"), "Must be more than Min")
+						.max(14),
 				}),
 				otherwise: yup.object().strip(),
 			}),
@@ -297,11 +305,11 @@
 				autocomplete="title"
 				placeholder="Job Title"
 				class="{`block w-full mt-1 bg-gray-800 rounded-md shadow-sm sm:text-sm
-			${
-				$errors.title
-					? 'border-red-500 ring-1 ring-red-500 focus:ring-red-500 focus:border-red-500'
-					: 'border-gray-700 focus:ring-indigo-500 focus:border-indigo-500'
-			}`}" />
+					${
+						$errors.title
+							? 'border-red-500 ring-1 ring-red-500 focus:ring-red-500 focus:border-red-500'
+							: 'border-gray-700 focus:ring-indigo-500 focus:border-indigo-500'
+					}`}" />
 		</div>
 
 		<div>
@@ -460,17 +468,21 @@
 		</div>
 
 		<div
-			class="{`grid-flow-row grid-cols-1
-			${$data.location.remote && $data.location.worldwide ? 'hidden' : 'grid'}
-			${$data.location.countries?.length ? 'grid-rows-2 gap-6' : ''}
-			`}">
+			class="{`grid-flow-row grid-cols-1 grid-rows-2 gap-6
+			${$data.location.remote && $data.location.worldwide ? 'hidden' : 'grid'}`}">
 			<div>
 				<label
 					for="countries"
 					class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
 					Countries
 				</label>
-				<div class="grid grid-flow-row gap-2">
+				<div
+					class="{`grid grid-flow-row gap-2 pointer-events-auto bg-gray-800 rounded-md shadow-sm mt-1 sm:text-sm
+						${
+							$errors.location.countries
+								? 'border-red-500 ring-2 ring-red-500 focus:ring-red-500 focus:border-red-500'
+								: 'border-gray-700 focus:ring-indigo-500 focus:border-indigo-500'
+						}`}">
 					<!-- svelte-ignore a11y-no-onchange -->
 					<select
 						id="countries"
@@ -479,7 +491,7 @@
 						on:change="{() =>
 							($data.location.countries = countriesSlimSelector.selected())}"
 						multiple
-						class="mt-1 text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+						class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md">
 						{#each countryCodes as countryCode}
 							<option class="bg-gray-800" value="{countryCode}">
 								{flag(countryCode)}
@@ -490,16 +502,18 @@
 					</select>
 				</div>
 			</div>
-			<div
-				class="{`${
-					$data.location.countries?.length ? 'block' : 'hidden'
-				}`}">
+			<div>
 				<label
 					for="cities"
 					class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
 					Cities
 				</label>
-				<div class="grid grid-flow-row gap-2">
+				<div class="{`grid grid-flow-row gap-2 pointer-events-auto bg-gray-800 rounded-md shadow-sm mt-1 sm:text-sm
+					${
+						$errors.location.cities
+							? 'border-red-500 ring-2 ring-red-500 focus:ring-red-500 focus:border-red-500'
+							: 'border-gray-700 focus:ring-indigo-500 focus:border-indigo-500'
+					}`}">
 					<!-- svelte-ignore a11y-no-onchange -->
 					<select
 						id="cities"
@@ -508,7 +522,7 @@
 						on:change="{() =>
 							($data.location.cities = citiesSlimSelector.selected())}"
 						multiple
-						class="mt-1 text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+						class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md">
 					</select>
 				</div>
 			</div>
