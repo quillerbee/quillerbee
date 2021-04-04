@@ -272,6 +272,15 @@
 	textarea {
 		resize: none;
 	}
+
+	.tab-btns:focus {
+		box-shadow: 0 4px 5px rgb(0 0 0 / 70%);
+		@apply border border-gray-700 border-t-0;
+	}
+
+	.markdown-btn:focus {
+		box-shadow: inset 0 1px 0 rgb(255 255 255 / 50%), 0 1px 5px rgb(0 0 0 / 50%);
+	}
 </style>
 
 <form
@@ -782,10 +791,10 @@
 					on:click|preventDefault="{() => {
 						isEditMode = true;
 					}}"
-					class="{`flex items-center p-2 focus:outline-none
+					class="{`flex items-center p-2 focus:outline-none rounded-b-md bottom-up-shadow focus:text-gray-300 tab-btns focus:border-r-0
 					${
 						isEditMode
-							? 'text-gray-300 bg-gray-800 border border-t-0 border-gray-700 rounded-b-md'
+							? 'text-gray-300 bg-gray-800 border border-t-0 border-gray-700'
 							: ''
 					}`}">
 					<svg class="mr-1" width="15" height="15">
@@ -797,10 +806,10 @@
 					on:click|preventDefault="{() => {
 						isEditMode = false;
 					}}"
-					class="{`flex items-center p-2 focus:outline-none
+					class="{`flex items-center p-2 focus:outline-none rounded-b-md bottom-up-shadow focus:text-gray-300 tab-btns focus:border-l-0
 					${
 						!isEditMode
-							? 'text-gray-300 bg-gray-800 border border-t-0 border-gray-700 rounded-b-md'
+							? 'text-gray-300 bg-gray-800 border border-t-0 border-gray-700'
 							: ''
 					}`}">
 					<svg class="mr-1" width="15" height="15">
@@ -819,7 +828,7 @@
 					{$data.description?.match(/\w+/g)?.length || 0} / 1000
 				</div>
 				<button
-					class="focus:outline-none"
+					class="ml-2 focus:outline-none markdown-btn"
 					on:click|preventDefault="{showExample}"
 					tabindex="0"
 					use:tippy="{{
@@ -832,7 +841,7 @@
 							<li>It will replace any existing text.</li>
 						</ul>`,
 					}}">
-					<svg class="ml-2 text-[#fc0]" width="20" height="20">
+					<svg class="text-[#fc0]" width="20" height="20">
 						<use xlink:href="#markdown"></use>
 					</svg>
 				</button>
