@@ -278,7 +278,8 @@
 	}
 
 	.markdown-btn:focus {
-		box-shadow: inset 0 1px 0 rgb(255 255 255 / 50%), 0 1px 5px rgb(0 0 0 / 50%);
+		box-shadow: inset 0 1px 0 rgb(255 255 255 / 50%),
+			0 1px 5px rgb(0 0 0 / 50%);
 	}
 </style>
 
@@ -325,7 +326,7 @@
 					}`}" />
 		</div>
 
-		<div>
+		<div id="parent">
 			<label
 				for="url"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
@@ -339,6 +340,8 @@
 							<li>A link to your job application site.</li>
 							<li>If you don't have one, make it with <a class="inline font-bold" target="_blank" rel="noopener" href="https://www.lever.co/">Lever.co</a>.</li>
 						</ul>`,
+					interactive: true,
+					appendTo: 'parent',
 				}}">
 				Link
 				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
