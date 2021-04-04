@@ -174,28 +174,6 @@
 		},
 	});
 
-	const initialValues = {
-		title: "",
-		url: "",
-		salary: {
-			min: "",
-			max: "",
-			currency: "USD",
-		},
-		location: {
-			remote: true,
-			worldwide: true,
-			countries: [],
-			cities: [],
-			timezone: {},
-		},
-		tags: [],
-		category: "",
-		type: "",
-		flair: "",
-		description: "",
-	};
-
 	const validateSchema = yup.object().shape({
 		title: yup
 			.string()
@@ -254,7 +232,27 @@
 	});
 
 	const { form, data, errors, setField, reset } = createForm({
-		initialValues,
+		initialValues: {
+			title: "",
+			url: "",
+			salary: {
+				min: "",
+				max: "",
+				currency: "USD",
+			},
+			location: {
+				remote: true,
+				worldwide: true,
+				countries: [],
+				cities: [],
+				timezone: {},
+			},
+			tags: [],
+			category: "",
+			type: "",
+			flair: "",
+			description: "",
+		},
 		extend: [validator, reporter],
 		validateSchema,
 		onSubmit: (values) => {
