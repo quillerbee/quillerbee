@@ -23,8 +23,13 @@
 
 	.toggle.toggle-on {
 		border-color: rgba(137, 194, 217, 0.4);
-		-webkit-transition: all 0.5s 0.15s ease-out;
-		transition: all 0.5s 0.15s ease-out;
+		-webkit-transition: border-color 0.5s 0.15s ease-out;
+		transition: border-color 0.5s 0.15s ease-out;
+	}
+
+	.toggle.toggle-on:focus {
+		border-color: transparent;
+		transition: none;
 	}
 
 	.toggle-button {
@@ -121,7 +126,7 @@
 
 <button
 	id="{id}"
-	class="{`toggle border-2 border-gray-700 focus:ring-indigo-500 transform scale-75 focus:border-indigo-500 ${
+	class="{`toggle border-2 border-gray-700 focus:ring-4 focus:ring-offset-0 focus:ring-indigo-500 transform scale-75 ${
 		toggle ? 'toggle-on' : ''
 	}`}"
 	on:click|preventDefault="{toggleBtn}">

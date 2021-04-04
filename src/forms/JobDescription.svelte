@@ -284,6 +284,7 @@
 			<label
 				for="title"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
+				tabindex="0"
 				use:tippy="{{
 					...commonTippyConfig,
 					content: `
@@ -320,6 +321,7 @@
 			<label
 				for="url"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
+				tabindex="0"
 				use:tippy="{{
 					...commonTippyConfig,
 					content: `
@@ -329,7 +331,6 @@
 							<li>A link to your job application site.</li>
 							<li>If you don't have one, make it with <a class="inline font-bold" target="_blank" rel="noopener" href="https://www.lever.co/">Lever.co</a>.</li>
 						</ul>`,
-					interactive: true,
 				}}">
 				Link
 				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
@@ -358,6 +359,7 @@
 		<div
 			for="currency"
 			class="absolute inline-flex items-center pl-4 pr-3 text-sm bg-gray-800 border border-gray-700 cursor-pointer focus:outline-none -top-3 left-5 rounded-xl"
+			tabindex="0"
 			use:tippy="{{
 				...commonTippyConfig,
 				content: `
@@ -434,6 +436,7 @@
 		<div
 			for="currency"
 			class="absolute inline-flex items-center pl-4 pr-3 text-sm bg-gray-800 border border-gray-700 cursor-pointer focus:outline-none -top-3 left-5 rounded-xl"
+			tabindex="0"
 			use:tippy="{{
 				...commonTippyConfig,
 				content: `
@@ -456,7 +459,10 @@
 					class="block mb-1 text-sm font-medium text-gray-300">
 					Is this a Remote Position?
 				</label>
-				<ToggleBtn id="remote" toggle="{$data.location.remote}" setField="{setField}" />
+				<ToggleBtn
+					id="remote"
+					toggle="{$data.location.remote}"
+					setField="{setField}" />
 			</div>
 			{#if $data.location.remote}
 				<div class="flex items-center justify-between p-2 pr-0">
@@ -592,6 +598,7 @@
 			<label
 				for="tags"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
+				tabindex="0"
 				use:tippy="{{
 					...commonTippyConfig,
 					content: `
@@ -625,6 +632,7 @@
 			<label
 				for="category"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
+				tabindex="0"
 				use:tippy="{{
 					...commonTippyConfig,
 					content: `
@@ -659,6 +667,7 @@
 			<label
 				for="job-type"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
+				tabindex="0"
 				use:tippy="{{
 					...commonTippyConfig,
 					content: `
@@ -692,6 +701,7 @@
 			<label
 				for="flair"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
+				tabindex="0"
 				use:tippy="{{
 					...commonTippyConfig,
 					content: `
@@ -721,10 +731,11 @@
 			</div>
 		</div>
 	</div>
-	<div class="relative">
+	<div class="relative" id="parent">
 		<label
 			for="description"
 			class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
+			tabindex="0"
 			use:tippy="{{
 				...commonTippyConfig,
 				content: `
@@ -737,6 +748,7 @@
 							<li>Click on Markdown Icon to see an Example.</li>
 						</ul>`,
 				interactive: true,
+				appendTo: 'parent',
 			}}">
 			Description
 			<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
@@ -809,6 +821,7 @@
 				<button
 					class="focus:outline-none"
 					on:click|preventDefault="{showExample}"
+					tabindex="0"
 					use:tippy="{{
 						...commonTippyConfig,
 						content: `
