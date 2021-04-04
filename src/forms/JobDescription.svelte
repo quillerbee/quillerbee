@@ -273,9 +273,8 @@
 		resize: none;
 	}
 
-	.tab-btns:focus {
-		box-shadow: 0 4px 5px rgb(0 0 0 / 70%);
-		@apply border border-gray-700 border-t-0;
+	.shadow-selected {
+		box-shadow: 0 4px 5px rgb(0 0 0 / 50%);
 	}
 
 	.markdown-btn:focus {
@@ -791,10 +790,10 @@
 					on:click|preventDefault="{() => {
 						isEditMode = true;
 					}}"
-					class="{`flex items-center p-2 focus:outline-none rounded-b-md bottom-up-shadow focus:text-gray-300 tab-btns focus:border-r-0
+					class="{`flex items-center p-2 focus:outline-none rounded-b-md bottom-up-shadow focus:text-gray-300
 					${
 						isEditMode
-							? 'text-gray-300 bg-gray-800 border border-t-0 border-gray-700'
+							? 'text-gray-300 bg-gray-800 border border-t-0 border-gray-700 shadow-selected'
 							: ''
 					}`}">
 					<svg class="mr-1" width="15" height="15">
@@ -806,10 +805,10 @@
 					on:click|preventDefault="{() => {
 						isEditMode = false;
 					}}"
-					class="{`flex items-center p-2 focus:outline-none rounded-b-md bottom-up-shadow focus:text-gray-300 tab-btns focus:border-l-0
+					class="{`flex items-center p-2 focus:outline-none rounded-b-md focus:text-gray-300
 					${
 						!isEditMode
-							? 'text-gray-300 bg-gray-800 border border-t-0 border-gray-700'
+							? 'text-gray-300 bg-gray-800 border border-t-0 border-gray-700 shadow-selected'
 							: ''
 					}`}">
 					<svg class="mr-1" width="15" height="15">
