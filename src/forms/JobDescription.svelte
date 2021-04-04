@@ -456,7 +456,7 @@
 					class="block mb-1 text-sm font-medium text-gray-300">
 					Is this a Remote Position?
 				</label>
-				<ToggleBtn id="remote" data="{data}" setField="{setField}" />
+				<ToggleBtn id="remote" toggle="{$data.location.remote}" setField="{setField}" />
 			</div>
 			{#if $data.location.remote}
 				<div class="flex items-center justify-between p-2 pr-0">
@@ -467,7 +467,7 @@
 					</label>
 					<ToggleBtn
 						id="worldwide"
-						data="{data}"
+						toggle="{$data.location.worldwide}"
 						setField="{setField}" />
 				</div>
 			{/if}
