@@ -211,8 +211,8 @@
 				is: (remote, worldwide, countries) =>
 					remote && !worldwide && countries?.length > 1,
 				then: yup.object({
-					min: yup.number().min(-12).max(14).lessThan(yup.ref("max")),
-					max: yup.number().min(-12).max(14).moreThan(yup.ref("min")),
+					min: yup.number().truncate().min(-12).lessThan(yup.ref("max"), "Must be less than Max"),
+					max: yup.number().truncate().moreThan(yup.ref("min"), "Must be more than Min").max(14),
 				}),
 				otherwise: yup.object().strip(),
 			}),
@@ -235,9 +235,9 @@
 			location: {
 				remote: true,
 				worldwide: true,
-				timezone: {},
 				countries: [],
 				cities: [],
+				timezone: {},
 			},
 			description: "",
 		},
@@ -539,10 +539,15 @@
 					</div>
 					<input
 						id="timezone"
-						type="number"
+						type="text"
 						name="min"
 						bind:value="{$data.location.timezone.min}"
-						class="block w-full pr-12 bg-gray-800 border-gray-700 rounded-r-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+						class="{`block w-full bg-gray-800 border-l-0 rounded-r-md shadow-sm sm:text-sm
+							${
+								$errors.location.timezone.min
+									? 'border-red-500 ring-1 ring-red-500 focus:ring-red-500 focus:border-red-500'
+									: 'border-gray-700 focus:ring-indigo-500 focus:border-indigo-500'
+							}`}"
 						placeholder="-5" />
 				</div>
 				<div class="flex rounded-md shadow-sm">
@@ -551,10 +556,15 @@
 						<span class="text-gray-500 sm:text-sm"> UTC </span>
 					</div>
 					<input
-						type="number"
+						type="text"
 						name="max"
 						bind:value="{$data.location.timezone.max}"
-						class="block w-full pr-12 bg-gray-800 border-gray-700 rounded-r-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+						class="{`block w-full bg-gray-800 border-l-0 rounded-r-md shadow-sm sm:text-sm
+							${
+								$errors.location.timezone.max
+									? 'border-red-500 ring-1 ring-red-500 focus:ring-red-500 focus:border-red-500'
+									: 'border-gray-700 focus:ring-indigo-500 focus:border-indigo-500'
+							}`}"
 						placeholder="+5" />
 				</div>
 			</div>
