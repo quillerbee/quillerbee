@@ -2,6 +2,7 @@
 	import { format } from "timeago.js";
 	import chroma from "chroma-js";
 	import { flag, name } from "country-emoji";
+	import tippy from "sveltejs-tippy";
 
 	export let jobPost;
 	export let company;
@@ -135,7 +136,12 @@
 									<ul
 										class="flex items-center text-base countries">
 										{#each location.countries as country}
-											<li class="mr-1.5">
+											<li
+												class="mr-1.5 cursor-pointer"
+												use:tippy="{{
+													theme: 'warn',
+													content: name(country),
+												}}">
 												{flag(country)}
 											</li>
 										{/each}
@@ -143,7 +149,14 @@
 								{:else}
 									<div
 										class="flex items-center font-semibold">
-										<span class="mr-1.5">
+										<span
+											class="mr-1.5 cursor-pointer text-base"
+											use:tippy="{{
+												theme: 'warn',
+												content: name(
+													location.countries?.[0]
+												),
+											}}">
 											{flag(location.countries?.[0])}
 										</span>
 										{name(location.countries?.[0])} Only
@@ -153,8 +166,16 @@
 						</div>
 						{#if location.remote}
 							{#if location.worldwide}
-								<div class="flex font-semibold">
-									<span class="mr-1.5">🌏</span> Worldwide
+								<div class="flex items-center font-semibold cursor-pointer">
+									<span
+										class="mr-1.5 text-base"
+										use:tippy="{{
+											theme: 'warn',
+											content: 'Worldwide',
+										}}">
+										🌏
+									</span>
+									Worldwide
 								</div>
 							{:else if location.countries.length > 1}
 								<div class="flex ml-1 font-semibold">
