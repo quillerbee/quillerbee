@@ -221,21 +221,19 @@
 		extend: [validator, reporter],
 		validateSchema,
 		onSubmit: (values) => {
-			const val = pickBy(values);
+			const payload = validateSchema.cast(pickBy(values));
 
-			val.tags = val.tags?.map((val) => ({ name: val }));
-			val.location.cities = val.location.cities?.map((val) => ({
+			payload.tags = payload.tags?.map((val) => ({ name: val }));
+			payload.location.cities = payload.location.cities?.map((val) => ({
 				name: val,
 			}));
 
-			val.created = new Date().toISOString();
-			val.status = status.Active;
+			payload.created = new Date().toISOString();
+			payload.status = status.Active;
 
-			val.company = {
+			payload.company = {
 				email: "abhijit.kar@quillerbee.com",
 			};
-
-			const payload = validateSchema.cast(val);
 
 			log.info(payload);
 
