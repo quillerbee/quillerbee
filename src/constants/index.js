@@ -34,6 +34,12 @@ export const flairs = [
 	{ text: "$90 - Featured", value: "Featured" },
 ];
 
+export const status = {
+	Active: "Active",
+	Inactive: "	Inactive",
+	Deleted: "	Deleted",
+};
+
 export const markdownExample = `
 # h1 Headings 🌎
 ---  

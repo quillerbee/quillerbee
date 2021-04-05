@@ -23,7 +23,10 @@
 		types,
 		flairs,
 		markdownExample,
+		status,
 	} from "@constants";
+
+	import { pickBy } from "@utils";
 
 	const currencyCodes = Object.keys(currencyToSymbolMap);
 	const countryCodes = Object.keys(countries);
@@ -126,53 +129,6 @@
 				}
 			}
 		`,
-		variables: {
-			input: [
-				{
-					company: {
-						email: "abhijit.kar@quillerbee.com",
-					},
-					title: "Fullstack Developer",
-					description: "Do Fullstack for QuillerBee",
-					url: "https://www.quillerbee.com",
-					salary: {
-						min: 10000,
-						max: 20000,
-						currency: "JPY",
-					},
-					location: {
-						remote: true,
-						countries: ["IN", "US", "JP"],
-						cities: [
-							{
-								name: "Hyderabad",
-							},
-							{
-								name: "Texas",
-							},
-							{
-								name: "Tokyo",
-							},
-						],
-					},
-					tags: [
-						{
-							name: "JavaScript",
-						},
-						{
-							name: "TypeScript",
-						},
-					],
-					category: {
-						name: "Software Development",
-					},
-					type: "Other",
-					status: "Active",
-					flair: "Sponsored",
-					created: "2021-03-21T10:59:12.986Z",
-				},
-			],
-		},
 	});
 
 	const validateSchema = yup.object().shape({
@@ -227,9 +183,11 @@
 			}),
 		}),
 		tags: yup.array().min(1).max(5),
-		category: yup.string().required(),
+		category: yup.object({
+			name: yup.string().required(),
+		}),
 		type: yup.string().required(),
-		flair: yup.string().notRequired(),
+		flair: yup.string().nullable().notRequired(),
 		description: yup
 			.string()
 			.wordLimit(1000, "Keep it Short")
@@ -253,7 +211,9 @@
 				timezone: {},
 			},
 			tags: [],
-			category: "",
+			category: {
+				name: "",
+			},
 			type: "",
 			flair: null,
 			description: "",
@@ -261,10 +221,27 @@
 		extend: [validator, reporter],
 		validateSchema,
 		onSubmit: (values) => {
-			log.info(validateSchema.cast(values));
-			// Remove null values
-			// Add other values like: created, status, ...
-			createJob();
+			const val = pickBy(values);
+
+			val.tags = val.tags?.map((val) => ({ name: val }));
+			val.location.cities = val.location.cities?.map((val) => ({
+				name: val,
+			}));
+
+			val.created = new Date().toISOString();
+			val.status = status.Active;
+
+			val.company = {
+				email: "abhijit.kar@quillerbee.com",
+			};
+
+			const payload = validateSchema.cast(val);
+
+			log.info(payload);
+
+			createJob({ input: payload }).then((result) => {
+				log.info(result.data, result.error);
+			});
 		},
 	});
 
@@ -673,9 +650,9 @@
 			<div class="grid grid-flow-row gap-2">
 				<select
 					id="category"
-					name="category"
+					name="category.name"
 					bind:this="{categorySelector}"
-					bind:value="{$data.category}"
+					bind:value="{$data.category.name}"
 					class="mt-1 text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 					<option data-placeholder="true"></option>
 					{#each categories as category}
