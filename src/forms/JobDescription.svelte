@@ -157,7 +157,10 @@
 			countries: yup.array().when(["remote", "worldwide"], {
 				is: (remote, worldwide) => remote && worldwide,
 				then: yup.array().strip(),
-				otherwise: yup.array().min(1, "Must have at least one Country").max(5, "Can't have more than 5 Countries"),
+				otherwise: yup
+					.array()
+					.min(1, "Must have at least one Country")
+					.max(5, "Can't have more than 5 Countries"),
 			}),
 			cities: yup.array().when(["remote", "worldwide"], {
 				is: (remote, worldwide) => remote && worldwide,
@@ -275,7 +278,6 @@
 			<label
 				for="title"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				
 				use:tippy="{{
 					...commonTippyConfig,
 					content: `
@@ -312,7 +314,6 @@
 			<label
 				for="url"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				
 				use:tippy="{{
 					...commonTippyConfig,
 					content: `
@@ -352,7 +353,6 @@
 		<div
 			for="currency"
 			class="absolute inline-flex items-center pl-4 pr-3 text-sm bg-gray-800 border border-gray-700 cursor-pointer focus:outline-none -top-3 left-5 rounded-xl"
-			
 			use:tippy="{{
 				...commonTippyConfig,
 				content: `
@@ -429,7 +429,6 @@
 		<div
 			for="currency"
 			class="absolute inline-flex items-center pl-4 pr-3 text-sm bg-gray-800 border border-gray-700 cursor-pointer focus:outline-none -top-3 left-5 rounded-xl"
-			
 			use:tippy="{{
 				...commonTippyConfig,
 				content: `
@@ -605,7 +604,6 @@
 			<label
 				for="tags"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				
 				use:tippy="{{
 					...commonTippyConfig,
 					content: `
@@ -642,7 +640,6 @@
 			<label
 				for="category"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				
 				use:tippy="{{
 					...commonTippyConfig,
 					content: `
@@ -678,7 +675,6 @@
 			<label
 				for="type"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				
 				use:tippy="{{
 					...commonTippyConfig,
 					content: `
@@ -713,7 +709,6 @@
 			<label
 				for="flair"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				
 				use:tippy="{{
 					...commonTippyConfig,
 					content: `
@@ -748,7 +743,6 @@
 		<label
 			for="description"
 			class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-			
 			use:tippy="{{
 				...commonTippyConfig,
 				content: `
@@ -834,7 +828,6 @@
 				<button
 					class="ml-2 focus:outline-none markdown-btn"
 					on:click|preventDefault="{showExample}"
-					
 					use:tippy="{{
 						...commonTippyConfig,
 						content: `

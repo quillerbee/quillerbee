@@ -166,7 +166,8 @@
 						</div>
 						{#if location.remote}
 							{#if location.worldwide}
-								<div class="flex items-center font-semibold cursor-pointer">
+								<div
+									class="flex items-center font-semibold cursor-pointer">
 									<span
 										class="mr-1.5 text-base"
 										use:tippy="{{
