@@ -1,12 +1,12 @@
 dependencies:
-  '@felte/reporter-tippy': 0.1.14
-  '@felte/validator-yup': 0.2.0_yup@0.32.9
+  '@felte/reporter-tippy': 0.2.4
+  '@felte/validator-yup': 0.2.1_yup@0.32.9
   '@tailwindcss/typography': 0.4.0_tailwindcss@2.0.4
   '@urql/svelte': 1.2.0_graphql@15.5.0+svelte@3.35.0
   chroma-js: 2.1.1
   country-emoji: 1.5.6
   currency-symbol-map: 5.0.1
-  felte: 0.6.3_svelte@3.35.0
+  felte: 0.6.4_svelte@3.35.0
   graphql: 15.5.0
   loglevel: 1.7.1
   marked: 2.0.1
@@ -275,35 +275,27 @@ packages:
       node: ^10.12.0 || >=12.0.0
     resolution:
       integrity: sha512-2ZPCc+uNbjV5ERJr+aKSPRwZgKd2z11x0EgLvb1PURmUrn9QNRXFqje0Ldq454PfAVyaJYyrDvvIKSFP4NnBog==
-  /@felte/common/0.3.0:
-    dependencies:
-      lodash-es: 4.17.21
+  /@felte/common/0.3.4:
     dev: false
     resolution:
-      integrity: sha512-9ZZbKdaNNF5lO+vUwpiR3ZEMLtKVVu7PAK4Coc0IOXxM2U0Ga34y8lSg4wUnxzb5xUDTWQahLEHYzKMogcFJtQ==
-  /@felte/common/0.3.2:
+      integrity: sha512-nh89AQpSlXqiDT4r28FUVJqjFkKGd+MOrw84a01mrSBvtOZL9NdWINn3ZbinY2lXIVmgmeIPXlL9RmWr3Zv1Kg==
+  /@felte/reporter-tippy/0.2.4:
     dependencies:
-      lodash-es: 4.17.21
-    dev: false
-    resolution:
-      integrity: sha512-6vdpBldQWaU4JyUgsnir+hsmufZCNyhdqgWtvZSq0ZgmSX8kAZIYGgdKrZnUBuKcj+ULTMoosKjiiO22Msq8aA==
-  /@felte/reporter-tippy/0.1.14:
-    dependencies:
-      '@felte/common': 0.3.0
+      '@felte/common': 0.3.4
     dev: false
     peerDependencies:
       tippy.js: ^6.0.0
     resolution:
-      integrity: sha512-XE33qMxY9Jg9lW//vLEInfPMsDA6ZKtp/kkmq+A2+tVQrMpmhPuH2jr6Iv5xYkKn5QRbs7kVeD1zJNYxfxDDzw==
-  /@felte/validator-yup/0.2.0_yup@0.32.9:
+      integrity: sha512-VEtlrJYO/dukjECI1WlzUBZxe5Dxa+mBNngW4Qu97YDPy3Rn0EIsVkwf2xK6lWIXb5UKLlKGtGsr7zydvCit7Q==
+  /@felte/validator-yup/0.2.1_yup@0.32.9:
     dependencies:
-      '@felte/common': 0.3.0
+      '@felte/common': 0.3.4
       yup: 0.32.9
     dev: false
     peerDependencies:
       yup: ^0.32.9
     resolution:
-      integrity: sha512-GsFQ/JY0wIk8cy+FZXNOz8+oO09bSfEdHM7YV9iik5DfjYHZkIgHPHzoYl7Em3X+XGyn95uyQJ7/gCB5SuRnMQ==
+      integrity: sha512-HqUOF9l+fYEDUWHN/9KXnzQG0F7OW5m4yx1eQBMcCb2MduMs14CI4+AGWa2hhADa/Wcxlu4uU2Di/Dsoru62Cg==
   /@fullhuman/postcss-purgecss/3.1.3:
     dependencies:
       purgecss: 3.1.3
@@ -1610,16 +1602,15 @@ packages:
     dev: true
     resolution:
       integrity: sha512-7Eczs8gIPDrVzT+EksYBcupqMyxSHXXrHOLRRxU2/DicV8789MRBRR8+Hc2uWzUupOs4YS4JzBmBxjjCVBxD/g==
-  /felte/0.6.3_svelte@3.35.0:
+  /felte/0.6.4_svelte@3.35.0:
     dependencies:
-      '@felte/common': 0.3.2
-      lodash-es: 4.17.21
+      '@felte/common': 0.3.4
       svelte: 3.35.0
     dev: false
     peerDependencies:
       svelte: ^3.31.0
     resolution:
-      integrity: sha512-LWilwLYv7wINiaSdwdn7tzc8cn9PMC0hEcYdbAAj497ptHyncrYCtqpMbDKlWeph9/O0jb5jKPTwozAjE7N6FQ==
+      integrity: sha512-8kn48pgRMQA/5+cDwFvh91O6KkTlin7m+Zs6QdGk9qhlv1hierJErohIVxJIxRCqAi5gfQAci62Ch2c24d6aUA==
   /figures/1.7.0:
     dependencies:
       escape-string-regexp: 1.0.5
@@ -4191,8 +4182,8 @@ packages:
 specifiers:
   '@babel/core': ^7.13.10
   '@babel/eslint-parser': ^7.13.10
-  '@felte/reporter-tippy': ^0.1.14
-  '@felte/validator-yup': ^0.2.0
+  '@felte/reporter-tippy': ^0.2.4
+  '@felte/validator-yup': ^0.2.1
   '@roxi/routify': ^2.15.1
   '@sveltejs/vite-plugin-svelte': ^1.0.0-next.5
   '@tailwindcss/forms': ^0.3.2
@@ -4205,7 +4196,7 @@ specifiers:
   currency-symbol-map: ^5.0.1
   eslint: ^7.22.0
   eslint-plugin-svelte3: ^3.1.2
-  felte: ^0.6.3
+  felte: ^0.6.4
   graphql: ^15.5.0
   loglevel: ^1.7.1
   marked: ^2.0.1

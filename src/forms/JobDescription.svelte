@@ -157,7 +157,7 @@
 			countries: yup.array().when(["remote", "worldwide"], {
 				is: (remote, worldwide) => remote && worldwide,
 				then: yup.array().strip(),
-				otherwise: yup.array().min(1).max(5),
+				otherwise: yup.array().min(1, "Must have at least one Country").max(5, "Can't have more than 5 Countries"),
 			}),
 			cities: yup.array().when(["remote", "worldwide"], {
 				is: (remote, worldwide) => remote && worldwide,
@@ -218,7 +218,7 @@
 			flair: null,
 			description: "",
 		},
-		extend: [validator, reporter],
+		extend: [validator, reporter()],
 		validateSchema,
 		onSubmit: (values) => {
 			const payload = validateSchema.cast(pickBy(values));
@@ -275,7 +275,7 @@
 			<label
 				for="title"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				tabindex="0"
+				
 				use:tippy="{{
 					...commonTippyConfig,
 					content: `
@@ -312,7 +312,7 @@
 			<label
 				for="url"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				tabindex="0"
+				
 				use:tippy="{{
 					...commonTippyConfig,
 					content: `
@@ -352,7 +352,7 @@
 		<div
 			for="currency"
 			class="absolute inline-flex items-center pl-4 pr-3 text-sm bg-gray-800 border border-gray-700 cursor-pointer focus:outline-none -top-3 left-5 rounded-xl"
-			tabindex="0"
+			
 			use:tippy="{{
 				...commonTippyConfig,
 				content: `
@@ -429,7 +429,7 @@
 		<div
 			for="currency"
 			class="absolute inline-flex items-center pl-4 pr-3 text-sm bg-gray-800 border border-gray-700 cursor-pointer focus:outline-none -top-3 left-5 rounded-xl"
-			tabindex="0"
+			
 			use:tippy="{{
 				...commonTippyConfig,
 				content: `
@@ -473,13 +473,26 @@
 		</div>
 
 		<div
+			id="countries"
 			class="{`grid-flow-row grid-cols-1 grid-rows-2 gap-6
 			${$data.location.remote && $data.location.worldwide ? 'hidden' : 'grid'}`}">
 			<div>
 				<label
+					id="countries"
 					for="countries"
-					class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
+					class="flex items-center mb-1 text-sm font-medium text-gray-300 grid-col-2">
 					Countries
+					{#if $errors.location.countries}
+						<svg
+							width="15"
+							height="15"
+							use:tippy="{{
+								content: $errors.location.countries,
+							}}"
+							class="text-red-500 ml-1 -mt-0.5">
+							<use xlink:href="#exclamation"></use>
+						</svg>
+					{/if}
 				</label>
 				<div
 					class="{`grid grid-flow-row gap-2 pointer-events-auto bg-gray-800 rounded-md shadow-sm mt-1 sm:text-sm
@@ -496,6 +509,7 @@
 						on:change="{() =>
 							($data.location.countries = countriesSlimSelector.selected())}"
 						multiple
+						data-felte-reporter-tippy-ignore
 						class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md">
 						{#each countryCodes as countryCode}
 							<option class="bg-gray-800" value="{countryCode}">
@@ -591,7 +605,7 @@
 			<label
 				for="tags"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				tabindex="0"
+				
 				use:tippy="{{
 					...commonTippyConfig,
 					content: `
@@ -628,7 +642,7 @@
 			<label
 				for="category"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				tabindex="0"
+				
 				use:tippy="{{
 					...commonTippyConfig,
 					content: `
@@ -664,7 +678,7 @@
 			<label
 				for="type"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				tabindex="0"
+				
 				use:tippy="{{
 					...commonTippyConfig,
 					content: `
@@ -699,7 +713,7 @@
 			<label
 				for="flair"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				tabindex="0"
+				
 				use:tippy="{{
 					...commonTippyConfig,
 					content: `
@@ -734,7 +748,7 @@
 		<label
 			for="description"
 			class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-			tabindex="0"
+			
 			use:tippy="{{
 				...commonTippyConfig,
 				content: `
@@ -820,7 +834,7 @@
 				<button
 					class="ml-2 focus:outline-none markdown-btn"
 					on:click|preventDefault="{showExample}"
-					tabindex="0"
+					
 					use:tippy="{{
 						...commonTippyConfig,
 						content: `

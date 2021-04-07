@@ -28,7 +28,7 @@
 			<label
 				for="name"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				tabindex="0"
+				
 				use:tippy="{{
 					...commonTippyConfig,
 					content: `
@@ -57,7 +57,7 @@
 			<label
 				for="email"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				tabindex="0"
+				
 				use:tippy="{{
 					...commonTippyConfig,
 					content: `
@@ -89,7 +89,7 @@
 			<label
 				for="website"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-				tabindex="0"
+				
 				use:tippy="{{
 					...commonTippyConfig,
 					content: `
@@ -123,7 +123,7 @@
 		<label
 			for="about"
 			class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
-			tabindex="0"
+			
 			use:tippy="{{
 				...commonTippyConfig,
 				content: `
