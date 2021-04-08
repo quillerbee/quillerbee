@@ -487,18 +487,19 @@
 							height="15"
 							use:tippy="{{
 								content: $errors.location.countries,
+								placement: 'right',
 							}}"
-							class="text-red-500 ml-1 -mt-0.5">
+							class="text-red-500 ml-1 -mt-0.5 cursor-pointer">
 							<use xlink:href="#exclamation"></use>
 						</svg>
 					{/if}
 				</label>
 				<div
-					class="{`grid grid-flow-row gap-2 pointer-events-auto bg-gray-800 rounded-md shadow-sm mt-1 sm:text-sm
+					class="{`grid grid-flow-row gap-2 pointer-events-auto rounded-md shadow-sm mt-1 sm:text-sm
 						${
 							$errors.location.countries
 								? 'border-red-500 ring-2 ring-red-500 focus:ring-red-500 focus:border-red-500'
-								: 'border-gray-700 focus:ring-indigo-500 focus:border-indigo-500'
+								: ''
 						}`}">
 					<!-- svelte-ignore a11y-no-onchange -->
 					<select
@@ -523,15 +524,27 @@
 			<div>
 				<label
 					for="cities"
-					class="block mb-1 text-sm font-medium text-gray-300 grid-col-2">
+					class="flex items-center mb-1 text-sm font-medium text-gray-300 grid-col-2">
 					Cities
+					{#if $errors.location.cities}
+						<svg
+							width="15"
+							height="15"
+							use:tippy="{{
+								content: $errors.location.cities,
+								placement: 'right',
+							}}"
+							class="text-red-500 ml-1 -mt-0.5 cursor-pointer">
+							<use xlink:href="#exclamation"></use>
+						</svg>
+					{/if}
 				</label>
 				<div
-					class="{`grid grid-flow-row gap-2 pointer-events-auto bg-gray-800 rounded-md shadow-sm mt-1 sm:text-sm
+					class="{`grid grid-flow-row gap-2 pointer-events-auto rounded-md shadow-sm mt-1 sm:text-sm
 					${
 						$errors.location.cities
 							? 'border-red-500 ring-2 ring-red-500 focus:ring-red-500 focus:border-red-500'
-							: 'border-gray-700 focus:ring-indigo-500 focus:border-indigo-500'
+							: ''
 					}`}">
 					<!-- svelte-ignore a11y-no-onchange -->
 					<select
@@ -541,6 +554,7 @@
 						on:change="{() =>
 							($data.location.cities = citiesSlimSelector.selected())}"
 						multiple
+						data-felte-reporter-tippy-ignore
 						class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md">
 					</select>
 				</div>
@@ -621,8 +635,25 @@
 				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
 					<use xlink:href="#information-circle"></use>
 				</svg>
+				{#if $errors.tags}
+					<svg
+						width="15"
+						height="15"
+						use:tippy="{{
+							content: $errors.tags,
+							placement: 'right',
+						}}"
+						class="text-red-500 ml-1 -mt-0.5 cursor-pointer">
+						<use xlink:href="#exclamation"></use>
+					</svg>
+				{/if}
 			</label>
-			<div class="grid grid-flow-row gap-2">
+			<div class="{`grid grid-flow-row gap-2 pointer-events-auto rounded-md shadow-sm mt-1 sm:text-sm
+				${
+					$errors.tags
+						? 'border-red-500 ring-2 ring-red-500 focus:ring-red-500 focus:border-red-500'
+						: ''
+				}`}">
 				<!-- svelte-ignore a11y-no-onchange -->
 				<select
 					id="tags"
@@ -631,7 +662,8 @@
 					on:change="{() =>
 						($data.tags = tagsSlimSelector.selected())}"
 					multiple
-					class="mt-1 text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+					data-felte-reporter-tippy-ignore
+					class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 				</select>
 			</div>
 		</div>
@@ -655,14 +687,32 @@
 				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
 					<use xlink:href="#information-circle"></use>
 				</svg>
+				{#if $errors.category.name}
+					<svg
+						width="15"
+						height="15"
+						use:tippy="{{
+							content: $errors.category.name,
+							placement: 'right',
+						}}"
+						class="text-red-500 ml-1 -mt-0.5 cursor-pointer">
+						<use xlink:href="#exclamation"></use>
+					</svg>
+				{/if}
 			</label>
-			<div class="grid grid-flow-row gap-2">
+			<div class="{`grid grid-flow-row gap-2 pointer-events-auto rounded-md shadow-sm mt-1 sm:text-sm
+				${
+					$errors.category.name
+						? 'border-red-500 ring-2 ring-red-500 focus:ring-red-500 focus:border-red-500'
+						: ''
+				}`}">
 				<select
 					id="category"
 					name="category.name"
 					bind:this="{categorySelector}"
 					bind:value="{$data.category.name}"
-					class="mt-1 text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+					data-felte-reporter-tippy-ignore
+					class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 					<option data-placeholder="true"></option>
 					{#each categories as category}
 						<option>{category}</option>
@@ -689,14 +739,32 @@
 				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
 					<use xlink:href="#information-circle"></use>
 				</svg>
+				{#if $errors.type}
+					<svg
+						width="15"
+						height="15"
+						use:tippy="{{
+							content: $errors.type,
+							placement: 'right',
+						}}"
+						class="text-red-500 ml-1 -mt-0.5 cursor-pointer">
+						<use xlink:href="#exclamation"></use>
+					</svg>
+				{/if}
 			</label>
-			<div class="grid grid-flow-row gap-2">
+			<div class="{`grid grid-flow-row gap-2 pointer-events-auto rounded-md shadow-sm mt-1 sm:text-sm
+				${
+					$errors.type
+						? 'border-red-500 ring-2 ring-red-500 focus:ring-red-500 focus:border-red-500'
+						: ''
+				}`}">
 				<select
 					id="type"
 					name="type"
 					bind:this="{typeSelector}"
 					bind:value="{$data.type}"
-					class="mt-1 text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+					data-felte-reporter-tippy-ignore
+					class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 					<option data-placeholder="true"></option>
 					{#each types as type}
 						<option value="{type.value}">{type.text}</option>
@@ -724,13 +792,13 @@
 					<use xlink:href="#annotation"></use>
 				</svg>
 			</label>
-			<div class="grid grid-flow-row gap-2">
+			<div class="grid grid-flow-row gap-2 mt-1">
 				<select
 					id="flair"
 					name="flair"
 					bind:this="{flairSelector}"
 					bind:value="{$data.flair}"
-					class="mt-1 text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+					class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 					<option data-placeholder="true"></option>
 					{#each flairs as flair}
 						<option value="{flair.value}">{flair.text}</option>
