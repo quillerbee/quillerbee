@@ -648,7 +648,8 @@
 					</svg>
 				{/if}
 			</label>
-			<div class="{`grid grid-flow-row gap-2 pointer-events-auto rounded-md shadow-sm mt-1 sm:text-sm
+			<div
+				class="{`grid grid-flow-row gap-2 pointer-events-auto rounded-md shadow-sm mt-1 sm:text-sm
 				${
 					$errors.tags
 						? 'border-red-500 ring-2 ring-red-500 focus:ring-red-500 focus:border-red-500'
@@ -700,7 +701,8 @@
 					</svg>
 				{/if}
 			</label>
-			<div class="{`grid grid-flow-row gap-2 pointer-events-auto rounded-md shadow-sm mt-1 sm:text-sm
+			<div
+				class="{`grid grid-flow-row gap-2 pointer-events-auto rounded-md shadow-sm mt-1 sm:text-sm
 				${
 					$errors.category.name
 						? 'border-red-500 ring-2 ring-red-500 focus:ring-red-500 focus:border-red-500'
@@ -752,7 +754,8 @@
 					</svg>
 				{/if}
 			</label>
-			<div class="{`grid grid-flow-row gap-2 pointer-events-auto rounded-md shadow-sm mt-1 sm:text-sm
+			<div
+				class="{`grid grid-flow-row gap-2 pointer-events-auto rounded-md shadow-sm mt-1 sm:text-sm
 				${
 					$errors.type
 						? 'border-red-500 ring-2 ring-red-500 focus:ring-red-500 focus:border-red-500'
