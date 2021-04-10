@@ -157,15 +157,12 @@
 			countries: yup.array().when(["remote", "worldwide"], {
 				is: (remote, worldwide) => remote && worldwide,
 				then: yup.array().strip(),
-				otherwise: yup
-					.array()
-					.min(1, "Must have at least one Country")
-					.max(5, "Can't have more than 5 Countries"),
+				otherwise: yup.array().min(1, "Required").max(5, "At max 5"),
 			}),
 			cities: yup.array().when(["remote", "worldwide"], {
 				is: (remote, worldwide) => remote && worldwide,
 				then: yup.array().strip(),
-				otherwise: yup.array().min(1).max(5),
+				otherwise: yup.array().min(1, "Required").max(5, "At max 5"),
 			}),
 			timezone: yup.object().when(["remote", "worldwide", "countries"], {
 				is: (remote, worldwide, countries) =>
@@ -174,22 +171,20 @@
 					min: yup
 						.number()
 						.truncate()
-						.min(-12)
+						.min(-12, "Must be more than -12")
 						.lessThan(yup.ref("max"), "Must be less than Max"),
 					max: yup
 						.number()
 						.truncate()
 						.moreThan(yup.ref("min"), "Must be more than Min")
-						.max(14),
+						.max(14, "Must be less than 14"),
 				}),
 				otherwise: yup.object().strip(),
 			}),
 		}),
-		tags: yup.array().min(1).max(5),
-		category: yup.object({
-			name: yup.string().required(),
-		}),
-		type: yup.string().required(),
+		tags: yup.array().min(1, "Required").max(5, "At max 5"),
+		category: yup.string().required("Required"),
+		type: yup.string().required("Required"),
 		flair: yup.string().nullable().notRequired(),
 		description: yup
 			.string()
@@ -214,9 +209,7 @@
 				timezone: {},
 			},
 			tags: [],
-			category: {
-				name: "",
-			},
+			category: "",
 			type: "",
 			flair: null,
 			description: "",
@@ -233,6 +226,10 @@
 
 			payload.created = new Date().toISOString();
 			payload.status = status.Active;
+
+			payload.category = {
+				name: payload.category,
+			};
 
 			payload.company = {
 				email: "abhijit.kar@quillerbee.com",
@@ -482,23 +479,11 @@
 			${$data.location.remote && $data.location.worldwide ? 'hidden' : 'grid'}`}">
 			<div>
 				<label
-					id="countries-label"
 					for="countries"
+					id="countries-label"
 					data-felte-reporter-tippy-trigger-for="countries"
 					class="flex items-center mb-1 text-sm font-medium text-gray-300 grid-col-2">
 					Countries
-					{#if $errors.location.countries}
-						<svg
-							width="15"
-							height="15"
-							use:tippy="{{
-								content: $errors.location.countries,
-								placement: 'right',
-							}}"
-							class="text-red-500 ml-1 -mt-0.5 cursor-pointer">
-							<use xlink:href="#exclamation"></use>
-						</svg>
-					{/if}
 				</label>
 				<div
 					data-felte-reporter-tippy-for="countries"
@@ -525,29 +510,16 @@
 								{name(countryCode)}
 							</option>
 						{/each}
-						<option class="bg-gray-800">United States</option>
 					</select>
 				</div>
 			</div>
 			<div>
 				<label
+					id="cities-label"
 					for="cities"
 					data-felte-reporter-tippy-trigger-for="cities"
-					id="cities-label"
 					class="flex items-center mb-1 text-sm font-medium text-gray-300 grid-col-2">
 					Cities
-					{#if $errors.location.cities}
-						<svg
-							width="15"
-							height="15"
-							use:tippy="{{
-								content: $errors.location.cities,
-								placement: 'right',
-							}}"
-							class="text-red-500 ml-1 -mt-0.5 cursor-pointer">
-							<use xlink:href="#exclamation"></use>
-						</svg>
-					{/if}
 				</label>
 				<div
 					data-felte-reporter-tippy-for="cities"
@@ -649,18 +621,6 @@
 				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
 					<use xlink:href="#information-circle"></use>
 				</svg>
-				{#if $errors.tags}
-					<svg
-						width="15"
-						height="15"
-						use:tippy="{{
-							content: $errors.tags,
-							placement: 'right',
-						}}"
-						class="text-red-500 ml-1 -mt-0.5 cursor-pointer">
-						<use xlink:href="#exclamation"></use>
-					</svg>
-				{/if}
 			</label>
 			<div
 				data-felte-reporter-tippy-for="tags"
@@ -688,6 +648,8 @@
 		<div>
 			<label
 				for="category"
+				id="category-label"
+				data-felte-reporter-tippy-trigger-for="category"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
 				use:tippy="{{
 					...commonTippyConfig,
@@ -704,25 +666,14 @@
 				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
 					<use xlink:href="#information-circle"></use>
 				</svg>
-				{#if $errors.category.name}
-					<svg
-						width="15"
-						height="15"
-						use:tippy="{{
-							content: $errors.category.name,
-							placement: 'right',
-						}}"
-						class="text-red-500 ml-1 -mt-0.5 cursor-pointer">
-						<use xlink:href="#exclamation"></use>
-					</svg>
-				{/if}
 			</label>
 			<div
-				id="category-label"
-				data-felte-reporter-tippy-trigger-for="category"
+				id="category"
+				aria-labelledby="category-label"
+				data-felte-reporter-tippy-for="category"
 				class="{`grid grid-flow-row gap-2 pointer-events-auto rounded-md shadow-sm mt-1 sm:text-sm
 				${
-					$errors.category.name
+					$errors.category
 						? 'border-red-500 ring-2 ring-red-500 focus:ring-red-500 focus:border-red-500'
 						: ''
 				}`}">
@@ -730,9 +681,9 @@
 					id="category"
 					data-felte-reporter-tippy-for="category"
 					aria-labelledby="category-label"
-					name="category.name"
+					name="category"
 					bind:this="{categorySelector}"
-					bind:value="{$data.category.name}"
+					bind:value="{$data.category}"
 					data-felte-reporter-tippy-ignore
 					class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
 					<option data-placeholder="true"></option>
@@ -763,22 +714,11 @@
 				<svg width="15" height="15" class="text-[#fc0] ml-1 -mt-0.5">
 					<use xlink:href="#information-circle"></use>
 				</svg>
-				{#if $errors.type}
-					<svg
-						width="15"
-						height="15"
-						use:tippy="{{
-							content: $errors.type,
-							placement: 'right',
-						}}"
-						class="text-red-500 ml-1 -mt-0.5 cursor-pointer">
-						<use xlink:href="#exclamation"></use>
-					</svg>
-				{/if}
 			</label>
 			<div
-				data-felte-reporter-tippy-for="type"
+				id="type"
 				aria-labelledby="type-label"
+				data-felte-reporter-tippy-for="type"
 				class="{`grid grid-flow-row gap-2 pointer-events-auto rounded-md shadow-sm mt-1 sm:text-sm
 				${
 					$errors.type
