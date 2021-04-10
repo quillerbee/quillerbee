@@ -474,7 +474,6 @@
 		</div>
 
 		<div
-			id="countries"
 			class="{`grid-flow-row grid-cols-1 grid-rows-2 gap-6
 			${$data.location.remote && $data.location.worldwide ? 'hidden' : 'grid'}`}">
 			<div>
@@ -482,7 +481,7 @@
 					for="countries"
 					id="countries-label"
 					data-felte-reporter-tippy-trigger-for="countries"
-					class="flex items-center mb-1 text-sm font-medium text-gray-300 grid-col-2">
+					class="flex items-center mb-1 text-sm font-medium text-gray-300 cursor-pointer grid-col-2">
 					Countries
 				</label>
 				<div
@@ -518,7 +517,7 @@
 					id="cities-label"
 					for="cities"
 					data-felte-reporter-tippy-trigger-for="cities"
-					class="flex items-center mb-1 text-sm font-medium text-gray-300 grid-col-2">
+					class="flex items-center mb-1 text-sm font-medium text-gray-300 cursor-pointer grid-col-2">
 					Cities
 				</label>
 				<div
@@ -668,7 +667,6 @@
 				</svg>
 			</label>
 			<div
-				id="category"
 				aria-labelledby="category-label"
 				data-felte-reporter-tippy-for="category"
 				class="{`grid grid-flow-row gap-2 pointer-events-auto rounded-md shadow-sm mt-1 sm:text-sm
@@ -679,7 +677,6 @@
 				}`}">
 				<select
 					id="category"
-					data-felte-reporter-tippy-for="category"
 					aria-labelledby="category-label"
 					name="category"
 					bind:this="{categorySelector}"
@@ -716,7 +713,6 @@
 				</svg>
 			</label>
 			<div
-				id="type"
 				aria-labelledby="type-label"
 				data-felte-reporter-tippy-for="type"
 				class="{`grid grid-flow-row gap-2 pointer-events-auto rounded-md shadow-sm mt-1 sm:text-sm
@@ -761,12 +757,13 @@
 					<use xlink:href="#annotation"></use>
 				</svg>
 			</label>
-			<div class="grid grid-flow-row gap-2 mt-1">
+			<div
+				data-felte-reporter-tippy-for="flair"
+				aria-labelledby="flair-label"
+				class="grid grid-flow-row gap-2 mt-1">
 				<select
 					id="flair"
 					name="flair"
-					data-felte-reporter-tippy-for="flair"
-					aria-labelledby="flair-label"
 					bind:this="{flairSelector}"
 					bind:value="{$data.flair}"
 					class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
