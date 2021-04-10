@@ -545,6 +545,16 @@ a:hover::after, a:focus::after {
 	background-color: #fffb8c
 }
 
+@media only screen and (max-device-width: 640px) {
+    .ss-main .ss-single-selected {
+        height: 42px;
+    }
+
+    .ss-main .ss-multi-selected {
+        height: 42px;
+    }
+}
+
 /* slim-select */
 
 .tippy-box {
