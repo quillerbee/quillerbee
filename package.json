@@ -28,7 +28,7 @@
 		"vite-aliases": "^0.5.1"
 	},
 	"dependencies": {
-		"@felte/reporter-tippy": "^0.2.7",
+		"@felte/reporter-tippy": "^0.2.9",
 		"@felte/validator-yup": "^0.2.3",
 		"@tailwindcss/typography": "^0.4.0",
 		"@tailwindcss/forms": "^0.3.2",

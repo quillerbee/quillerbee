@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@babel/core': ^7.13.10
   '@babel/eslint-parser': ^7.13.10
-  '@felte/reporter-tippy': ^0.2.7
+  '@felte/reporter-tippy': ^0.2.9
   '@felte/validator-yup': ^0.2.3
   '@roxi/routify': ^2.15.1
   '@sveltejs/vite-plugin-svelte': ^1.0.0-next.5
@@ -34,7 +34,7 @@ specifiers:
   yup: ^0.32.9
 
 dependencies:
-  '@felte/reporter-tippy': 0.2.7
+  '@felte/reporter-tippy': 0.2.9
   '@felte/validator-yup': 0.2.3_yup@0.32.9
   '@tailwindcss/forms': 0.3.2_tailwindcss@2.1.1
   '@tailwindcss/typography': 0.4.0_tailwindcss@2.1.1
@@ -325,12 +325,16 @@ packages:
     resolution: {integrity: sha512-nh89AQpSlXqiDT4r28FUVJqjFkKGd+MOrw84a01mrSBvtOZL9NdWINn3ZbinY2lXIVmgmeIPXlL9RmWr3Zv1Kg==}
     dev: false
 
-  /@felte/reporter-tippy/0.2.7:
-    resolution: {integrity: sha512-IBhB+OxgDbarJSC03wZGICQvdQgdyMv9uKEVmpg57uPhfVezewTNVAWqInLg32RmDBTroE4/Qoil0jfOkmpdHQ==}
+  /@felte/common/0.3.7:
+    resolution: {integrity: sha512-xVmyA9nQig3BkOusPwJj+XatXWlgsL4b7IJhT8V0GSfiekpFtEzlV2KL9g7w+EQ75x//Bm7fj839nVW8hwHlZA==}
+    dev: false
+
+  /@felte/reporter-tippy/0.2.9:
+    resolution: {integrity: sha512-fOxzuwfMHNYTZzWNEe/fgoR5pJteuHoIdQtM1a0E3nPjTV1h7GmyF5nUynyIY28p6JUe97fMchmFQXUJ6GO7oQ==}
     peerDependencies:
       tippy.js: ^6.0.0
     dependencies:
-      '@felte/common': 0.3.4
+      '@felte/common': 0.3.7
     dev: false
 
   /@felte/validator-yup/0.2.3_yup@0.32.9:
