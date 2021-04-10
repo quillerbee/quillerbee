@@ -353,6 +353,8 @@
 		<div
 			for="currency"
 			class="absolute inline-flex items-center pl-4 pr-3 text-sm bg-gray-800 border border-gray-700 cursor-pointer focus:outline-none -top-3 left-5 rounded-xl"
+			data-felte-reporter-tippy-trigger-for="currency"
+			id="currency-label"
 			use:tippy="{{
 				...commonTippyConfig,
 				content: `
@@ -368,7 +370,10 @@
 				<use xlink:href="#information-circle"></use>
 			</svg>
 		</div>
-		<div class="grid grid-flow-col gap-2">
+		<div
+			class="grid grid-flow-col gap-2"
+			data-felte-reporter-tippy-for="currency"
+			aria-labelledby="currency-label">
 			<select
 				id="currency"
 				name="currency"
@@ -477,8 +482,9 @@
 			${$data.location.remote && $data.location.worldwide ? 'hidden' : 'grid'}`}">
 			<div>
 				<label
-					id="countries"
+					id="countries-label"
 					for="countries"
+					data-felte-reporter-tippy-trigger-for="countries"
 					class="flex items-center mb-1 text-sm font-medium text-gray-300 grid-col-2">
 					Countries
 					{#if $errors.location.countries}
@@ -495,6 +501,8 @@
 					{/if}
 				</label>
 				<div
+					data-felte-reporter-tippy-for="countries"
+					aria-labelledby="countries-label"
 					class="{`grid grid-flow-row gap-2 pointer-events-auto rounded-md shadow-sm mt-1 sm:text-sm
 						${
 							$errors.location.countries
@@ -524,6 +532,8 @@
 			<div>
 				<label
 					for="cities"
+					data-felte-reporter-tippy-trigger-for="cities"
+					id="cities-label"
 					class="flex items-center mb-1 text-sm font-medium text-gray-300 grid-col-2">
 					Cities
 					{#if $errors.location.cities}
@@ -540,6 +550,8 @@
 					{/if}
 				</label>
 				<div
+					data-felte-reporter-tippy-for="cities"
+					aria-labelledby="cities-label"
 					class="{`grid grid-flow-row gap-2 pointer-events-auto rounded-md shadow-sm mt-1 sm:text-sm
 					${
 						$errors.location.cities
@@ -617,6 +629,8 @@
 		<div class="col-span-3">
 			<label
 				for="tags"
+				id="tags-label"
+				data-felte-reporter-tippy-trigger-for="tags"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
 				use:tippy="{{
 					...commonTippyConfig,
@@ -649,6 +663,8 @@
 				{/if}
 			</label>
 			<div
+				data-felte-reporter-tippy-for="tags"
+				aria-labelledby="tags-label"
 				class="{`grid grid-flow-row gap-2 pointer-events-auto rounded-md shadow-sm mt-1 sm:text-sm
 				${
 					$errors.tags
@@ -702,6 +718,8 @@
 				{/if}
 			</label>
 			<div
+				id="category-label"
+				data-felte-reporter-tippy-trigger-for="category"
 				class="{`grid grid-flow-row gap-2 pointer-events-auto rounded-md shadow-sm mt-1 sm:text-sm
 				${
 					$errors.category.name
@@ -710,6 +728,8 @@
 				}`}">
 				<select
 					id="category"
+					data-felte-reporter-tippy-for="category"
+					aria-labelledby="category-label"
 					name="category.name"
 					bind:this="{categorySelector}"
 					bind:value="{$data.category.name}"
@@ -726,6 +746,8 @@
 		<div>
 			<label
 				for="type"
+				id="type-label"
+				data-felte-reporter-tippy-trigger-for="type"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
 				use:tippy="{{
 					...commonTippyConfig,
@@ -755,6 +777,8 @@
 				{/if}
 			</label>
 			<div
+				data-felte-reporter-tippy-for="type"
+				aria-labelledby="type-label"
 				class="{`grid grid-flow-row gap-2 pointer-events-auto rounded-md shadow-sm mt-1 sm:text-sm
 				${
 					$errors.type
@@ -779,6 +803,8 @@
 		<div>
 			<label
 				for="flair"
+				id="flair-label"
+				data-felte-reporter-tippy-trigger-for="flair"
 				class="inline-flex items-center text-sm font-medium text-gray-300 cursor-pointer focus:outline-none"
 				use:tippy="{{
 					...commonTippyConfig,
@@ -799,6 +825,8 @@
 				<select
 					id="flair"
 					name="flair"
+					data-felte-reporter-tippy-for="flair"
+					aria-labelledby="flair-label"
 					bind:this="{flairSelector}"
 					bind:value="{$data.flair}"
 					class="text-sm text-gray-300 bg-gray-800 border-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
