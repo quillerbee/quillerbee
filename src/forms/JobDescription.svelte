@@ -221,10 +221,12 @@
 
 			payload.tags = payload.tags?.map((val) => ({ name: val }));
 
-			if(!(payload.remote && payload.worldwide)) {
-				payload.location.cities = payload.location.cities?.map((val) => ({
-					name: val,
-				}));
+			if (!(payload.remote && payload.worldwide)) {
+				payload.location.cities = payload.location.cities?.map(
+					(val) => ({
+						name: val,
+					})
+				);
 			}
 
 			payload.created = new Date().toISOString();
