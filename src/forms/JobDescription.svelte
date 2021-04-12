@@ -333,7 +333,7 @@
 			</label>
 			<input
 				id="url"
-				type="text"
+				type="url"
 				inputmode="url"
 				name="url"
 				autocomplete="url"
@@ -805,6 +805,7 @@
 				id="description"
 				name="description"
 				rows="12"
+				spellcheck="true"
 				bind:value="{$data.description}"
 				class="{`w-full bg-gray-800 rounded-md shadow-sm sm:text-sm text-gray-200
 				${
